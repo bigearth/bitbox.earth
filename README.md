@@ -13,6 +13,8 @@ Inpired by [ganache](http://truffleframework.com/ganache/).
 * npm v5.6.x
 * webpack v3.10.x
   * `npm install --global webpack`
+* XCode
+  * `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
 ## Installation
 
