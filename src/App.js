@@ -23,6 +23,7 @@ import BlockDetails from './components/BlockDetails';
 // import AddressDetails from './components/AddressDetails';
 import Transactions from './components/Transactions';
 import Configuration from './components/Configuration';
+import Faq from './components/Faq';
 
 // utilities
 import Crypto from './utilities/Crypto';
@@ -349,7 +350,6 @@ class App extends Component {
       );
     };
 
-
     const ConfigurationPage = (props) => {
       return (
         <Configuration
@@ -370,6 +370,14 @@ class App extends Component {
         />
       );
     };
+
+    const FAQPage = (props) => {
+      return (
+        <Faq
+        />
+      );
+    };
+
     let chainlength = 0;
     if(this.state.blockchainInstance.chain) {
       chainlength = this.state.blockchainInstance.chain.length - 1;
@@ -419,6 +427,15 @@ class App extends Component {
                     isActive={pathMatch}
                     activeClassName="pure-menu-selected"
                     className="pure-menu-link"
+                    to="/faq">
+                    <i className="fas fa-question-circle"></i> FAQ
+                  </NavLink>
+                </li>
+                <li className="pure-menu-item">
+                  <NavLink
+                    isActive={pathMatch}
+                    activeClassName="pure-menu-selected"
+                    className="pure-menu-link"
                     to="/configuration/accounts-and-keys">
                     <i className="fas fa-cog"></i>
                   </NavLink>
@@ -449,6 +466,7 @@ class App extends Component {
             <Route exact path="/blocks" component={BlocksPage}/>
             <Route path="/blocks/:block_id" component={BlockPage}/>
             <Route path="/configuration" component={ConfigurationPage}/>
+            <Route path="/faq" component={FAQPage}/>
             <Route exact path="/" component={WalletPage}/>
             <Redirect from='*' to='/' />
           </Switch>

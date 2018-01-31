@@ -327,9 +327,12 @@ a.pure-button-primary {
   color: #6FBEF3;
 }
 
-.main-header a.pure-menu-link.pure-menu-selected, .main-header a.pure-menu-link:hover {
-  color: #fff;
+.main-header .pure-menu-item a.pure-menu-link, .main-header a.pure-menu-link:hover {
   background: none;
+}
+
+.main-header .pure-menu-item a.pure-menu-link.pure-menu-selected, .main-header a.pure-menu-link:hover {
+  color: #fff;
 }
 
 .main-header .networkInfo {
@@ -494,4 +497,17 @@ a.pure-button-primary {
 
 .BodyBlockDetails.pure-table tbody:last-of-type {
   border: none;
+}
+
+.Faq .pure-g h2, .Faq h3, .Faq p {
+  padding-left: 2%;
+}
+
+.Faq .pure-g h2, .Faq h3 {
+  font-weight: 400;
+}
+
+.Faq a {
+  text-decoration: none;
+  color: #6FBEF3;
 }
