@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BitcoinCash from '../utilities/BitcoinCash';
 
 class Faq extends Component {
   render() {
@@ -50,6 +51,10 @@ class Faq extends Component {
             </ul>
             <h2>Who?</h2>
             <p>Created w/ ❤️ on EARTH by <a href='https://twitter.com/cgcardona'>Gabriel Cardona</a></p>
+            <h2>Donations</h2>
+            <p>
+              Bitcoin Cash accepted at: <strong>1C79j1XBq5t4J8P3asSLCCXp2xBogSX57c</strong> or <strong>{BitcoinCash.toCashAddress('1C79j1XBq5t4J8P3asSLCCXp2xBogSX57c')}</strong>
+            </p>
           </div>
         </div>
       </div>
