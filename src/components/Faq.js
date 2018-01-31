@@ -21,13 +21,13 @@ class Faq extends Component {
             </p>
             <h3>Command line</h3>
             <p>
-              There is also a command line component: <a href='https://www.npmjs.com/package/bitbox-cli'>`bitcoin-cli`</a>.
+              There is also a command line component: <a href='https://www.npmjs.com/package/bitbox-cli'><code>bitcoin-cli</code></a>.
             </p>
             <p>
-              `bitbox init --title helloworld` stubs out a directory structure w/ a bitbox.js file that has localhost:8332 settings to connect to your local running BITBOX.
+              <code>bitbox init --title helloworld</code> stubs out a directory structure w/ a bitbox.js file that has localhost:8332 settings to connect to your local running BITBOX.
             </p>
             <p>
-              `bitbox console` has a custom node REPL w/ the entire BCH RPC on a BitcoinCash object.
+              <code>bitbox console</code> has a custom node REPL w/ the entire BCH RPC on a BitcoinCash object.
             </p>
             <h2>Why?</h2>
             <p>
