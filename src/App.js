@@ -60,19 +60,19 @@ class App extends Component {
 
   componentDidMount() {
     if(this.state.configuration.wallet.createNewWallet) {
-      let [mnemonic, path, addresses] = BitcoinCash.createHDWallet({
-        totalAccounts: this.totalAccounts,
-        autogenerateMnemonic: this.autogenerateMnemonic,
-        autogeneratePath: this.autogeneratePath
-      });
-      let config = this.state.configuration;
-      this.setState({
-        mnemonic: mnemonic,
-        path: path,
-        addresses: addresses,
-        configuration: config
-      });
-      this.createBlockchain(addresses);
+    //   let [mnemonic, path, addresses] = BitcoinCash.createHDWallet({
+    //     totalAccounts: this.totalAccounts,
+    //     autogenerateMnemonic: this.autogenerateMnemonic,
+    //     autogeneratePath: this.autogeneratePath
+    //   });
+    //   let config = this.state.configuration;
+    //   this.setState({
+    //     mnemonic: mnemonic,
+    //     path: path,
+    //     addresses: addresses,
+    //     configuration: config
+    //   });
+    //   this.createBlockchain(addresses);
     }
   }
 
@@ -394,82 +394,138 @@ class App extends Component {
                 //     <i className="fas fa-exchange-alt"></i> Transactions
                 //   </NavLink>
                 // </li>
+          // <Switch>
+          //   <Route exact path="/blocks" component={BlocksPage}/>
+          //   <Route path="/blocks/:block_id" component={BlockPage}/>
+          //   <Route path="/configuration" component={ConfigurationPage}/>
+          //   <Route path="/faq" component={FAQPage}/>
+          //   <Route exact path="/" component={WalletPage}/>
+          //   <Redirect from='*' to='/' />
+          // </Switch>
     return (
       <Router>
         <div>
-          <div className="header main-header">
-            <div className="pure-menu pure-menu-horizontal">
-              <Link className="pure-menu-heading" to="/">BitBox</Link>
-              <ul className="pure-menu-list">
-
-                <li className="pure-menu-item">
-                  <NavLink
-                    isActive={pathMatch}
-                    activeClassName="pure-menu-selected"
-                    className="pure-menu-link"
-                    to="/">
-                    <i className="fas fa-user"></i> Wallet
-                  </NavLink>
-                </li>
-                <li className="pure-menu-item">
-                  <NavLink
-                    isActive={pathMatch}
-                    activeClassName="pure-menu-selected"
-                    className="pure-menu-link"
-                    to="/blocks">
-                    <i className="fas fa-cubes"></i> Blocks
-                  </NavLink>
-                </li>
-              </ul>
-              <ul className="pure-menu-list right">
-                <li className="pure-menu-item">
-                  <NavLink
-                    isActive={pathMatch}
-                    activeClassName="pure-menu-selected"
-                    className="pure-menu-link"
-                    to="/faq">
-                    <i className="fas fa-question-circle"></i> FAQ
-                  </NavLink>
-                </li>
-                <li className="pure-menu-item">
-                  <NavLink
-                    isActive={pathMatch}
-                    activeClassName="pure-menu-selected"
-                    className="pure-menu-link"
-                    to="/configuration/accounts-and-keys">
-                    <i className="fas fa-cog"></i>
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-            <div className="pure-menu pure-menu-horizontal networkInfo">
-              <ul className="pure-menu-list">
-
-                <li className="pure-menu-item">
-                  CURRENT BLOCK <br />
-                  {chainlength}
-                </li>
-                <li className="pure-menu-item">
-                  RPC SERVER <br /> http://127.0.0.1:8332
-                </li>
-                <li className="pure-menu-item">
-                  MINING STATUS <br /> AUTOMINING <i className="fas fa-spinner fa-spin" />
-                </li>
-                <li className="pure-menu-item">
-                  <button className='pure-button danger-background' onClick={this.createBlock.bind(this)}><i className="fas fa-cube"></i> Create block</button>
-                </li>
-              </ul>
+          <div className="header">
+            <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+              <Link className="pure-menu-heading header-logo" to="/">
+                <img src={'assets/logo.png'} /> <br />BitBox
+              </Link>
             </div>
           </div>
+          <div className="splash-container">
+              <div className="splash">
+                  <h1 className="splash-head">YOUR $BCH TOOLKIT</h1>
+                  <p className="splash-subhead">
+                      SUPERCHARGE your Bitcoin Cash workflow.
+                  </p>
+                  <p>
+                    <a href="https://github.com/bigearth/bitbox-electron/releases/download/0.0.1/BITBOX-0.0.1.dmg" className="pure-button pure-button-primary">
+                      <i className="fab fa-apple"></i> Download (MacOS)
+                    </a>
+                  </p>
+                  <div>
+                    <p className="splash-subhead install">
+                    INSTALL VIA NPM
+                    </p>
+                    <p>
+                      <code>npm install bitbox-cli --global</code>
+                    </p>
+                  </div>
+              </div>
+          </div>
 
-          <Switch>
-            <Route exact path="/blocks" component={BlocksPage}/>
-            <Route path="/blocks/:block_id" component={BlockPage}/>
-            <Route path="/configuration" component={ConfigurationPage}/>
-            <Route path="/faq" component={FAQPage}/>
-            <Route exact path="/" component={WalletPage}/>
-            <Redirect from='*' to='/' />
-          </Switch>
+          <div className="content-wrapper">
+            <div className="content features">
+                <h2 className="content-head is-center">Features</h2>
+
+                <div className="pure-g">
+                    <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                      <p className="header-icon"><i className="fa fa-cube" /></p>
+                      <h3 className="content-subhead">
+                        One Click Blockchain
+                      </h3>
+                      <p>
+                        Quickly fire up a personal Bitcoin Cash blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates.
+                      </p>
+                    </div>
+                    <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                      <p className="header-icon"><i className="fa fa-eye" /></p>
+                      <h3 className="content-subhead">
+                        Visual Mnemonic &amp; Account Info
+                      </h3>
+                      <p>
+                        Quickly see the current status of all accounts, including their addresses, private keys, transactions and balances.
+                      </p>
+                    </div>
+                    <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                      <p className="header-icon"><i className="fa fa-clock" /></p>
+                      <h3 className="content-subhead">
+                        Advanced Mining Controls
+                      </h3>
+                      <p>
+                        Configure advanced mining with a single click, setting block times to best suit your development needs.
+                      </p>
+                    </div>
+                    <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                      <p className="header-icon"><i className="fab fa-sistrix" /></p>
+                      <h3 className="content-subhead">
+                        Built-in Block Explorer
+                      </h3>
+                      <p>
+                        Examine all blocks and transactions to gain insight about what’s happening under the hood.
+                      </p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="ribbon l-box-lrg pure-g">
+                <div className="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-16-24">
+                  <img alt="File Icons" className="pure-img-responsive" src={'assets/screenshot.png'} />
+                </div>
+                <div className="pure-u-1 pure-u-md-1-2 pure-u-lg-8-24 screenshot-desc">
+                  <p>
+                    <a href="https://github.com/bigearth/bitbox-electron/releases/download/0.0.1/BITBOX-0.0.1.dmg" className="pure-button pure-button-primary">
+                      <i className="fab fa-apple"></i> Download (MacOS)
+                    </a>
+                  </p>
+                <div>
+                  <p className="splash-subhead install">INSTALL VIA NPM</p>
+                  <p><code>npm install bitbox-cli --global</code></p>
+                </div>
+
+                </div>
+            </div>
+
+            <div className="content">
+                <h2 className="content-head is-center">Like what you see?</h2>
+
+                <div className="pure-g">
+                    <div className="l-box-lrg pure-u-1 pure-u-md-8-24 download">
+                      <h4>It&rsquo;s open source</h4>
+                      <p>BITBOX is on GitHub under the MIT Open Source License. We welcome any and all contributions, and feature suggestions.</p>
+                      <ul>
+                        <li>
+                          <a href='https://github.com/bigearth/bitbox-electron'>https://github.com/bigearth/bitbox-electron</a>
+                        </li>
+                        <li>
+                          <a href='https://github.com/bigearth/bitbox-cli'>https://github.com/bigearth/bitbox-cli</a>
+                        </li>
+                        <li>
+                          <a href='https://github.com/bigearth/bitbox.earth'>https://github.com/bigearth/bitbox.earth</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="l-box-lrg pure-u-1 pure-u-md-16-24 github">
+                      <i className="fab fa-github-square"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className="footer l-box is-center">
+              Created w/ ❤️ on EARTH by <a href='https://twitter.com/cgcardona'>Gabriel Cardona</a>
+            </div>
+          </div>
         </div>
       </Router>
     );
