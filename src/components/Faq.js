@@ -8,6 +8,8 @@ class Faq extends Component {
         <h2 className="content-head is-center">Faq</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
+            <h2>Can I verify the authenticity of these files before running them?</h2>
+            <p>Yes you can find signatures and checksum hashes on <a href='https://github.com/bigearth/keys-n-hashes'>github</a>.</p>
             <h2>What?</h2>
             <h3>BITBOX</h3>
             <p>

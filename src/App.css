@@ -185,7 +185,6 @@ a.pure-button-primary {
     position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
-    text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */
@@ -499,6 +498,10 @@ a.pure-button-primary {
   border: none;
 }
 
+.Faq {
+  padding-top: 50px;
+}
+
 .Faq .pure-g h2, .Faq h3, .Faq p {
   padding-left: 2%;
 }
@@ -681,7 +684,6 @@ a.pure-button-primary {
     position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
-    text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */

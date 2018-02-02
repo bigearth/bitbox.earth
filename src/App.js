@@ -386,29 +386,43 @@ class App extends Component {
 
   //   // <Route path="/addresses/:address_id" component={AddressPage}/>
             // <Route path="/transactions" component={TransactionsPage}/>
-                // <li className="pure-menu-item">
-                //   <NavLink
-                //     isActive={pathMatch}
-                //     activeClassName="pure-menu-selected"
-                //     className="pure-menu-link"
-                //     to="/transactions">
-                //     <i className="fas fa-exchange-alt"></i> Transactions
-                //   </NavLink>
-                // </li>
           // <Switch>
           //   <Route exact path="/blocks" component={BlocksPage}/>
           //   <Route path="/blocks/:block_id" component={BlockPage}/>
           //   <Route path="/configuration" component={ConfigurationPage}/>
-          //   <Route path="/faq" component={FAQPage}/>
           //   <Route exact path="/" component={WalletPage}/>
           //   <Redirect from='*' to='/' />
           // </Switch>
     return (
       <Router>
-        <Switch>
-          <Route exact path="/" component={Homepage}/>
-          <Redirect from='*' to='/' />
-        </Switch>
+        <div>
+          <div className="header">
+            <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+              <Link className="pure-menu-heading header-logo" to="/">
+                <img src={'assets/logo.png'} /> <br />BitBox
+              </Link>
+
+              <ul className="pure-menu-list">
+                <li className="pure-menu-item">
+                  <NavLink
+                    isActive={pathMatch}
+                    activeClassName="pure-menu-selected"
+                    className="pure-menu-link"
+                    to="/faq">
+                    <i className="fas fa-question-circle"></i> FAQ
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+          <Switch>
+            <Route path="/faq" component={FAQPage}/>
+            <Route exact path="/" component={Homepage}/>
+            <Redirect from='*' to='/' />
+          </Switch>
+        </div>
       </Router>
     );
   }
