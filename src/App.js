@@ -31,7 +31,7 @@ import Crypto from './utilities/Crypto';
 import BitcoinCash from './utilities/BitcoinCash';
 
 // css
-import './App.css';
+import './styles/app.scss';
 
 class App extends Component {
 
@@ -397,7 +397,7 @@ class App extends Component {
       <Router>
         <div>
           <div className="header">
-            <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <div className="home-menu main-menu pure-menu pure-menu-horizontal pure-menu-fixed">
               <Link className="pure-menu-heading header-logo" to="/">
                 <img src={'assets/logo.png'} /> <br />BitBox
               </Link>

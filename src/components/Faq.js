@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import BitcoinCash from '../utilities/BitcoinCash';
+import "../styles/faq.scss";
 
 class Faq extends Component {
   render() {
     return (
-      <div className="Faq">
+      <div className="faq">
         <h2 className="content-head is-center">Faq</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">

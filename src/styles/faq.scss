@@ -1,0 +1,18 @@
+@import 'themeColors';
+
+.faq {
+  padding-top: 85px;
+}
+
+.faq .pure-g h2, .faq h3, .faq p {
+  padding-left: 2%;
+}
+
+.faq .pure-g h2, .faq h3 {
+  font-weight: 400;
+}
+
+.faq a, .faq a:visited {
+  text-decoration: none;
+  color: $medBlue;
+}

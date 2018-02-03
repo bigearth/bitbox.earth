@@ -5,6 +5,8 @@ import {
   withRouter
 } from 'react-router-dom';
 
+import "../styles/homepage.scss";
+
 class Homepage extends Component {
   render() {
     return (
