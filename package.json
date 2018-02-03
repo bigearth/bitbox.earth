@@ -24,6 +24,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
+    "start:dev": "webpack-dev-server --content-base build",
     "start": "webpack && node server.js",
     "build": "webpack",
     "test": "react-scripts test --env=jsdom",
