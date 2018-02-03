@@ -3,25 +3,6 @@ import BitcoinCash from '../utilities/BitcoinCash';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
-const codeString = `
-Usage: bitbox [options] [command]
-
-
-Options:
-
-  -V, --version  output the version number
-  -h, --help     output usage information
-
-
-Commands:
-
-  new [options]  The 'bitbox new' command creates a new BITBOX application w/ a
-    directory structure and bitbox.js configuration file.
-
-    Pass in command line arguments or optionally specify commonly used arguments in a .bitboxrc file in your home directory
-
-  console        Run a console with Bitcoin Cash RPC commands available
-`;
 
 class Docs extends Component {
   render() {
@@ -33,9 +14,16 @@ class Docs extends Component {
             <h2 id='gettingStarted'>Gettings Started</h2>
             <h3 id="installation">Installation</h3>
             <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.1/BITBOX-0.0.1.dmg'>app for MacOS</a>. Verify the <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
+            <h3 id="guiBasics">BITBOX basics</h3>
+            <h4 id='wallet'>Wallet</h4>
+            <p>Each tie you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic and HD derivation path. You can toggle between seeing the public address in cashddr format and the privatekey in Wallet Import Format (WIF).</p>
+            <img src='assets/gui-basics-1.png' />
+            <h4 id='config'>Configuration</h4>
+            <p>You can restart your BITBOX, change how many addresses are generated, use a custom mnemonic/HD path and toggle cashaddr/base58 on the config screen which is available if you click on the cog icon.</p>
+            <img src='assets/gui-basics-2.png' />
             <p>Install from npm:</p>
             <SyntaxHighlighter language='text' style={ocean}>{"npm install bitbox-cli --global"}</SyntaxHighlighter>
-            <h4>Requirements</h4>
+            <h4 id='requirements'>Requirements</h4>
             <ul>
               <li>
                 NodeJS v9.4.x
