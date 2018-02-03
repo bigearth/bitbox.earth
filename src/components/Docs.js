@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BitcoinCash from '../utilities/BitcoinCash';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import BitcoinCash from '../utilities/BitcoinCash';
 import "../styles/faq.scss";
 
 class Faq extends Component {
@@ -59,7 +58,7 @@ class Faq extends Component {
             <p>Created w/ ❤️ on EARTH by <a href='https://twitter.com/cgcardona'>Gabriel Cardona</a></p>
             <h2>Donations</h2>
             <p>
-              Bitcoin Cash accepted at: <strong>1C79j1XBq5t4J8P3asSLCCXp2xBogSX57c</strong> or <strong>{BitcoinCash.toCashAddress('1C79j1XBq5t4J8P3asSLCCXp2xBogSX57c')}</strong>
+              Bitcoin Cash accepted at: <strong>1C79j1XBq5t4J8P3asSLCCXp2xBogSX57c</strong> or <strong>bitcoincash:qpuax2tarq33f86wccwlx8ge7tad2wgvqgjqlwshpw</strong>
             </p>
           </div>
         </div>
