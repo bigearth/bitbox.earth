@@ -12,7 +12,7 @@ class Docs extends Component {
           <div className="pure-u-1-1">
             <h2 id='gettingStarted'>Gettings Started</h2>
             <h3 id="installation">Installation</h3>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.1/BITBOX-0.0.2.dmg'>app for MacOS</a>. Verify the <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.2/BITBOX-0.0.2.dmg'>app for MacOS</a>. Verify the <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h3 id="guiBasics">BITBOX basics</h3>
             <h4 id='wallet'>Wallet</h4>
             <p>Each tie you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic and HD derivation path. You can toggle between seeing the public address in cashddr format and the privatekey in Wallet Import Format (WIF).</p>
