@@ -24,6 +24,7 @@ import BlockDetails from './components/BlockDetails';
 import Transactions from './components/Transactions';
 import Configuration from './components/Configuration';
 import Faq from './components/Faq';
+import Docs from './components/Docs';
 import Homepage from './components/Homepage';
 
 // utilities
@@ -372,6 +373,13 @@ class App extends Component {
       );
     };
 
+    const DocsPage = (props) => {
+      return (
+        <Docs
+        />
+      );
+    };
+
     const FAQPage = (props) => {
       return (
         <Faq
@@ -408,6 +416,15 @@ class App extends Component {
                     isActive={pathMatch}
                     activeClassName="pure-menu-selected"
                     className="pure-menu-link"
+                    to="/docs">
+                    <i className="fas fa-book"></i> Docs
+                  </NavLink>
+                </li>
+                <li className="pure-menu-item">
+                  <NavLink
+                    isActive={pathMatch}
+                    activeClassName="pure-menu-selected"
+                    className="pure-menu-link"
                     to="/faq">
                     <i className="fas fa-question-circle"></i> FAQ
                   </NavLink>
@@ -415,9 +432,8 @@ class App extends Component {
               </ul>
             </div>
           </div>
-
-
           <Switch>
+            <Route path="/docs" component={DocsPage}/>
             <Route path="/faq" component={FAQPage}/>
             <Route exact path="/" component={Homepage}/>
             <Redirect from='*' to='/' />
