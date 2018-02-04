@@ -15,7 +15,7 @@ class Docs extends Component {
             <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.3/BITBOX-0.0.3.dmg'>app for MacOS</a>. Verify the <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h3 id="guiBasics">BITBOX basics</h3>
             <h4 id='wallet'>Wallet</h4>
-            <p>Each tie you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic and HD derivation path. You can toggle between seeing the public address in cashddr format and the privatekey in Wallet Import Format (WIF).</p>
+            <p>Each time you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic and HD derivation path. You can toggle between seeing the public address in cashddr format and the privatekey in Wallet Import Format (WIF).</p>
             <img src='assets/gui-basics-1.png' />
             <h4 id='config'>Configuration</h4>
             <p>You can restart your BITBOX, change how many addresses are generated, increase/decrease the amount of entropy used when generating a mnemonic, use a custom mnemonic/HD path and toggle cashaddr/base58 on the config screen which is available if you click on the cog icon.</p>
@@ -38,7 +38,7 @@ class Docs extends Component {
             <h3 id="bitboxNew"><code>bitbox new</code></h3>
             <p>BITBOX will generate a generic app w/ web bindings and default configuration.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
-  $ bitbox new --title hellowEARTH
+  $ bitbox new --title helloEARTH
   Creating helloEARTH/ directory
   Creating src/ directory: ./helloEARTH/src
   Creating test/ directory: ./helloEARTH/tests
