@@ -74,7 +74,7 @@ class Docs extends Component {
   port = 8332
             `}</SyntaxHighlighter>
             <h3 id="bitboxConsole"><code>bitbox console</code></h3>
-            <p>Launch a console w/ the entire Bitcoin Cash RPC availaboe via a built in <code>BITBOX</code> object.</p>
+            <p>Launch a console w/ the entire Bitcoin Cash RPC available via a built in <code>BITBOX</code> object.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
   $ bitbox console
   ⚡️  BITBOX ⚡️ BITBOX.
