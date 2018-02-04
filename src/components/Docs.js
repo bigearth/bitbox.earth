@@ -12,13 +12,14 @@ class Docs extends Component {
           <div className="pure-u-1-1">
             <h2 id='gettingStarted'>Gettings Started</h2>
             <h3 id="installation">Installation</h3>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.3/BITBOX-0.0.3.dmg'>app for MacOS</a>. Verify the <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.4/BITBOX-0.0.4.dmg'>app for MacOS</a>. Verify the <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h3 id="guiBasics">BITBOX basics</h3>
             <h4 id='wallet'>Wallet</h4>
             <p>Each time you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic and HD derivation path. You can toggle between seeing the public address in cashddr format and the privatekey in Wallet Import Format (WIF).</p>
             <img src='assets/gui-basics-1.png' />
             <h4 id='config'>Configuration</h4>
             <p>You can restart your BITBOX, change how many addresses are generated, increase/decrease the amount of entropy used when generating a mnemonic, use a custom mnemonic/HD path and toggle cashaddr/base58 on the config screen which is available if you click on the cog icon.</p>
+            <p>Adding a password let&rsquo;s you explore all 2<super>512</super> potential $BCH master seeds.</p>
             <img src='assets/gui-basics-2.png' />
             <p>Install from npm:</p>
             <SyntaxHighlighter language='text' style={ocean}>{"npm install bitbox-cli --global"}</SyntaxHighlighter>
