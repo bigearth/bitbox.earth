@@ -18,7 +18,7 @@ class Docs extends Component {
             <p>Each tie you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic and HD derivation path. You can toggle between seeing the public address in cashddr format and the privatekey in Wallet Import Format (WIF).</p>
             <img src='assets/gui-basics-1.png' />
             <h4 id='config'>Configuration</h4>
-            <p>You can restart your BITBOX, change how many addresses are generated, use a custom mnemonic/HD path and toggle cashaddr/base58 on the config screen which is available if you click on the cog icon.</p>
+            <p>You can restart your BITBOX, change how many addresses are generated, increase/decrease the amount of entropy used when generating a mnemonic, use a custom mnemonic/HD path and toggle cashaddr/base58 on the config screen which is available if you click on the cog icon.</p>
             <img src='assets/gui-basics-2.png' />
             <p>Install from npm:</p>
             <SyntaxHighlighter language='text' style={ocean}>{"npm install bitbox-cli --global"}</SyntaxHighlighter>
