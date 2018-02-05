@@ -12,7 +12,7 @@ class Docs extends Component {
           <div className="pure-u-1-1">
             <h2 id='gettingStarted'>Gettings Started</h2>
             <h3 id="installation">Installation</h3>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.6/BITBOX-0.0.6.dmg'>app for MacOS</a>.</p>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.0.7/BITBOX-0.0.7.dmg'>app for MacOS</a>.</p>
             <p>You can verify the files haven&rsquo;t been tampered w/ by downloading them and running <code>openssl sha -sha256 path/to/BITBOX.major.minor.patch.dmg</code>. Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h3 id="guiBasics">BITBOX basics</h3>
             <h4 id='wallet'>Wallet</h4>
