@@ -79,6 +79,13 @@ class App extends Component {
                     <i className="fas fa-question-circle"></i> FAQ
                   </NavLink>
                 </li>
+                <li className="pure-menu-item">
+                  <a
+                    className="pure-menu-link"
+                    href="https://bigearth.github.io/bitblog/">
+                    <i className="fas fa-keyboard"></i> Blog
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
