@@ -43,7 +43,7 @@ class Homepage extends Component {
                       One Click Blockchain
                     </h3>
                     <p>
-                      Quickly fire up a personal Bitcoin Cash blockchain which you can use to run tests, execute commands, and inspect state while controlling how the chain operates.
+                      Your own Bitcoin Cash blockchain to run tests and execute commands. Also interact from the command line and w/ web bindings.
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
