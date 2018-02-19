@@ -58,7 +58,7 @@ class Homepage extends Component {
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
                     <p className="header-icon"><i className="fa fa-keyboard" /></p>
                     <h3 className="content-subhead">
-                      Command line untility
+                      Command line utility
                     </h3>
                     <p>
                       Create new $BCH apps w/ a single command. Accelerate how quickly you can create your app.
