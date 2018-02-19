@@ -40,7 +40,7 @@ class Homepage extends Component {
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
                     <p className="header-icon"><i className="fa fa-cube" /></p>
                     <h3 className="content-subhead">
-                      One Click Blockchain
+                      Instant Blockchain
                     </h3>
                     <p>
                       Your own Bitcoin Cash blockchain to run tests and execute commands. Also interact from the command line and w/ web bindings.
@@ -56,21 +56,21 @@ class Homepage extends Component {
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-                    <p className="header-icon"><i className="fa fa-clock" /></p>
+                    <p className="header-icon"><i className="fa fa-keyboard" /></p>
                     <h3 className="content-subhead">
-                      Advanced Mining Controls
+                      Command line untility
                     </h3>
                     <p>
-                      Mine a new block after each transaction or every few minutes. You decide.
+                      Create new $BCH apps w/ a single command. Accelerate how quickly you can create your app.
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-                    <p className="header-icon"><i className="fab fa-sistrix" /></p>
+                    <p className="header-icon"><i className="fab fa-code" /></p>
                     <h3 className="content-subhead">
-                      Built-in Block Explorer
+                      Entire Bitcoin Cash RPC
                     </h3>
                     <p>
-                      Explore the details of each block, address and transaction going back to your very own genesis block.
+                      Accepts incoming requests for 100% of the Bitcoin Cash JSON RPC.
                     </p>
                   </div>
               </div>
