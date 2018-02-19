@@ -65,7 +65,7 @@ class Homepage extends Component {
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-                    <p className="header-icon"><i className="fab fa-code" /></p>
+                    <p className="header-icon"><i className="fas fa-code" /></p>
                     <h3 className="content-subhead">
                       Entire Bitcoin Cash RPC
                     </h3>
