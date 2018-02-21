@@ -78,7 +78,7 @@ class Homepage extends Component {
 
           <div className="ribbon l-box-lrg pure-g">
               <div className="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-16-24">
-                <img alt="File Icons" className="pure-img-responsive" src={'assets/screenshot.png'} />
+                <img alt="File Icons" className="pure-img-responsive" src='assets/screenshot.png' />
               </div>
               <div className="pure-u-1 pure-u-md-1-2 pure-u-lg-8-24 screenshot-desc">
                 <p>
