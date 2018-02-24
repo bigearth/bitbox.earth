@@ -11,7 +11,7 @@ import {
 
 
 // custom components
-import Faq from './components/Faq';
+import BitboxCli from './components/BitboxCli';
 import Docs from './components/Docs';
 import Homepage from './components/Homepage';
 
@@ -44,9 +44,9 @@ class App extends Component {
       );
     };
 
-    const FAQPage = (props) => {
+    const BitboxCliPage = (props) => {
       return (
-        <Faq
+        <BitboxCli
         />
       );
     };
@@ -75,8 +75,8 @@ class App extends Component {
                     isActive={pathMatch}
                     activeClassName="pure-menu-selected"
                     className="pure-menu-link"
-                    to="/faq">
-                    <i className="fas fa-question-circle"></i> FAQ
+                    to="/bitboxcli">
+                    <i className="fa fa-code"></i> bitbox-cli
                   </NavLink>
                 </li>
                 <li className="pure-menu-item">
@@ -91,7 +91,7 @@ class App extends Component {
           </div>
           <Switch>
             <Route path="/docs" component={DocsPage}/>
-            <Route path="/faq" component={FAQPage}/>
+            <Route path="/bitboxcli" component={BitboxCliPage}/>
             <Route exact path="/" component={Homepage}/>
             <Redirect from='*' to='/' />
           </Switch>
