@@ -239,7 +239,7 @@ class BitboxCli extends Component {
   Arguments:
   1. "passphrase"    (string) The pass phrase to encrypt the wallet with. It must be at least 1 character, but should be long.
 
-  BITBOX.encryptwallet()
+  BITBOX.encryptwallet("passphrase")
             `}</SyntaxHighlighter>
 
             <h2 id='estimatefee'><code>estimatefee</code></h2>
