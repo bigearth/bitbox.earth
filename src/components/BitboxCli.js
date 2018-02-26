@@ -16,6 +16,32 @@ class BitboxCli extends Component {
         <h2 className="content-head is-center">BitboxCli</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
+            <ul>
+              <li>
+                <a href='#blockchain'>Blockchain</a>
+              </li>
+              <li>
+                <a href='#control'>Control</a>
+              </li>
+              <li>
+                <a href='#generating'>Generating</a>
+              </li>
+              <li>
+                <a href='#mining'>Mining</a>
+              </li>
+              <li>
+                <a href='#network'>Network</a>
+              </li>
+              <li>
+                <a href='#rawtransactions'>Rawtransactions</a>
+              </li>
+              <li>
+                <a href='#util'>Util</a>
+              </li>
+              <li>
+                <a href='#wallet'>Wallet</a>
+              </li>
+            </ul>
             <h2 id='blockchain' className="content-head is-center">Blockchain</h2>
 
             <h3 id='getbestblockhash'><code>getbestblockhash</code></h3>
