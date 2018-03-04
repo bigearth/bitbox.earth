@@ -13,7 +13,7 @@ class Docs extends Component {
             <h2 id='gettingStarted'>Gettings Started</h2>
             <p>BITBOX is a suite of tools to SUPERCHARGE your $BCH workflow. It consists of a one click Bitcoin Cash blockchain which you can configure in any way you want and a command line utility for scripting and generating app scaffolds.</p>
             <h3 id="installation">Installation</h3>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.1.9/BITBOX-0.1.9.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running</p>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.2.0/BITBOX-0.2.0.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running</p>
             <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX.major.minor.patch.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows">Windows</h4>
@@ -26,7 +26,7 @@ class Docs extends Component {
             <p>BITBOX uses the following derivation path where <code>44&rsquo;</code> is the <code>purpose</code> to show that this wallet is BIP44 compliant. <code>145&rsquo;</code> is the coin code for $BCH. <code>n&rsquo;</code> is for the index of the respective account. BITBOX creates 10 accounts by default so <code>n</code> is <code>1&ndash;10</code>.</p>
             <SyntaxHighlighter language='text' style={ocean}>{" m / 44' / 145' / n' / 0 / 0"}</SyntaxHighlighter>
             <p>For each account BITBOX derives the private key in <a href='https://bitcoin.org/en/glossary/wallet-import-format'>Wallet Import Format (WIF)</a> and public address in <a href='https://en.bitcoin.it/wiki/Base58Check_encoding'>legacy base58check</a> and <a href='https://www.bitcoinabc.org/cashaddr'>cashaddr</a> encoding for the first external change address. It also derives the <a href='https://bitcoin.org/en/glossary/extended-key'>xpriv and xpub extended keys</a> for the account.</p>
-            <p>You can toggle between seeing the public address and the privatekey(WIF) as well as the xpriv and xpub extended keys by clicking the blue button w/ the key icon on the right side of the screen. The button and the keys will turn orange to let you know that these keys shouldn&rsquo;t be left visible.</p>
+            <p>You can toggle between seeing the public address and the privatekey(WIF) as well as the xpriv and xpub extended keys by clicking the blue button w/ the key icon on the right side of the screen.</p>
             <img src='assets/screenshot.png' />
             <h4 id='convert'>Conversion</h4>
             <p>It&rsquo;s common to see your addresses in 1 of 3 formats&mdash;legacy base58Check, cashaddr or privateKeyWIF. The first two are the public addresses which you share w/ people to send you $BCH and the last one is the private key that you never show anyone.</p>
