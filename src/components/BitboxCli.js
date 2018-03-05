@@ -234,7 +234,7 @@ class BitboxCli extends Component {
 
             <h3 id='signMessageWithPrivKey'><code>signMessageWithPrivKey</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Detect address network
+  Sign message with private key
 
   Arguments:
   1. privateKeyWIF        private key in wallet import format
@@ -249,7 +249,7 @@ class BitboxCli extends Component {
 
             <h3 id='verifyMessage'><code>verifyMessage</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Detect address network
+  Verify message
 
   Arguments:
   1. address              public cashaddr or legacy address which signed the message
