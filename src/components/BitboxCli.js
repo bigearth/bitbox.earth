@@ -78,6 +78,34 @@ class BitboxCli extends Component {
   // 9
             `}</SyntaxHighlighter>
 
+            <h3 id='toLegacyAddress'><code>toLegacyAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Converting cashaddr to legacy address format
+
+  Arguments:
+  1. address        cashaddr address to be converted
+
+  Result:
+  "legacyAddress"    legacy base 58 check encoded address
+
+  BITBOX.BitcoinCash.toLegacyAddress('bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl')
+  // 1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN
+            `}</SyntaxHighlighter>
+
+            <h3 id='toCashAddress'><code>toCashAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Converting legacy to cashAddr address format
+
+  Arguments:
+  1. address        legacy address to be converted
+
+  Result:
+  "cashAddr"    cashAddr encoded address
+
+  BITBOX.BitcoinCash.toCashAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN')
+  // bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
+            `}</SyntaxHighlighter>
+
             <h3 id='isLegacyAddress'><code>isLegacyAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Detect if legacy base58check encoded address
@@ -156,7 +184,7 @@ class BitboxCli extends Component {
   1. address               address to determine format
 
   Result:
-  "addressFormat"            string of address format 
+  "addressFormat"            string of address format
 
   BITBOX.BitcoinCash.detectAddressFormat('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
   // cashaddr
