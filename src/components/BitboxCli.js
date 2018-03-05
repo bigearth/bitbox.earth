@@ -128,7 +128,7 @@ class BitboxCli extends Component {
   1. address   address to determine
 
   Result:
-  isCashAddrAddress     boolean if is legacy address
+  isCashAddrAddress     boolean if is cashaddr address
 
   BITBOX.BitcoinCash.isCashAddrAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
   // true
