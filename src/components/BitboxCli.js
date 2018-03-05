@@ -232,6 +232,37 @@ class BitboxCli extends Component {
   // p2pkh
             `}</SyntaxHighlighter>
 
+            <h3 id='signMessageWithPrivKey'><code>signMessageWithPrivKey</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect address network
+
+  Arguments:
+  1. privateKeyWIF        private key in wallet import format
+  2. message              message to sign
+
+  Result:
+  "signature"        cryptographic signature
+
+  BITBOX.BitcoinCash.signMessageWithPrivKey('KxtpRDUJDiutLaTV8Vuavhb6h7zq9YV9ZKA3dU79PCgYmNVmkkvS', "EARTH");
+  // IIYVhlo2Z6TWFjYX1+YM+7vQKz0m+zYdSe4eYpFLuAQDEZXqll7lZC8Au22VI2LLP5x+IerZckVk3QQPsA3e8/8=
+            `}</SyntaxHighlighter>
+
+            <h3 id='verifyMessage'><code>verifyMessage</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect address network
+
+  Arguments:
+  1. address              public cashaddr or legacy address which signed the message
+  2. signature            cryptographic signature
+  2. message              message to verify
+
+  Result:
+  "isVerified"            boolean if message is verified or not
+
+  BITBOX.BitcoinCash.verifyMessage('bitcoincash:qp2zvw3zpk5xx43w4tve7mtekd9kaxwj4uenq9eupv', 'IIYVhlo2Z6TWFjYX1+YM+7vQKz0m+zYdSe4eYpFLuAQDEZXqll7lZC8Au22VI2LLP5x+IerZckVk3QQPsA3e8/8=', 'EARTH')
+  // true
+            `}</SyntaxHighlighter>
+
             <h2 id='crypto' className="content-head is-center">Crypto</h2>
             <h3 id='createHash'><code>createHash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
