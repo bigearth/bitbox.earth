@@ -19,6 +19,9 @@ class BitboxCli extends Component {
             <p><code>bitbox-cli</code> is a Utility for creating great <a href='https://www.bitcoincash.org'>Bitcoin Cash</a> applications. If can be used from the command line or from within client/server apps. Any methods which make network requests return a <code>Promise</code> and any other methods return immediately.</p>
             <ul>
               <li>
+                <a href='#bitcoinCash'>Bitcoin Cash</a>
+              </li>
+              <li>
                 <a href='#crypto'>Crypto</a>
               </li>
               <li>
@@ -46,6 +49,147 @@ class BitboxCli extends Component {
                 <a href='#wallet'>Wallet</a>
               </li>
             </ul>
+            <h2 id='bitcoinCash' className="content-head is-center">Bitcoin Cash</h2>
+            <h3 id='toSatoshi'><code>toSatoshi</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Converting Bitcoin Cash units to satoshi units
+
+  Arguments:
+  1. bitcoinCash         unit to be converted
+
+  Result:
+  satoshi    bitcoinCash unit converted to satoshis
+
+  BITBOX.BitcoinCash.toSatoshi(9)
+  // 900000000
+            `}</SyntaxHighlighter>
+
+            <h3 id='toBitcoinCash'><code>toBitcoinCash</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Converting satoshi units to Bitcoin Cash units
+
+  Arguments:
+  1. satoshi         unit to be converted
+
+  Result:
+  satoshi    satoshi unit converted to Bitcoin Cash
+
+  BITBOX.BitcoinCash.toBitcoinCash(900000000)
+  // 9
+            `}</SyntaxHighlighter>
+
+            <h3 id='isLegacyAddress'><code>isLegacyAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect if legacy base58check encoded address
+
+  Arguments:
+  1. address   address to determine
+
+  Result:
+  isLegacyAddress     boolean if is legacy address
+
+  BITBOX.BitcoinCash.isLegacyAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // false
+            `}</SyntaxHighlighter>
+
+            <h3 id='isMainnetAddress'><code>isMainnetAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect if mainnet address
+
+  Arguments:
+  1. address   address to determine
+
+  Result:
+  isMainnetAddress     boolean if is mainnet address
+
+  BITBOX.BitcoinCash.isMainnetAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // true
+            `}</SyntaxHighlighter>
+
+            <h3 id='isTestnetAddress'><code>isTestnetAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect if testnet address
+
+  Arguments:
+  1. address   address to determine
+
+  Result:
+  isMainnetAddress     boolean if is testnet address
+
+  BITBOX.BitcoinCash.isTestnetAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  //false
+            `}</SyntaxHighlighter>
+
+            <h3 id='isP2PKHAddress'><code>isP2PKHAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect if p2pkh address
+
+  Arguments:
+  1. address   address to determine
+
+  Result:
+  isP2PKHAddress     boolean if is p2pkh address
+
+  BITBOX.BitcoinCash.isP2PKHAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // true
+            `}</SyntaxHighlighter>
+
+            <h3 id='isP2SHAddress'><code>isP2SHAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect if p2sh address
+
+  Arguments:
+  1. address   address to determine
+
+  Result:
+  isP2SHAddress     boolean if is p2sh address
+
+  BITBOX.BitcoinCash.isP2SHAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // false
+            `}</SyntaxHighlighter>
+
+            <h3 id='detectAddressFormat'><code>detectAddressFormat</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect address format
+
+  Arguments:
+  1. address               address to determine format
+
+  Result:
+  "addressFormat"            string of address format 
+
+  BITBOX.BitcoinCash.detectAddressFormat('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // cashaddr
+            `}</SyntaxHighlighter>
+
+            <h3 id='detectAddressNetwork'><code>detectAddressNetwork</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect address network
+
+  Arguments:
+  1. address               address to determine network
+
+  Result:
+  "addressNetwork"            string of address network
+
+  BITBOX.BitcoinCash.detectAddressNetwork('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // mainnet
+            `}</SyntaxHighlighter>
+
+            <h3 id='detectAddressType'><code>detectAddressType</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect address network
+
+  Arguments:
+  1. address              address to determine network
+
+  Result:
+  "addressNetwork"        string of address network
+
+  BITBOX.BitcoinCash.detectAddressType('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s');
+  // p2pkh
+            `}</SyntaxHighlighter>
+
             <h2 id='crypto' className="content-head is-center">Crypto</h2>
             <h3 id='createHash'><code>createHash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -61,7 +205,7 @@ class BitboxCli extends Component {
   BITBOX.Crypto.createHash('EARTH', 'sha256')
   // bcfee25a8baf6808fce5ff4e63cf21c8d114853ca7eacdcc3c210d73c58dab66
             `}</SyntaxHighlighter>
-}
+
             <h3 id='createSHA256Hash'><code>createSHA256Hash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Utility for creating sha256 hash digests of data
@@ -75,7 +219,7 @@ class BitboxCli extends Component {
   BITBOX.Crypto.createSHA256Hash('EARTH')
   // bcfee25a8baf6808fce5ff4e63cf21c8d114853ca7eacdcc3c210d73c58dab66
             `}</SyntaxHighlighter>
-}
+
             <h3 id='createRIPEMD160Hash'><code>createRIPEMD160Hash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Utility for creating ripemd160 hash digests of data
@@ -89,7 +233,7 @@ class BitboxCli extends Component {
   BITBOX.Crypto.createRIPEMD160Hash('EARTH')
   // ca700bba3bd37304b9bd923652245f598ece8afe
             `}</SyntaxHighlighter>
-}
+
             <h3 id='randomBytes'><code>randomBytes</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Generates cryptographically strong pseudo-random data. The size argument is a number indicating the number of bytes to generate.
@@ -103,7 +247,7 @@ class BitboxCli extends Component {
   BITBOX.Crypto.randomBytes(32)
   // 6e1453357f6f99d19d2a6554f35eab65b6c27f6572e31d7f2faa696cac57759b
             `}</SyntaxHighlighter>
-}
+
 
             <h2 id='blockchain' className="content-head is-center">Blockchain</h2>
 
