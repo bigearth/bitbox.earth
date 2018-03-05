@@ -13,7 +13,7 @@ class Docs extends Component {
             <h2 id='gettingStarted'>Gettings Started</h2>
             <p>BITBOX is a suite of tools to SUPERCHARGE your $BCH workflow. It consists of a one click Bitcoin Cash blockchain which you can configure in any way you want and a command line utility for scripting and generating app scaffolds.</p>
             <h3 id="installation">Installation</h3>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.2.2/BITBOX-0.2.2.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running</p>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.2.3/BITBOX-0.2.3.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running</p>
             <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX.major.minor.patch.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows">Windows</h4>
