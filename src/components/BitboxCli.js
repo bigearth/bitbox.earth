@@ -120,6 +120,20 @@ class BitboxCli extends Component {
   // false
             `}</SyntaxHighlighter>
 
+            <h3 id='isCashAddress'><code>isCashAddress</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Detect if cashAddr encoded address
+
+  Arguments:
+  1. address   address to determine
+
+  Result:
+  isCashAddrAddress     boolean if is legacy address
+
+  BITBOX.BitcoinCash.isCashAddrAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+  // true
+            `}</SyntaxHighlighter>
+
             <h3 id='isMainnetAddress'><code>isMainnetAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Detect if mainnet address
