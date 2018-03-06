@@ -1531,7 +1531,7 @@ class BitboxCli extends Component {
 
           <h2 id='util' className="content-head is-center">Util</h2>
 
-            <h3 id='createmultisig'><code>createmultisig</code></h3>
+            <h3 id='createMultisig'><code>createMultisig</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Creates a multi-signature address with n signature of m keys required.
   It returns a json object with the address and redeemScript.
@@ -1550,10 +1550,18 @@ class BitboxCli extends Component {
     "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.
   }
 
-  BITBOX.createmultisig(2 ["16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5", "171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV"])
+  BITBOX.Util.createMultisig(2, ["bitcoincash:qzc86hrdufhcwlyzk7k82x77kfs2myekn57nv9cw5f", "1B4C53FAn3wd1AswXZxMfmeHxnky7CTvfZ"])
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+  // {
+  //   address: '39cp79UgFriqYS5ZYZyhiXbnUfE4eUjZur',
+  //   redeemScript: '52210261d3f136eea0a3f786389d85212fae01d7b4a3c7520af78b49f079471d847d3421027495999882ace5aa4fb3d920dd7571b1ed75bcbd5987ef289cb6f88629c4a09652ae'
+  // }
             `}</SyntaxHighlighter>
 
-            <h3 id='estimatefee'><code>estimatefee</code></h3>
+            <h3 id='estimateFee'><code>estimateFee</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks.
 
@@ -1568,10 +1576,15 @@ class BitboxCli extends Component {
   -1 is always returned for nblocks == 1 as it is impossible to calculate
   a fee that is high enough to get reliably included in the next block.
 
-  BITBOX.estimatefee(6)
+  BITBOX.Util.estimateFee(2)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+  // 0.00000002
             `}</SyntaxHighlighter>
 
-            <h3 id='estimatepriority'><code>estimatepriority</code></h3>
+            <h3 id='estimatePriority'><code>estimatePriority</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks.
 
@@ -1584,10 +1597,15 @@ class BitboxCli extends Component {
   A negative value is returned if not enough transactions and blocks
   have been observed to make an estimate.
 
-  BITBOX.estimatepriority(6)
+  BITBOX.Util.estimatePriority(2)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+  // -1
             `}</SyntaxHighlighter>
 
-            <h3 id='signmessagewithprivkey'><code>signmessagewithprivkey</code></h3>
+            <h3 id='signMessageWithPrivKey'><code>signMessageWithPrivKey</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Sign a message with the private key of an address
 
@@ -1598,10 +1616,15 @@ class BitboxCli extends Component {
   Result:
   "signature"          (string) The signature of the message encoded in base 64
 
-  BITBOX.signmessage("privkey", "my message")
+  BITBOX.Util.signMessageWithPrivKey('KzkYKDZw9PveUu3mn4nR5LKYqmY1A6yHFdY8YqQvd7Z2BT3Ssu4Y', 'EARTH')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+  // H3XA3KtFEMhoSLdiOP6U0dFTJGnZV3MSSGro3GLKgpaVCQ/oot137oxmOomncvqbNiOIx+MJMWZkG7XkQcUp0Tg=
             `}</SyntaxHighlighter>
 
-            <h3 id='validateaddress'><code>validateaddress</code></h3>
+            <h3 id='validateAddress'><code>validateAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Return information about the given bitcoin address.
 
@@ -1624,10 +1647,23 @@ class BitboxCli extends Component {
     "hdmasterkeyid" : "<hash160>" (string, optional) The Hash160 of the HD master pubkey
   }
 
-  BITBOX.validateaddress("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y")
+  BITBOX.Util.validateAddress("bitcoincash:qzc86hrdufhcwlyzk7k82x77kfs2myekn57nv9cw5f")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+  // { isvalid: true,
+  // address: '17fshh33qUze2yifiJ2sXgijSMzJ2KNEwu',
+  // scriptPubKey: '76a914492ae280d70af33acf0ae7cd329b961e65e9cbd888ac',
+  // ismine: true,
+  // iswatchonly: false,
+  // isscript: false,
+  // pubkey: '0312eeb9ae5f14c3cf43cece11134af860c2ef7d775060e3a578ceec888acada31',
+  // iscompressed: true,
+  // account: 'Test' }
             `}</SyntaxHighlighter>
 
-            <h3 id='verifymessage'><code>verifymessage</code></h3>
+            <h3 id='verifyMessage'><code>verifyMessage</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Verify a signed message
 
@@ -1639,7 +1675,12 @@ class BitboxCli extends Component {
   Result:
   true|false   (boolean) If the signature is verified or not.
 
-  BITBOX.verifymessage("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", "signature", "my message")
+  BITBOX.Util.verifyMessage("bitcoincash:qrcxa4yqkkyulztkanlqf3jw88pgses63uhl0tqxs3", "IC1Rbp/1UoX/0Luk8O+ZqhB13E2G5qDn6G6T9e2k+4unJuf70qbiJpuHBhouz5nY4JHgrd/TXARZe+kS+Lu/11g=", "EARTH")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+  // true
             `}</SyntaxHighlighter>
 
           <h2 id='wallet' className="content-head is-center">Wallet</h2>
