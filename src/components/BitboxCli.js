@@ -473,6 +473,27 @@ class BitboxCli extends Component {
   //       index: 9 } ] ]
             `}</SyntaxHighlighter>
 
+            <h3 id='fromXPub'><code>fromXPub</code></h3>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  Generates an external change address for an extended public key (xpub)
+
+  Arguments:
+  1. xpub <string>                 extended public key to be used
+  2. index <number> optional       index of external change address. Default is 0
+
+  Result:
+  changeAddress <string>      cashaddr encoded change address
+
+  for(let i = 0; i <= 4; i++) {
+    BITBOX.BitcoinCash.fromXPub("xpub6DTNmB7gWa8RtQAfmy8wSDikM5mky4fhsnqQd9AqoCaLcekqNgRZW5JCSXwXkLDkABHTD1qx7kqrbGzT6xBGfAvCJSj2rwvKWP8eZBR2EVA", i)
+  }
+  // bitcoincash:qptnmya5wkly7xf97wm5ak23yqdsz3l2cyj7k9vyyh
+  // bitcoincash:qrr2suh9yjsrkl2qp3p967uhfg6u0r6xxsn9h5vuvr
+  // bitcoincash:qpkfg4kck99wksyss6nvaqtafeahfnyrpsj0ed372t
+  // bitcoincash:qppgmuuwy07g0x39sx2z0x2u8e34tvfdxvy0c2jvx7
+  // bitcoincash:qryj8x4s7vfsc864jm0xaak9qfe8qgk245y9ska57l
+            `}</SyntaxHighlighter>
+
             <h2 id='crypto' className="content-head is-center">Crypto</h2>
             <h3 id='createHash'><code>createHash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -530,7 +551,6 @@ class BitboxCli extends Component {
   BITBOX.Crypto.randomBytes(32)
   // 6e1453357f6f99d19d2a6554f35eab65b6c27f6572e31d7f2faa696cac57759b
             `}</SyntaxHighlighter>
-
 
             <h2 id='blockchain' className="content-head is-center">Blockchain</h2>
 
