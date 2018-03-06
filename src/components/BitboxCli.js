@@ -72,7 +72,7 @@ class BitboxCli extends Component {
   1. satoshi         unit to be converted
 
   Result:
-  satoshi    satoshi unit converted to Bitcoin Cash
+  bitcoinCash    satoshi unit converted to Bitcoin Cash
 
   BITBOX.BitcoinCash.toBitcoinCash(900000000)
   // 9
