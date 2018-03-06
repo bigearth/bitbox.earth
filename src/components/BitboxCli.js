@@ -323,7 +323,7 @@ class BitboxCli extends Component {
   //         s: 0 },
   //      compressed: true,
   //      network:
-  //       { messagePrefix: '\u0018Bitcoin Signed Message:\n',
+  //       { messagePrefix: 'Bitcoin Signed Message:',
   //         bech32: 'bc',
   //         bip32: [Object],
   //         pubKeyHash: 0,
@@ -364,7 +364,7 @@ class BitboxCli extends Component {
   //      s: 0 },
   //   compressed: true,
   //   network:
-  //    { messagePrefix: '\u0018Bitcoin Signed Message:\n',
+  //    { messagePrefix: 'Bitcoin Signed Message:',
   //      bech32: 'bc',
   //      bip32: { public: 76067358, private: 76066276 },
   //      pubKeyHash: 0,
@@ -380,7 +380,7 @@ class BitboxCli extends Component {
   1. configuration    configuration object
 
   Result:
-  [rootSeed, masterPrivateKey, mnemonic, config.HDPath, accounts]         
+  [rootSeed, masterPrivateKey, mnemonic, config.HDPath, accounts]
 
   BITBOX.BitcoinCash.createHDWallet({
     autogenerateHDMnemonic: true,
