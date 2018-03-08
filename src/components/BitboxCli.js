@@ -585,17 +585,21 @@ class BitboxCli extends Component {
 
             <h2 id='blockchain' className="content-head is-center">Blockchain</h2>
 
-            <h3 id='getbestblockhash'><code>getbestblockhash</code></h3>
+            <h3 id='getBestBlockHash'><code>getBestBlockHash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the hash of the best (tip) block in the longest blockchain.
 
   Result:
   "hex"      (string) the block hash hex encoded
 
-  BITBOX.getbestblockhash()
+  BITBOX.Blockchain.getBestBlockHash()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getblock'><code>getblock</code></h3>
+            <h3 id='getBlock'><code>getBlock</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   If verbose is false, returns a string that is serialized, hex-encoded data for block 'hash'.
   If verbose is true, returns an Object with information about block <hash>.
@@ -630,10 +634,14 @@ class BitboxCli extends Component {
   Result (for verbose=false):
   "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
-  BITBOX.getblock("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09")
+  BITBOX.Blockchain.getBlock("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getblockchaininfo'><code>getblockchaininfo</code></h3>
+            <h3 id='getBlockchainInfo'><code>getBlockchainInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns an object containing various state info regarding blockchain processing.
 
@@ -669,20 +677,28 @@ class BitboxCli extends Component {
     }
   }
 
-  BITBOX.getblockchaininfo()
+  BITBOX.Blockchain.getBlockchainInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getblockcount'><code>getblockcount</code></h3>
+            <h3 id='getBlockCount'><code>getBlockCount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the number of blocks in the longest blockchain.
 
   Result:
   n    (numeric) The current block count
 
-  BITBOX.getblockcount()
+  BITBOX.Blockchain.getBlockCount()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getblockhash'><code>getblockhash</code></h3>
+            <h3 id='getBlockHash'><code>getBlockHash</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns hash of block in best-block-chain at height provided.
 
@@ -692,10 +708,14 @@ class BitboxCli extends Component {
   Result:
   "hash"         (string) The block hash
 
-  BITBOX.getblockhash(1000)
+  BITBOX.Blockchain.getBlockHash(1000)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getblockheader'><code>getblockheader</code></h3>
+            <h3 id='getBlockHeader'><code>getBlockHeader</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   If verbose is false, returns a string that is serialized, hex-encoded data for blockheader 'hash'.
   If verbose is true, returns an Object with information about blockheader <hash>.
@@ -725,10 +745,14 @@ class BitboxCli extends Component {
   Result (for verbose=false):
   "data"             (string) A string that is serialized, hex-encoded data for block 'hash'.
 
-  BITBOX.getblockheader("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09")
+  BITBOX.Blockchain.getBlockHeader("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getchaintips'><code>getchaintips</code></h3>
+            <h3 id='getChainTips'><code>getChainTips</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Return information about all known tips in the block tree, including the main chain as well as orphaned branches.
 
@@ -754,20 +778,28 @@ class BitboxCli extends Component {
   4.  "valid-fork"            This branch is not part of the active chain, but is fully validated
   5.  "active"                This is the tip of the active main chain, which is certainly valid
 
-  BITBOX.getchaintips()
+  BITBOX.Blockchain.getChainTips()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getdifficulty'><code>getdifficulty</code></h3>
+            <h3 id='getDifficulty'><code>getDifficulty</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 
   Result:
   n.nnn       (numeric) the proof-of-work difficulty as a multiple of the minimum difficulty.
 
-  BITBOX.getdifficulty()
+  BITBOX.Blockchain.getDifficulty()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getmempoolancestors'><code>getmempoolancestors</code></h3>
+            <h3 id='getMempoolAncestors'><code>getMempoolAncestors</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   If txid is in the mempool, returns all in-mempool ancestors.
 
@@ -803,10 +835,14 @@ class BitboxCli extends Component {
     }, ...
   }
 
-  BITBOX.getmempoolancestors("mytxid")
+  BITBOX.Blockchain.getMempoolAncestors("mytxid")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getmempooldescendants'><code>getmempooldescendants</code></h3>
+            <h3 id='getMempoolDescendants'><code>getMempoolDescendants</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   If txid is in the mempool, returns all in-mempool descendants.
 
@@ -842,10 +878,14 @@ class BitboxCli extends Component {
     }, ...
   }
 
-  BITBOX.getmempooldescendants("mytxid")
+  BITBOX.Blockchain.getMempoolDescendants("mytxid")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getmempoolentry'><code>getmempoolentry</code></h3>
+            <h3 id='getMempoolEntry'><code>getMempoolEntry</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns mempool data for given transaction
 
@@ -872,10 +912,14 @@ class BitboxCli extends Component {
          ... ]
   }
 
-  BITBOX.getmempoolentry("mytxid")
+  BITBOX.Blockchain.getMempoolEntry("mytxid")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getmempoolinfo'><code>getmempoolinfo</code></h3>
+            <h3 id='getMempoolInfo'><code>getMempoolInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
 
   Returns details on the active state of the TX memory pool.
@@ -889,10 +933,14 @@ class BitboxCli extends Component {
     "mempoolminfee": xxxxx       (numeric) Minimum fee for tx to be accepted
   }
 
-  BITBOX.getmempoolinfo()
+  BITBOX.Blockchain.getMempoolInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getrawmempool'><code>getrawmempool</code></h3>
+            <h3 id='getRawMempool'><code>getRawMempool</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns all transaction ids in memory pool as a json array of string transaction ids.
 
@@ -927,10 +975,14 @@ class BitboxCli extends Component {
     }, ...
   }
 
-  BITBOX.getrawmempool(true)
+  BITBOX.Blockchain.getRawMempool(true)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='gettxout'><code>gettxout</code></h3>
+            <h3 id='getTxOut'><code>getTxOut</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
 
   Returns details about an unspent transaction output.
@@ -958,10 +1010,14 @@ class BitboxCli extends Component {
     "coinbase" : true|false   (boolean) Coinbase or not
   }
 
-  BITBOX.gettxout("txid", 1)
+  BITBOX.Blockchain.getTxOut("txid", 1)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='gettxoutproof'><code>gettxoutproof</code></h3>
+            <h3 id='getTxOutProof'><code>getTxOutProof</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns a hex-encoded proof that "txid" was included in a block.
 
@@ -981,10 +1037,14 @@ class BitboxCli extends Component {
   Result:
   "data"           (string) A string that is a serialized, hex-encoded data for the proof.
 
-  BITBOX.gettxoutproof(["txid1", "txid2"])
+  BITBOX.Blockchain.getTxOutProof(["txid1", "txid2"])
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='gettxoutsetinfo'><code>gettxoutsetinfo</code></h3>
+            <h3 id='getTxOutSetInfo'><code>getTxOutSetInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns statistics about the unspent transaction output set.
   Note this call may take some time.
@@ -1001,10 +1061,14 @@ class BitboxCli extends Component {
     "total_amount": x.xxx          (numeric) The total amount
   }
 
-  BITBOX.gettxoutsetinfo()
+  BITBOX.Blockchain.getTxOutSetInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='preciousblock'><code>preciousblock</code></h3>
+            <h3 id='preciousBlock'><code>preciousBlock</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Treats a block as if it were received before others with the same work.
 
@@ -1015,10 +1079,14 @@ class BitboxCli extends Component {
   Arguments:
   1. "blockhash"   (string, required) the hash of the block to mark as precious
 
-  BITBOX.preciousblock("blockhash")
+  BITBOX.Blockchain.preciousBlock("blockhash")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='pruneblockchain'><code>pruneblockchain</code></h3>
+            <h3 id='pruneBlockchain'><code>pruneBlockchain</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Arguments:
   1. "height"       (numeric, required) The block height to prune up to. May be set to a discrete height, or a unix timestamp
@@ -1027,10 +1095,14 @@ class BitboxCli extends Component {
   Result:
   n    (numeric) Height of the last block pruned.
 
-  BITBOX.pruneblockchain(1000)
+  BITBOX.Blockchain.pruneBlockchain(1000)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='verifychain'><code>verifychain</code></h3>
+            <h3 id='verifyChain'><code>verifyChain</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Verifies blockchain database.
 
@@ -1041,10 +1113,14 @@ class BitboxCli extends Component {
   Result:
   true|false       (boolean) Verified or not
 
-  BITBOX.verifychain()
+  BITBOX.Blockchain.verifyChain()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='verifytxoutproof'><code>verifytxoutproof</code></h3>
+            <h3 id='verifyTxOutProof'><code>verifyTxOutProof</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Verifies that a proof points to a transaction in a block, returning the transaction it commits to
   and throwing an RPC error if the block is not in our best chain
@@ -1055,13 +1131,16 @@ class BitboxCli extends Component {
   Result:
   ["txid"]      (array, strings) The txid(s) which the proof commits to, or empty array if the proof is invalid
 
-  BITBOX.verifytxoutproof("proof")
+  BITBOX.Blockchain.verifyTxOutProof("proof")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
-
 
           <h2 id='control' className="content-head is-center">Control</h2>
 
-            <h3 id='getinfo'><code>getinfo</code></h3>
+            <h3 id='getInfo'><code>getInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Returns an object containing various state info.
 
@@ -1085,10 +1164,14 @@ class BitboxCli extends Component {
     "errors": "..."           (string) any error messages
   }
 
-  BITBOX.getinfo()
+  BITBOX.Control.getInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getmemoryinfo'><code>getmemoryinfo</code></h3>
+            <h3 id='getMemoryInfo'><code>getMemoryInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns an object containing information about memory usage.
 
@@ -1104,7 +1187,11 @@ class BitboxCli extends Component {
     }
   }
 
-  BITBOX.getmemoryinfo()
+  BITBOX.Control.getMemoryInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='help'><code>help</code></h3>
@@ -1117,14 +1204,22 @@ class BitboxCli extends Component {
   Result:
   "text"     (string) The help text
 
-  BITBOX.help('getblockhash')
+  BITBOX.Control.help()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='stop'><code>stop</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Stop Bitcoin server.
 
-  BITBOX.stop()
+  BITBOX.Control.stop()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
           <h2 id='generating' className="content-head is-center">Generating</h2>
@@ -1140,12 +1235,16 @@ class BitboxCli extends Component {
   Result:
   [ blockhashes ]     (array) hashes of blocks generated
 
-  BITBOX.generate(11)
+  BITBOX.Generating.generate(11)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
           <h2 id='mining' className="content-head is-center">Mining</h2>
 
-            <h3 id='getblocktemplate'><code>getblocktemplate</code></h3>
+            <h3 id='getBlockTemplate'><code>getBlockTemplate</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
   It returns data needed to construct a block to work on.
@@ -1214,10 +1313,14 @@ class BitboxCli extends Component {
        "height" : n                      (numeric) The height of the next block
      }
 
-  BITBOX.getblocktemplate()
+  BITBOX.Mining.getBlockTemplate()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getmininginfo'><code>getmininginfo</code></h3>
+            <h3 id='getMiningInfo'><code>getMiningInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns a json object containing mining-related information.
   Result:
@@ -1232,10 +1335,14 @@ class BitboxCli extends Component {
     "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
   }
 
-  BITBOX.getmininginfo()
+  BITBOX.Mining.getMiningInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getnetworkhashps'><code>getnetworkhashps</code></h3>
+            <h3 id='getNetworkHashps'><code>getNetworkHashps</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the estimated network hashes per second based on the last n blocks.
   Pass in [blocks] to override # of blocks, -1 specifies since last difficulty change.
@@ -1248,10 +1355,14 @@ class BitboxCli extends Component {
   Result:
   x             (numeric) Hashes per second estimated
 
-  BITBOX.getnetworkhashps()
+  BITBOX.Mining.getNetworkHashps()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='prioritisetransaction'><code>prioritisetransaction</code></h3>
+            <h3 id='prioritiseTransaction'><code>prioritiseTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Accepts the transaction into mined blocks at a higher (or lower) priority
 
@@ -1267,10 +1378,14 @@ class BitboxCli extends Component {
   Result:
   true              (boolean) Returns true
 
-  BITBOX.prioritisetransaction("txid", 0.0, 10000)
+  BITBOX.Mining.prioritiseTransaction("txid", 0.0, 10000)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='submitblock'><code>submitblock</code></h3>
+            <h3 id='submitBlock'><code>submitBlock</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Attempts to submit new block to network.
   The 'jsonparametersobject' parameter is currently ignored.
@@ -1283,12 +1398,16 @@ class BitboxCli extends Component {
         "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
       }
 
-  BITBOX.submitblock("mydata")
+  BITBOX.Mining.submitBlock("mydata")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
           <h2 id='network' className="content-head is-center">Network</h2>
 
-            <h3 id='addnode'><code>addnode</code></h3>
+            <h3 id='addNode'><code>addNode</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Attempts add or remove a node from the addnode list.
   Or try a connection to a node once.
@@ -1297,17 +1416,25 @@ class BitboxCli extends Component {
   1. "node"     (string, required) The node (see getpeerinfo for nodes)
   2. "command"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
 
-  BITBOX.addnode("192.168.0.6:8333", "onetry")
+  BITBOX.Network.addNode("192.168.0.6:8333", "onetry")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='clearbanned'><code>clearbanned</code></h3>
+            <h3 id='clearBanned'><code>clearBanned</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Clear all banned IPs.
 
-  BITBOX.clearbanned()
+  BITBOX.Network.clearBanned()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='disconnectnode'><code>disconnectnode</code></h3>
+            <h3 id='disconnectNode'><code>disconnectNode</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Immediately disconnects from the specified peer node.
 
@@ -1319,10 +1446,14 @@ class BitboxCli extends Component {
   1. "address"     (string, optional) The IP address/port of the node
   2. "nodeid"      (number, optional) The node ID (see getpeerinfo for node IDs)
 
-  BITBOX.disconnectnode("192.168.0.6:8333")
+  BITBOX.Network.disconnectNode("192.168.0.6:8333")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getaddednodeinfo'><code>getaddednodeinfo</code></h3>
+            <h3 id='getAddedNodeInfo'><code>getAddedNodeInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns information about the given added node, or all added nodes (note that onetry addnodes are not listed here)
 
@@ -1344,20 +1475,28 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.getaddednodeinfo('192.168.0.201')
+  BITBOX.Network.getAddedNodeInfo('192.168.0.201')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getconnectioncount'><code>getconnectioncount</code></h3>
+            <h3 id='getConnectionCount'><code>getConnectionCount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the number of connections to other nodes.
 
   Result:
   n          (numeric) The connection count
 
-  BITBOX.getconnectioncount()
+  BITBOX.Network.getConnectionCount()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getnettotals'><code>getnettotals</code></h3>
+            <h3 id='getNetTotals'><code>getNetTotals</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns information about network traffic, including bytes in, bytes out, and current time.
 
@@ -1377,10 +1516,14 @@ class BitboxCli extends Component {
     }
   }
 
-  BITBOX.getnettotals()
+  BITBOX.Network.getNetTotals()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getnetworkinfo'><code>getnetworkinfo</code></h3>
+            <h3 id='getNetworkInfo'><code>getNetworkInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns an object containing various state info regarding P2P networking.
 
@@ -1417,10 +1560,14 @@ class BitboxCli extends Component {
     "warnings": "..."                    (string) any network warnings
   }
 
-  BITBOX.getnetworkinfo()
+  BITBOX.Network.getNetworkInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getpeerinfo'><code>getpeerinfo</code></h3>
+            <h3 id='getPeerInfo'><code>getPeerInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns data about each connected network node as a json array of objects.
 
@@ -1466,14 +1613,22 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.getpeerinfo()
+  BITBOX.Network.getPeerInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listbanned'><code>listbanned</code></h3>
+            <h3 id='listBanned'><code>listBanned</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   List all banned IPs/Subnets.
 
-  BITBOX.listbanned()
+  BITBOX.Network.listBanned()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='ping'><code>ping</code></h3>
@@ -1482,10 +1637,14 @@ class BitboxCli extends Component {
   Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
   Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
 
-  BITBOX.ping()
+  BITBOX.Network.ping()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='setban'><code>setban</code></h3>
+            <h3 id='setBan'><code>setBan</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Attempts add or remove a IP/Subnet from the banned list.
 
@@ -1495,22 +1654,30 @@ class BitboxCli extends Component {
   3. "bantime"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)
   4. "absolute"     (boolean, optional) If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)
 
-  BITBOX.setban("192.168.0.6", "add", 86400)
+  BITBOX.Network.setBan("192.168.0.6", "add", 8640)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='setnetworkactive'><code>setnetworkactive</code></h3>
+            <h3 id='setNetworkActive'><code>setNetworkActive</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Disable/enable all p2p network activity.
 
   Arguments:
   1. "state"        (boolean, required) true to enable networking, false to disable
 
-  BITBOX.setnetworkactive(true)
+  BITBOX.Network.setNetworkActive(true)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
           <h2 id='rawtransactions' className="content-head is-center">Rawtransactions</h2>
 
-            <h3 id='createrawtransaction'><code>createrawtransaction</code></h3>
+            <h3 id='createRawTransaction'><code>createRawTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Create a transaction spending the given inputs and creating new outputs.
   Outputs can be addresses or data.
@@ -1539,10 +1706,14 @@ class BitboxCli extends Component {
   Result:
   "transaction"              (string) hex string of the transaction
 
-  BITBOX.createrawtransaction([{"txid":"myid","vout":0}], {"address":0.01})
+  BITBOX.RawTransactions.createRawTransaction([{"txid":"myid","vout":0}], {"address":0.01})
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='decoderawtransaction'><code>decoderawtransaction</code></h3>
+            <h3 id='decodeRawTransaction'><code>decodeRawTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Return a JSON object representing the serialized, hex-encoded transaction.
 
@@ -1587,10 +1758,14 @@ class BitboxCli extends Component {
     ],
   }
 
-  BITBOX.decoderawtransaction('01000000013ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a000000006a4730440220540986d1c58d6e76f8f05501c520c38ce55393d0ed7ed3c3a82c69af04221232022058ea43ed6c05fec0eccce749a63332ed4525460105346f11108b9c26df93cd72012103083dfc5a0254613941ddc91af39ff90cd711cdcde03a87b144b883b524660c39ffffffff01807c814a000000001976a914d7e7c4e0b70eaa67ceff9d2823d1bbb9f6df9a5188ac00000000')
+  BITBOX.RawTransactions.decodeRawTransaction('01000000013ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a000000006a4730440220540986d1c58d6e76f8f05501c520c38ce55393d0ed7ed3c3a82c69af04221232022058ea43ed6c05fec0eccce749a63332ed4525460105346f11108b9c26df93cd72012103083dfc5a0254613941ddc91af39ff90cd711cdcde03a87b144b883b524660c39ffffffff01807c814a000000001976a914d7e7c4e0b70eaa67ceff9d2823d1bbb9f6df9a5188ac00000000')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='decodescript'><code>decodescript</code></h3>
+            <h3 id='decodeScript'><code>decodeScript</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Decode a hex-encoded script.
 
@@ -1610,10 +1785,14 @@ class BitboxCli extends Component {
     "p2sh","address" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).
   }
 
-  BITBOX.decodescript('4830450221009a51e00ec3524a7389592bc27bea4af5104a59510f5f0cfafa64bbd5c164ca2e02206c2a8bbb47eabdeed52f17d7df668d521600286406930426e3a9415fe10ed592012102e6e1423f7abde8b70bca3e78a7d030e5efabd3eb35c19302542b5fe7879c1a16')
+  BITBOX.RawTransactions.decodeScript('4830450221009a51e00ec3524a7389592bc27bea4af5104a59510f5f0cfafa64bbd5c164ca2e02206c2a8bbb47eabdeed52f17d7df668d521600286406930426e3a9415fe10ed592012102e6e1423f7abde8b70bca3e78a7d030e5efabd3eb35c19302542b5fe7879c1a16')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='fundrawtransaction'><code>fundrawtransaction</code></h3>
+            <h3 id='fundRawTransaction'><code>fundRawTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Add inputs to a transaction until it has enough in value to meet its out value.
   This will not modify existing inputs, and will add at most one change output to the outputs.
@@ -1652,10 +1831,14 @@ class BitboxCli extends Component {
     "changepos": n          (numeric) The position of the added change output, or -1
   }
 
-  BITBOX.fundrawtransaction([], {"myaddress":0.01})
+  BITBOX.RawTransactions.fundRawTransaction([], {"myaddress":0.01})
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getrawtransaction'><code>getrawtransaction</code></h3>
+            <h3 id='getRawTransaction'><code>getRawTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Return the raw transaction data.
 
@@ -1712,10 +1895,14 @@ class BitboxCli extends Component {
     "blocktime" : ttt         (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
   }
 
-  BITBOX.getrawtransaction("mytxid", true)
+  BITBOX.RawTransactions.getRawTransaction("mytxid", true)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='sendrawtransaction'><code>sendrawtransaction</code></h3>
+            <h3 id='sendRawTransaction'><code>sendRawTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Submits raw transaction (serialized, hex-encoded) to local node and network.
 
@@ -1728,10 +1915,14 @@ class BitboxCli extends Component {
   Result:
   "hex"             (string) The transaction hash in hex
 
-  BITBOX.sendrawtransaction("signedhex")
+  BITBOX.RawTransactions.sendRawTransaction("signedhex")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='signrawtransaction'><code>signrawtransaction</code></h3>
+            <h3 id='signRawTransaction'><code>signRawTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Sign inputs for raw transaction (serialized, hex-encoded).
   The second optional argument (may be null) is an array of previous transaction outputs that
@@ -1787,7 +1978,11 @@ class BitboxCli extends Component {
     ]
   }
 
-  BITBOX.signrawtransaction("myhex")
+  BITBOX.RawTransactions.signRawTransaction("myhex")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
           <h2 id='util' className="content-head is-center">Util</h2>
@@ -1946,7 +2141,7 @@ class BitboxCli extends Component {
 
           <h2 id='wallet' className="content-head is-center">Wallet</h2>
 
-            <h3 id='addmultisigaddress'><code>addmultisigaddress</code></h3>
+            <h3 id='addMultisigAddress'><code>addMultisigAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Add a nrequired-to-sign multisignature address to the wallet.
   Each key is a Bitcoin address or hex-encoded public key.
@@ -1967,20 +2162,28 @@ class BitboxCli extends Component {
   Example:
   Add a multisig address from 2 addresses
 
-  BITBOX.addmultisigaddress(2, ["16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5", "171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV"])
+  BITBOX.Wallet.addMultisigAddress(2, ["16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5", "171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV"])
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='backupwallet'><code>backupwallet</code></h3>
+            <h3 id='backupWallet'><code>backupWallet</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Safely copies current wallet file to destination, which can be a directory or a path with filename.
 
   Arguments:
   1. "destination"   (string) The destination directory or file
 
-  BITBOX.backupwallet("./backup.dat")
+  BITBOX.Wallet.backupWallet("./backup.dat")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='dumpprivkey'><code>dumpprivkey</code></h3>
+            <h3 id='dumpPrivkey'><code>dumpPrivkey</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Reveals the private key corresponding to 'address'.
   Then the importprivkey can be used with this output
@@ -1991,20 +2194,28 @@ class BitboxCli extends Component {
   Result:
   "key"                (string) The private key
 
-  BITBOX.dumpprivkey('bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y')
+  BITBOX.Wallet.dumpPrivkey('bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='dumpwallet'><code>dumpwallet</code></h3>
+            <h3 id='dumpWallet'><code>dumpWallet</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Dumps all wallet keys in a human-readable format.
 
   Arguments:
   1. "filename"    (string, required) The filename
 
-  BITBOX.dumpwallet('test')
+  BITBOX.Wallet.dumpWallet('test')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='encryptwallet'><code>encryptwallet</code></h3>
+            <h3 id='encryptWallet'><code>encryptWallet</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Encrypts the wallet with 'passphrase'. This is for first time encryption.
   After this, any calls that interact with private keys such as sending or signing
@@ -2016,10 +2227,14 @@ class BitboxCli extends Component {
   Arguments:
   1. "passphrase"    (string) The pass phrase to encrypt the wallet with. It must be at least 1 character, but should be long.
 
-  BITBOX.encryptwallet("passphrase")
+  BITBOX.Wallet.encryptWallet('passphrase')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getaccount'><code>getaccount</code></h3>
+            <h3 id='getAccount'><code>getAccount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Returns the account associated with the given address.
 
@@ -2029,10 +2244,14 @@ class BitboxCli extends Component {
   Result:
   "accountname"        (string) the account address
 
-  BITBOX.getaccount('bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y')
+  BITBOX.Wallet.getAccount('bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getaccountaddress'><code>getaccountaddress</code></h3>
+            <h3 id='getAccountAddress'><code>getAccountAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Returns the current Bitcoin address for receiving payments to this account.
 
@@ -2042,10 +2261,14 @@ class BitboxCli extends Component {
   Result:
   "address"          (string) The account bitcoin address
 
-  BITBOX.generate('myaccount')
+  BITBOX.Wallet.getAccountAddress('myaccount')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getaddressesbyaccount'><code>getaddressesbyaccount</code></h3>
+            <h3 id='getAddressesByAccount'><code>getAddressesByAccount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Returns the list of addresses for the given account.
 
@@ -2058,10 +2281,14 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.getaddressesbyaccount('foobar')
+  BITBOX.Wallet.getAddressesByAccount('foobar')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getbalance'><code>getbalance</code></h3>
+            <h3 id='getBalance'><code>getBalance</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   If account is not specified, returns the server's total available balance.
   If account is specified (DEPRECATED), returns the balance in the account.
@@ -2087,10 +2314,14 @@ class BitboxCli extends Component {
   Result:
   amount              (numeric) The total amount in BCH received for this account.
 
-  BITBOX.getbalance('*', 6)
+  BITBOX.Wallet.getBalance('*', 6)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getnewaddress'><code>getnewaddress</code></h3>
+            <h3 id='getNewAddress'><code>getNewAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns a new Bitcoin address for receiving payments.
   If 'account' is specified (DEPRECATED), it is added to the address book
@@ -2102,10 +2333,14 @@ class BitboxCli extends Component {
   Result:
   "address"    (string) The new bitcoin address
 
-  BITBOX.getnewaddress()
+  BITBOX.Wallet.getNewAddress()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getrawchangeaddress'><code>getrawchangeaddress</code></h3>
+            <h3 id='getRawChangeAddress'><code>getRawChangeAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns a new Bitcoin address, for receiving change.
   This is for use with raw transactions, NOT normal use.
@@ -2113,10 +2348,14 @@ class BitboxCli extends Component {
   Result:
   "address"    (string) The address
 
-  BITBOX.getrawchangeaddress()
+  BITBOX.Wallet.getRawChangeAddress()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getreceivedbyaccount'><code>getreceivedbyaccount</code></h3>
+            <h3 id='getReceivedByAccount'><code>getReceivedByAccount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Returns the total amount received by addresses with <account> in transactions with at least [minconf] confirmations.
 
@@ -2127,10 +2366,14 @@ class BitboxCli extends Component {
   Result:
   amount              (numeric) The total amount in BCH received for this account.
 
-  BITBOX.getreceivedbyaccount("foobar", 6)
+  BITBOX.Wallet.getReceivedByAccount("foobar", 6)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getreceivedbyaddress'><code>getreceivedbyaddress</code></h3>
+            <h3 id='getReceivedByAddress'><code>getReceivedByAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the total amount received by the given address in transactions with at least minconf confirmations.
 
@@ -2141,10 +2384,14 @@ class BitboxCli extends Component {
   Result:
   amount   (numeric) The total amount in BCH received at this address.
 
-  BITBOX.getreceivedbyaddress("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", 6)
+  BITBOX.Wallet.getReceivedByAddress("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", 6)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='gettransaction'><code>gettransaction</code></h3>
+            <h3 id='getTransaction'><code>getTransaction</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Get detailed information about in-wallet transaction <txid>
 
@@ -2184,17 +2431,25 @@ class BitboxCli extends Component {
     "hex" : "data"         (string) Raw data for transaction
   }
 
-  BITBOX.gettransaction("1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d")
+  BITBOX.Wallet.getTransaction("1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getunconfirmedbalance'><code>getunconfirmedbalance</code></h3>
+            <h3 id='getUnconfirmedBalance'><code>getUnconfirmedBalance</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns the server's total unconfirmed balance
 
-  BITBOX.getunconfirmedbalance()
+  BITBOX.Wallet.getUnconfirmedBalance()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='getwalletinfo'><code>getwalletinfo</code></h3>
+            <h3 id='getWalletInfo'><code>getWalletInfo</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns an object containing various wallet state info.
 
@@ -2212,10 +2467,14 @@ class BitboxCli extends Component {
     "hdmasterkeyid": "<hash160>" (string) the Hash160 of the HD master pubkey
   }
 
-  BITBOX.getwalletinfo()
+  BITBOX.Wallet.getWalletInfo()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='importaddress'><code>importaddress</code></h3>
+            <h3 id='importAddress'><code>importAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Adds a script (in hex) or address that can be watched as if it were in your wallet but cannot be used to spend.
 
@@ -2231,10 +2490,14 @@ class BitboxCli extends Component {
   Note: If you import a non-standard raw script in hex form, outputs sending to it will be treated
   as change, and not show up in many RPCs.
 
-  BITBOX.importaddress("myscript", "testing", false)
+  BITBOX.Wallet.importAddress("myscript", "testing", false)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='importmulti'><code>importmulti</code></h3>
+            <h3 id='importMulti'><code>importMulti</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Import addresses/scripts (with private or public keys, redeem script (P2SH)), rescanning all addresses in one-shot-only (rescan can be disabled via options).
 
@@ -2263,10 +2526,14 @@ class BitboxCli extends Component {
        "rescan": <false>,         (boolean, optional, default: true) Stating if should rescan the blockchain after all imports
     }
 
-  BITBOX.importmulti({ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }, { "scriptPubKey": { "address": "<my 2nd address>" }, "label": "example 2", "timestamp": 1455191480 })
+  BITBOX.Wallet.importMulti({ "scriptPubKey": { "address": "<my address>" }, "timestamp":1455191478 }, { "scriptPubKey": { "address": "<my 2nd address>" }, "label": "example 2", "timestamp": 1455191480 })
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='importprivkey'><code>importprivkey</code></h3>
+            <h3 id='importPrivkey'><code>importPrivkey</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Adds a private key (as returned by dumpprivkey) to your wallet.
 
@@ -2277,10 +2544,14 @@ class BitboxCli extends Component {
 
   Note: This call can take minutes to complete if rescan is true.
 
-  BITBOX.importprivkey("mykey", "testing", false)
+  BITBOX.Wallet.importPrivkey("mykey", "testing", false)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='importprunedfunds'><code>importprunedfunds</code></h3>
+            <h3 id='importPrunedFunds'><code>importPrunedFunds</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Imports funds without rescan. Corresponding address or script must previously be included in wallet. Aimed towards pruned wallets. The end-user is responsible to import additional transactions that subsequently spend the imported outputs or rescan after the point in the blockchain the transaction is included.
 
@@ -2288,30 +2559,42 @@ class BitboxCli extends Component {
   1. "rawtransaction" (string, required) A raw transaction in hex funding an already-existing address in wallet
   2. "txoutproof"     (string, required) The hex output from gettxoutproof that contains the transaction
 
-  BITBOX.importprunedfunds("rawtransaction", "txoutproof")
+  BITBOX.Wallet.importPrunedFunds("rawtransaction", "txoutproof")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='importwallet'><code>importwallet</code></h3>
+            <h3 id='importWallet'><code>importWallet</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Imports keys from a wallet dump file (see dumpwallet).
 
   Arguments:
   1. "filename"    (string, required) The wallet file
 
-  BITBOX.importwallet("test")
+  BITBOX.Wallet.importWallet("test")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='keypoolrefill'><code>keypoolrefill</code></h3>
+            <h3 id='keypoolRefill'><code>keypoolRefill</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Fills the keypool.
 
   Arguments
   1. newsize     (numeric, optional, default=100) The new keypool size
 
-  BITBOX.keypoolrefill()
+  BITBOX.Wallet.keypoolRefill()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listaccounts'><code>listaccounts</code></h3>
+            <h3 id='listAccounts'><code>listAccounts</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Returns Object that has account names as keys, account balances as values.
 
@@ -2325,10 +2608,14 @@ class BitboxCli extends Component {
     ...
   }
 
-  BITBOX.listaccounts(6)
+  BITBOX.Wallet.listAccounts(6)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listaddressgroupings'><code>listaddressgroupings</code></h3>
+            <h3 id='listAddressGroupings'><code>listAddressGroupings</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Lists groups of addresses which have had their common ownership
   made public by common use as inputs or as the resulting change
@@ -2347,10 +2634,14 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.listaddressgroupings()
+  BITBOX.Wallet.listAddressGroupings()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listlockunspent'><code>listlockunspent</code></h3>
+            <h3 id='listLockUnspent'><code>listLockUnspent</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns list of temporarily unspendable outputs.
   See the lockunspent call to lock and unlock transactions for spending.
@@ -2364,10 +2655,14 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.listlockunspent()
+  BITBOX.Wallet.listLockUnspent()
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listreceivedbyaccount'><code>listreceivedbyaccount</code></h3>
+            <h3 id='listReceivedByAccount'><code>listReceivedByAccount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. List balances by account.
 
@@ -2388,10 +2683,14 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.listreceivedbyaccount(6, true, true)
+  BITBOX.Wallet.listReceivedByAccount(6, true, true)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listreceivedbyaddress'><code>listreceivedbyaddress</code></h3>
+            <h3 id='listReceivedByAddress'><code>listReceivedByAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   List balances by receiving address.
 
@@ -2417,10 +2716,14 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.listreceivedbyaddress(6, true, true)
+  BITBOX.Wallet.listReceivedByAddress(6, true, true)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listsinceblock'><code>listsinceblock</code></h3>
+            <h3 id='listSinceBlock'><code>listSinceBlock</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Get all transactions in blocks since block [blockhash], or all transactions if omitted
 
@@ -2454,10 +2757,14 @@ class BitboxCli extends Component {
     "lastblock": "lastblockhash"     (string) The hash of the last block
   }
 
-  BITBOX.listsinceblock("000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad", 6)
+  BITBOX.Wallet.listSinceBlock("000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad", 6)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listtransactions'><code>listtransactions</code></h3>
+            <h3 id='listTransactions'><code>listTransactions</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns up to 'count' most recent transactions skipping the first 'from' transactions for account 'account'.
 
@@ -2507,10 +2814,14 @@ class BitboxCli extends Component {
     }
   ]
 
-  BITBOX.listtransactions("*", 20, 100)
+  BITBOX.Wallet.listTransactions("*", 20, 100)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='listunspent'><code>listunspent</code></h3>
+            <h3 id='listUnspent'><code>listUnspent</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Returns array of unspent transaction outputs with between minconf and maxconf (inclusive) confirmations. Optionally filter to only include txouts paid to specified addresses.
 
@@ -2544,10 +2855,14 @@ class BitboxCli extends Component {
     ,...
   ]
 
-  BITBOX.listunspent(6, 9999999 ["1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg", "1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP"])
+  BITBOX.Wallet.listUnspent(6, 9999999 ["1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg", "1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP"])
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='lockunspent'><code>lockunspent</code></h3>
+            <h3 id='lockUnspent'><code>lockUnspent</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Updates list of temporarily unspendable outputs.
   Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
@@ -2571,7 +2886,11 @@ class BitboxCli extends Component {
   Result:
   true|false    (boolean) Whether the command was successful or not
 
-  BITBOX.lockunspent(false, [{"txid":"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0","vout":1}])
+  BITBOX.Wallet.lockUnspent(false, [{"txid":"a08e6907dbbd3d809776dbfc5d82e371b764ed838b5655e72f463568df1aadf0","vout":1}])
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='move'><code>move</code></h3>
@@ -2588,20 +2907,28 @@ class BitboxCli extends Component {
   Result:
   true|false           (boolean) true if successful.
 
-  BITBOX.move("alice", "bob", 0.01, 6, "Hello EARTH")
+  BITBOX.Wallet.move("alice", "bob", 0.01, 6, "Hello EARTH")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='removeprunedfunds'><code>removeprunedfunds</code></h3>
+            <h3 id='removePrunedFunds'><code>removePrunedFunds</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds. This will effect wallet balances.
 
   Arguments:
   1. "txid"           (string, required) The hex-encoded id of the transaction you are deleting
 
-  BITBOX.removeprunedfunds('a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5')
+  BITBOX.Wallet.removePrunedFunds('a8d0c0184dde994a09ec054286f1ce581bebf46446a512166eae7628734ea0a5')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='sendfrom'><code>sendfrom</code></h3>
+            <h3 id='sendFrom'><code>sendFrom</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED (use sendtoaddress). Sent an amount from an account to a bitcoin address.
 
@@ -2622,10 +2949,14 @@ class BitboxCli extends Component {
   Result:
   "txid"                 (string) The transaction id.
 
-  BITBOX.sendfrom("me", "bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", 0.01, 6, "donation", "seans outpost"')
+  BITBOX.Wallet.sendFrom("me", "bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", 0.01, 6, "donation", "seans outpost"')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='sendmany'><code>sendmany</code></h3>
+            <h3 id='sendMany'><code>sendMany</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Send multiple times. Amounts are double-precision floating point numbers.
 
@@ -2651,10 +2982,14 @@ class BitboxCli extends Component {
   "txid"                   (string) The transaction id for the send. Only 1 transaction is created regardless of
                                       the number of addresses.
 
-  BITBOX.sendmany("", {"1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX":0.01,"1353tsE8YMTA4EuV7dgUXGjNFf9KpVvKHz":0.02}, 6, "testing")
+  BITBOX.Wallet.sendMany("", {"1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX":0.01,"1353tsE8YMTA4EuV7dgUXGjNFf9KpVvKHz":0.02}, 6, "testing")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='sendtoaddress'><code>sendtoaddress</code></h3>
+            <h3 id='sendToAddress'><code>sendToAddress</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Send an amount to a given address.
 
@@ -2672,10 +3007,14 @@ class BitboxCli extends Component {
   Result:
   "txid"                  (string) The transaction id.
 
-  BITBOX.sendtoaddress("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", 0.1, "donation", "seans outpost")
+  BITBOX.Wallet.sendToAddress("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", 0.1, "donation", "seans outpost")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='setaccount'><code>setaccount</code></h3>
+            <h3 id='setAccount'><code>setAccount</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   DEPRECATED. Sets the account associated with the given address.
 
@@ -2683,10 +3022,14 @@ class BitboxCli extends Component {
   1. "address"         (string, required) The bitcoin address to be associated with an account.
   2. "account"         (string, required) The account to assign the address to.
 
-  BITBOX.setaccount("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", "seans outpost")
+  BITBOX.Wallet.setAccount("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", "seans outpost")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='settxfee'><code>settxfee</code></h3>
+            <h3 id='setTxFee'><code>setTxFee</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Set the transaction fee per kB. Overwrites the paytxfee parameter.
 
@@ -2696,10 +3039,14 @@ class BitboxCli extends Component {
   Result
   true|false        (boolean) Returns true if successful
 
-  BITBOX.settxfee(0.00001)
+  BITBOX.Wallet.setTxFee(0.00001)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
 
-            <h3 id='signmessage'><code>signmessage</code></h3>
+            <h3 id='signMessage'><code>signMessage</code></h3>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   Sign a message with the private key of an address
 
@@ -2710,7 +3057,11 @@ class BitboxCli extends Component {
   Result:
   "signature"          (string) The signature of the message encoded in base 64
 
-  BITBOX.signmessage("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", "my message")
+  BITBOX.Wallet.signMessage("bitcoincash:qqnw4m6red45wf0alqz8w2wzsqljzez87gjxquuw9y", "my message")
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
             `}</SyntaxHighlighter>
           </div>
         </div>

@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+  Link
+} from 'react-router-dom';
+
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
@@ -110,25 +114,13 @@ class Docs extends Component {
   port = 8332
             `}</SyntaxHighlighter>
             <h3 id="bitboxConsole"><code>bitbox console</code></h3>
-            <p>Launch a console w/ the entire Bitcoin Cash RPC available via a built in <code>BITBOX</code> object.</p>
+            <p>Launch a console w/ the entire Bitcoin Cash RPC available as well as dozens of helper methods via a built in <code>BITBOX</code> object. <Link to="/bitboxcli">Full list of commands</Link>.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
   $ bitbox console
   ⚡️  BITBOX ⚡️ BITBOX.
-  BITBOX.abandonTransaction      BITBOX.addmultisigaddress      BITBOX.addnode                 BITBOX.addwitnessaddress       BITBOX.backupWallet            BITBOX.bumpfee                 BITBOX.clearbanned
-  BITBOX.createmultisig          BITBOX.createrawtransaction    BITBOX.decoderawtransaction    BITBOX.decodescript            BITBOX.disconnectnode          BITBOX.dumpprivkey             BITBOX.dumpwallet
-  BITBOX.encryptwallet           BITBOX.estimatefee             BITBOX.estimatepriority        BITBOX.fundrawtransaction      BITBOX.generate                BITBOX.generatetoaddress       BITBOX.getaccount
-  BITBOX.getaccountaddress       BITBOX.getaddednodeinfo        BITBOX.getaddressesbyaccount   BITBOX.getbalance              BITBOX.getbestblockhash        BITBOX.getblock                BITBOX.getblockchaininfo
-  BITBOX.getblockcount           BITBOX.getblockhash            BITBOX.getblockheader          BITBOX.getblocktemplate        BITBOX.getchaintips            BITBOX.getconnectioncount      BITBOX.getdifficulty
-  BITBOX.getgenerate             BITBOX.gethashespersec         BITBOX.getinfo                 BITBOX.getmemoryinfo           BITBOX.getmempoolancestors     BITBOX.getmempooldescendants   BITBOX.getmempoolentry
-  BITBOX.getmempoolinfo          BITBOX.getmininginfo           BITBOX.getnettotals            BITBOX.getnetworkhashps        BITBOX.getnetworkinfo          BITBOX.getnewaddress           BITBOX.getpeerinfo
-  BITBOX.getrawchangeaddress     BITBOX.getrawmempool           BITBOX.getrawtransaction       BITBOX.getreceivedbyaccount    BITBOX.getreceivedbyaddress    BITBOX.gettransaction          BITBOX.gettxout
-  BITBOX.gettxoutproof           BITBOX.gettxoutsetinfo         BITBOX.getunconfirmedbalance   BITBOX.getwalletinfo           BITBOX.getwork                 BITBOX.help                    BITBOX.importaddress
-  BITBOX.importmulti             BITBOX.importprivkey           BITBOX.importprunedfunds       BITBOX.importwallet            BITBOX.keypoolrefill           BITBOX.listaccounts            BITBOX.listaddressgroupings
-  BITBOX.listbanned              BITBOX.listlockunspent         BITBOX.listreceivedbyaccount   BITBOX.listreceivedbyaddress   BITBOX.listsinceblock          BITBOX.listtransactions        BITBOX.listunspent
-  BITBOX.lockunspent             BITBOX.move                    BITBOX.pingRpc                 BITBOX.preciousblock           BITBOX.prioritisetransaction   BITBOX.pruneblockchain         BITBOX.removeprunedfunds
-  BITBOX.sendfrom                BITBOX.sendmany                BITBOX.sendrawtransaction      BITBOX.sendtoaddress           BITBOX.setaccount              BITBOX.setban                  BITBOX.setgenerate
-  BITBOX.setnetworkactive        BITBOX.settxfee                BITBOX.signmessage             BITBOX.signmessagewithprivkey  BITBOX.signrawtransaction      BITBOX.stop                    BITBOX.submitblock
-  BITBOX.validateaddress         BITBOX.verifychain             BITBOX.verifymessage           BITBOX.verifytxoutproof        BITBOX.walletlock              BITBOX.walletpassphrase        BITBOX.walletpassphrasechange
+
+  BITBOX.BitboxHTTP              BITBOX.BitcoinCash             BITBOX.Blockchain              BITBOX.Control                 BITBOX.Crypto                  BITBOX.Generating              BITBOX.Mining
+  BITBOX.Network                 BITBOX.RawTransactions         BITBOX.Util                    BITBOX.Wallet                  BITBOX.config
             `}</SyntaxHighlighter>
           </div>
         </div>
