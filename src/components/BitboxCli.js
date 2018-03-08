@@ -34,8 +34,7 @@ class BitboxCli extends Component {
       <div className="docs bitboxcli">
         <h2 className="content-head is-center">BitboxCli</h2>
         <div className="pure-g">
-          <div className="pure-u-1-1">
-            <p><code>bitbox-cli</code> is a Utility for creating great <a href='https://www.bitcoincash.org'>Bitcoin Cash</a> applications. If can be used from the command line or from within client/server apps. Any methods which make network requests return a <code>Promise</code> and any other methods return immediately.</p>
+          <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5">
             <ul>
               <li>
                 <Link to="/bitboxcli/bitcoincash">Bitcoin Cash</Link>
@@ -68,6 +67,9 @@ class BitboxCli extends Component {
                 <Link to="/bitboxcli/wallet">Wallet</Link>
               </li>
             </ul>
+          </div>
+          <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5">
+            <p><code>bitbox-cli</code> is a Utility for creating great <a href='https://www.bitcoincash.org'>Bitcoin Cash</a> applications. If can be used from the command line or from within client/server apps. Any methods which make network requests return a <code>Promise</code> and any other methods return immediately.</p>
             <Route path="/bitboxcli/bitcoincash" component={BitcoinCash}/>
             <Route path="/bitboxcli/crypto" component={Crypto}/>
             <Route path="/bitboxcli/blockchain" component={Blockchain}/>
