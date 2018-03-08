@@ -4,11 +4,21 @@ import {
   Link,
   withRouter
 } from 'react-router-dom';
+import Slider from 'react-slick';
+
 
 import "../styles/homepage.scss";
 
 class Homepage extends Component {
   render() {
+    let settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true
+    };
     return (
       <div>
         <div className="splash-container">
@@ -78,7 +88,26 @@ class Homepage extends Component {
 
           <div className="ribbon l-box-lrg pure-g">
               <div className="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-16-24">
-                <img alt="File Icons" className="pure-img-responsive" src='assets/screenshot.png' />
+                <Slider {...settings}>
+                  <div>
+                    <img alt="screenshot1" className="pure-img-responsive" src='assets/screenshot1.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot2" className="pure-img-responsive" src='assets/screenshot2.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot3" className="pure-img-responsive" src='assets/screenshot3.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot4" className="pure-img-responsive" src='assets/screenshot4.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot5" className="pure-img-responsive" src='assets/screenshot5.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot6" className="pure-img-responsive" src='assets/screenshot6.png' />
+                  </div>
+                </Slider>
               </div>
               <div className="pure-u-1 pure-u-md-1-2 pure-u-lg-8-24 screenshot-desc">
                 <p>
