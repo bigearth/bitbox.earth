@@ -9,7 +9,6 @@ import {
   NavLink
 } from 'react-router-dom';
 
-
 // custom components
 import BitboxCli from './components/BitboxCli';
 import Docs from './components/Docs';
@@ -57,7 +56,7 @@ class App extends Component {
           <div className="header">
             <div className="home-menu main-menu pure-menu pure-menu-horizontal pure-menu-fixed">
               <Link className="pure-menu-heading header-logo" to="/">
-                <img src={'assets/logo.png'} /> <br />BitBox
+                <img src={'/assets/logo.png'} /> <br />BitBox
               </Link>
 
               <ul className="pure-menu-list">

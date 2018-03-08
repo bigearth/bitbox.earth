@@ -85,7 +85,6 @@ class Homepage extends Component {
                   </div>
               </div>
           </div>
-
           <div className="ribbon l-box-lrg pure-g">
               <div className="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-16-24">
                 <Slider {...settings}>
