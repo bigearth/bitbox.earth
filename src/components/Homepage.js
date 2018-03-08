@@ -71,7 +71,7 @@ class Homepage extends Component {
                       Full framework
                     </h3>
                     <p>
-                      Create new $BCH apps in react, angular and node w/ a single command. Built in paper wallet generator. Dozens of utility methods to cccelerate how quickly you can create your app.
+                      Create new $BCH apps in react, angular and node w/ a single command. Built in paper wallet generator. Dozens of utility methods to accelerate how quickly you can create your app.
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
