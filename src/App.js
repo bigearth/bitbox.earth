@@ -65,7 +65,7 @@ class App extends Component {
                     isActive={pathMatch}
                     activeClassName="pure-menu-selected"
                     className="pure-menu-link"
-                    to="/docs">
+                    to="/docs/gettingstarted">
                     <i className="fas fa-book"></i> Docs
                   </NavLink>
                 </li>
