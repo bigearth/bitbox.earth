@@ -53,7 +53,7 @@ class Homepage extends Component {
                       Instant Blockchain
                     </h3>
                     <p>
-                      Your own Bitcoin Cash blockchain to run tests and execute commands. Also interact from the command line and w/ web bindings.
+                      Your own Bitcoin Cash blockchain to configure however you choose. Execute commands from the command line and w/ web bindings.
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -68,10 +68,10 @@ class Homepage extends Component {
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
                     <p className="header-icon"><i className="fa fa-keyboard" /></p>
                     <h3 className="content-subhead">
-                      Command line utility
+                      Full framework
                     </h3>
                     <p>
-                      Create new $BCH apps w/ a single command. Accelerate how quickly you can create your app.
+                      Create new $BCH apps in react, angular and node w/ a single command. Built in paper wallet generator. Dozens of utility methods to cccelerate how quickly you can create your app.
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -80,7 +80,7 @@ class Homepage extends Component {
                       Entire Bitcoin Cash RPC
                     </h3>
                     <p>
-                      Accepts incoming requests for 100% of the Bitcoin Cash JSON RPC.
+                      Accepts incoming requests for 100% of the Bitcoin Cash JSON RPC. Test your code against your own local BITBOX before deploying to production.
                     </p>
                   </div>
               </div>
