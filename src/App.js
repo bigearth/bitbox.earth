@@ -61,13 +61,6 @@ class App extends Component {
 
               <ul className="pure-menu-list">
                 <li className="pure-menu-item">
-                  <a
-                    className="pure-menu-link"
-                    href="https://bigearth.github.io/bitblog/">
-                    <i className="fas fa-keyboard"></i> Blog
-                  </a>
-                </li>
-                <li className="pure-menu-item">
                   <NavLink
                     isActive={pathMatch}
                     activeClassName="pure-menu-selected"
@@ -84,6 +77,13 @@ class App extends Component {
                     to="/bitboxcli">
                     <i className="fa fa-code"></i> bitbox-cli
                   </NavLink>
+                </li>
+                <li className="pure-menu-item">
+                  <a
+                    className="pure-menu-link"
+                    href="https://bigearth.github.io/bitblog/">
+                    <i className="fas fa-keyboard"></i> Blog
+                  </a>
                 </li>
               </ul>
             </div>
