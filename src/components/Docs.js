@@ -17,9 +17,8 @@ class Docs extends Component {
   render() {
     return (
       <div className="docs">
-        <h2 className="content-head is-center">Docs</h2>
         <div className="pure-g">
-          <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5">
+          <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5 docsMenu">
             <ul>
               <li>
                 <Link to="/docs/gettingstarted">Getting Started</Link>
@@ -35,7 +34,8 @@ class Docs extends Component {
               </li>
             </ul>
           </div>
-          <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5">
+          <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5 docsContent">
+            <h2 className="content-head is-center">Docs</h2>
             <Route path="/docs/gettingstarted" component={GettingStarted}/>
             <Route path="/docs/conversion" component={Conversion}/>
             <Route path="/docs/signandverify" component={SignAndVerify}/>
