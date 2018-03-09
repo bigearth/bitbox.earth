@@ -7,7 +7,7 @@ class Network extends Component {
   render() {
     return (
       <div className="Network">
-        <h2 id='network' className="content-head is-center">Network</h2>
+        <h2 id='network' className="content-head is-center"><i className="fas fa-cloud" /> Network</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='addNode'><code>addNode</code></h3>

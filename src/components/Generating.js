@@ -7,7 +7,7 @@ class Generating extends Component {
   render() {
     return (
       <div className="Generating">
-        <h2 id='generating' className="content-head is-center">Generating</h2>
+        <h2 id='generating' className="content-head is-center"><i className="fab fa-buromobelexperte" /> Generating</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='generate'><code>generate</code></h3>

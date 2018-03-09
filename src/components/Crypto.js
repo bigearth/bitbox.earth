@@ -7,7 +7,7 @@ class Crypto extends Component {
   render() {
     return (
       <div className="Crypto">
-        <h2 id='crypto' className="content-head is-center">Crypto</h2>
+        <h2 id='crypto' className="content-head is-center"><i className="fas fa-link" /> Crypto</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='createHash'><code>createHash</code></h3>

@@ -7,7 +7,7 @@ class Mining extends Component {
   render() {
     return (
       <div className="Mining">
-        <h2 id='mining' className="content-head is-center">Mining</h2>
+        <h2 id='mining' className="content-head is-center"><i className="fas fa-hdd" /> Mining</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
 

@@ -7,7 +7,7 @@ class Blockchain extends Component {
   render() {
     return (
       <div className="Blockchain">
-        <h2 id='blockchain' className="content-head is-center">Blockchain</h2>
+        <h2 id='blockchain' className="content-head is-center"><i className="fas fa-cubes" />Blockchain</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='getBestBlockHash'><code>getBestBlockHash</code></h3>

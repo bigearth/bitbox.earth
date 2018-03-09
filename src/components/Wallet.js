@@ -7,7 +7,7 @@ class Wallet extends Component {
   render() {
     return (
       <div className="Wallet">
-        <h2 id='wallet' className="content-head is-center">Wallet</h2>
+        <h2 id='wallet' className="content-head is-center"><i className="fas fa-folder" /> Wallet</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='addMultisigAddress'><code>addMultisigAddress</code></h3>

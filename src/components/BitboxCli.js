@@ -36,39 +36,39 @@ class BitboxCli extends Component {
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5 docsMenu">
             <ul>
               <li>
-                <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc"></i> Bitcoin Cash</Link>
+                <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc" /> Bitcoin Cash</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/crypto"><i className="fas fa-link"></i> Crypto</Link>
+                <Link to="/bitboxcli/crypto"><i className="fas fa-link" /> Crypto</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/blockchain"><i className="fas fa-cubes"></i> Blockchain</Link>
+                <Link to="/bitboxcli/blockchain"><i className="fas fa-cubes" /> Blockchain</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/control"><i className="fas fa-gamepad"></i> Control</Link>
+                <Link to="/bitboxcli/control"><i className="fas fa-gamepad" /> Control</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/generating"><i className="fab fa-buromobelexperte"></i> Generating</Link>
+                <Link to="/bitboxcli/generating"><i className="fab fa-buromobelexperte" /> Generating</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/mining"><i className="fas fa-hdd"></i> Mining</Link>
+                <Link to="/bitboxcli/mining"><i className="fas fa-hdd" /> Mining</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/network"><i className="fas fa-cloud"></i> Network</Link>
+                <Link to="/bitboxcli/network"><i className="fas fa-cloud" /> Network</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/rawtransactions"><i className="fas fa-exchange-alt"></i> Rawtransactions</Link>
+                <Link to="/bitboxcli/rawtransactions"><i className="fas fa-exchange-alt" /> Rawtransactions</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/util"><i className="fas fa-cogs"></i> Util</Link>
+                <Link to="/bitboxcli/util"><i className="fas fa-cogs" /> Util</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/wallet"><i className="fas fa-folder"></i> Wallet</Link>
+                <Link to="/bitboxcli/wallet"><i className="fas fa-folder" /> Wallet</Link>
               </li>
             </ul>
           </div>
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5 docsContent">
-            <h2 className="content-head is-center">BitboxCli</h2>
+            <h1 className="content-head is-center">BitboxCli</h1>
             <p><code>bitbox-cli</code> is a Utility for creating great <a href='https://www.bitcoincash.org'>Bitcoin Cash</a> applications. If can be used from the command line or from within client/server apps. Any methods which make network requests return a <code>Promise</code> and any other methods return immediately.</p>
             <Route path="/bitboxcli/bitcoincash" component={BitcoinCash}/>
             <Route path="/bitboxcli/crypto" component={Crypto}/>

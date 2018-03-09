@@ -7,7 +7,7 @@ class Control extends Component {
   render() {
     return (
       <div className="Control">
-        <h2 id='control' className="content-head is-center">Control</h2>
+        <h2 id='control' className="content-head is-center"><i className="fas fa-gamepad" />Control</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='getInfo'><code>getInfo</code></h3>

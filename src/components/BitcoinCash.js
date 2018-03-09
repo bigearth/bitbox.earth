@@ -7,7 +7,7 @@ class BitcoinCash extends Component {
   render() {
     return (
       <div className="BitcoinCash">
-        <h2 id='bitcoinCash' className="content-head is-center">Bitcoin Cash</h2>
+        <h2 id='bitcoinCash' className="content-head is-center"><i className="fab fa-btc" /> Bitcoin Cash</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
           <h3 id='toSatoshi'><code>toSatoshi</code></h3>

@@ -7,7 +7,7 @@ class RawTransactions extends Component {
   render() {
     return (
       <div className="RawTransactions">
-        <h2 id='rawtransactions' className="content-head is-center">Rawtransactions</h2>
+        <h2 id='rawtransactions' className="content-head is-center"><i className="fas fa-exchange-alt" /> Rawtransactions</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
 

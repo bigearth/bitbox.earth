@@ -7,7 +7,7 @@ class Util extends Component {
   render() {
     return (
       <div className="Util">
-        <h2 id='util' className="content-head is-center">Util</h2>
+        <h2 id='util' className="content-head is-center"><i className="fas fa-cogs" /> Util</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
 
