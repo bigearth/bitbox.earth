@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Installation from './Installation';
 import GettingStarted from './GettingStarted';
 import Conversion from './Conversion';
 import SignAndVerify from './SignAndVerify';
@@ -24,6 +25,9 @@ class Docs extends Component {
                 <Link to="/docs/gettingstarted"><i className="fas fa-home"></i> Getting Started</Link>
               </li>
               <li>
+                <Link to="/docs/installation"><i className="fas fa-wrench"></i> Installation</Link>
+              </li>
+              <li>
                 <Link to="/docs/conversion"><i className="fas fa-qrcode"></i> Conversion</Link>
               </li>
               <li>
@@ -35,8 +39,9 @@ class Docs extends Component {
             </ul>
           </div>
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5 docsContent">
-            <h2 className="content-head is-center">Docs</h2>
+            <h1 className="content-head is-center">Docs</h1>
             <Route path="/docs/gettingstarted" component={GettingStarted}/>
+            <Route path="/docs/installation" component={Installation}/>
             <Route path="/docs/conversion" component={Conversion}/>
             <Route path="/docs/signandverify" component={SignAndVerify}/>
             <Route path="/docs/configuration" component={Configuration}/>
