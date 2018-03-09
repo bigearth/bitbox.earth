@@ -7,7 +7,7 @@ class Configuration extends Component {
   render() {
     return (
       <div className="Configuration">
-        <h2 id='config' className="content-head is-center">Configuration</h2>
+        <h2 id='config' className="content-head is-center"><i className="fas fa-cog" /> Configuration</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>You can restart your BITBOX, change how many addresses are generated, increase/decrease the amount of entropy used when generating a mnemonic, use a custom mnemonic/HD path and toggle cashaddr/base58 on the config screen which is available if you click on the cog icon.</p>

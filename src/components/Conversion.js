@@ -7,7 +7,7 @@ class Conversion extends Component {
   render() {
     return (
       <div className="Conversion">
-        <h2 id='convert' className="content-head is-center">Conversion</h2>
+        <h2 id='convert' className="content-head is-center"><i className="fas fa-qrcode" /> Conversion</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>It&rsquo;s common to see your addresses in 1 of 3 formats&mdash;legacy base58Check, cashaddr or privateKeyWIF. The first two are the public addresses which you share w/ people to send you $BCH and the last one is the private key that you never show anyone.</p>

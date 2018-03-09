@@ -22,19 +22,19 @@ class Docs extends Component {
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5 docsMenu">
             <ul>
               <li>
-                <Link to="/docs/gettingstarted"><i className="fas fa-home"></i> Getting Started</Link>
+                <Link to="/docs/gettingstarted"><i className="fas fa-home" /> Getting Started</Link>
               </li>
               <li>
-                <Link to="/docs/installation"><i className="fas fa-wrench"></i> Installation</Link>
+                <Link to="/docs/installation"><i className="fas fa-wrench" /> Installation</Link>
               </li>
               <li>
-                <Link to="/docs/conversion"><i className="fas fa-qrcode"></i> Conversion</Link>
+                <Link to="/docs/conversion"><i className="fas fa-qrcode" /> Conversion</Link>
               </li>
               <li>
-                <Link to="/docs/signandverify"><i className="far fa-check-circle"></i> Sign &amp; Verify</Link>
+                <Link to="/docs/signandverify"><i className="far fa-check-circle" /> Sign &amp; Verify</Link>
               </li>
               <li>
-                <Link to="/docs/configuration"><i className="fas fa-cog"></i> Configuration</Link>
+                <Link to="/docs/configuration"><i className="fas fa-cog" /> Configuration</Link>
               </li>
             </ul>
           </div>
