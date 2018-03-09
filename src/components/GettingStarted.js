@@ -32,7 +32,7 @@ class GettingStarted extends Component {
             <p>Accepts incoming requests for 100% of the Bitcoin Cash JSON RPC.</p>
 
             <h3><i className="fas fa-terminal" /> Built in console</h3>
-            <p><code>bitbox console</code> opens a repl w/ the entire <Link to="/bitboxcli/bitcoincash">BITBOX</Link> api available. Ex: <code>BitcoinCash</code>, <code>Crypto</code>, <code>Blockchain</code>, <code>Control</code>, <code>Generating</code>, <code>Mining</code>, <code>Network</code>, <code>Rawtransactions</code>, <code>Util</code> and <code>Wallet</code>.</p>
+            <p><code>bitbox console</code> opens a repl w/ the entire <Link to="/bitboxcli/bitcoincash">BITBOX</Link> api available. Ex: <code>BitcoinCash</code>, <code>Crypto</code>, <code>Blockchain</code>, <code>Control</code>, <code>Generating</code>, <code>Mining</code>, <code>Network</code>, <code>RawTransactions</code>, <code>Util</code> and <code>Wallet</code>.</p>
           </div>
         </div>
 

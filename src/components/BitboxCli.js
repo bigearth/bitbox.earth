@@ -57,7 +57,7 @@ class BitboxCli extends Component {
                 <Link to="/bitboxcli/network"><i className="fas fa-cloud" /> Network</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/rawtransactions"><i className="fas fa-exchange-alt" /> Rawtransactions</Link>
+                <Link to="/bitboxcli/rawtransactions"><i className="fas fa-exchange-alt" /> RawTransactions</Link>
               </li>
               <li>
                 <Link to="/bitboxcli/util"><i className="fas fa-cogs" /> Util</Link>
