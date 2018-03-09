@@ -25,6 +25,13 @@ class BitboxScaffold extends Component {
     -f, --framework <framework>  The framework to use. Options include "react", "angular" and "node". Default: "react"
     -r, --repo <repo>            The github repository to use. Ex: https://github.com/bigearth/bitbox-scaffold-react.git
     -h, --help                   output usage information
+
+
+    $  bitbox scaffold --framework node
+
+    Scaffolding node app in current directory
+    All done. ✅
+    Now confirm you have your locally running BITBOX and run \`npm install && npm start\` 🚀
             `}</SyntaxHighlighter>
             <h3>More Info</h3>
             <ul>
