@@ -29,6 +29,7 @@ class BitboxPaper extends Component {
       $ bitbox paper
       Creating cashaddr paper wallet on mainnet
            `}</SyntaxHighlighter>
+           <img src='/assets/paper.png' />
           </div>
         </div>
       </div>
