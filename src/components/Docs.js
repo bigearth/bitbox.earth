@@ -8,6 +8,7 @@ import Configuration from './Configuration';
 import BitboxNew from './BitboxNew';
 import BitboxConsole from './BitboxConsole';
 import BitboxScaffold from './BitboxScaffold';
+import BitboxPaper from './BitboxPaper';
 
 import {
   Link
@@ -48,6 +49,9 @@ class Docs extends Component {
               <li>
                 <Link to="/docs/bitboxconsole"><i className="fas fa-terminal" /> <code>console</code></Link>
               </li>
+              <li>
+                <Link to="/docs/bitboxpaper"><i className="fas fa-folder" /> <code>paper</code></Link>
+              </li>
             </ul>
           </div>
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5 docsContent">
@@ -60,6 +64,7 @@ class Docs extends Component {
             <Route path="/docs/bitboxnew" component={BitboxNew}/>
             <Route path="/docs/bitboxscaffold" component={BitboxScaffold}/>
             <Route path="/docs/bitboxconsole" component={BitboxConsole}/>
+            <Route path="/docs/bitboxpaper" component={BitboxPaper}/>
           </div>
         </div>
       </div>
