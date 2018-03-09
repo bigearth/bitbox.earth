@@ -14,13 +14,6 @@ class Installation extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id="guiBasics">BITBOX basics</h3>
-            <h4 id='wallet'>Wallet</h4>
-            <p>Each time you fire up BITBOX it&rsquo;ll generate 10 new BCH addresses from a randomly generated mnemonic. BITBOX is <a href='https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki'>BIP44 compliant</a> which means that mnemonics created on BITBOX are valid on Trezor and other BIP44 compliant wallets. You can also use mnemonics created on Trezor etc and import keys in to BITBOX. Remember that BITBOX is a development tool so don&rsquo;t use any mnemonics which contain any actual coins.</p>
-            <p>BIP44 compliant wallets have a specific derivation path:</p>
-            <SyntaxHighlighter language='text' style={ocean}>{" m / purpose' / coin_type' / account' / change / address_index"}</SyntaxHighlighter>
-            <p>BITBOX uses the following derivation path where <code>44&rsquo;</code> is the <code>purpose</code> to show that this wallet is BIP44 compliant. <code>145&rsquo;</code> is the coin code for $BCH. <code>n&rsquo;</code> is for the index of the respective account. BITBOX creates 10 accounts by default so <code>n</code> is <code>1&ndash;10</code>.</p>
-            <SyntaxHighlighter language='text' style={ocean}>{" m / 44' / 145' / n' / 0 / 0"}</SyntaxHighlighter>
-            <p>For each account BITBOX derives the private key in <a href='https://bitcoin.org/en/glossary/wallet-import-format'>Wallet Import Format (WIF)</a> and public address in <a href='https://en.bitcoin.it/wiki/Base58Check_encoding'>legacy base58check</a> and <a href='https://www.bitcoinabc.org/cashaddr'>cashaddr</a> encoding for the first external change address. It also derives the <a href='https://bitcoin.org/en/glossary/extended-key'>xpriv and xpub extended keys</a> for the account.</p>
             <p>You can toggle between seeing the public address and the privatekey(WIF) as well as the xpriv and xpub extended keys by clicking the blue button w/ the key icon on the right side of the screen.</p>
             <img src='/assets/screenshot1.png' />
             <h3 id="commandLineBasics">Command line basics</h3>
