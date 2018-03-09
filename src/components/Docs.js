@@ -7,6 +7,7 @@ import SignAndVerify from './SignAndVerify';
 import Configuration from './Configuration';
 import BitboxNew from './BitboxNew';
 import BitboxConsole from './BitboxConsole';
+import BitboxScaffold from './BitboxScaffold';
 
 import {
   Link
@@ -42,6 +43,9 @@ class Docs extends Component {
                 <Link to="/docs/bitboxnew"><i className="fas fa-plus" /> <code>new</code></Link>
               </li>
               <li>
+                <Link to="/docs/bitboxscaffold"><i className="fas fa-shipping-fast" /> <code>scaffold</code></Link>
+              </li>
+              <li>
                 <Link to="/docs/bitboxconsole"><i className="fas fa-terminal" /> <code>console</code></Link>
               </li>
             </ul>
@@ -54,6 +58,7 @@ class Docs extends Component {
             <Route path="/docs/signandverify" component={SignAndVerify}/>
             <Route path="/docs/configuration" component={Configuration}/>
             <Route path="/docs/bitboxnew" component={BitboxNew}/>
+            <Route path="/docs/bitboxscaffold" component={BitboxScaffold}/>
             <Route path="/docs/bitboxconsole" component={BitboxConsole}/>
           </div>
         </div>

@@ -10,10 +10,9 @@ class BitboxConsole extends Component {
   render() {
     return (
       <div className="BitboxConsole">
-        <h2 className="content-head is-center">Bitbox Console</h2>
+        <h2 className="content-head is-center"><i className="fas fa-terminal" /> Bitbox Console</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
-            <h3 id="bitboxConsole"><code>bitbox console</code></h3>
             <p>Launch a console w/ the entire Bitcoin Cash RPC available as well as dozens of helper methods via a built in <code>BITBOX</code> object. <Link to="/bitboxcli/bitcoincash">Full list of commands</Link>.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
   $ bitbox console
