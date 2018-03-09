@@ -36,34 +36,34 @@ class BitboxCli extends Component {
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5 docsMenu">
             <ul>
               <li>
-                <Link to="/bitboxcli/bitcoincash">Bitcoin Cash</Link>
+                <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc"></i> Bitcoin Cash</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/crypto">Crypto</Link>
+                <Link to="/bitboxcli/crypto"><i className="fas fa-link"></i> Crypto</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/blockchain">Blockchain</Link>
+                <Link to="/bitboxcli/blockchain"><i className="fas fa-cubes"></i> Blockchain</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/control">Control</Link>
+                <Link to="/bitboxcli/control"><i className="fas fa-gamepad"></i> Control</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/generating">Generating</Link>
+                <Link to="/bitboxcli/generating"><i className="fab fa-buromobelexperte"></i> Generating</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/mining">Mining</Link>
+                <Link to="/bitboxcli/mining"><i className="fas fa-hdd"></i> Mining</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/network">Network</Link>
+                <Link to="/bitboxcli/network"><i className="fas fa-cloud"></i> Network</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/rawtransactions">Rawtransactions</Link>
+                <Link to="/bitboxcli/rawtransactions"><i className="fas fa-exchange-alt"></i> Rawtransactions</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/util">Util</Link>
+                <Link to="/bitboxcli/util"><i className="fas fa-cogs"></i> Util</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/wallet">Wallet</Link>
+                <Link to="/bitboxcli/wallet"><i className="fas fa-folder"></i> Wallet</Link>
               </li>
             </ul>
           </div>
