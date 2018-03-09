@@ -58,7 +58,7 @@ class Crypto extends Component {
   Generates cryptographically strong pseudo-random data. The size argument is a number indicating the number of bytes to generate.
 
   Arguments:
-  1. data          data to be hashed
+  1. numBytes<number>          number of bytes to generate
 
   Result:
   "hex"      hex encoded random bytes
