@@ -15,8 +15,8 @@ class Installation extends Component {
           <div className="pure-u-1-1">
             <h3 id="gui"><i className="fas fa-desktop" /> GUI</h3>
             <h4 id="apple"><i className="fab fa-apple" /> MacOS</h4>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.2.5/BITBOX-0.2.5.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running:</p>
-            <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.2.5.dmg"}</SyntaxHighlighter>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.3.0/BITBOX-0.3.0.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running:</p>
+            <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.3.0.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows"><i className="fab fa-windows" /> Windows</h4>
             <p>There currently is no Windows build but there is a <a href='https://github.com/bigearth/bitbox-electron/issues/8'>$50 bounty</a> paid in $BCH.</p>
