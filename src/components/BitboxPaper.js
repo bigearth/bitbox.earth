@@ -26,7 +26,7 @@ class BitboxPaper extends Component {
       -h, --help                 output usage information
 
       $ bitbox paper
-      Creating cashaddr paper wallet on mainnet
+      Creating cashaddr paper wallet
            `}</SyntaxHighlighter>
            <img src='/assets/paper.png' />
           </div>
