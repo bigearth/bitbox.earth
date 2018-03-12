@@ -22,6 +22,7 @@ class Blockchain extends Component {
     console.log(result);
   }, (err) => { console.log(err);
   });
+  // 241decef88889efac8e6ce428a8ac696fdde5972eceed97e1fb58d6106af31d5
             `}</SyntaxHighlighter>
 
             <h3 id='getBlock'><code>getBlock</code></h3>
@@ -121,6 +122,7 @@ class Blockchain extends Component {
     console.log(result);
   }, (err) => { console.log(err);
   });
+  // 6
             `}</SyntaxHighlighter>
 
             <h3 id='getBlockHash'><code>getBlockHash</code></h3>
@@ -133,11 +135,12 @@ class Blockchain extends Component {
   Result:
   "hash"         (string) The block hash
 
-  BITBOX.Blockchain.getBlockHash(1000)
+  BITBOX.Blockchain.getBlockHash(0)
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
   });
+  // 037e2ee505097ad0e4d00d96dcc2299e43700fb22236c5befcc9347ccfe0cf10
             `}</SyntaxHighlighter>
 
             <h3 id='getBlockHeader'><code>getBlockHeader</code></h3>
