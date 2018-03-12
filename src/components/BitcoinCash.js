@@ -228,13 +228,13 @@ class BitcoinCash extends Component {
           Create mnemonic from entropy
 
           Arguments:
-          1. numBytes <number>   integer of bytes of randomness. This calls Crypto.randomBytes internally but will soon be updated to accept output from Crypto.randomBytes as it's arg instead of the current integer.
+          1. randomBytes <string>   string of hex encoded random entropy. This entropy can be generated w/ BITBOX.Crypto.randomBytes.
 
           Result:
           mnemonic <string>      a random mnemonic
 
-          BITBOX.BitcoinCash.entropyToMnemonic(16)
-          // enable stem left method one submit coach bid inspire cluster armed bracket
+          BITBOX.BitcoinCash.entropyToMnemonic('f379da02cc426e6e26430d25e6cc372dfd0a1a2e4a33ac4dc6ae6d56017f642d')
+          // vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property
           `}</SyntaxHighlighter>
 
           <h3 id='mnemonicToSeed'><code>mnemonicToSeed</code></h3>
