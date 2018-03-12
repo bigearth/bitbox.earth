@@ -269,7 +269,7 @@ class BitcoinCash extends Component {
           1. mnemonic <string>   a menmonic to turn to entropy.
 
           Result:
-          entropy <string>      a random mnemonic
+          entropy <string>       hex encoded entropy
 
           BITBOX.BitcoinCash.mnemonicToEntropy('boil lonely casino manage habit where total glory muffin name limit mansion');
           // 1910748dc37683f4b9731c91325a07c3
