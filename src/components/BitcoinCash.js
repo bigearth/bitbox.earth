@@ -223,6 +223,30 @@ class BitcoinCash extends Component {
           // true
           `}</SyntaxHighlighter>
 
+          <h3 id='generateMnemonic'><code>generateMnemonic</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+          Generate entropy
+
+          Arguments:
+          1. randomBits <number>   number of random bits of entropy to use. The more bits the longer the mnemonic.
+          Entropy (bits)	Mnemonic length (words)
+          128             12
+
+          160             15
+
+          192             18
+
+          224             21
+
+          256             24
+
+          Result:
+          mnemonic <string>      a random mnemonic
+
+          BITBOX.BitcoinCash.generateMnemonic(128);
+          // boil lonely casino manage habit where total glory muffin name limit mansion
+          `}</SyntaxHighlighter>
+
           <h3 id='entropyToMnemonic'><code>entropyToMnemonic</code></h3>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
           Create mnemonic from entropy
@@ -235,6 +259,48 @@ class BitcoinCash extends Component {
 
           BITBOX.BitcoinCash.entropyToMnemonic('f379da02cc426e6e26430d25e6cc372dfd0a1a2e4a33ac4dc6ae6d56017f642d')
           // vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property
+          `}</SyntaxHighlighter>
+
+          <h3 id='mnemonicToEntropy'><code>mnemonicToEntropy</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+          Turn mnemonic to entropy
+
+          Arguments:
+          1. mnemonic <string>   a menmonic to turn to entropy.
+
+          Result:
+          entropy <string>      a random mnemonic
+
+          BITBOX.BitcoinCash.mnemonicToEntropy('boil lonely casino manage habit where total glory muffin name limit mansion');
+          // 1910748dc37683f4b9731c91325a07c3
+          `}</SyntaxHighlighter>
+
+          <h3 id='validateMnemonic'><code>validateMnemonic</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+          Validate mnemonic
+
+          Arguments:
+          1. mnemonic <string>   mnemonic phrase
+
+          Result:
+          valid <boolean>        If the mnemonic is valid
+
+          BITBOX.BitcoinCash.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion')
+          // true
+          `}</SyntaxHighlighter>
+
+          <h3 id='mnemonicToSeedHex'><code>mnemonicToSeedHex</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+          Create root seed from mnemonic
+
+          Arguments:
+          1. mnemonic <string>   mnemonic phrase
+
+          Result:
+          seedHex <string>       seed hex encoded
+
+          BITBOX.BitcoinCash.mnemonicToSeedHex('boil lonely casino manage habit where total glory muffin name limit mansion', '');
+          // e906236ab5ebec8fbff9948807a6f5d2aa6f35e8bcbcda99e22f9048323cdc0755b781782ee1cce40007bcf900593ed2667e6e9800d734fa46a8f7f51ec74818
           `}</SyntaxHighlighter>
 
           <h3 id='mnemonicToSeed'><code>mnemonicToSeed</code></h3>
