@@ -268,6 +268,9 @@ class BitcoinCash extends Component {
 
         BITBOX.BitcoinCash.generateMnemonic(128);
         // boil lonely casino manage habit where total glory muffin name limit mansion
+
+        BITBOX.BitcoinCash.generateMnemonic(128, BITBOX.BitcoinCash.mnemonicWordLists().french);
+        // annonce ampleur sanglier peser acheter cultiver abroger embellir résoudre dialogue grappin lanterne
           `}</SyntaxHighlighter>
 
           <h3 id='entropyToMnemonic'><code>entropyToMnemonic</code></h3>
