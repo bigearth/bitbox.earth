@@ -318,6 +318,29 @@ class BitcoinCash extends Component {
         // true
           `}</SyntaxHighlighter>
 
+          <h3 id='translateMnemonic'><code>translateMnemonic</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+        Translate mnemonic
+
+        Arguments:
+        1. mnemonic <string>       mnemonic phrase
+        2. fromLanguage <string>   language mnemonic is being translated from
+        3. toLanguage <string>     language mnemonic is being translated to
+
+        Result:
+        mnemonic <string>        translated mnemonic
+
+        // create korean mnemonic
+        let koreanMnemonic = BITBOX.BitcoinCash.generateMnemonic(256, BITBOX.BitcoinCash.mnemonicWordLists().korean);
+        // 상대 조직 피곤 기간 장면 저런 서쪽 신고 연예인 고춧가루 활짝 세종대왕 거울 대충 벨트 제일 저곳 남녀 수술 수학 학원 금년 유학 인공
+        // translate it to spanish
+        let spanishMnemonic = BITBOX.BitcoinCash.translateMnemonic(koreanMnemonic, 'korean', 'spanish')
+        // gato razón torero bobina pintor poema grieta leer mirar aparato vivaz hembra alambre cielo esencia rabia poder buscar incapaz instante trofeo bicho oído pájaro
+        // translate back to korean
+        BITBOX.BitcoinCash.translateMnemonic(spanishMnemonic, 'spanish', 'korean')
+        // 상대 조직 피곤 기간 장면 저런 서쪽 신고 연예인 고춧가루 활짝 세종대왕 거울 대충 벨트 제일 저곳 남녀 수술 수학 학원 금년 유학 인공
+          `}</SyntaxHighlighter>
+
           <h3 id='mnemonicToSeedHex'><code>mnemonicToSeedHex</code></h3>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
         Create root seed from mnemonic
