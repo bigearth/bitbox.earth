@@ -23,10 +23,14 @@ class BitboxPaper extends Component {
     Options:
 
       -e, --encoding <encoding>  The encoding to use. Options include "cashaddr" and "legacy". Default: "cashaddr"
+      -l, --language <language>  language of mnemonic. Options: chinese_simplified, chinese_traditional, english, french, italian, japanese, korean, spanish. Default: english
       -h, --help                 output usage information
 
       $ bitbox paper
-      Creating cashaddr paper wallet
+      Creating english cashaddr paper wallet
+
+      $ bitbox paper -l korean -e legacy
+      Creating korean legacy paper wallet
            `}</SyntaxHighlighter>
            <img src='/assets/paper.png' />
           </div>

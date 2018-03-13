@@ -62,7 +62,7 @@ class Homepage extends Component {
                       Visual Mnemonic &amp; HD Path
                     </h3>
                     <p>
-                      Generate any number of addresses. Toggle the address between public/privateWIF and cashaddr/base58. Set a custom mnemonic and/or HD Derivation Path.
+                      Generate any number of addresses. Toggle the address between public/privateWIF and cashaddr/base58. Set a custom mnemonic and/or HD Derivation Path. Generate mnemonics in 8 languages.
                     </p>
                   </div>
                   <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
