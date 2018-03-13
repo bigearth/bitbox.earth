@@ -26,7 +26,7 @@ class GettingStarted extends Component {
             <p>Create new $BCH apps in react, angular and node w/ <code>bitbox scaffold</code>. Create a blank app w/ <code>bitbox new</code>. Test your code against a local blockchain or remote full running node. Dozens of utility methods to accelerate how quickly you can create your app.</p>
 
             <h3><i className="fas fa-folder" /> Paper wallet generator</h3>
-            <p>Creating paper wallets is as easy as <code>bitbox paper</code>. Set encoding to legacy or cashaddr. See the mnemonic and derivation path. Generate a mnemonic in 8 langugages including: english, chinese (simplified & traditional), french, italian, japanese, korean and spanish.</p>
+            <p>Creating paper wallets is as easy as <code>bitbox paper</code>. Set encoding to legacy or cashaddr. See the mnemonic and derivation path. Generate the mnemonic in 8 langugages including: english, chinese (simplified & traditional), french, italian, japanese, korean and spanish.</p>
 
             <h3><i className="fas fa-code" /> Entire Bitcoin Cash RPC</h3>
             <p>Accepts incoming requests for 100% of the Bitcoin Cash JSON RPC.</p>
