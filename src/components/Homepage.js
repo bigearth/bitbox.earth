@@ -28,7 +28,7 @@ class Homepage extends Component {
               SUPERCHARGE your Bitcoin Cash workflow.
             </p>
             <p>
-              <a href="https://github.com/bigearth/bitbox-electron/releases/download/0.3.4/BITBOX-0.3.4.dmg" className="pure-button pure-button-primary">
+              <a href="https://github.com/bigearth/bitbox-electron/releases/download/0.3.5/BITBOX-0.3.5.dmg" className="pure-button pure-button-primary">
                 <i className="fab fa-apple"></i> Download (MacOS)
               </a>
             </p>
@@ -110,7 +110,7 @@ class Homepage extends Component {
               </div>
               <div className="pure-u-1 pure-u-md-1-2 pure-u-lg-8-24 screenshot-desc">
                 <p>
-                  <a href="https://github.com/bigearth/bitbox-electron/releases/download/0.3.4/BITBOX-0.3.4.dmg" className="pure-button pure-button-primary">
+                  <a href="https://github.com/bigearth/bitbox-electron/releases/download/0.3.5/BITBOX-0.3.5.dmg" className="pure-button pure-button-primary">
                     <i className="fab fa-apple"></i> Download (MacOS)
                   </a>
                 </p>
