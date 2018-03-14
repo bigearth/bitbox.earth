@@ -18,7 +18,7 @@ class Conversion extends Component {
               <li><strong>Private Key WIF</strong> L2VtEQ2oAJyHgjbQEVfrKnGwdCQYDC82vDpa4VqU3vPuuHLRAY8i </li>
             </ul>
             <p>With BITBOX you can paste in any of those 3 formats to the conversion tool and it&rsquo;ll convert it to the other formats and create QR codes for easier copying. This is especially useful if someone wants you to send them $BCH and they give you a format that your wallet doesn&rsquo;t support or if you have a private key WIF and want to learn more details about it.</p>
-            <img src='/assets/conversion.png' />
+            <img src='/assets/screenshot6.png' />
           </div>
         </div>
       </div>

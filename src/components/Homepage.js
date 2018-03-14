@@ -106,6 +106,15 @@ class Homepage extends Component {
                   <div>
                     <img alt="screenshot6" className="pure-img-responsive" src='assets/screenshot6.png' />
                   </div>
+                  <div>
+                    <img alt="screenshot6" className="pure-img-responsive" src='assets/screenshot7.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot6" className="pure-img-responsive" src='assets/screenshot8.png' />
+                  </div>
+                  <div>
+                    <img alt="screenshot6" className="pure-img-responsive" src='assets/screenshot9.png' />
+                  </div>
                 </Slider>
               </div>
               <div className="pure-u-1 pure-u-md-1-2 pure-u-lg-8-24 screenshot-desc">

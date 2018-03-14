@@ -31,7 +31,7 @@ class Configuration extends Component {
               <li>28 bytes / 224 bits === 21 words</li>
               <li>32 bytes / 256 bits === 24 words</li>
             </ul>
-            <img src='/assets/screenshot6.png' />
+            <img src='/assets/screenshot8.png' />
           </div>
         </div>
       </div>
