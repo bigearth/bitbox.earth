@@ -625,7 +625,7 @@ class BitcoinCash extends Component {
         Decodes base58Check encoded string to hex
 
         Arguments:
-        1. base58check <string>                 base58check encoded bytes to encode as hex
+        1. base58check <string>                 base58check encoded bytes to decode to hex
 
         Result:
         hex <string>                            hex encoded string
@@ -640,10 +640,11 @@ class BitcoinCash extends Component {
         Encodes address and options as BIP21 uri
 
         Arguments:
-        1. base58check <string>                 base58check encoded bytes to encode as hex
+        1. address <string>                 base58check or legacy encoded address
+        2. options <object>                 options such as amount, label, message etc
 
         Result:
-        hex <string>                            hex encoded string
+        bip21 <string>                      bip21 encoded uri
 
         let address = "bitcoincash:qrdsfshx7yzfjl9sfj2khuja5crcu4vaxqrt2qkz5s";
         let options = {
@@ -660,10 +661,10 @@ class BitcoinCash extends Component {
         Decodes BIP21 uri
 
         Arguments:
-        1. base58check <string>                 base58check encoded bytes to encode as hex
+        1. bip21 <string>                 bip21 encoded uri
 
         Result:
-        hex <string>                            hex encoded string
+        results <object>                  decoded bip21 uri
 
         let bip21 = "bitcoincash:qrdsfshx7yzfjl9sfj2khuja5crcu4vaxqrt2qkz5s?amount=1&label=%23BCHForEveryone";
 
