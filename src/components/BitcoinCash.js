@@ -606,7 +606,7 @@ class BitcoinCash extends Component {
 
           <h3 id='encodeBase58Check'><code>encodeBase58Check</code></h3>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+        Encodes hex string as base58Check
 
         Arguments:
         1. bytes <string>                        hex encoded bytes to encode as base58check
@@ -622,7 +622,7 @@ class BitcoinCash extends Component {
 
           <h3 id='decodeBase58Check'><code>decodeBase58Check</code></h3>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+        Decodes base58Check encoded string to hex
 
         Arguments:
         1. base58check <string>                 base58check encoded bytes to encode as hex
@@ -637,7 +637,7 @@ class BitcoinCash extends Component {
 
           <h3 id='encodeBIP21'><code>encodeBIP21</code></h3>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+        Encodes address and options as BIP21 uri
 
         Arguments:
         1. base58check <string>                 base58check encoded bytes to encode as hex
@@ -657,7 +657,7 @@ class BitcoinCash extends Component {
 
           <h3 id='decodeBIP21'><code>decodeBIP21</code></h3>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+        Decodes BIP21 uri
 
         Arguments:
         1. base58check <string>                 base58check encoded bytes to encode as hex
