@@ -603,6 +603,73 @@ class BitcoinCash extends Component {
         { privateKeyWIF: 'Kz3qqJ8GFSSbDrBqtV7mfhBoDPkSmMKtp7Yk62psDgmRjyU8id8J',
         address: 'bitcoincash:qp8xjllc75c2hgrpjy3f6kegtfqgmn72dqs0y20anv' } ]
           `}</SyntaxHighlighter>
+
+          <h3 id='encodeBase58Check'><code>encodeBase58Check</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+
+        Arguments:
+        1. bytes <string>                        hex encoded bytes to encode as base58check
+
+        Result:
+        base58check <string>                    base58check encoded string
+
+        let hex = '0079bd35d306f648350818470c9f18903df6e06902a026f2a7';
+        let bytes = Buffer.from(hex, 'hex');
+        BITBOX.BitcoinCash.encodeBase58Check(bytes);
+        // 1C6hRmfzvWst5WA7bFRCVAqHt5gE2g7Qar
+          `}</SyntaxHighlighter>
+
+          <h3 id='decodeBase58Check'><code>decodeBase58Check</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+
+        Arguments:
+        1. base58check <string>                 base58check encoded bytes to encode as hex
+
+        Result:
+        hex <string>                            hex encoded string
+
+        let base58check = '1C6hRmfzvWst5WA7bFRCVAqHt5gE2g7Qar';
+        BITBOX.BitcoinCash.decodeBase58Check(base58check);
+        // 0079bd35d306f648350818470c9f18903df6e06902a026f2a7
+          `}</SyntaxHighlighter>
+
+          <h3 id='encodeBIP21'><code>encodeBIP21</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+
+        Arguments:
+        1. base58check <string>                 base58check encoded bytes to encode as hex
+
+        Result:
+        hex <string>                            hex encoded string
+
+        let address = "bitcoincash:qrdsfshx7yzfjl9sfj2khuja5crcu4vaxqrt2qkz5s";
+        let options = {
+          amount: 1,
+          label: "#BCHForEveryone"
+        };
+
+        BITBOX.BitcoinCash.encodeBIP21(address, options);
+        // bitcoincash:qrdsfshx7yzfjl9sfj2khuja5crcu4vaxqrt2qkz5s?amount=1&label=%23BCHForEveryone
+          `}</SyntaxHighlighter>
+
+          <h3 id='decodeBIP21'><code>decodeBIP21</code></h3>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+        Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
+
+        Arguments:
+        1. base58check <string>                 base58check encoded bytes to encode as hex
+
+        Result:
+        hex <string>                            hex encoded string
+
+        let bip21 = "bitcoincash:qrdsfshx7yzfjl9sfj2khuja5crcu4vaxqrt2qkz5s?amount=1&label=%23BCHForEveryone";
+
+        BITBOX.BitcoinCash.decodeBIP21(bip21);
+        // { address: 'qrdsfshx7yzfjl9sfj2khuja5crcu4vaxqrt2qkz5s', options: { amount: 1, label: '#BCHForEveryone' } }
+          `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
