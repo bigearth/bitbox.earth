@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+  <loc>https://www.bitbox.earth</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/gettingstarted</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/installation</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/conversion</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/signandverify</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/configuration</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/bitboxnew</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/bitboxscaffold</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/bitboxconsole</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/docs/bitboxpaper</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/bitcoincash</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/crypto</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/blockchain</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/control</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/generating</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/mining</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/network</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/rawtransactions</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/util</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/wallet</loc>
+</url>
+
+</urlset>
