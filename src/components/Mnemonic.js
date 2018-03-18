@@ -11,61 +11,138 @@ class Mnemonic extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='generateMnemonic'><code>generateMnemonic</code></h3>
+            <p>Generate <a href='https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki'>BIP39</a> mnemonic from entropy</p>
+            <h4>Arguments</h4>
+            <ul>
+              <li>1. randomBits <code>number</code>:                     number of random bits of entropy to use. The more bits the longer the mnemonic.
+              </li>
+              <li>2. mnemonic word list <code>array</code> <code>optional</code>:   list of words to generate the mnemonic from</li>
+            </ul>
+            <h4>Result</h4>
+            <p>mnemonic <code>string</code>                          a random mnemonic</p>
+            <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Generate entropy
-
-    Arguments:
-    1. randomBits <number>   number of random bits of entropy to use. The more bits the longer the mnemonic.
-    Entropy (bits)	Mnemonic length (words)
-    128             12
-
-    160             15
-
-    192             18
-
-    224             21
-
-    256             24
-    2. mnemonic word list <array>
-
-    Result:
-    mnemonic <string>      a random mnemonic
-
+    // generate 12 word mnemonic
     BITBOX.BitcoinCash.Mnemonic.generateMnemonic(128);
     // boil lonely casino manage habit where total glory muffin name limit mansion
 
+    // generate 15 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.generateMnemonic(160);
+    // steak prevent estate save dance design close noise cheap season among train sleep ketchup gas
+
+    // generate 18 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.generateMnemonic(192);
+    // fever endorse purpose normal fashion desert blood robust prevent clean guard display raise virtual again unit banana rich
+
+    // generate 21 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.generateMnemonic(224);
+    // scan pink shock describe chicken edit budget exit camera morning awesome silk inner pair sea few flock walnut write mountain surface
+
+    // generate 24 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.generateMnemonic(256);
+    // disagree tide elbow citizen jazz cinnamon bridge certain april settle pact film always inmate border inform solution that submit produce cloth balcony upper maid
+
+    // generate 12 french word mnemonic
     BITBOX.BitcoinCash.Mnemonic.generateMnemonic(128, BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().french);
     // annonce ampleur sanglier peser acheter cultiver abroger embellir résoudre dialogue grappin lanterne
             `}</SyntaxHighlighter>
 
             <h3 id='entropyToMnemonic'><code>entropyToMnemonic</code></h3>
+            <p>Create mnemonic from entropy</p>
+            <h4>Arguments</h4>
+            <ul>
+              <li>1. randomBytes <code>string</code>:   string of hex encoded random entropy. This entropy can be generated w/ BITBOX.Crypto.randomBytes.</li>
+              <li>2. mnemonic word list <code>array</code> <code>optional</code>:   list of words to generate the mnemonic from</li>
+            </ul>
+            <h4>Result</h4>
+            <p> mnemonic <code>string</code>      a random mnemonic </p>
+            <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Create mnemonic from entropy
+    // generate 16 bytes of entropy
+    let entropy = BITBOX.Crypto.randomBytes(16);
+    // c2d5f2d51a4944f1c9e17f10e1b98718
+    // turn entropy to 12 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(entropy)
+    // security question relief cruel nephew jump chest copper axis assist gift correct
 
-    Arguments:
-    1. randomBytes <string>   string of hex encoded random entropy. This entropy can be generated w/ BITBOX.Crypto.randomBytes.
-    2. mnemonic word list <array>
+    // generate 20 bytes of entropy
+    let entropy = BITBOX.Crypto.randomBytes(20);
+    // 71cdd28575534807b1b477869c726a816bb1fe1b
+    // turn entropy to 15 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(entropy)
+    // impact hub pattern turkey cruel adult short moment make toe one actress roast yellow hurt
 
-    Result:
-    mnemonic <string>      a random mnemonic
+    // generate 24 bytes of entropy
+    let entropy = BITBOX.Crypto.randomBytes(24);
+    // 1615e8a1c42dc008acf03d4a8d4a60467d29a1b8c5232756
+    // turn entropy to 18 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(entropy)
+    // bid quantum chronic marriage swing affair record amateur enhance heart object mind spoon speak toast piece chef real
 
-    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic('f379da02cc426e6e26430d25e6cc372dfd0a1a2e4a33ac4dc6ae6d56017f642d')
+    // generate 28 bytes of entropy
+    let entropy = BITBOX.Crypto.randomBytes(28);
+    // 9c17b186ccfddd4aa1314e1c3f0f86e60579870cb5d93fa6c100edb1
+    // turn entropy to 21 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(entropy)
+    // orchard rural giant okay tape pipe luggage clap bring wear ticket slot fiscal seminar crazy robot distance current dizzy swarm barrel
+
+    // generate 32 bytes of entropy
+    let entropy = BITBOX.Crypto.randomBytes(32);
+    // f379da02cc426e6e26430d25e6cc372dfd0a1a2e4a33ac4dc6ae6d56017f642d
+    // turn entropy to 24 word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(entropy)
     // vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property
+
+    // generate 16 bytes of entropy
+    let entropy = BITBOX.Crypto.randomBytes(16);
+    // c2d5f2d51a4944f1c9e17f10e1b98718
+    // turn entropy to 12 japanese word mnemonic
+    BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(entropy, BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().french)
+    // ぱそこん　にあう　にんめい　きどく　ちそう　せんきょ　かいが　きおく　いれる　いねむり　しいく　きかんしゃ
       `}</SyntaxHighlighter>
 
       <h3 id='mnemonicToEntropy'><code>mnemonicToEntropy</code></h3>
+      <p>Turn mnemonic to entropy</p>
+      <h4>Arguments</h4>
+      <ul>
+        <li>
+    1. mnemonic <code>string</code>:   a mnemonic to turn to entropy.
+        </li>
+        <li>
+    2. mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from 
+        </li>
+      </ul>
+      <h4>Result</h4>
+      <p>
+    entropy <code>string</code>       hex encoded entropy
+      </p>
+      <h4>Examples</h4>
       <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Turn mnemonic to entropy
+    // turn 12 word mnemonic to entropy
+    let mnemonic = 'security question relief cruel nephew jump chest copper axis assist gift correct';
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToEntropy(mnemonic)
+    // c2d5f2d51a4944f1c9e17f10e1b98718
 
-    Arguments:
-    1. mnemonic <string>   a menmonic to turn to entropy.
-    2. mnemonic word list <array>
+    // turn 15 word mnemonic to entropy
+    let mnemonic = 'impact hub pattern turkey cruel adult short moment make toe one actress roast yellow hurt';
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToEntropy(mnemonic)
+    // 71cdd28575534807b1b477869c726a816bb1fe1b
 
-    Result:
-    entropy <string>       hex encoded entropy
+    // turn 18 word mnemonic to entropy
+    let mnemonic = 'bid quantum chronic marriage swing affair record amateur enhance heart object mind spoon speak toast piece chef real';
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToEntropy(mnemonic)
+    // 1615e8a1c42dc008acf03d4a8d4a60467d29a1b8c5232756
 
-    BITBOX.BitcoinCash.Mnemonic.mnemonicToEntropy('boil lonely casino manage habit where total glory muffin name limit mansion');
-    // 1910748dc37683f4b9731c91325a07c3
+    // turn 21 word mnemonic to entropy
+    let mnemonic = 'orchard rural giant okay tape pipe luggage clap bring wear ticket slot fiscal seminar crazy robot distance current dizzy swarm barrel';
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToEntropy(mnemonic)
+    // 9c17b186ccfddd4aa1314e1c3f0f86e60579870cb5d93fa6c100edb1
+
+    // turn 24 word mnemonic to entropy
+    let mnemonic = 'vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property';
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToEntropy(mnemonic)
+    // f379da02cc426e6e26430d25e6cc372dfd0a1a2e4a33ac4dc6ae6d56017f642d
+
             `}</SyntaxHighlighter>
 
             <h3 id='validateMnemonic'><code>validateMnemonic</code></h3>
@@ -73,7 +150,7 @@ class Mnemonic extends Component {
     Validate mnemonic
 
     Arguments:
-    1. mnemonic <string>   mnemonic phrase
+    1. mnemonic <code>string</code>   mnemonic phrase
     2. mnemonic word list <array>
 
     Result:
@@ -88,10 +165,10 @@ class Mnemonic extends Component {
     Create root seed from mnemonic
 
     Arguments:
-    1. mnemonic <string>   mnemonic phrase
+    1. mnemonic <code>string</code>   mnemonic phrase
 
     Result:
-    seedHex <string>       seed hex encoded
+    seedHex <code>string</code>       seed hex encoded
 
     BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('boil lonely casino manage habit where total glory muffin name limit mansion', '');
     // e906236ab5ebec8fbff9948807a6f5d2aa6f35e8bcbcda99e22f9048323cdc0755b781782ee1cce40007bcf900593ed2667e6e9800d734fa46a8f7f51ec74818
@@ -102,7 +179,7 @@ class Mnemonic extends Component {
     Create root seed from mnemonic
 
     Arguments:
-    1. mnemonic <string>   mnemonic phrase
+    1. mnemonic <code>string</code>   mnemonic phrase
 
     Result:
     rootSeed               rootSeed
@@ -116,12 +193,12 @@ class Mnemonic extends Component {
     Translate mnemonic
 
     Arguments:
-    1. mnemonic <string>       mnemonic phrase
-    2. fromLanguage <string>   language mnemonic is being translated from
-    3. toLanguage <string>     language mnemonic is being translated to
+    1. mnemonic <code>string</code>       mnemonic phrase
+    2. fromLanguage <code>string</code>   language mnemonic is being translated from
+    3. toLanguage <code>string</code>     language mnemonic is being translated to
 
     Result:
-    mnemonic <string>        translated mnemonic
+    mnemonic <code>string</code>        translated mnemonic
 
     // create korean mnemonic
     let koreanMnemonic = BITBOX.BitcoinCash.Mnemonic.generateMnemonic(256, BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().korean);
@@ -161,7 +238,7 @@ class Mnemonic extends Component {
     Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
 
     Arguments:
-    1. mnemonic <string>                        mnemonic to use
+    1. mnemonic <code>string</code>                        mnemonic to use
     2. numberOfKeypairs <number> optional       number of keypairs to return. Default is 1
 
     Result:
