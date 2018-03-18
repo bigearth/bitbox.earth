@@ -109,7 +109,7 @@ class Mnemonic extends Component {
     1. mnemonic <code>string</code>:   a mnemonic to turn to entropy.
         </li>
         <li>
-    2. mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from 
+    2. mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
         </li>
       </ul>
       <h4>Result</h4>
@@ -146,60 +146,92 @@ class Mnemonic extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='validateMnemonic'><code>validateMnemonic</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Validate mnemonic
-
-    Arguments:
+      <p>Validate mnemonic</p>
+      <h4>Arguments</h4>
+      <ul>
+        <li>
     1. mnemonic <code>string</code>   mnemonic phrase
-    2. mnemonic word list <array>
-
-    Result:
-    valid <boolean>        If the mnemonic is valid
-
+        </li>
+        <li>
+    2. mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
+        </li>
+      </ul>
+      <h4>Result</h4>
+      <p>
+    valid <code>boolean</code>        If the mnemonic is valid
+      </p>
+      <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     BITBOX.BitcoinCash.Mnemonic.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion')
     // true
             `}</SyntaxHighlighter>
 
-            <h3 id='mnemonicToSeedHex'><code>mnemonicToSeedHex</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Create root seed from mnemonic
-
-    Arguments:
-    1. mnemonic <code>string</code>   mnemonic phrase
-
-    Result:
+      <h3 id='mnemonicToSeedHex'><code>mnemonicToSeedHex</code></h3>
+      <p>Create root seed from mnemonic</p>
+      <h4>Arguments</h4>
+      <ul>
+        <li>
+    1. mnemonic <code>string</code>:                         mnemonic phrase
+        </li>
+        <li>
+    2. passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
+        </li>
+      </ul>
+      <h4>Result</h4>
+      <p>
     seedHex <code>string</code>       seed hex encoded
-
+      </p>
+      <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('boil lonely casino manage habit where total glory muffin name limit mansion', '');
     // e906236ab5ebec8fbff9948807a6f5d2aa6f35e8bcbcda99e22f9048323cdc0755b781782ee1cce40007bcf900593ed2667e6e9800d734fa46a8f7f51ec74818
             `}</SyntaxHighlighter>
 
-            <h3 id='mnemonicToSeedBuffer'><code>mnemonicToSeedBuffer</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Create root seed from mnemonic
-
-    Arguments:
+      <h3 id='mnemonicToSeedBuffer'><code>mnemonicToSeedBuffer</code></h3>
+      <p>
+      Create root seed from mnemonic
+      </p>
+      <h4>Arguments</h4>
+      <ul>
+        <li>
     1. mnemonic <code>string</code>   mnemonic phrase
-
-    Result:
-    rootSeed               rootSeed
-
+        </li>
+        <li>
+    2. passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
+        </li>
+      </ul>
+      <h4>Result</h4>
+      <p>
+    rootSeedBuffer                    rootSeed
+      </p>
+      <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedBuffer('enable stem left method one submit coach bid inspire cluster armed bracket')
     // <Buffer 0a fa b7 46 8f 0c df 79 0f 0e 44 37 45 0c 33 c3 c8 27 17 42 75 d6 13 02 c3 55 de ef 2e 69 57 e4 f5 dd 55 b6 a8 73 78 6d b8 09 36 75 af 4f 6b 2c 52 63 ... >
             `}</SyntaxHighlighter>
 
-            <h3 id='translateMnemonic'><code>translateMnemonic</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Translate mnemonic
-
-    Arguments:
-    1. mnemonic <code>string</code>       mnemonic phrase
-    2. fromLanguage <code>string</code>   language mnemonic is being translated from
-    3. toLanguage <code>string</code>     language mnemonic is being translated to
-
-    Result:
+      <h3 id='translateMnemonic'><code>translateMnemonic</code></h3>
+      <p>
+      Translate mnemonic
+      </p>
+      <h4>Arguments</h4>
+      <ul>
+        <li>
+    1. mnemonic <code>string</code>:       mnemonic phrase
+        </li>
+        <li>
+    2. fromLanguage <code>string</code>:   language mnemonic is being translated from
+        </li>
+        <li>
+    3. toLanguage <code>string</code>:    language mnemonic is being translated to
+        </li>
+      </ul>
+      <h4>Result</h4>
+      <p>
     mnemonic <code>string</code>        translated mnemonic
-
+      </p>
+      <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     // create korean mnemonic
     let koreanMnemonic = BITBOX.BitcoinCash.Mnemonic.generateMnemonic(256, BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().korean);
     // 상대 조직 피곤 기간 장면 저런 서쪽 신고 연예인 고춧가루 활짝 세종대왕 거울 대충 벨트 제일 저곳 남녀 수술 수학 학원 금년 유학 인공
@@ -211,13 +243,16 @@ class Mnemonic extends Component {
     // 상대 조직 피곤 기간 장면 저런 서쪽 신고 연예인 고춧가루 활짝 세종대왕 거울 대충 벨트 제일 저곳 남녀 수술 수학 학원 금년 유학 인공
             `}</SyntaxHighlighter>
 
-            <h3 id='mnemonicWordLists'><code>mnemonicWordLists</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+      <h3 id='mnemonicWordLists'><code>mnemonicWordLists</code></h3>
+      <p>
     Return mnemonic word lists
-
-    Result:
-    wordlists <object>      an object with wordlists in the following languages english (default), japanese, chinese simplified, chinese traditional, french, italian, japanese, korean, spanish
-
+      </p>
+      <h4>Result</h4>
+      <p>
+    wordlists <code>object</code>      an object with wordlists in the following languages english (default), japanese, chinese simplified, chinese traditional, french, italian, japanese, korean, spanish
+      </p>
+      <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists();
     // {
     //   EN: [],
@@ -233,17 +268,25 @@ class Mnemonic extends Component {
     // }
             `}</SyntaxHighlighter>
 
-          <h3 id='keypairsFromMnemonic'><code>keypairsFromMnemonic</code></h3>
+      <h3 id='keypairsFromMnemonic'><code>keypairsFromMnemonic</code></h3>
+      <p>
+    Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: <code>m/44&rsquo;/145&rsquo;/0&rsquo;/0/n</code>
+      </p>
+      <h4>Arguments</h4>
+      <ul>
+        <li>
+    1. mnemonic <code>string</code>:                                      mnemonic to use
+        </li>
+        <li>
+    2. numberOfKeypairs <code>number</code> <code>optional</code>         number of keypairs to return. Default is 1
+        </li>
+      </ul>
+      <h4>Result</h4>
+      <p>
+    keypairs <code>array</code>                            array of privateKeyWIF/publicAddress pairs
+      </p>
+      <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-    Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: m/44'/145'/0'/0/n
-
-    Arguments:
-    1. mnemonic <code>string</code>                        mnemonic to use
-    2. numberOfKeypairs <number> optional       number of keypairs to return. Default is 1
-
-    Result:
-    keypairs <array>                            array of privateKeyWIF/publicAddress pairs
-
     // First create a mnemonic from 32 bytes of random entropy
     let mnemonic = BITBOX.BitcoinCash.entropyToMnemonic(32);
     // symptom owner ridge follow buffalo choose stem depend million jar lemon claw color credit remove model pudding slot fiber west heavy ranch bird wet
