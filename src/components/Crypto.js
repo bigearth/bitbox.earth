@@ -15,14 +15,14 @@ class Crypto extends Component {
            Utility for creating hash digests of data. Can be sha256 or ripemd160.
             </p>
             <h4>Arguments</h4>
-            <ul>
+            <ol>
               <li>
-              1. data  <code>string</code>:         data to be hashed
+              data  <code>string</code>:         data to be hashed
               </li>
               <li>
-              2. algorithm <code>string</code>:     algorithm to use. default: 'sha256'
+              algorithm <code>string</code>:     algorithm to use. default: 'sha256'
               </li>
-            </ul>
+            </ol>
             <h4>Result</h4>
             <p>
             hex <code>string</code>     hex encoded hash of data
@@ -55,11 +55,11 @@ class Crypto extends Component {
   Utility for creating sha256 hash digests of data
             </p>
             <h4>Arguments</h4>
-            <ul>
+            <ol>
               <li>
-  1. data  <code>string</code>:          data to be hashed
+  data  <code>string</code>:          data to be hashed
               </li>
-            </ul>
+            </ol>
             <h4>Result</h4>
             <p>
             hex <code>string</code>     hex encoded sha256 hash of data
@@ -82,11 +82,11 @@ class Crypto extends Component {
   Utility for creating ripemd160 hash digests of data
             </p>
             <h4>Arguments</h4>
-            <ul>
+            <ol>
               <li>
-  1. data  <code>string</code>:          data to be hashed
+  data  <code>string</code>:          data to be hashed
               </li>
-            </ul>
+            </ol>
             <h4>Result</h4>
             <p>
             hex <code>string</code>     hex encoded ripemd160 hash of data
@@ -109,11 +109,11 @@ class Crypto extends Component {
   Generates cryptographically strong pseudo-random data. The size argument is a number indicating the number of bytes to generate.
             </p>
             <h4>Arguments</h4>
-            <ul>
+            <ol>
               <li>
-  1. numBytes<code>number</code>          number of bytes to generate
+  numBytes<code>number</code>:          number of bytes to generate
               </li>
-            </ul>
+            </ol>
             <h4>Result</h4>
             <p>
             hex <code>string</code>     hex encoded random bytes

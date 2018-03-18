@@ -13,11 +13,11 @@ class Mnemonic extends Component {
             <h3 id='generateMnemonic'><code>generateMnemonic</code></h3>
             <p>Generate <a href='https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki'>BIP39</a> mnemonic from entropy</p>
             <h4>Arguments</h4>
-            <ul>
-              <li>1. randomBits <code>number</code>:                     number of random bits of entropy to use. The more bits the longer the mnemonic.
+            <ol>
+              <li>randomBits <code>number</code>:                     number of random bits of entropy to use. The more bits the longer the mnemonic.
               </li>
-              <li>2. mnemonic word list <code>array</code> <code>optional</code>:   list of words to generate the mnemonic from</li>
-            </ul>
+              <li>mnemonic word list <code>array</code> <code>optional</code>:   list of words to generate the mnemonic from</li>
+            </ol>
             <h4>Result</h4>
             <p>mnemonic <code>string</code>                          a random mnemonic</p>
             <h4>Examples</h4>
@@ -50,10 +50,10 @@ class Mnemonic extends Component {
             <h3 id='entropyToMnemonic'><code>entropyToMnemonic</code></h3>
             <p>Create mnemonic from entropy</p>
             <h4>Arguments</h4>
-            <ul>
-              <li>1. randomBytes <code>string</code>:   string of hex encoded random entropy. This entropy can be generated w/ BITBOX.Crypto.randomBytes.</li>
-              <li>2. mnemonic word list <code>array</code> <code>optional</code>:   list of words to generate the mnemonic from</li>
-            </ul>
+            <ol>
+              <li>randomBytes <code>string</code>:   string of hex encoded random entropy. This entropy can be generated w/ BITBOX.Crypto.randomBytes.</li>
+              <li>mnemonic word list <code>array</code> <code>optional</code>:   list of words to generate the mnemonic from</li>
+            </ol>
             <h4>Result</h4>
             <p> mnemonic <code>string</code>      a random mnemonic </p>
             <h4>Examples</h4>
@@ -104,14 +104,14 @@ class Mnemonic extends Component {
       <h3 id='mnemonicToEntropy'><code>mnemonicToEntropy</code></h3>
       <p>Turn mnemonic to entropy</p>
       <h4>Arguments</h4>
-      <ul>
+      <ol>
         <li>
-    1. mnemonic <code>string</code>:   a mnemonic to turn to entropy.
+    mnemonic <code>string</code>:   a mnemonic to turn to entropy.
         </li>
         <li>
-    2. mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
+    mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
         </li>
-      </ul>
+      </ol>
       <h4>Result</h4>
       <p>
     entropy <code>string</code>       hex encoded entropy
@@ -148,14 +148,14 @@ class Mnemonic extends Component {
             <h3 id='validateMnemonic'><code>validateMnemonic</code></h3>
       <p>Validate mnemonic</p>
       <h4>Arguments</h4>
-      <ul>
+      <ol>
         <li>
-    1. mnemonic <code>string</code>   mnemonic phrase
+    mnemonic <code>string</code>   mnemonic phrase
         </li>
         <li>
-    2. mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
+    mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
         </li>
-      </ul>
+      </ol>
       <h4>Result</h4>
       <p>
     valid <code>boolean</code>        If the mnemonic is valid
@@ -169,14 +169,14 @@ class Mnemonic extends Component {
       <h3 id='mnemonicToSeedHex'><code>mnemonicToSeedHex</code></h3>
       <p>Create root seed from mnemonic</p>
       <h4>Arguments</h4>
-      <ul>
+      <ol>
         <li>
-    1. mnemonic <code>string</code>:                         mnemonic phrase
+    mnemonic <code>string</code>:                         mnemonic phrase
         </li>
         <li>
-    2. passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
+    passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
         </li>
-      </ul>
+      </ol>
       <h4>Result</h4>
       <p>
     seedHex <code>string</code>       seed hex encoded
@@ -192,14 +192,14 @@ class Mnemonic extends Component {
       Create root seed from mnemonic
       </p>
       <h4>Arguments</h4>
-      <ul>
+      <ol>
         <li>
-    1. mnemonic <code>string</code>   mnemonic phrase
+    mnemonic <code>string</code>   mnemonic phrase
         </li>
         <li>
-    2. passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
+    passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
         </li>
-      </ul>
+      </ol>
       <h4>Result</h4>
       <p>
     rootSeedBuffer                    rootSeed
@@ -215,17 +215,17 @@ class Mnemonic extends Component {
       Translate mnemonic
       </p>
       <h4>Arguments</h4>
-      <ul>
+      <ol>
         <li>
-    1. mnemonic <code>string</code>:       mnemonic phrase
+    mnemonic <code>string</code>:       mnemonic phrase
         </li>
         <li>
-    2. fromLanguage <code>string</code>:   language mnemonic is being translated from
+    fromLanguage <code>string</code>:   language mnemonic is being translated from
         </li>
         <li>
-    3. toLanguage <code>string</code>:    language mnemonic is being translated to
+    toLanguage <code>string</code>:    language mnemonic is being translated to
         </li>
-      </ul>
+      </ol>
       <h4>Result</h4>
       <p>
     mnemonic <code>string</code>        translated mnemonic
@@ -273,14 +273,14 @@ class Mnemonic extends Component {
     Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: <code>m/44&rsquo;/145&rsquo;/0&rsquo;/0/n</code>
       </p>
       <h4>Arguments</h4>
-      <ul>
+      <ol>
         <li>
-    1. mnemonic <code>string</code>:                                      mnemonic to use
+    mnemonic <code>string</code>:                                      mnemonic to use
         </li>
         <li>
-    2. numberOfKeypairs <code>number</code> <code>optional</code>         number of keypairs to return. Default is 1
+    numberOfKeypairs <code>number</code> <code>optional</code>         number of keypairs to return. Default is 1
         </li>
-      </ul>
+      </ol>
       <h4>Result</h4>
       <p>
     keypairs <code>array</code>                            array of privateKeyWIF/publicAddress pairs
