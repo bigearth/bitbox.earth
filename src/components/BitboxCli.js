@@ -37,6 +37,17 @@ class BitboxCli extends Component {
             <ul>
               <li>
                 <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc" /> Bitcoin Cash</Link>
+                <ul>
+                  <li>
+                    <Link to="/bitboxcli/bitcoincash/mnemonic"><i className="fas fa-key" /> Mnemonic</Link>
+                  </li>
+                  <li>
+                    <Link to="/bitboxcli/bitcoincash/address"><i className="fas fa-qrcode" /> Address</Link>
+                  </li>
+                  <li>
+                    <Link to="/bitboxcli/bitcoincash/hdnode"><i className="fab fa-btc" /> HDNode</Link>
+                  </li>
+                </ul>
               </li>
               <li>
                 <Link to="/bitboxcli/crypto"><i className="fas fa-link" /> Crypto</Link>

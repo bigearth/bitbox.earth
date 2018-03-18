@@ -148,6 +148,9 @@ class Homepage extends Component {
                       <li>
                         <a href='https://github.com/bigearth/bitbox.earth'>https://github.com/bigearth/bitbox.earth</a>
                       </li>
+                      <li>
+                        <a href='https://github.com/bigearth/bitblog'>https://github.com/bigearth/bitblog</a>
+                      </li>
                     </ul>
                   </div>
                   <div className="l-box-lrg pure-u-1 pure-u-md-16-24 github">

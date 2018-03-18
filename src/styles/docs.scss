@@ -23,9 +23,16 @@
   padding-top: 110px;
 }
 
+.docs .docsMenu ul:first-child {
+  font-size: 1.2em;
+}
+
+.docs .docsMenu ul ul {
+  font-size: 1em;
+}
+
 .docs .docsMenu ul {
   list-style-type: none;
-  font-size: 1.2em;
 }
 
 .docs .docsMenu ul li {
