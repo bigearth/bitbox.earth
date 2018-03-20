@@ -12,24 +12,27 @@ class Util extends Component {
           <div className="pure-u-1-1">
 
             <h3 id='createMultisig'><code>createMultisig</code></h3>
+            <p>
+  Creates a multi-signature address with n signature of m keys required. It returns a json object with the address and redeemScript.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+            nrequired (numeric, required) The number of required signatures out of the n keys or addresses.
+              </li>
+              <li>
+            keys (string, required) A json array of keys which are bitcoin addresses or hex-encoded public keys
+              </li>
+            </ol>
+            <h4>Result</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Creates a multi-signature address with n signature of m keys required.
-  It returns a json object with the address and redeemScript.
-
-  Arguments:
-  1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.
-  2. "keys"       (string, required) A json array of keys which are bitcoin addresses or hex-encoded public keys
-       [
-         "key"    (string) bitcoin address or hex-encoded public key
-         ,...
-       ]
-
-  Result:
   {
     "address":"multisigaddress",  (string) The value of the new multisig address.
     "redeemScript":"script"       (string) The string value of the hex-encoded redemption script.
   }
-
+            `}</SyntaxHighlighter>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Util.createMultisig(2, ["bitcoincash:qzc86hrdufhcwlyzk7k82x77kfs2myekn57nv9cw5f", "1B4C53FAn3wd1AswXZxMfmeHxnky7CTvfZ"])
   .then((result) => {
     console.log(result);
@@ -42,20 +45,27 @@ class Util extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='estimateFee'><code>estimateFee</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+            <p>
   Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks.
-
-  Arguments:
-  1. nblocks     (numeric, required)
-
-  Result:
-  n              (numeric) estimated fee-per-kilobyte
-
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+  nblocks     (numeric, required)
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+  n              (numeric): estimated fee-per-kilobyte
+            </p>
+            <p>
   A negative value is returned if not enough transactions and blocks
   have been observed to make an estimate.
   -1 is always returned for nblocks == 1 as it is impossible to calculate
   a fee that is high enough to get reliably included in the next block.
-
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Util.estimateFee(2)
   .then((result) => {
     console.log(result);
@@ -65,18 +75,24 @@ class Util extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='estimatePriority'><code>estimatePriority</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+            <p>
   DEPRECATED. Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks.
-
-  Arguments:
-  1. nblocks     (numeric, required)
-
-  Result:
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+  nblocks     (numeric, required)
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
   n              (numeric) estimated priority
-
-  A negative value is returned if not enough transactions and blocks
-  have been observed to make an estimate.
-
+            </p>
+            <p>
+  A negative value is returned if not enough transactions and blocks have been observed to make an estimate.
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Util.estimatePriority(2)
   .then((result) => {
     console.log(result);
@@ -86,16 +102,24 @@ class Util extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='signMessageWithPrivKey'><code>signMessageWithPrivKey</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Sign a message with the private key of an address
-
-  Arguments:
-  1. "privkey"         (string, required) The private key to sign the message with.
-  2. "message"         (string, required) The message to create a signature of.
-
-  Result:
-  "signature"          (string) The signature of the message encoded in base 64
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  privkey         (string, required): The private key to sign the message with.
+            </li>
+            <li>
+  message         (string, required): The message to create a signature of.
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  signature          (string): The signature of the message encoded in base 64
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Util.signMessageWithPrivKey('KzkYKDZw9PveUu3mn4nR5LKYqmY1A6yHFdY8YqQvd7Z2BT3Ssu4Y', 'EARTH')
   .then((result) => {
     console.log(result);
@@ -105,13 +129,17 @@ class Util extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='validateAddress'><code>validateAddress</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Return information about the given bitcoin address.
-
-  Arguments:
-  1. "address"     (string, required) The bitcoin address to validate
-
-  Result:
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  address     (string, required): The bitcoin address to validate
+            </li>
+          </ol>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "isvalid" : true|false,       (boolean) If the address is valid or not. If not, this is the only property returned.
     "address" : "address", (string) The bitcoin address validated
@@ -126,7 +154,9 @@ class Util extends Component {
     "hdkeypath" : "keypath"       (string, optional) The HD keypath if the key is HD and available
     "hdmasterkeyid" : "<hash160>" (string, optional) The Hash160 of the HD master pubkey
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Util.validateAddress("bitcoincash:qzc86hrdufhcwlyzk7k82x77kfs2myekn57nv9cw5f")
   .then((result) => {
     console.log(result);
@@ -144,17 +174,27 @@ class Util extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='verifyMessage'><code>verifyMessage</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Verify a signed message
-
-  Arguments:
-  1. "address"         (string, required) The bitcoin address to use for the signature.
-  2. "signature"       (string, required) The signature provided by the signer in base 64 encoding (see signmessage).
-  3. "message"         (string, required) The message that was signed.
-
-  Result:
-  true|false   (boolean) If the signature is verified or not.
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  address         (string, required): The bitcoin address to use for the signature.
+            </li>
+            <li>
+  signature       (string, required): The signature provided by the signer in base 64 encoding (see signmessage).
+            </li>
+            <li>
+  message         (string, required): The message that was signed.
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  true|false   (boolean): If the signature is verified or not.
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Util.verifyMessage("bitcoincash:qrcxa4yqkkyulztkanlqf3jw88pgses63uhl0tqxs3", "IC1Rbp/1UoX/0Luk8O+ZqhB13E2G5qDn6G6T9e2k+4unJuf70qbiJpuHBhouz5nY4JHgrd/TXARZe+kS+Lu/11g=", "EARTH")
   .then((result) => {
     console.log(result);
@@ -162,7 +202,6 @@ class Util extends Component {
   });
   // true
             `}</SyntaxHighlighter>
-
           </div>
         </div>
       </div>

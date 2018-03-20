@@ -12,34 +12,38 @@ class RawTransactions extends Component {
           <div className="pure-u-1-1">
 
             <h3 id='createRawTransaction'><code>createRawTransaction</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+            <p>
   Create a transaction spending the given inputs and creating new outputs.
   Outputs can be addresses or data.
   Returns hex-encoded raw transaction.
-  Note that the transaction's inputs are not signed, and
+  Note that the transaction&rsquo;s inputs are not signed, and
   it is not stored in the wallet or transmitted to the network.
-
-  Arguments:
-  1. "inputs"                (array, required) A json array of json objects
-       [
-         {
-           "txid":"id",    (string, required) The transaction id
-           "vout":n,         (numeric, required) The output number
-           "sequence":n      (numeric, optional) The sequence number
-         }
-         ,...
-       ]
-  2. "outputs"               (object, required) a json object with outputs
-      {
-        "address": x.xxx,    (numeric or string, required) The key is the bitcoin address, the numeric value (can be string) is the BCH amount
-        "data": "hex"      (string, required) The key is "data", the value is hex encoded data
-        ,...
-      }
-  3. locktime                  (numeric, optional, default=0) Raw locktime. Non-0 value also locktime-activates inputs
-
-  Result:
-  "transaction"              (string) hex string of the transaction
-
+            </p>
+            <h4>Arguments</h4>
+            <h5>inputs</h5>
+            <p>
+  (array, required): A json array of json objects
+            </p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+[ { "txid":"id",    (string, required) The transaction id "vout":n,         (numeric, required) The output number "sequence":n      (numeric, optional) The sequence number } ,... ]
+            `}</SyntaxHighlighter>
+            <h5>outputs</h5>
+              <p>
+                 (object, required): a json object with outputs
+              </p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+              { "address": x.xxx,    (numeric or string, required) The key is the bitcoin address, the numeric value (can be string) is the BCH amount "data": "hex"      (string, required) The key is "data", the value is hex encoded data ,... }
+            `}</SyntaxHighlighter>
+            <h5>locktime</h5>
+              <p>
+                (numeric, optional, default=0): Raw locktime. Non-0 value also locktime-activates inputs
+              </p>
+            <h4>Result</h4>
+            <p>
+  transaction              (string): hex string of the transaction
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.createRawTransaction([{"txid":"myid","vout":0}], {"address":0.01})
   .then((result) => {
     console.log(result);
@@ -48,13 +52,17 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='decodeRawTransaction'><code>decodeRawTransaction</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+            <p>
   Return a JSON object representing the serialized, hex-encoded transaction.
-
-  Arguments:
-  1. "hexstring"      (string, required) The transaction hex string
-
-  Result:
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  hexstring      (string, required): The transaction hex string
+            </li>
+          </ol>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "txid" : "id",        (string) The transaction id
     "hash" : "id",        (string) The transaction hash (differs from txid for witness transactions)
@@ -91,7 +99,9 @@ class RawTransactions extends Component {
        ,...
     ],
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.decodeRawTransaction('01000000013ba3edfd7a7b12b27ac72c3e67768f617fc81bc3888a51323a9fb8aa4b1e5e4a000000006a4730440220540986d1c58d6e76f8f05501c520c38ce55393d0ed7ed3c3a82c69af04221232022058ea43ed6c05fec0eccce749a63332ed4525460105346f11108b9c26df93cd72012103083dfc5a0254613941ddc91af39ff90cd711cdcde03a87b144b883b524660c39ffffffff01807c814a000000001976a914d7e7c4e0b70eaa67ceff9d2823d1bbb9f6df9a5188ac00000000')
   .then((result) => {
     console.log(result);
@@ -100,13 +110,17 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='decodeScript'><code>decodeScript</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Decode a hex-encoded script.
-
-  Arguments:
-  1. "hexstring"     (string) the hex encoded script
-
-  Result:
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  hexstring     (string): the hex encoded script
+            </li>
+          </ol>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "asm":"asm",   (string) Script public key
     "hex":"hex",   (string) hex encoded public key
@@ -118,7 +132,9 @@ class RawTransactions extends Component {
     ],
     "p2sh","address" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.decodeScript('4830450221009a51e00ec3524a7389592bc27bea4af5104a59510f5f0cfafa64bbd5c164ca2e02206c2a8bbb47eabdeed52f17d7df668d521600286406930426e3a9415fe10ed592012102e6e1423f7abde8b70bca3e78a7d030e5efabd3eb35c19302542b5fe7879c1a16')
   .then((result) => {
     console.log(result);
@@ -127,7 +143,7 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='fundRawTransaction'><code>fundRawTransaction</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Add inputs to a transaction until it has enough in value to meet its out value.
   This will not modify existing inputs, and will add at most one change output to the outputs.
   No existing outputs will be modified unless "subtractFeeFromOutputs" is specified.
@@ -138,10 +154,17 @@ class RawTransactions extends Component {
   in the wallet using importaddress or addmultisigaddress (to calculate fees).
   You can see whether this is the case by checking the "solvable" field in the listunspent output.
   Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only
-
-  Arguments:
-  1. "hexstring"           (string, required) The hex string of the raw transaction
-  2. options                 (object, optional)
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  hexstring           (string, required): The hex string of the raw transaction
+            </li>
+            <li>
+  options                 (object, optional)
+            </li>
+          </ol>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
      {
        "changeAddress"          (string, optional, default pool address) The bitcoin address to receive the change
        "changePosition"         (numeric, optional, default random) The index of the change output
@@ -157,14 +180,17 @@ class RawTransactions extends Component {
                                     [vout_index,...]
      }
                            for backward compatibility: passing in a true instead of an object will result in {"includeWatching":true}
-
-  Result:
+            `}</SyntaxHighlighter>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)
     "fee":       n,         (numeric) Fee in BCH the resulting transaction pays
     "changepos": n          (numeric) The position of the added change output, or -1
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.fundRawTransaction([], {"myaddress":0.01})
   .then((result) => {
     console.log(result);
@@ -173,20 +199,29 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getRawTransaction'><code>getRawTransaction</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Return the raw transaction data.
-
-  If verbose is 'true', returns an Object with information about 'txid'.
-  If verbose is 'false' or omitted, returns a string that is serialized, hex-encoded data for 'txid'.
-
-  Arguments:
-  1. "txid"      (string, required) The transaction id
-  2. verbose       (bool, optional, default=false) If false, return a string, otherwise return a json object
-
+          <p>
+  Return the raw transaction data. If verbose is 'true', returns an Object with information about 'txid'. If verbose is 'false' or omitted, returns a string that is serialized, hex-encoded data for 'txid'.
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  txid      (string, required): The transaction id
+            </li>
+            <li>
+  verbose       (bool, optional, default=false): If false, return a string, otherwise return a json object
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
   Result (if verbose is not set or set to false):
-  "data"      (string) The serialized, hex-encoded data for 'txid'
-
+          </p>
+          <p>
+  data      (string): The serialized, hex-encoded data for 'txid'
+          </p>
+          <p>
   Result (if verbose is set to true):
+          </p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "hex" : "data",       (string) The serialized, hex-encoded data for 'txid'
     "txid" : "id",        (string) The transaction id (same as provided)
@@ -228,7 +263,9 @@ class RawTransactions extends Component {
     "time" : ttt,             (numeric) The transaction time in seconds since epoch (Jan 1 1970 GMT)
     "blocktime" : ttt         (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.getRawTransaction("mytxid", true)
   .then((result) => {
     console.log(result);
@@ -237,18 +274,24 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='sendRawTransaction'><code>sendRawTransaction</code></h3>
+          <p>
+  Submits raw transaction (serialized, hex-encoded) to local node and network. Also see createrawtransaction and signrawtransaction calls.
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  hexstring    (string, required): The hex string of the raw transaction)
+            </li>
+            <li>
+  allowhighfees    (boolean, optional, default=false): Allow high fees
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  hex             (string): The transaction hash in hex
+          </p>
+          <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Submits raw transaction (serialized, hex-encoded) to local node and network.
-
-  Also see createrawtransaction and signrawtransaction calls.
-
-  Arguments:
-  1. "hexstring"    (string, required) The hex string of the raw transaction)
-  2. allowhighfees    (boolean, optional, default=false) Allow high fees
-
-  Result:
-  "hex"             (string) The transaction hash in hex
-
   BITBOX.RawTransactions.sendRawTransaction("signedhex")
   .then((result) => {
     console.log(result);
@@ -257,16 +300,19 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='signRawTransaction'><code>signRawTransaction</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Sign inputs for raw transaction (serialized, hex-encoded).
   The second optional argument (may be null) is an array of previous transaction outputs that
   this transaction depends on but may not yet be in the block chain.
   The third optional argument (may be null) is an array of base58-encoded private
   keys that, if given, will be the only keys used to sign the transaction.
-
-  Arguments:
-  1. "hexstring"     (string, required) The transaction hex string
-  2. "prevtxs"       (string, optional) An json array of previous dependent transaction outputs
+          </p>
+          <h4>Arguments</h4>
+          <h5>hexstring</h5>
+          <p>(string, required) The transaction hex string</p>
+          <h5>prevtxs</h5>
+          <p>(string, optional) An json array of previous dependent transaction outputs</p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
        [               (json array of json objects, or 'null' if none provided)
          {
            "txid":"id",             (string, required) The transaction id
@@ -277,12 +323,18 @@ class RawTransactions extends Component {
          }
          ,...
       ]
-  3. "privkeys"     (string, optional) A json array of base58-encoded private keys for signing
+            `}</SyntaxHighlighter>
+          <h5>privkeys</h5>
+          <p>(string, optional) A json array of base58-encoded private keys for signing</p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
       [                  (json array of strings, or 'null' if none provided)
         "privatekey"   (string) private key in base58-encoding
         ,...
       ]
-  4. "sighashtype"     (string, optional, default=ALL) The signature hash type. Must be one of
+            `}</SyntaxHighlighter>
+          <h5>sighashtype</h5>
+          <p>(string, optional, default=ALL) The signature hash type. Must be one of</p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
          "ALL"
          "NONE"
          "SINGLE"
@@ -295,8 +347,13 @@ class RawTransactions extends Component {
          "ALL|FORKID|ANYONECANPAY"
          "NONE|FORKID|ANYONECANPAY"
          "SINGLE|FORKID|ANYONECANPAY"
-
-  Result:
+            `}</SyntaxHighlighter>
+          <h5>
+          </h5>
+          <p>
+          </p>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
     "complete" : true|false,   (boolean) If the transaction has a complete set of signatures
@@ -311,14 +368,15 @@ class RawTransactions extends Component {
       ,...
     ]
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.signRawTransaction("myhex")
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
   });
             `}</SyntaxHighlighter>
-
           </div>
         </div>
       </div>
