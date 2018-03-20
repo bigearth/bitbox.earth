@@ -26,9 +26,22 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet w/ prefix
     BITBOX.BitcoinCash.Address.toLegacyAddress('bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl')
     // 1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN
-          `}</SyntaxHighlighter>
+
+    // mainnet w/ no prefix
+    BITBOX.BitcoinCash.Address.toLegacyAddress('qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl')
+    // 1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN
+
+    // testnet w/ prefix
+    BITBOX.BitcoinCash.Address.toLegacyAddress('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // mqc1tmwY2368LLGktnePzEyPAsgADxbksi
+
+    // testnet w/ no prefix
+    BITBOX.BitcoinCash.Address.toLegacyAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // mqc1tmwY2368LLGktnePzEyPAsgADxbksi
+    `}</SyntaxHighlighter>
 
           <h3 id='toCashAddress'><code>toCashAddress</code></h3>
           <p>
@@ -46,8 +59,25 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet
     BITBOX.BitcoinCash.Address.toCashAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN')
     // bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
+
+    // mainnet
+    BITBOX.BitcoinCash.Address.toCashAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN')
+    // bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
+
+    // mainnet
+    BITBOX.BitcoinCash.Address.toCashAddress('18HEMuar5ZhXDFep1gEiY1eoPPcBLxfDxj')
+    // bitcoincash:qp8a4vzfk9kstwsl4ud4ym3z2tckdf7a4gfwkxvtfq
+
+    // tesnet
+    BITBOX.BitcoinCash.Address.toCashAddress('n2FZEv1o4DjqKtgJTqpANsivyemMEzEsS9')
+    // bchtest:qr3hz2zvnaneyedrznkn20a95lech08vdqp95mungk
+
+    // tesnet
+    BITBOX.BitcoinCash.Address.toCashAddress('msDbtTj7kWXPpYaR7PQmMK84i66fJqQMLx')
+    // bchtest:qzq9je6pntpva3wf6scr7mlnycr54sjgeqxgrr9ku3
           `}</SyntaxHighlighter>
 
           <h3 id='isLegacyAddress'><code>isLegacyAddress</code></h3>
@@ -57,17 +87,38 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>         address to determine
+    address <code>string</code>:         address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isLegacyAddress <code>boolean</code>   true/false if legacy address
+    isLegacyAddress <code>boolean</code>:   true/false if legacy address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr
     BITBOX.BitcoinCash.Address.isLegacyAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
     // false
+
+    // w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isLegacyAddress('qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl')
+    // false
+
+    // legacy
+    BITBOX.BitcoinCash.Address.isLegacyAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN')
+    // true
+
+    // testnet w/ cashaddr prefix
+    BITBOX.BitcoinCash.Address.isLegacyAddress('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // false
+
+    // testnet w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isLegacyAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // false
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.isLegacyAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // true
           `}</SyntaxHighlighter>
 
           <h3 id='isCashAddress'><code>isCashAddress</code></h3>
@@ -77,18 +128,39 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>            address to determine
+    address <code>string</code>:            address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isCashAddress <code>boolean</code>    true/false if cashaddress
+    isCashAddress <code>boolean</code>:    true/false if cashaddress
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet cashaddr
     BITBOX.BitcoinCash.Address.isCashAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
     // true
-          `}</SyntaxHighlighter>
+
+    // mainnet w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isCashAddress('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // true
+
+    // mainnet legacy
+    BITBOX.BitcoinCash.Address.isCashAddress('18HEMuar5ZhXDFep1gEiY1eoPPcBLxfDxj')
+    // false
+
+    // testnet w/ cashaddr prefix
+    BITBOX.BitcoinCash.Address.isCashAddress('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // true
+
+    // testnet w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isCashAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // true
+
+    // testnet legacy
+    BITBOX.BitcoinCash.Address.isCashAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // false
+    `}</SyntaxHighlighter>
 
           <h3 id='isMainnetAddress'><code>isMainnetAddress</code></h3>
           <p>
@@ -97,17 +169,38 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>            address to determine
+    address <code>string</code>:            address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isMainnetAddress <code>boolean</code>     true/false if mainnet address
+    isMainnetAddress <code>boolean</code>:     true/false if mainnet address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet cashaddr
     BITBOX.BitcoinCash.Address.isMainnetAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
     // true
+
+    // mainnet cashaddr w/ no prefix
+    BITBOX.BitcoinCash.Address.isMainnetAddress('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // true
+
+    // mainnet legacy
+    BITBOX.BitcoinCash.Address.isMainnetAddress('14krEkSaKoTkbFT9iUCfUYARo4EXA8co6M')
+    // true
+
+    // testnet cashaddr
+    BITBOX.BitcoinCash.Address.isMainnetAddress('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // false
+
+    // testnet w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isMainnetAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // false
+
+    // testnet legacy
+    BITBOX.BitcoinCash.Address.isMainnetAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // false
           `}</SyntaxHighlighter>
 
           <h3 id='isTestnetAddress'><code>isTestnetAddress</code></h3>
@@ -117,17 +210,38 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    addresss <code>string</code>            address to determine
+    addresss <code>string</code>:            address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isMainnetAddresss <code>boolean</code>     true/false if is testnet address
+    isMainnetAddresss <code>boolean</code>:     true/false if is testnet address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr mainnet
     BITBOX.BitcoinCash.Address.isTestnetAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
     //false
+
+    // w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isTestnetAddress('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // false
+
+    // legacy mainnet
+    BITBOX.BitcoinCash.Address.isTestnetAddress('14krEkSaKoTkbFT9iUCfUYARo4EXA8co6M')
+    // false
+
+    // cashaddr testnet
+    BITBOX.BitcoinCash.Address.isTestnetAddress('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // true
+
+    // testnet w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isTestnetAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // true
+
+    // testnet legacy
+    BITBOX.BitcoinCash.Address.isTestnetAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // true
           `}</SyntaxHighlighter>
 
           <h3 id='isP2PKHAddress'><code>isP2PKHAddress</code></h3>
@@ -146,7 +260,28 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr
     BITBOX.BitcoinCash.Address.isP2PKHAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // true
+
+    // w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isP2PKHAddress('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // true
+
+    // legacy
+    BITBOX.BitcoinCash.Address.isP2PKHAddress('14krEkSaKoTkbFT9iUCfUYARo4EXA8co6M')
+    // true
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.isP2PKHAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // true
+
+    // testnet w/ no cashaddr prefix
+    BITBOX.BitcoinCash.Address.isP2PKHAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // true
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.isP2PKHAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
     // true
           `}</SyntaxHighlighter>
 
@@ -166,7 +301,28 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr
     BITBOX.BitcoinCash.Address.isP2SHAddress('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // false
+
+    // cashaddr w/ no prefix
+    BITBOX.BitcoinCash.Address.isP2SHAddress('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // false
+
+    // legacy
+    BITBOX.BitcoinCash.Address.isP2SHAddress('1NoYQso5UF6XqC4NbjKAp2EnjJ59yLNn74')
+    // false
+
+    // cashaddr testnet
+    BITBOX.BitcoinCash.Address.isP2SHAddress('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // false
+
+    // cashaddr testnet w/ no prefix
+    BITBOX.BitcoinCash.Address.isP2SHAddress('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // false
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.isP2SHAddress('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
     // false
           `}</SyntaxHighlighter>
 
@@ -186,8 +342,29 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr
     BITBOX.BitcoinCash.Address.detectAddressFormat('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
     // cashaddr
+
+    // cashaddr w/ no prefix
+    BITBOX.BitcoinCash.Address.detectAddressFormat('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // cashaddr
+
+    // legacy
+    BITBOX.BitcoinCash.Address.detectAddressFormat('1NoYQso5UF6XqC4NbjKAp2EnjJ59yLNn74')
+    // legacy
+
+    // cashaddr testnet
+    BITBOX.BitcoinCash.Address.detectAddressFormat('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // cashaddr
+
+    // cashaddr testnet w/ no prefix
+    BITBOX.BitcoinCash.Address.detectAddressFormat('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // cashaddr
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.detectAddressFormat('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // legacy
           `}</SyntaxHighlighter>
 
           <h3 id='detectAddressNetwork'><code>detectAddressNetwork</code></h3>
@@ -206,8 +383,29 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr
     BITBOX.BitcoinCash.Address.detectAddressNetwork('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
     // mainnet
+
+    // cashaddr w/ no prefix
+    BITBOX.BitcoinCash.Address.detectAddressNetwork('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s')
+    // mainnet
+
+    // legacy
+    BITBOX.BitcoinCash.Address.detectAddressNetwork('1NoYQso5UF6XqC4NbjKAp2EnjJ59yLNn74')
+    // mainnet
+
+    // cashaddr testnet
+    BITBOX.BitcoinCash.Address.detectAddressNetwork('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // testnet
+
+    // cashaddr testnet w/ no prefix
+    BITBOX.BitcoinCash.Address.detectAddressNetwork('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy')
+    // testnet
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.detectAddressNetwork('mqc1tmwY2368LLGktnePzEyPAsgADxbksi')
+    // testnet
           `}</SyntaxHighlighter>
 
           <h3 id='detectAddressType'><code>detectAddressType</code></h3>
@@ -226,7 +424,28 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // cashaddr
     BITBOX.BitcoinCash.Address.detectAddressType('bitcoincash:qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s');
+    // p2pkh
+
+    // cashaddr w/ no prefix
+    BITBOX.BitcoinCash.Address.detectAddressType('qqfx3wcg8ts09mt5l3zey06wenapyfqq2qrcyj5x0s');
+    // p2pkh
+
+    // legacy
+    BITBOX.BitcoinCash.Address.detectAddressType('1NoYQso5UF6XqC4NbjKAp2EnjJ59yLNn74');
+    // p2pkh
+
+    // cashaddr testnet
+    BITBOX.BitcoinCash.Address.detectAddressType('bchtest:qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy');
+    // p2pkh
+
+    // cashaddr testnet w/ no prefix
+    BITBOX.BitcoinCash.Address.detectAddressType('qph2v4mkxjgdqgmlyjx6njmey0ftrxlnggt9t0a6zy');
+    // p2pkh
+
+    // legacy testnet
+    BITBOX.BitcoinCash.Address.detectAddressType('mqc1tmwY2368LLGktnePzEyPAsgADxbksi');
     // p2pkh
           `}</SyntaxHighlighter>
 

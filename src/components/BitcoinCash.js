@@ -14,7 +14,6 @@ class BitcoinCash extends Component {
   render() {
     return (
       <div className="BitcoinCash">
-        <h2 id='bitcoinCash' className="content-head is-center"><i className="fab fa-btc" /> Bitcoin Cash</h2>
         <div className="pure-g">
           <div className="pure-u-1-1">
           <Route path="/bitboxcli/bitcoincash/address" component={Address}/>

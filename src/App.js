@@ -74,7 +74,7 @@ class App extends Component {
                     isActive={pathMatch}
                     activeClassName="pure-menu-selected"
                     className="pure-menu-link"
-                    to="/bitboxcli/bitcoincash">
+                    to="/bitboxcli/bitcoincash/mnemonic">
                     <i className="fa fa-code"></i> bitbox-cli
                   </NavLink>
                 </li>

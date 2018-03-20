@@ -36,7 +36,7 @@ class BitboxCli extends Component {
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-5 docsMenu">
             <ul>
               <li>
-                <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc" /> Bitcoin Cash</Link>
+                <Link to="/bitboxcli/bitcoincash/mnemonic"><i className="fab fa-btc" /> Bitcoin Cash</Link>
                 <ul>
                   <li>
                     <Link to="/bitboxcli/bitcoincash/mnemonic"><i className="fas fa-key" /> Mnemonic</Link>
