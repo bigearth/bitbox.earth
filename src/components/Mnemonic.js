@@ -153,7 +153,7 @@ class Mnemonic extends Component {
     mnemonic <code>string</code>   mnemonic phrase
         </li>
         <li>
-    mnemonic word list <code>array</code> <code>optional</code>:   list of words the mnemonic was generated from
+    mnemonic word list <code>array</code>:   list of words the mnemonic was generated from
         </li>
       </ol>
       <h4>Result</h4>
@@ -278,7 +278,7 @@ class Mnemonic extends Component {
     mnemonic <code>string</code>:                                      mnemonic to use
         </li>
         <li>
-    numberOfKeypairs <code>number</code> <code>optional</code>         number of keypairs to return. Default is 1
+    numberOfKeypairs <code>number</code> <code>optional</code>:        number of keypairs to return. Default is 1
         </li>
       </ol>
       <h4>Result</h4>
@@ -288,13 +288,12 @@ class Mnemonic extends Component {
       <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
     // First create a mnemonic from 32 bytes of random entropy
-    let mnemonic = BITBOX.BitcoinCash.entropyToMnemonic(32);
+    let mnemonic = BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(32);
     // symptom owner ridge follow buffalo choose stem depend million jar lemon claw color credit remove model pudding slot fiber west heavy ranch bird wet
 
     // Then call keypairsFromMnemonic and pass in your mnemonic and how many keypairs you'd like
-    BITBOX.BitcoinCash.keypairsFromMnemonic(mnemonic, 5))
+    BITBOX.BitcoinCash.Mnemonic.keypairsFromMnemonic(mnemonic, 5)
     // it returns the following array.
-
     [ { privateKeyWIF: 'Kz6b1TszeUGaypUpRCnfD2L17bQSW93o4j3VMpvT5e5BqaF9XkyP',
     address: 'bitcoincash:qp8a4vzfk9kstwsl4ud4ym3z2tckdf7a4gfwkxvtfq' },
     { privateKeyWIF: 'L5ZHQ2BdTQaTq2A8HNsdkHYKPLsfrHgvJyrVxHFFZyN9K3fmeoiG',
@@ -305,6 +304,66 @@ class Mnemonic extends Component {
     address: 'bitcoincash:qrhj0lesz6sn7l4hc5arh5tt8k583ahdaun6mcdjx8' },
     { privateKeyWIF: 'Kz3qqJ8GFSSbDrBqtV7mfhBoDPkSmMKtp7Yk62psDgmRjyU8id8J',
     address: 'bitcoincash:qp8xjllc75c2hgrpjy3f6kegtfqgmn72dqs0y20anv' } ]
+
+    // again
+    let mnemonic = BITBOX.BitcoinCash.Mnemonic.entropyToMnemonic(32);
+    // equip owner slim sibling panther future amazing inside rain boss work cup way debate monkey promote impact palace mansion idle embrace custom grocery stumble
+    BITBOX.BitcoinCash.Mnemonic.keypairsFromMnemonic(mnemonic, 5)
+    // returns
+    [ { privateKeyWIF: 'L51kvKUZ6CqGMBV6Ew7dPosK83rPcgXZZ3YBHwpRVPuCZSXuFfuy',
+    address: 'bitcoincash:qraws64rf3sxddh9frw5gjum9m7p2xqpxgk6qluhrt' },
+    { privateKeyWIF: 'L4rzcGNUgz1oDh6nZobdr1t5yyWNRQfL29MJtFMksjaG5qBN1NBi',
+      address: 'bitcoincash:qqpqhs5fqt2jfequqppytfemuh03fl493qljsepkue' },
+    { privateKeyWIF: 'KzxX4SAp53kjVqqV65GPTUxvuaKKuhAJZqyfZ51ogYvnfSiyrjah',
+      address: 'bitcoincash:qqua0de65f2ug3xxz0vyj0v4sp43qjg33qh6zqu5ld' },
+    { privateKeyWIF: 'L5SJXmhdd9wK6pYWAnNEr4uF8xZaPagzYrA3x8Wq6ykRj9kYwHcC',
+      address: 'bitcoincash:qpnfdl5umwl39u263kkxxnk6aa30cwrymg8v8p5j2f' },
+    { privateKeyWIF: 'KyWmctVJndJf59bpmgc5GUqfaNXn6RFMRCJGPK8aDGWLF4PzVf1x',
+      address: 'bitcoincash:qr8y2lgpf4dmr7w6rvlywm8e27w5jef42y3rg5ncg7' } ]
+          `}</SyntaxHighlighter>
+
+      <h3 id='findNearestWord'><code>findNearestWord</code></h3>
+      <p>
+      Returns nearest matching word from provided word list
+      </p>
+      <h4>Arguments</h4>
+      <ol>
+        <li>
+    word <code>string</code>:            mnemonic to use
+        </li>
+        <li>
+    wordlist <code>array</code>:         wordlist to search
+        </li>
+      </ol>
+      <h4>Result</h4>
+      <p>
+    word <code>string</code>             nearest matching word from profided wordlist
+      </p>
+      <h4>Examples</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // english
+    let word = 'ab';
+    let wordlist = BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().english;
+    BITBOX.BitcoinCash.Mnemonic.findNearestWord(word, wordlist);
+    // abandon
+
+    // french
+    let word = 'octu';
+    let wordlist = BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().french;
+    BITBOX.BitcoinCash.Mnemonic.findNearestWord(word, wordlist);
+    // octupler
+
+    // spanish
+    let word = 'foobaro';
+    let wordlist = BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().spanish;
+    BITBOX.BitcoinCash.Mnemonic.findNearestWord(word, wordlist);
+    // forro
+
+    // italian
+    let word = 'nv';
+    let wordlist = BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().italian;
+    BITBOX.BitcoinCash.Mnemonic.findNearestWord(word, wordlist);
+    // neve
           `}</SyntaxHighlighter>
           </div>
         </div>
