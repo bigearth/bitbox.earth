@@ -11,10 +11,11 @@ class Control extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='getInfo'><code>getInfo</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   DEPRECATED. Returns an object containing various state info.
-
-  Result:
+          </p>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "version": xxxxx,           (numeric) the server version
     "protocolversion": xxxxx,   (numeric) the protocol version
@@ -33,7 +34,9 @@ class Control extends Component {
     "relayfee": x.xxxx,         (numeric) minimum relay fee for non-free transactions in BCH/kB
     "errors": "..."           (string) any error messages
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Control.getInfo()
   .then((result) => {
     console.log(result);
@@ -42,10 +45,11 @@ class Control extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getMemoryInfo'><code>getMemoryInfo</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns an object containing information about memory usage.
-
-  Result:
+          </p>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "locked": {               (json object) Information about locked memory manager
       "used": xxxxx,          (numeric) Number of bytes used
@@ -56,7 +60,9 @@ class Control extends Component {
       "chunks_free": xxxxx,   (numeric) Number unused chunks
     }
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Control.getMemoryInfo()
   .then((result) => {
     console.log(result);
@@ -65,15 +71,21 @@ class Control extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='help'><code>help</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   List all commands, or get help for a specified command.
-
-  Arguments:
-  1. "command"     (string, optional) The command to get help on
-
-  Result:
-  "text"     (string) The help text
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  command     (string, optional): The command to get help on
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  text     (string): The help text
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Control.help()
   .then((result) => {
     console.log(result);
@@ -82,9 +94,11 @@ class Control extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='stop'><code>stop</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Stop Bitcoin server.
-
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Control.stop()
   .then((result) => {
     console.log(result);

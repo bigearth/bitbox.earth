@@ -11,14 +11,21 @@ class Network extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='addNode'><code>addNode</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+            <p>
   Attempts add or remove a node from the addnode list.
   Or try a connection to a node once.
-
-  Arguments:
-  1. "node"     (string, required) The node (see getpeerinfo for nodes)
-  2. "command"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
-
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+  node    (string, required): The node (see getpeerinfo for nodes)
+              </li>
+              <li>
+  command  (string, required): 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
+              </li>
+            </ol>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.addNode("192.168.0.6:8333", "onetry")
   .then((result) => {
     console.log(result);
@@ -27,9 +34,11 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='clearBanned'><code>clearBanned</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Clear all banned IPs.
-
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.clearBanned()
   .then((result) => {
     console.log(result);
@@ -38,17 +47,20 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='disconnectNode'><code>disconnectNode</code></h3>
+          <p>
+  Immediately disconnects from the specified peer node. Strictly one out of 'address' and 'nodeid' can be provided to identify the node. To disconnect by nodeid, either set 'address' to the empty string, or call using the named 'nodeid' argument only.
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  address     (string, optional): The IP address/port of the node
+            </li>
+            <li>
+  nodeid      (number, optional): The node ID (see getpeerinfo for node IDs)
+            </li>
+          </ol>
+          <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Immediately disconnects from the specified peer node.
-
-  Strictly one out of 'address' and 'nodeid' can be provided to identify the node.
-
-  To disconnect by nodeid, either set 'address' to the empty string, or call using the named 'nodeid' argument only.
-
-  Arguments:
-  1. "address"     (string, optional) The IP address/port of the node
-  2. "nodeid"      (number, optional) The node ID (see getpeerinfo for node IDs)
-
   BITBOX.Network.disconnectNode("192.168.0.6:8333")
   .then((result) => {
     console.log(result);
@@ -57,13 +69,17 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getAddedNodeInfo'><code>getAddedNodeInfo</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns information about the given added node, or all added nodes (note that onetry addnodes are not listed here)
-
-  Arguments:
-  1. "node"   (string, optional) If provided, return information about this specific node, otherwise all nodes are returned.
-
-  Result:
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  node   (string, optional): If provided, return information about this specific node, otherwise all nodes are returned.
+            </li>
+          </ol>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   [
     {
       "addednode" : "192.168.0.201",   (string) The node ip address or name (as provided to addnode)
@@ -77,7 +93,9 @@ class Network extends Component {
     }
     ,...
   ]
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.getAddedNodeInfo('192.168.0.201')
   .then((result) => {
     console.log(result);
@@ -86,12 +104,17 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getConnectionCount'><code>getConnectionCount</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns the number of connections to other nodes.
-
-  Result:
-  n          (numeric) The connection count
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  n          (numeric): The connection count
+            </li>
+          </ol>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.getConnectionCount()
   .then((result) => {
     console.log(result);
@@ -100,10 +123,11 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getNetTotals'><code>getNetTotals</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns information about network traffic, including bytes in, bytes out, and current time.
-
-  Result:
+          </p>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "totalbytesrecv": n,   (numeric) Total bytes received
     "totalbytessent": n,   (numeric) Total bytes sent
@@ -118,7 +142,9 @@ class Network extends Component {
       "time_left_in_cycle": t                 (numeric) Seconds left in current time cycle
     }
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.getNetTotals()
   .then((result) => {
     console.log(result);
@@ -127,10 +153,11 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getNetworkInfo'><code>getNetworkInfo</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns an object containing various state info regarding P2P networking.
-
-  Result:
+          </p>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "version": xxxxx,                      (numeric) the server version
     "subversion": "/Satoshi:x.x.x/",     (string) the server subversion string
@@ -162,7 +189,9 @@ class Network extends Component {
     ]
     "warnings": "..."                    (string) any network warnings
   }
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.getNetworkInfo()
   .then((result) => {
     console.log(result);
@@ -171,10 +200,11 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getPeerInfo'><code>getPeerInfo</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns data about each connected network node as a json array of objects.
-
-  Result:
+          </p>
+          <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   [
     {
       "id": n,                   (numeric) Peer index
@@ -215,7 +245,9 @@ class Network extends Component {
     }
     ,...
   ]
-
+            `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.getPeerInfo()
   .then((result) => {
     console.log(result);
@@ -224,9 +256,11 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='listBanned'><code>listBanned</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   List all banned IPs/Subnets.
-
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.listBanned()
   .then((result) => {
     console.log(result);
@@ -235,11 +269,13 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='ping'><code>ping</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Requests that a ping be sent to all other nodes, to measure ping time.
   Results provided in getpeerinfo, pingtime and pingwait fields are decimal seconds.
   Ping command is handled in queue with all other commands, so it measures processing backlog, not just network ping.
-
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.ping()
   .then((result) => {
     console.log(result);
@@ -248,15 +284,26 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='setBan'><code>setBan</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Attempts add or remove a IP/Subnet from the banned list.
-
-  Arguments:
-  1. "subnet"       (string, required) The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)
-  2. "command"      (string, required) 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list
-  3. "bantime"      (numeric, optional) time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)
-  4. "absolute"     (boolean, optional) If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  subnet     (string, required): The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)
+            </li>
+            <li>
+  command      (string, required): 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list
+            </li>
+            <li>
+  bantime      (numeric, optional): time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)
+            </li>
+            <li>
+  absolute     (boolean, optional): If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)
+            </li>
+          </ol>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.setBan("192.168.0.6", "add", 8640)
   .then((result) => {
     console.log(result);
@@ -265,19 +312,23 @@ class Network extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='setNetworkActive'><code>setNetworkActive</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Disable/enable all p2p network activity.
-
-  Arguments:
-  1. "state"        (boolean, required) true to enable networking, false to disable
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  state        (boolean, required): true to enable networking, false to disable
+            </li>
+          </ol>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Network.setNetworkActive(true)
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
   });
             `}</SyntaxHighlighter>
-
           </div>
         </div>
       </div>

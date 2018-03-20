@@ -12,17 +12,32 @@ class Mining extends Component {
           <div className="pure-u-1-1">
 
             <h3 id='getBlockTemplate'><code>getBlockTemplate</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   If the request parameters include a 'mode' key, that is used to explicitly select between the default 'template' request or a 'proposal'.
   It returns data needed to construct a block to work on.
   For full specification, see BIPs 22, 23, 9, and 145:
-      https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki
-      https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki
-      https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes
-      https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki
-
-  Arguments:
-  1. template_request         (json object, optional) A json object in the following spec
+          </p>
+          <ul>
+            <li>
+              <a href='https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki'>https://github.com/bitcoin/bips/blob/master/bip-0022.mediawiki</a>
+            </li>
+            <li>
+              <a href='https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki'>https://github.com/bitcoin/bips/blob/master/bip-0023.mediawiki</a>
+            </li>
+            <li>
+              <a href='https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes'>https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki#getblocktemplate_changes</a>
+            </li>
+            <li>
+              <a href='https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki'>https://github.com/bitcoin/bips/blob/master/bip-0145.mediawiki</a>
+            </li>
+          </ul>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  template_request         (json object, optional): A json object in the following spec
+            </li>
+          </ol>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
        {
          "mode":"template"    (string, optional) This must be set to "template", "proposal" (see BIP 23), or omitted
          "capabilities":[     (array, optional) A list of strings
@@ -34,8 +49,9 @@ class Mining extends Component {
              ,...
          ]
        }
-
-       Result:
+          `}</SyntaxHighlighter>
+          <h4>Result</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
      {
        "version" : n,                    (numeric) The preferred block version
        "rules" : [ "rulename", ... ],    (array of strings) specific block rules that are to be enforced
@@ -79,7 +95,9 @@ class Mining extends Component {
        "bits" : "xxxxxxxx",              (string) compressed target of next block
        "height" : n                      (numeric) The height of the next block
      }
-
+          `}</SyntaxHighlighter>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Mining.getBlockTemplate()
   .then((result) => {
     console.log(result);
@@ -88,9 +106,11 @@ class Mining extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getMiningInfo'><code>getMiningInfo</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+            <p>
   Returns a json object containing mining-related information.
-  Result:
+            </p>
+            <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   {
     "blocks": nnn,             (numeric) The current block
     "currentblocksize": nnn,   (numeric) The last block size
@@ -101,7 +121,9 @@ class Mining extends Component {
     "pooledtx": n              (numeric) The size of the mempool
     "chain": "xxxx",           (string) current network name as defined in BIP70 (main, test, regtest)
   }
-
+            `}</SyntaxHighlighter>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Mining.getMiningInfo()
   .then((result) => {
     console.log(result);
@@ -110,18 +132,26 @@ class Mining extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='getNetworkHashps'><code>getNetworkHashps</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Returns the estimated network hashes per second based on the last n blocks.
   Pass in [blocks] to override # of blocks, -1 specifies since last difficulty change.
   Pass in [height] to estimate the network speed at the time when a certain block was found.
-
-  Arguments:
-  1. nblocks     (numeric, optional, default=120) The number of blocks, or -1 for blocks since last difficulty change.
-  2. height      (numeric, optional, default=-1) To estimate at the time of the given height.
-
-  Result:
-  x             (numeric) Hashes per second estimated
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  nblocks     (numeric, optional, default=120): The number of blocks, or -1 for blocks since last difficulty change.
+            </li>
+            <li>
+  height      (numeric, optional, default=-1): To estimate at the time of the given height.
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  x             (numeric): Hashes per second estimated
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Mining.getNetworkHashps()
   .then((result) => {
     console.log(result);
@@ -130,21 +160,31 @@ class Mining extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='prioritiseTransaction'><code>prioritiseTransaction</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Accepts the transaction into mined blocks at a higher (or lower) priority
-
-  Arguments:
-  1. "txid"       (string, required) The transaction id.
-  2. priority_delta (numeric, required) The priority to add or subtract.
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  txid       (string, required): The transaction id.
+            </li>
+            <li>
+  priority_delta (numeric, required): The priority to add or subtract.
                     The transaction selection algorithm considers the tx as it would have a higher priority.
                     (priority of a transaction is calculated: coinage * value_in_satoshis / txsize)
-  3. fee_delta      (numeric, required) The fee value (in satoshis) to add (or subtract, if negative).
+            </li>
+            <li>
+  fee_delta      (numeric, required): The fee value (in satoshis) to add (or subtract, if negative).
                     The fee is not actually paid, only the algorithm for selecting transactions into a block
                     considers the transaction as it would have paid a higher (or lower) fee.
-
-  Result:
-  true              (boolean) Returns true
-
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  true              (boolean): Returns true
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Mining.prioritiseTransaction("txid", 0.0, 10000)
   .then((result) => {
     console.log(result);
@@ -153,25 +193,35 @@ class Mining extends Component {
             `}</SyntaxHighlighter>
 
             <h3 id='submitBlock'><code>submitBlock</code></h3>
+          <p>
+  Attempts to submit new block to network. The 'jsonparametersobject' parameter is currently ignored. See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  hexdata        (string, required): the hex-encoded block data to submit
+            </li>
+            <li>
+  parameters     (string, optional): object of optional parameters
+            </li>
+          </ol>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  Attempts to submit new block to network.
-  The 'jsonparametersobject' parameter is currently ignored.
-  See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
-
-  Arguments
-  1. "hexdata"        (string, required) the hex-encoded block data to submit
-  2. "parameters"     (string, optional) object of optional parameters
       {
         "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
       }
-
+            `}</SyntaxHighlighter>
+          <h4>Result</h4>
+          <p>
+    legacyAddress <code>string</code>    legacy base 58 check encoded address
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Mining.submitBlock("mydata")
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
   });
             `}</SyntaxHighlighter>
-
           </div>
         </div>
       </div>

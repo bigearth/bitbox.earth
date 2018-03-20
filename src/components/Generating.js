@@ -11,16 +11,24 @@ class Generating extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='generate'><code>generate</code></h3>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
+          <p>
   Mine up to nblocks blocks immediately (before the RPC call returns)
-
-  Arguments:
-  1. nblocks      (numeric, required) How many blocks are generated immediately.
-  2. maxtries     (numeric, optional) How many iterations to try (default = 1000000).
-
-  Result:
-  [ blockhashes ]     (array) hashes of blocks generated
-
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  nblocks      (numeric, required): How many blocks are generated immediately.
+            </li>
+            <li>
+  maxtries     (numeric, optional): How many iterations to try (default = 1000000).
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  [ blockhashes ]     (array): hashes of blocks generated
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.Generating.generate(11)
   .then((result) => {
     console.log(result);
