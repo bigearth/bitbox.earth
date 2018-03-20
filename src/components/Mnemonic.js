@@ -162,8 +162,14 @@ class Mnemonic extends Component {
       </p>
       <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-    BITBOX.BitcoinCash.Mnemonic.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion')
-    // true
+    BITBOX.BitcoinCash.Mnemonic.validateMnemonic('ca', BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().english)
+    // ca is not in wordlist, did you mean cabbage?
+
+    BITBOX.BitcoinCash.Mnemonic.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion', BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().english)
+    // Valid mnemonic
+
+    BITBOX.BitcoinCash.Mnemonic.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion boil lonely casino manage habit where total glory muffin name limit mansion', BITBOX.BitcoinCash.Mnemonic.mnemonicWordLists().english)
+    // Invalid mnemonic
             `}</SyntaxHighlighter>
 
       <h3 id='mnemonicToSeedHex'><code>mnemonicToSeedHex</code></h3>
@@ -185,6 +191,18 @@ class Mnemonic extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
     BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('boil lonely casino manage habit where total glory muffin name limit mansion', '');
     // e906236ab5ebec8fbff9948807a6f5d2aa6f35e8bcbcda99e22f9048323cdc0755b781782ee1cce40007bcf900593ed2667e6e9800d734fa46a8f7f51ec74818
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('vendor talk alone sick balance tissue number armor frequent plug transfer chest', 'password');
+    // 2da5465236a41c90bfc538c9781603261f707c6744aae097fa961ba12316a0e20cf6acb609cc2faf9a9950b3f9a9bec9f4194037e5189d4c9762e49c38fa68ee
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('idea relax weird defense body bronze champion ancient vocal peanut similar dose grit company peasant gate sunset deal library act include penalty annual main', '');
+    // c156365b0f2a1604dd6f53ad7d0a4c14ba38f981fb180fdfc3146e6afcd8af2f1fc42cb2d3658a312ea8485912bdf0f18de45cf932f6704aa8bbd9eaace1fbee
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('bus aware census desk orphan zebra fashion host try muscle pig close jealous slice elegant prison reject ship great program trumpet syrup tray remove', '');
+    // f42ce8e188d15a665c18c0cfaedf093c75d24c479d5287f4bec06b13e7da0401a3503687221feecfc857e86eaebb174b83607a665040254e99574a138eebeb42
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedHex('frost deliver coin clutch upon round scene wonder various wise luggage country', 'yayayayay');
+    // 1d009fa3a88651a404d5033deb6db101e2f13bc3c86d1fb993b4d133dc8421122c9b5210bad89615e0b09a343352f807c8c44540f2ad425c9a9a33f81a36b71f
             `}</SyntaxHighlighter>
 
       <h3 id='mnemonicToSeedBuffer'><code>mnemonicToSeedBuffer</code></h3>
@@ -208,6 +226,18 @@ class Mnemonic extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
     BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedBuffer('enable stem left method one submit coach bid inspire cluster armed bracket')
     // <Buffer 0a fa b7 46 8f 0c df 79 0f 0e 44 37 45 0c 33 c3 c8 27 17 42 75 d6 13 02 c3 55 de ef 2e 69 57 e4 f5 dd 55 b6 a8 73 78 6d b8 09 36 75 af 4f 6b 2c 52 63 ... >
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedBuffer('vendor talk alone sick balance tissue number armor frequent plug transfer chest', 'password');
+    // <Buffer 2d a5 46 52 36 a4 1c 90 bf c5 38 c9 78 16 03 26 1f 70 7c 67 44 aa e0 97 fa 96 1b a1 23 16 a0 e2 0c f6 ac b6 09 cc 2f af 9a 99 50 b3 f9 a9 be c9 f4 19 ... >
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedBuffer('idea relax weird defense body bronze champion ancient vocal peanut similar dose grit company peasant gate sunset deal library act include penalty annual main', '');
+    // <Buffer c1 56 36 5b 0f 2a 16 04 dd 6f 53 ad 7d 0a 4c 14 ba 38 f9 81 fb 18 0f df c3 14 6e 6a fc d8 af 2f 1f c4 2c b2 d3 65 8a 31 2e a8 48 59 12 bd f0 f1 8d e4 ... >
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedBuffer('bus aware census desk orphan zebra fashion host try muscle pig close jealous slice elegant prison reject ship great program trumpet syrup tray remove', '');
+    // <Buffer f4 2c e8 e1 88 d1 5a 66 5c 18 c0 cf ae df 09 3c 75 d2 4c 47 9d 52 87 f4 be c0 6b 13 e7 da 04 01 a3 50 36 87 22 1f ee cf c8 57 e8 6e ae bb 17 4b 83 60 ... >
+
+    BITBOX.BitcoinCash.Mnemonic.mnemonicToSeedBuffer('frost deliver coin clutch upon round scene wonder various wise luggage country', 'yayayayay');
+    // <Buffer 1d 00 9f a3 a8 86 51 a4 04 d5 03 3d eb 6d b1 01 e2 f1 3b c3 c8 6d 1f b9 93 b4 d1 33 dc 84 21 12 2c 9b 52 10 ba d8 96 15 e0 b0 9a 34 33 52 f8 07 c8 c4 ... >
             `}</SyntaxHighlighter>
 
       <h3 id='translateMnemonic'><code>translateMnemonic</code></h3>
