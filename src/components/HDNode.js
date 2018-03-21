@@ -84,6 +84,84 @@ class HDNode extends Component {
     let hdNode = BITBOX.HDNode.fromSeedHex(seedHex)
             `}</SyntaxHighlighter>
 
+            <h3 id='derive'><code>derive</code></h3>
+            <p>
+          Derive non hardened child HDNode
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          num <code>number</code>: number of child node. Ex: 0
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          HDNode                 HDNode
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create mnemonic
+    let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+    // create seed buffer from mnemonic
+    let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    // create HDNode from seed buffer
+    let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+    // derive unhardened child HDNode
+    let childNode = hdNode.derive(0);
+            `}</SyntaxHighlighter>
+
+            <h3 id='deriveHardened'><code>deriveHardened</code></h3>
+            <p>
+          Derive hardened child HDNode
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          num <code>number</code>: number of child node. Ex: 0
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          HDNode                 HDNode
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create mnemonic
+    let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+    // create seed buffer from mnemonic
+    let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    // create HDNode from seed buffer
+    let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+    // derive hardened child HDNode
+    let childNode = hdNode.deriveHardened(0);
+            `}</SyntaxHighlighter>
+
+            <h3 id='derivePath'><code>derivePath</code></h3>
+            <p>
+          Derive child HDNode from path
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          path <code>string</code>: path of child hd node. Ex: "m/44'/145'/0'"
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          HDNode                 HDNode
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create mnemonic
+    let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+    // create seed buffer from mnemonic
+    let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    // create HDNode from seed buffer
+    let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+    // derive hardened child HDNode
+    let childNode = hdNode.derivePath("m/44'/145'/0'");
+            `}</SyntaxHighlighter>
+
             <h3 id='toLegacyAddress'><code>toLegacyAddress</code></h3>
             <p>
           Get legacy address of HDNode
