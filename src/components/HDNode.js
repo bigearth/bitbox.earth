@@ -4,6 +4,10 @@ import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
 
 class HDNode extends Component {
+  componentDidMount() {
+    document.title = "HDNode - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+
   render() {
     return (
       // getCashAddress

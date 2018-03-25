@@ -8,6 +8,10 @@ import {
 import "../styles/docs.scss";
 
 class BitcoinCash extends Component {
+  componentDidMount() {
+    document.title = "BitcoinCash - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+
   render() {
     return (
       <div className="BitcoinCash">

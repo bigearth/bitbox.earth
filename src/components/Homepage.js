@@ -6,10 +6,13 @@ import {
 } from 'react-router-dom';
 import Slider from 'react-slick';
 
-
 import "../styles/homepage.scss";
 
 class Homepage extends Component {
+  componentDidMount() {
+    document.title = "BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+
   render() {
     let settings = {
       dots: true,

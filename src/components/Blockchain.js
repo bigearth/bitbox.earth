@@ -4,6 +4,10 @@ import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
 
 class Blockchain extends Component {
+  componentDidMount() {
+    document.title = "Blockchain - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+
   render() {
     return (
       <div className="Blockchain">

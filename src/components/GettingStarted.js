@@ -7,6 +7,10 @@ import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
 
 class GettingStarted extends Component {
+  componentDidMount() {
+    document.title = "Docs - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+  
   render() {
     return (
       <div className="GettingStarted">

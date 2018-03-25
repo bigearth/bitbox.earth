@@ -19,6 +19,10 @@ import {
 } from 'react-router-dom';
 
 class Docs extends Component {
+  componentDidMount() {
+    document.title = "Docs - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+
   render() {
     return (
       <div className="docs">
