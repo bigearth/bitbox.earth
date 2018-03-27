@@ -373,6 +373,84 @@ class HDNode extends Component {
     // xprv9s21ZrQH143K2b5GPP6zHz22E6LeCgQXJtwNbC3MA3Kz7Se7tveKo96EhqwFtSkYWkyenVcMqM7uq35PcUNG8cUdpsJEgwKG3dvfP7TmL3v
             `}</SyntaxHighlighter>
 
+            <h3 id='toPublicKeyBuffer'><code>toPublicKeyBuffer</code></h3>
+            <p>
+            Get the public key of an HDNode as a buffer
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+            hdNode: HDNode
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            publicKeyBuffer <code>string</code>:     public key of HDNode as a buffer
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create mnemonic
+    let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+    // create root seed encoded in hex from mnemonic
+    let rootSeedHex = BITBOX.Mnemonic.mnemonicToSeedHex(mnemonic);
+    // create HDNode from root seed hex
+    let hdNode = BITBOX.HDNode.fromSeedHex(rootSeedHex);
+    // create public key buffer from HDNode
+    let publicKeyBuffer = BITBOX.HDNode.toPublicKeyBuffer(hdNode);
+    // <Buffer 03 3e 39 d6 ed 07 31 54 63 70 e2 e9 20 6d 31 dd d9 80 b5 39 5a ea d5 9b 3a 53 49 99 99 1a 20 4c 59>
+
+    // generate entropy
+    let entropy = BITBOX.Crypto.randomBytes(32);
+    // create mnemonic from entropy
+    let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+    // create seed buffer from mnemonic
+    let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    // create HDNode from seed buffer
+    let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+    // create public key buffer from HDNode
+    let publicKeyBuffer = BITBOX.HDNode.toPublicKeyBuffer(hdNode);
+    // <Buffer 02 87 0e 84 f6 88 75 0e f7 e9 57 51 57 5c 04 51 e2 c0 e8 bb 9c 75 fc 01 f2 af 3d 5b 7f cd f0 f8 6d>
+            `}</SyntaxHighlighter>
+
+            <h3 id='toPublicKeyHex'><code>toPublicKeyHex</code></h3>
+            <p>
+            Get the public key of an HDNode encoded as hex
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+            hdNode: HDNode
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            publicKeyHex <code>string</code>:     public key of an HDNode encoded as hex
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create mnemonic
+    let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+    // create root seed encoded in hex from mnemonic
+    let rootSeedHex = BITBOX.Mnemonic.mnemonicToSeedHex(mnemonic);
+    // create HDNode from root seed hex
+    let hdNode = BITBOX.HDNode.fromSeedHex(rootSeedHex);
+    // create public key buffer from HDNode
+    let publicKeyHex = BITBOX.HDNode.toPublicKeyHex(hdNode);
+    // 03123464075c7a5fa6b8680afa2c962a02e7bf071c6b2395b0ac711d462cac9354
+
+    // generate entropy
+    let entropy = BITBOX.Crypto.randomBytes(32);
+    // create mnemonic from entropy
+    let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+    // create seed buffer from mnemonic
+    let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    // create HDNode from seed buffer
+    let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+    // create public key buffer from HDNode
+    let publicKeyHex = BITBOX.HDNode.toPublicKeyHex(hdNode);
+    // 03a8cf3ca53852260b74a0d32f2372a9f86e7cda7cec6b19a469f32c812bfc606e
+            `}</SyntaxHighlighter>
+
             <h3 id='fromXPriv'><code>fromXPriv</code></h3>
             <p>
             Generate HDNode from extended private key
