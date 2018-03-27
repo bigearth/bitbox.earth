@@ -8,7 +8,7 @@ import "../styles/docs.scss";
 
 class GettingStarted extends Component {
   componentDidMount() {
-    document.title = "Docs - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+    document.title = "Getting Started - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
   }
 
   render() {
