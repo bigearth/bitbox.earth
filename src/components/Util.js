@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
+import {
+  Link
+} from 'react-router-dom';
 
 class Util extends Component {
   componentDidMount() {
@@ -12,6 +15,15 @@ class Util extends Component {
     return (
       <div className="Util">
         <h2 id='util' className="content-head is-center"><i className="fas fa-cogs" /> Util</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/bitboxcli/bitcoincash">bitbox-cli</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/bitboxcli/util">Util</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
 

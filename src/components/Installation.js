@@ -15,6 +15,15 @@ class Installation extends Component {
     return (
       <div className="Installation">
         <h2 id='crypto' className="content-head is-center"><i className="fas fa-wrench" /> Installation</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/installation">Installation</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id="gui"><i className="fas fa-desktop" /> GUI</h3>

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+  Link
+} from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
@@ -12,6 +15,15 @@ class Conversion extends Component {
     return (
       <div className="Conversion">
         <h2 id='convert' className="content-head is-center"><i className="fas fa-qrcode" /> Conversion</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/conversion">Conversion</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>It&rsquo;s common to see your addresses in 1 of 3 formats&mdash;<a href='https://en.bitcoin.it/wiki/Base58Check_encoding'>legacy base58Check</a>, <a href='https://www.bitcoinabc.org/cashaddr'>cashaddr</a> or <a href='https://en.bitcoin.it/wiki/Wallet_import_format'>privateKeyWIF</a>. The first two are the public addresses which you share w/ people to send you $BCH and the last one is the private key that you never show anyone.</p>

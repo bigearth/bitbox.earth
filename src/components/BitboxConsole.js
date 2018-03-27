@@ -15,6 +15,15 @@ class BitboxConsole extends Component {
     return (
       <div className="BitboxConsole">
         <h2 className="content-head is-center"><i className="fas fa-terminal" /> Bitbox Console</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/bitboxconsole">console</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>Launch a console w/ the entire Bitcoin Cash RPC available as well as dozens of helper methods via a built in <code>BITBOX</code> object. <Link to="/bitboxcli/bitcoincash">Full list of commands</Link>.</p>

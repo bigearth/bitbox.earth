@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+  Link
+} from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
 import "../styles/docs.scss";
@@ -12,6 +15,15 @@ class Configuration extends Component {
     return (
       <div className="Configuration">
         <h2 id='config' className="content-head is-center"><i className="fas fa-cog" /> Configuration</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/configuration">Configuration</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <h3 id='wallet'><i className="fas fa-folder" /> Wallet</h3>

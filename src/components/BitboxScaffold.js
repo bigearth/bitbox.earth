@@ -15,6 +15,15 @@ class BitboxScaffold extends Component {
     return (
       <div className="BitboxScaffold">
         <h2 className="content-head is-center"><i className="fas fa-shipping-fast" /> Bitbox Scaffold</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/bitboxscaffold">scaffold</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>Create a $BCH app in under a minute in popular frameworks. Currently react, node and angular are supported. Pass in a <code>--repo</code> flag to specify a git repo to use.</p>

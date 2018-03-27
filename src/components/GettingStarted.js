@@ -10,11 +10,20 @@ class GettingStarted extends Component {
   componentDidMount() {
     document.title = "Docs - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
   }
-  
+
   render() {
     return (
       <div className="GettingStarted">
         <h2 id='crypto' className="content-head is-center"><i className="fas fa-home" /> Getting Started</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Getting Started</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>BITBOX is a suite of tools to SUPERCHARGE your $BCH workflow. It consists of a one click Bitcoin Cash blockchain, command line utility and javascript API which let you accelerate how quickly you can create an amazing app.</p>

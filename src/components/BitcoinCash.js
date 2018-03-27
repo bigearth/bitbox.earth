@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { ocean } from 'react-syntax-highlighter/styles/hljs';
-
+import {
+  Link
+} from 'react-router-dom';
 import {
   Route
 } from 'react-router-dom';
@@ -16,6 +18,15 @@ class BitcoinCash extends Component {
     return (
       <div className="BitcoinCash">
         <h2 id='BitcoinCash' className="content-head is-center"><i className="fab fa-btc" /> BitcoinCash</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/bitboxcli/bitcoincash">bitbox-cli</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/bitboxcli/bitcoincash">BitcoinCash</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
           <h3 id='toSatoshi'><code>toSatoshi</code></h3>

@@ -15,6 +15,15 @@ class BitboxNew extends Component {
     return (
       <div className="BitboxNew">
         <h2 id='bitboxNew' className="content-head is-center"><i className="fas fa-plus" /> Bitbox New</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/gettingstarted">Docs</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/docs/bitboxnew">new</Link></li>
+          </ul>
+        </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
             <p>BITBOX will generate a new app w/ empty <code>src/</code> and <code>test/</code> directories and a <code>bitbox.js</code> configured to connect to your local BITBOX. It accepts several flags to configure your new project or optionally specify commonly used arguments in a .bitboxrc file in your home directory.</p>
