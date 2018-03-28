@@ -360,6 +360,85 @@ class BitcoinCash extends Component {
     BITBOX.BitcoinCash.decodeBIP21(bip21);
     // { address: 'qzw6tfrh8p0jh834uf9rhg77pjg5rgnt3qw0e54u03', options: { amount: 42, label: 'no prefix' } }
           `}</SyntaxHighlighter>
+
+          <h3 id='getByteCount'><code>getByteCount</code></h3>
+          <p>
+        Get byte count of transaction
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+        inputs <code>object</code>:                 object w/ keys describing input types and counts. 'MULTISIG-P2SH' and 'P2PKH'. "MULTISIG-P2SH" also should include the required and total number of signatures. EX: "MULTISIG-P2SH:2-4"
+            </li>
+            <li>
+        outputs <code>object</code>:                 object w/ keys describing output types and counts. 'P2SH' and 'P2PKH'
+
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+        byteCount <code>number</code>:                  number of bytes
+          </p>
+          <h4>Examples</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // 1 P2PKH input
+    let inputs = {
+      P2PKH: 1
+    };
+    // 1 P2SH output
+    let outputs = {
+      P2SH: 1
+    };
+    BITBOX.BitcoinCash.getByteCount(inputs, outputs);
+    // 190
+
+    // 4 MULTISIG-P2SH 2-of-4 and 10 P2PKH inputs
+    let inputs = {
+      "MULTISIG-P2SH:2-4": 4,
+      P2PKH: 10
+    };
+    // 23 P2PKH outputs
+    let outputs = {
+      P2PKH: 23
+    };
+    BITBOX.BitcoinCash.getByteCount(inputs, outputs);
+    // 2750
+
+    // 2 MULTISIG-P2SH 3-of-5 inputs
+    let inputs = {
+      "MULTISIG-P2SH:3-5": 2
+    };
+    // 2 P2PKH outputs
+    let outputs = {
+      P2PKH: 2
+    };
+    BITBOX.BitcoinCash.getByteCount(inputs, outputs);
+    // 565
+
+    // 111 P2PKH inputs
+    let inputs = {
+      "P2PKH": 111
+    };
+    // 2 P2PKH outputs
+    let outputs = {
+      P2PKH: 2
+    };
+    BITBOX.BitcoinCash.getByteCount(inputs, outputs);
+    // 16506
+
+    // 10 P2PKH and 1 MULTISIG-P2SH 1-of-2 input
+    let inputs = {
+      P2PKH: 10,
+      "MULTISIG-P2SH:1-2":1
+    };
+    // 2 P2PKH and 1 P2SH outputs
+    let outputs = {
+      P2PKH: 2,
+      P2SH: 1
+    };
+    BITBOX.BitcoinCash.getByteCount(inputs, outputs);
+    // 1780
+          `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
