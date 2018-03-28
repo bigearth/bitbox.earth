@@ -146,6 +146,64 @@ class ECPair extends Component {
     BITBOX.HDNode.toCashAddress(ecpair)
     // bitcoincash:qzkej6g2zr9c9k83chyqh5pllzv6pkw62ckf2m82ks
             `}</SyntaxHighlighter>
+
+            <h3 id='toPublicKeyBuffer'><code>toPublicKeyBuffer</code></h3>
+            <p>
+            Get the public key of an ECPair as a buffer.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>string</code>:                 ECPair
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          pubkeyBuffer <code>string</code>:       public key of an ECPair as a buffer
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create ecpair from hex encoded public key
+    let ecpair = BITBOX.ECPair.fromPublicKeyHex('02d305772e0873fba6c1c7ff353ce374233316eb5820acd7ff3d7d9b82d514126b');
+    // create public key buffer
+    BITBOX.ECPair.toPublicKeyBuffer(ecpair);
+    // <Buffer 02 d3 05 77 2e 08 73 fb a6 c1 c7 ff 35 3c e3 74 23 33 16 eb 58 20 ac d7 ff 3d 7d 9b 82 d5 14 12 6b>
+
+    // again create ECPair from pubkeyHex
+    let ecpair = BITBOX.ECPair.fromPublicKeyHex('02fb721b92025e775b1b84774e65d568d24645cb633275f5c26f5c3101b214a8fb');
+    // create public key buffer
+    BITBOX.ECPair.toPublicKeyBuffer(ecpair);
+    // <Buffer 02 fb 72 1b 92 02 5e 77 5b 1b 84 77 4e 65 d5 68 d2 46 45 cb 63 32 75 f5 c2 6f 5c 31 01 b2 14 a8 fb>
+            `}</SyntaxHighlighter>
+
+            <h3 id='toPublicKeyHex'><code>toPublicKeyHex</code></h3>
+            <p>
+            Get the public key of an ECPair encoded as hex.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>string</code>:                 ECPair
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          pubkeyBuffer <code>string</code>:       public key of an ECPair encoded as hex
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create ecpair from hex encoded public key
+    let ecpair = BITBOX.ECPair.fromPublicKeyHex('02d305772e0873fba6c1c7ff353ce374233316eb5820acd7ff3d7d9b82d514126b');
+    // create public key buffer
+    BITBOX.ECPair.toPublicKeyHex(ecpair);
+    // 02d305772e0873fba6c1c7ff353ce374233316eb5820acd7ff3d7d9b82d514126b
+
+    // again create ECPair from pubkeyHex
+    let ecpair = BITBOX.ECPair.fromPublicKeyHex('02fb721b92025e775b1b84774e65d568d24645cb633275f5c26f5c3101b214a8fb');
+    // create public key buffer
+    BITBOX.ECPair.toPublicKeyHex(ecpair);
+    // 02fb721b92025e775b1b84774e65d568d24645cb633275f5c26f5c3101b214a8fb
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
