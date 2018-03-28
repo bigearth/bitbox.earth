@@ -70,6 +70,14 @@
 </url>
 
 <url>
+  <loc>https://www.bitbox.earth/bitboxcli/ecpair</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/script</loc>
+</url>
+
+<url>
   <loc>https://www.bitbox.earth/bitboxcli/blockchain</loc>
 </url>
 

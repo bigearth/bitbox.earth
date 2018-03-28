@@ -497,48 +497,6 @@ class HDNode extends Component {
     let hdNode = BITBOX.HDNode.fromXPub('xpub661MyMwAqRbcG4CnhNYoK1r1TKLwQQ1UdC3LHoWFK61rsnzh7Hx35qQ9Z53ucYcE5WvA7GEDXhqqKjSY2e6Y8n7WNVLYHpXCuuX945VPuYn');
             `}</SyntaxHighlighter>
 
-          <h3 id='fromWIF'><code>fromWIF</code></h3>
-          <p>
-          Generates an ECPair from a private key in wallet import format. Can generate addresses as well as sign messages and transactions. Can&rsquo;t derive child HDNodes.
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-        xpub <code>string</code>:                 extended public key to be used
-            </li>
-            <li>
-        path <code>string</code> <code>optional</code>:       derivation path of external change address. Default is <code>0/0</code>
-            </li>
-          </ol>
-          <h4>Result</h4>
-          <p>
-        changeAddress <code>string</code>:      cashaddr encoded change address
-          </p>
-          <h4>Examples</h4>
-          <SyntaxHighlighter language='javascript' style={ocean}>{`
-    // mainnet WIF
-    let wif = 'L4vmKsStbQaCvaKPnCzdRArZgdAxTqVx8vjMGLW5nHtWdRguiRi1';
-    let ecpair = BITBOX.HDNode.fromWIF(wif);
-
-    // get cashaddr
-    BITBOX.HDNode.getCashAddress(ecpair)
-    // bitcoincash:qrlwe36jtawauv24jnvjdcdcja5tapvvm5m3rnksz7
-
-    // get legacy addr
-    BITBOX.HDNode.getLegacyAddress(ecpair)
-    // 1QEvHPehayiuPnggPFsGYTmpZSPAnJpDG8
-
-    // mainnet WIF again
-    let wif = 'Kwpd21tPMtWy24WKmBuLc295fw63C2if16fzb3k6wyB8yTeABAAg'
-    let ecpair = BITBOX.HDNode.fromWIF(wif)
-
-    BITBOX.HDNode.getCashAddress(ecpair)
-    // bitcoincash:qznln6jzydykmlvrzcwhu63s6ce8lh227vfnydhnsx
-
-    BITBOX.HDNode.getLegacyAddress(ecpair)
-    // 1GKBESUjcyBPLDMuHTdBvnypB9DVETFnL1
-          `}</SyntaxHighlighter>
-
             <h3 id='createAccount'><code>createAccount</code></h3>
             <p>
             Create <a href='https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#the-default-wallet-layout'>BIP32</a> account. Has `getChainAddress` and `nextChainAddress` helper methods.

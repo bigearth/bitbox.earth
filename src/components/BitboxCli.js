@@ -5,6 +5,8 @@ import "../styles/docs.scss";
 
 import BitcoinCash from './BitcoinCash';
 import Crypto from './Crypto';
+import ECPair from './ECPair';
+import Script from './Script';
 import Blockchain from './Blockchain';
 import Control from './Control';
 import Generating from './Generating';
@@ -42,7 +44,7 @@ class BitboxCli extends Component {
                 <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc" /> Bitcoin Cash</Link>
               </li>
               <li>
-                <Link to="/bitboxcli/mnemonic"><i className="fas fa-key" /> Mnemonic</Link>
+                <Link to="/bitboxcli/mnemonic"><i className="fas fa-ellipsis-h" /> Mnemonic</Link>
               </li>
               <li>
                 <Link to="/bitboxcli/address"><i className="fas fa-qrcode" /> Address</Link>
@@ -52,6 +54,12 @@ class BitboxCli extends Component {
               </li>
               <li>
                 <Link to="/bitboxcli/crypto"><i className="fas fa-link" /> Crypto</Link>
+              </li>
+              <li>
+                <Link to="/bitboxcli/ecpair"><i className="fas fa-key" /> ECPair</Link>
+              </li>
+              <li>
+                <Link to="/bitboxcli/script"><i className="fas fa-code" /> Script</Link>
               </li>
               <li>
                 <Link to="/bitboxcli/blockchain"><i className="fas fa-cubes" /> Blockchain</Link>
@@ -87,6 +95,8 @@ class BitboxCli extends Component {
             <Route path="/bitboxcli/mnemonic" component={Mnemonic}/>
             <Route path="/bitboxcli/hdnode" component={HDNode}/>
             <Route path="/bitboxcli/crypto" component={Crypto}/>
+            <Route path="/bitboxcli/ecpair" component={ECPair}/>
+            <Route path="/bitboxcli/script" component={Script}/>
             <Route path="/bitboxcli/blockchain" component={Blockchain}/>
             <Route path="/bitboxcli/control" component={Control}/>
             <Route path="/bitboxcli/generating" component={Generating}/>

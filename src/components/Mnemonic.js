@@ -14,7 +14,7 @@ class Mnemonic extends Component {
   render() {
     return (
       <div className="Mnemonic">
-        <h2 id='Mnemonic' className="content-head is-center"><i className="fas fa-key" /> Mnemonic</h2>
+        <h2 id='Mnemonic' className="content-head is-center"><i className="fas fa-ellipsis-h" /> Mnemonic</h2>
         <div className="pure-menu pure-menu-horizontal breadcrumb">
           <ul className="pure-menu-list">
             <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>

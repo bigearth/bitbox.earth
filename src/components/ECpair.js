@@ -1,0 +1,156 @@
+import React, { Component } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { ocean } from 'react-syntax-highlighter/styles/hljs';
+import "../styles/docs.scss";
+import {
+  Link
+} from 'react-router-dom';
+
+class ECPair extends Component {
+  componentDidMount() {
+    document.title = "ECPair - BITBOX by EARTH - Supercharge your Bitcoin Cash workflow";
+  }
+
+  render() {
+    return (
+      <div className="ECPair">
+        <h2 id='ECPair' className="content-head is-center"><i className="fas fa-key" /> ECPair</h2>
+        <div className="pure-menu pure-menu-horizontal breadcrumb">
+          <ul className="pure-menu-list">
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/">Home</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/bitboxcli/bitcoincash">bitbox-cli</Link></li>
+            <li className="pure-menu-item"> > </li>
+            <li className="pure-menu-item"><Link className="pure-menu-link" to="/bitboxcli/ECPair">ECPair</Link></li>
+          </ul>
+        </div>
+        <div className="pure-g">
+          <div className="pure-u-1-1">
+            <h3 id='fromWIF'><code>fromWIF</code></h3>
+            <p>
+            Generates an ECPair from a private key in wallet import format.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          wif <code>string</code>:                private key in wallet import format (WIF)
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          ecpair <code>string</code>:      ECPair
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet WIF
+    let wif = 'L4vmKsStbQaCvaKPnCzdRArZgdAxTqVx8vjMGLW5nHtWdRguiRi1';
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+
+    // get cashaddr
+    BITBOX.HDNode.toCashAddress(ecpair)
+    // bitcoincash:qrlwe36jtawauv24jnvjdcdcja5tapvvm5m3rnksz7
+
+    // get legacy addr
+    BITBOX.HDNode.toLegacyAddress(ecpair)
+    // 1QEvHPehayiuPnggPFsGYTmpZSPAnJpDG8
+
+    // mainnet WIF again
+    let wif = 'Kwpd21tPMtWy24WKmBuLc295fw63C2if16fzb3k6wyB8yTeABAAg'
+    let ecpair = BITBOX.ECPair.fromWIF(wif)
+
+    BITBOX.HDNode.toCashAddress(ecpair)
+    // bitcoincash:qznln6jzydykmlvrzcwhu63s6ce8lh227vfnydhnsx
+
+    BITBOX.HDNode.toLegacyAddress(ecpair)
+    // 1GKBESUjcyBPLDMuHTdBvnypB9DVETFnL1
+            `}</SyntaxHighlighter>
+
+            <h3 id='fromPublicKeyBuffer'><code>fromPublicKeyBuffer</code></h3>
+            <p>
+            Generates an ECPair from a public key buffer.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          pubkeyBuffer <code>string</code>:                 public key buffer
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          ecpair <code>string</code>:      ECPair
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create ECPair from pubkeyBuffer
+    let pubkeyBuffer = Buffer.from("02fb721b92025e775b1b84774e65d568d24645cb633275f5c26f5c3101b214a8fb", 'hex');
+    let ecpair = BITBOX.ECPair.fromPublicKeyBuffer(pubkeyBuffer);
+
+    // get legacy address
+    BITBOX.HDNode.toLegacyAddress(ecpair)
+    // 1SeP7kmdWTwjFmWiRMpqtSkDpW39zrVLK
+
+    // get cash address
+    BITBOX.HDNode.toCashAddress(ecpair)
+    // bitcoincash:qqzdnxncgm3v247u5v0gqnglr2vpdhe0hu4wl0rmwt
+
+    // again create ECPair from pubkeyBuffer
+    let pubkeyBuffer = Buffer.from("02d305772e0873fba6c1c7ff353ce374233316eb5820acd7ff3d7d9b82d514126b", 'hex');
+    let ecpair = BITBOX.ECPair.fromPublicKeyBuffer(pubkeyBuffer);
+
+    // get legacy address
+    BITBOX.HDNode.toLegacyAddress(ecpair)
+    // 1GpugKfjEycPRhk8A8ALPh1zAJmTQGdJPp
+
+    // get cash address
+    BITBOX.HDNode.toCashAddress(ecpair)
+    // bitcoincash:qzkej6g2zr9c9k83chyqh5pllzv6pkw62ckf2m82ks
+            `}</SyntaxHighlighter>
+
+            <h3 id='fromPublicKeyHex'><code>fromPublicKeyHex</code></h3>
+            <p>
+            Generates an ECPair from a public key encoded as hex.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          pubkeyHex <code>string</code>:                 public key encoded as hex
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          ecpair <code>string</code>:      ECPair
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // create ECPair from pubkeyHex
+    let pubkeyHex = "02fb721b92025e775b1b84774e65d568d24645cb633275f5c26f5c3101b214a8fb";
+    let ecpair = BITBOX.ECPair.fromPublicKeyHex(pubkeyHex);
+
+    // get legacy address
+    BITBOX.HDNode.toLegacyAddress(ecpair)
+    // 1SeP7kmdWTwjFmWiRMpqtSkDpW39zrVLK
+
+    // get cash address
+    BITBOX.HDNode.toCashAddress(ecpair)
+    // bitcoincash:qqzdnxncgm3v247u5v0gqnglr2vpdhe0hu4wl0rmwt
+
+    // again create ECPair from pubkeyHex
+    let pubkeyHex = "02d305772e0873fba6c1c7ff353ce374233316eb5820acd7ff3d7d9b82d514126b";
+    let ecpair = BITBOX.ECPair.fromPublicKeyBuffer(pubkeyHex);
+
+    // get legacy address
+    BITBOX.HDNode.toLegacyAddress(ecpair)
+    // 1GpugKfjEycPRhk8A8ALPh1zAJmTQGdJPp
+
+    // get cash address
+    BITBOX.HDNode.toCashAddress(ecpair)
+    // bitcoincash:qzkej6g2zr9c9k83chyqh5pllzv6pkw62ckf2m82ks
+            `}</SyntaxHighlighter>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default ECPair;
