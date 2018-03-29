@@ -26,13 +26,13 @@ class BitboxConsole extends Component {
         </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
-            <p>Launch a console w/ the entire Bitcoin Cash RPC available as well as dozens of helper methods via a built in <code>BITBOX</code> object. <Link to="/bitboxcli/bitcoincash">Full list of commands</Link>.</p>
+            <p>Launch a console w/ the entire Bitcoin Cash RPC available as well as dozens of helper methods via a built in <code>BITBOX</code> object. <Link to="/bitboxcli/bitcoincash">Full list of commands</Link>. Pass in an <code>--environment</code> flag to connect to environments defined in <code>bitbox.js</code> or <code>~/.bitboxrc</code> files. By default <code>console</code> will connect to your <code>development</code> environment.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
-  $ bitbox console
-  ⚡️  BITBOX ⚡️ BITBOX.
-
-  BITBOX.BitboxHTTP              BITBOX.BitcoinCash             BITBOX.Blockchain              BITBOX.Control                 BITBOX.Crypto                  BITBOX.Generating              BITBOX.Mining
-  BITBOX.Network                 BITBOX.RawTransactions         BITBOX.Util                    BITBOX.Wallet                  BITBOX.config
+  $ bitbox console --environment production
+  > BITBOX.
+  BITBOX.Address                 BITBOX.BitboxHTTP              BITBOX.BitcoinCash             BITBOX.Blockchain              BITBOX.Control                 BITBOX.Crypto                  BITBOX.ECPair
+  BITBOX.Generating              BITBOX.HDNode                  BITBOX.Mining                  BITBOX.Mnemonic                BITBOX.Network                 BITBOX.RawTransactions         BITBOX.Script
+  BITBOX.Transaction             BITBOX.Util                    BITBOX.Wallet                  BITBOX.config
             `}</SyntaxHighlighter>
           </div>
         </div>

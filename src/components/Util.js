@@ -27,6 +27,60 @@ class Util extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
 
+            <h3 id='estimateSmartFee'><code>estimateSmartFee</code></h3>
+            <p>
+            WARNING: This interface is unstable and may disappear or change! Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks if possible and return the number of blocks for which the estimate is valid.
+            </p>
+
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+            nblocks (numeric, required)
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  {
+    "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in BCH)
+    "blocks" : n         (numeric) block number where estimate was found
+  }
+            `}</SyntaxHighlighter>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Util.estimateSmartFee(2)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+            `}</SyntaxHighlighter>
+
+            <h3 id='estimateSmartPriority'><code>estimateSmartPriority</code></h3>
+            <p>
+            DEPRECATED. WARNING: This interface is unstable and may disappear or change! Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks if possible and return the number of blocks for which the estimate is valid.
+            </p>
+
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+            nblocks (numeric, required)
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  {
+    "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in BCH)
+    "blocks" : n         (numeric) block number where estimate was found
+  }
+            `}</SyntaxHighlighter>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Util.estimateSmartPriority(2)
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+            `}</SyntaxHighlighter>
+
             <h3 id='createMultisig'><code>createMultisig</code></h3>
             <p>
   Creates a multi-signature address with n signature of m keys required. It returns a json object with the address and redeemScript.
