@@ -34,6 +34,25 @@ class BitboxConsole extends Component {
   BITBOX.Generating              BITBOX.HDNode                  BITBOX.Mining                  BITBOX.Mnemonic                BITBOX.Network                 BITBOX.RawTransactions         BITBOX.Script
   BITBOX.Transaction             BITBOX.Util                    BITBOX.Wallet                  BITBOX.config
             `}</SyntaxHighlighter>
+            <p>Quickly test your ideas</p>
+            <SyntaxHighlighter language='text' style={ocean}>{`
+  > BITBOX.BitcoinCash.toSatoshi(9)
+  // 900000000
+
+  > BITBOX.Address.toLegacyAddress('bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl')
+  // 1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN
+
+  // create mnemonic
+  > let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  // create seed buffer from mnemonic
+  > let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+  // create HDNode from seed buffer
+  > let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+  // derive hardened child HDNode
+  > let childNode = hdNode.derivePath("m/44'/145'/0'");
+  > BITBOX.HDNode.toXPriv(childNode)
+  // xprv9yHczLBaxwHo85o8mJVHSu1ghxEWM2QZcrvWFvHWXgkqfuqNz6EDNxv4wAPTBwX7nkrnBTPgdCZi7qyQAF72MF4KTq9UzzygDhvBajpwScs
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
