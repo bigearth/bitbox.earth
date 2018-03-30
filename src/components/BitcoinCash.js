@@ -439,6 +439,85 @@ class BitcoinCash extends Component {
     BITBOX.BitcoinCash.getByteCount(inputs, outputs);
     // 1780
           `}</SyntaxHighlighter>
+
+          <h3 id='byteToHexString'><code>byteToHexString</code></h3>
+          <p>
+        Turn typed array to hex encoded string
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+        uint8Array <code>Uint8Array</code>:                typed array to be encoded as hex
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+        hexString <code>string</code>:                  hex encoded string
+          </p>
+          <h4>Examples</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+    let hexString =  "02b66ed5895f043a4bbf8abc60e7edd93aea6bbe03db324ffe2f5220fa3b1ad207";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    BITBOX.BitcoinCash.byteToHexString(byteArray);
+    // 02b66ed5895f043a4bbf8abc60e7edd93aea6bbe03db324ffe2f5220fa3b1ad207
+
+    let hexString = "a8b30eb2cc8b695dfce558a66e1fa1b382f4f3cb7e92b6f67f9dcf795a713748";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    BITBOX.BitcoinCash.byteToHexString(byteArray);
+    // a8b30eb2cc8b695dfce558a66e1fa1b382f4f3cb7e92b6f67f9dcf795a713748
+
+    let hexString = "76a91479d3297d1823149f4ec61df31d19f2fad5390c0288ac";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    BITBOX.BitcoinCash.byteToHexString(byteArray);
+    // 76a91479d3297d1823149f4ec61df31d19f2fad5390c0288ac
+
+    let hexString = "362be6ef6ed9fd89a1dcce9978e0d448bbc60517";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    BITBOX.BitcoinCash.byteToHexString(byteArray);
+    // 362be6ef6ed9fd89a1dcce9978e0d448bbc60517
+
+    let hexString = "740f5b2c2b3a467512c05a96b61ca79ebf5bee6f34e1170093a5fa36af283c8c";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    BITBOX.BitcoinCash.byteToHexString(byteArray);
+    // 740f5b2c2b3a467512c05a96b61ca79ebf5bee6f34e1170093a5fa36af283c8c
+          `}</SyntaxHighlighter>
+
+          <h3 id='hexStringToByte'><code>hexStringToByte</code></h3>
+          <p>
+        Turn hex encoded string to byte array
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+        hexString <code>string</code>:                hex encoded string
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+        uint8Array <code>Uint8Array</code>:                  typed array
+          </p>
+          <h4>Examples</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+    let hexString =  "02b66ed5895f043a4bbf8abc60e7edd93aea6bbe03db324ffe2f5220fa3b1ad207";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    // [ 2, 182, 110, 213, 137, 95, 4, 58, 75, 191, 138, 188, 96, 231, 237, 217, 58, 234, 107, 190, 3, 219, 50, 79, 254, 47, 82, 32, 250, 59, 26, 210, 7 ]
+
+    let hexString = "a8b30eb2cc8b695dfce558a66e1fa1b382f4f3cb7e92b6f67f9dcf795a713748";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    // [ 168, 179, 14, 178, 204, 139, 105, 93, 252, 229, 88, 166, 110, 31, 161, 179, 130, 244, 243, 203, 126, 146, 182, 246, 127, 157, 207, 121, 90, 113, 55, 72 ]
+
+    let hexString = "76a91479d3297d1823149f4ec61df31d19f2fad5390c0288ac";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    // [ 118, 169, 20, 121, 211, 41, 125, 24, 35, 20, 159, 78, 198, 29, 243, 29, 25, 242, 250, 213, 57, 12, 2, 136, 172 ]
+
+    let hexString = "362be6ef6ed9fd89a1dcce9978e0d448bbc60517";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    // [ 54, 43, 230, 239, 110, 217, 253, 137, 161, 220, 206, 153, 120, 224, 212, 72, 187, 198, 5, 23 ]
+
+    let hexString = "740f5b2c2b3a467512c05a96b61ca79ebf5bee6f34e1170093a5fa36af283c8c";
+    let byteArray = BITBOX.BitcoinCash.hexStringToByte(hexString);
+    // [ 116, 15, 91, 44, 43, 58, 70, 117, 18, 192, 90, 150, 182, 28, 167, 158, 191, 91, 238, 111, 52, 225, 23, 0, 147, 165, 250, 54, 175, 40, 60, 140 ]
+          `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
