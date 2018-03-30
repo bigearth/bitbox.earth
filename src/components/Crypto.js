@@ -47,23 +47,23 @@ class Crypto extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create sha256 hashes
   BITBOX.Crypto.createHash('EARTH', 'sha256')
-  // bcfee25a8baf6808fce5ff4e63cf21c8d114853ca7eacdcc3c210d73c58dab66
+  // 740f5b2c2b3a467512c05a96b61ca79ebf5bee6f34e1170093a5fa36af283c8c
 
   BITBOX.Crypto.createHash('Carlos Gabriel Cardona', 'sha256')
-  // 3e3d496369a5e2314db74094a1cf0cae8e8cf3fefe1807e251df07c8822a9188
+  // 8e830655c84f9fbd951373c967fee8060e7f00fbb6da5c2b9e7591afca02a45a
 
   BITBOX.Crypto.createHash('Be excellent to each other', 'sha256')
-  //c88c5ae954dd4c3f46d125862fab06d0060ca4cccd523ba1c7d2df72e539868b
+  //8861475d7a1634cb0c174f20f8c3025a5ce65b062be80ec0f93627edad741bb1
 
   // create ripemd160 hashes
   BITBOX.Crypto.createHash('EARTH', 'ripemd160')
-  // ca700bba3bd37304b9bd923652245f598ece8afe
+  // 7629501f7dc77b2d6a20b38ac094b6a6d5588938
 
   BITBOX.Crypto.createHash('Carlos Gabriel Cardona', 'ripemd160')
-  // 971de56ec9f68050532ace44ea5a1b6bffd758a3
+  // 362be6ef6ed9fd89a1dcce9978e0d448bbc60517
 
   BITBOX.Crypto.createHash('Be excellent to each other', 'ripemd160')
-  //1c9b1d50930927998af46f152681c4a9ed5bc9e4
+  //24806a41ed63a6bc460494a728a6fd33b49eebe7
             `}</SyntaxHighlighter>
 
             <h3 id='createSHA256Hash'><code>createSHA256Hash</code></h3>
@@ -84,13 +84,13 @@ class Crypto extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create sha256 hashes
   BITBOX.Crypto.createHash('EARTH', 'sha256')
-  // bcfee25a8baf6808fce5ff4e63cf21c8d114853ca7eacdcc3c210d73c58dab66
+  // 740f5b2c2b3a467512c05a96b61ca79ebf5bee6f34e1170093a5fa36af283c8c
 
   BITBOX.Crypto.createHash('Carlos Gabriel Cardona', 'sha256')
-  // 3e3d496369a5e2314db74094a1cf0cae8e8cf3fefe1807e251df07c8822a9188
+  // 8e830655c84f9fbd951373c967fee8060e7f00fbb6da5c2b9e7591afca02a45a
 
   BITBOX.Crypto.createHash('Be excellent to each other', 'sha256')
-  //c88c5ae954dd4c3f46d125862fab06d0060ca4cccd523ba1c7d2df72e539868b
+  //8861475d7a1634cb0c174f20f8c3025a5ce65b062be80ec0f93627edad741bb1
             `}</SyntaxHighlighter>
 
             <h3 id='createRIPEMD160Hash'><code>createRIPEMD160Hash</code></h3>
@@ -111,13 +111,13 @@ class Crypto extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create ripemd160 hashes
   BITBOX.Crypto.createHash('EARTH', 'ripemd160')
-  // ca700bba3bd37304b9bd923652245f598ece8afe
+  // 7629501f7dc77b2d6a20b38ac094b6a6d5588938
 
   BITBOX.Crypto.createHash('Carlos Gabriel Cardona', 'ripemd160')
-  // 971de56ec9f68050532ace44ea5a1b6bffd758a3
+  // 362be6ef6ed9fd89a1dcce9978e0d448bbc60517
 
   BITBOX.Crypto.createHash('Be excellent to each other', 'ripemd160')
-  //1c9b1d50930927998af46f152681c4a9ed5bc9e4
+  //24806a41ed63a6bc460494a728a6fd33b49eebe7
             `}</SyntaxHighlighter>
 
             <h3 id='randomBytes'><code>randomBytes</code></h3>
