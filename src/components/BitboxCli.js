@@ -5,6 +5,7 @@ import "../styles/docs.scss";
 
 import BitcoinCash from './BitcoinCash';
 import Crypto from './Crypto';
+import TransactionBuilder from './TransactionBuilder';
 import ECPair from './ECPair';
 import Script from './Script';
 import Blockchain from './Blockchain';
@@ -42,6 +43,9 @@ class BitboxCli extends Component {
             <ul>
               <li>
                 <Link to="/bitboxcli/bitcoincash"><i className="fab fa-btc" /> Bitcoin Cash</Link>
+              </li>
+              <li>
+                <Link to="/bitboxcli/transactionbuilder"><i className="fas fa-exchange-alt" /> Transaction Builder</Link>
               </li>
               <li>
                 <Link to="/bitboxcli/mnemonic"><i className="fas fa-ellipsis-h" /> Mnemonic</Link>
@@ -91,6 +95,7 @@ class BitboxCli extends Component {
             <h1 className="content-head is-center">BitboxCli</h1>
             <p><code>bitbox-cli</code> is a Utility for creating great <a href='https://www.bitcoincash.org'>Bitcoin Cash</a> applications. If can be used from the command line or from within client/server apps. Any methods which make network requests return a <code>Promise</code> and any other methods return immediately.</p>
             <Route path="/bitboxcli/bitcoincash" component={BitcoinCash}/>
+            <Route path="/bitboxcli/transactionbuilder" component={TransactionBuilder}/>
             <Route path="/bitboxcli/address" component={Address}/>
             <Route path="/bitboxcli/mnemonic" component={Mnemonic}/>
             <Route path="/bitboxcli/hdnode" component={HDNode}/>
