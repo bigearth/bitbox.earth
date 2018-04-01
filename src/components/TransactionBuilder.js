@@ -33,29 +33,17 @@ class TransactionBuilder extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          keyPair <code>ecpair</code>:                ECPair of HDNode
-              </li>
-              <li>
           network <code>string</code>:                network. Defaults to "bitcoincash"
               </li>
             </ol>
             <h4>Result</h4>
             <p>
-          Transaction Builder <code>TransactionBuilder</code>:      TransactionBuilder
+          TransactionBuilder <code>TransactionBuilder</code>
             </p>
             <h4>Examples</h4>
-            <SyntaxHighlighter language='javaTransactionBuilder' style={ocean}>{`
-    let mnemonic = 'crystal tell okay cheese salon strike enroll math robust ignore oven peace';
-    // root seed buffer
-    let seed = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
-    // master HDNode
-    let master = BITBOX.HDNode.fromSeedBuffer(seed, 'bitcoincash');
-    // node of address which is going to spend utxo
-    let node = master.derivePath("m/44'/145'/0'/0/0");
-    // keypair
-    let keyPair = node.keyPair;
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     // instance of transaction builder
-    let txb = new BITBOX.TransactionBuilder(keyPair, 'bitcoincash');
+    let transactionBuilder = new BITBOX.TransactionBuilder('bitcoincash');
             `}</SyntaxHighlighter>
 
             <h3 id='addInput'><code>addInput</code></h3>
@@ -70,16 +58,27 @@ class TransactionBuilder extends Component {
               <li>
           index <code>number</code>:              index of vin
               </li>
+              <li>
+          keyPair <code>ecpair</code>:                ECPair of HDNode
+              </li>
             </ol>
             <h4>Examples</h4>
-            <SyntaxHighlighter language='javaTransactionBuilder' style={ocean}>{`
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    let mnemonic = 'crystal tell okay cheese salon strike enroll math robust ignore oven peace';
+    // root seed buffer
+    let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    // master HDNode
+    let masterHDNode = BITBOX.HDNode.fromSeedBuffer(rootSeedBuffer, 'bitcoincash');
+    // node of address which is going to spend utxo
+    let bip44BCHAccount0 = masterHDNode.derivePath("m/44'/145'/0'/0/0");
+    // keypair
+    let keyPair = bip44BCHAccount0.keyPair;
+    // instance of transaction builder
+    let transactionBuilder = new BITBOX.TransactionBuilder('bitcoincash');
     // txid of vin
     let txid = 'f7890915febe580920df2681d2bac0909ae89bd0cc1d3ed763e5eeba7f337f0e';
     // add input with txid and index of vin
-    txb.addInput(
-      txid,
-      0
-    );
+    transactionBuilder.addInput(txid, 0, keyPair);
             `}</SyntaxHighlighter>
 
             <h3 id='addOutput'><code>addOutput</code></h3>
@@ -92,19 +91,19 @@ class TransactionBuilder extends Component {
           address <code>string</code>:               legacy or cashaddr address
               </li>
               <li>
-          amount <code>number</code>:                amount to send in satoshis
+          sendAmount <code>number</code>:                amount to send in satoshis
               </li>
             </ol>
             <h4>Examples</h4>
-            <SyntaxHighlighter language='javaTransactionBuilder' style={ocean}>{`
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     // get byte count to calculate fee. paying 1 sat/byte
     let byteCount = BITBOX.BitcoinCash.getByteCount({ P2PKH: 1 }, { P2PKH: 1 });
     // original amount of satoshis in vin
     let originalAmount = 14438;
     // amount to send to receiver. It's the original amount - 1 sat/byte for tx size
-    let amount = originalAmount - byteCount;
-    // add output w/ amount to send
-    txb.addOutput('bitcoincash:qpuax2tarq33f86wccwlx8ge7tad2wgvqgjqlwshpw', amount);
+    let sendAmount = originalAmount - byteCount;
+    // add output w/ address and amount to send
+    transactionBuilder.addOutput('bitcoincash:qpuax2tarq33f86wccwlx8ge7tad2wgvqgjqlwshpw', sendAmount);
             `}</SyntaxHighlighter>
 
             <h3 id='sign'><code>sign</code></h3>
@@ -121,11 +120,11 @@ class TransactionBuilder extends Component {
               </li>
             </ol>
             <h4>Examples</h4>
-            <SyntaxHighlighter language='javaTransactionBuilder' style={ocean}>{`
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     // original amount of satoshis in vin
     let originalAmount = 14438;
     // sign w/ HDNode
-    txb.sign(0, originalAmount);
+    transactionBuilder.sign(0, originalAmount);
             `}</SyntaxHighlighter>
 
             <h3 id='build'><code>build</code></h3>
@@ -137,9 +136,9 @@ class TransactionBuilder extends Component {
           Transaction <code>Object</code>:      Transaction
             </p>
             <h4>Examples</h4>
-            <SyntaxHighlighter language='javaTransactionBuilder' style={ocean}>{`
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     // build tx
-    let tx = txb.build();
+    let tx = transactionBuilder.build();
             `}</SyntaxHighlighter>
 
             <h3 id='toHex'><code>toHex</code></h3>
@@ -151,7 +150,7 @@ class TransactionBuilder extends Component {
           rawHex <code>string</code>:      hex encoded raw transaction ready to be sent to the $BCH network
             </p>
             <h4>Examples</h4>
-            <SyntaxHighlighter language='javaTransactionBuilder' style={ocean}>{`
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
     // output rawhex
     let hex = tx.toHex();
     // 02000000010e7f337fbaeee563d73e1dccd09be89a90c0bad28126df200958befe150989f7000000006b48304502210085b8eb33f3981315bbe39c6810d0311c6cb39504914300ecd952cab8353222e202200ec95797c06ba8c9b15d59ab80e63300cb2371f67b3969d0b502d0fed733fbed4121025c85a571619e60fed412de0356b4e28f4f3670ab0c2b899dfe60e69aaa6cd4c0ffffffff01a6370000000000001976a91479d3297d1823149f4ec61df31d19f2fad5390c0288ac00000000
