@@ -123,7 +123,7 @@ class TransactionBuilder extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
     // original amount of satoshis in vin
     let originalAmount = 14438;
-    // sign w/ HDNode
+    // sign w/ keyPair
     transactionBuilder.sign(0, originalAmount);
             `}</SyntaxHighlighter>
 
