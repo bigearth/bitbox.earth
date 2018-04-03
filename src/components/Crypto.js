@@ -41,7 +41,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            hex <code>string</code>     hex encoded hash of data
+            hex <code>string</code>:    hex encoded hash of data
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -78,7 +78,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            hex <code>string</code>     hex encoded sha256 hash of data
+            hex <code>string</code>:     hex encoded sha256 hash of data
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -105,7 +105,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            hex <code>string</code>     hex encoded ripemd160 hash of data
+            hex <code>string</code>:     hex encoded ripemd160 hash of data
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -135,7 +135,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            hex <code>string</code>     hex encoded random bytes
+            hex <code>string</code>:     hex encoded random bytes
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -168,7 +168,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            hex <code>string</code>     hex encoded random bytes
+            hex <code>string</code>:     hex encoded random bytes
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -200,7 +200,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            buffer <code>Buffer</code>     random bytes as buffer
+            buffer <code>Buffer</code>:     random bytes as buffer
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
