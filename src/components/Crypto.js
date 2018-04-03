@@ -130,7 +130,7 @@ class Crypto extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-  numBytes<code>number</code>:          number of bytes to generate
+  numBytes <code>number</code>:          number of bytes to generate
               </li>
             </ol>
             <h4>Result</h4>
@@ -163,7 +163,7 @@ class Crypto extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-  numBytes<code>number</code>:          number of bytes to generate
+  numBytes <code>number</code>:          number of bytes to generate
               </li>
             </ol>
             <h4>Result</h4>
@@ -195,7 +195,7 @@ class Crypto extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-  numBytes<code>number</code>:          number of bytes to generate
+  numBytes <code>number</code>:          number of bytes to generate
               </li>
             </ol>
             <h4>Result</h4>
@@ -217,7 +217,7 @@ class Crypto extends Component {
   // <Buffer 90 7f aa 98 bb d9 1a 71 a7 fe bc d6 f2 59 8e 43 9d 54 3f 83 bc e7 79 8a 47 fb 45 8e>
 
   BITBOX.Crypto.randomBytesBuffer(32)
-  // <Buffer 35 13 bd 6e b3 25 fc 99 8f 44 10 82 0e 65 f5 fd 24 49 54 bc e3 19 97 2e 1e 23 82 e3 30 14 7c 8a>            
+  // <Buffer 35 13 bd 6e b3 25 fc 99 8f 44 10 82 0e 65 f5 fd 24 49 54 bc e3 19 97 2e 1e 23 82 e3 30 14 7c 8a>
             `}</SyntaxHighlighter>
           </div>
         </div>
