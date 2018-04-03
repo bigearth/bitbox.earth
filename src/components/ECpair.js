@@ -204,6 +204,72 @@ class ECPair extends Component {
     BITBOX.ECPair.toPublicKeyHex(ecpair);
     // 02fb721b92025e775b1b84774e65d568d24645cb633275f5c26f5c3101b214a8fb
             `}</SyntaxHighlighter>
+
+            <h3 id='toLegacyAddress'><code>toLegacyAddress</code></h3>
+            <p>
+          Get legacy address of ECPair
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair: ECPair
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            legacyAddress <code>string</code>:     legacy base58check encoded address of an ECPair
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // private key in wallet import format
+    let wif = 'L5GPEGxCmojgzFoBLUUqT2GegLGqobiYhTZzfLtpkLTfTb9E9NRn';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // to legacy address
+    BITBOX.ECPair.toLegacyAddress(ecpair);
+    // 1DgxdA5bbMcCNWg3yB2MgKqFazV92BXgxK
+
+    // private key in wallet import format
+    let wif = 'Kxq2EzVbDwjquUt5zyCFED5FRt99RZKEKVDJWTQcpSDoLAWMqLer';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // to legacy address
+    BITBOX.ECPair.toLegacyAddress(ecpair);
+    // 13sYpK2KkfrKkAVPoYrBm7dHxhfWNfseyF
+            `}</SyntaxHighlighter>
+
+            <h3 id='toCashAddress'><code>toCashAddress</code></h3>
+            <p>
+          Get cash address of ECPair
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair: ECPair
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            cashAddress <code>string</code>:     cashaddr encoded address of an ECPair
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // private key in wallet import format
+    let wif = 'L5GPEGxCmojgzFoBLUUqT2GegLGqobiYhTZzfLtpkLTfTb9E9NRn';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // to legacy address
+    let address = BITBOX.ECPair.toCashAddress(ecpair);
+    // bitcoincash:qz9nq206kteyv2t7trhdr4vzzkej60kqtytn7sxkxm
+
+    // private key in wallet import format
+    let wif = 'Kxq2EzVbDwjquUt5zyCFED5FRt99RZKEKVDJWTQcpSDoLAWMqLer';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // to legacy address
+    BITBOX.ECPair.toCashAddress(ecpair);
+    // bitcoincash:qq0hlxa22ek7kcxew3wy7cpf6fdfm9jq4vms2xs3r4
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
