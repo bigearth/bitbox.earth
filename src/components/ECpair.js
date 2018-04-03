@@ -259,7 +259,7 @@ class ECPair extends Component {
     // ecpair from wif
     let ecpair = BITBOX.ECPair.fromWIF(wif);
     // to legacy address
-    let address = BITBOX.ECPair.toCashAddress(ecpair);
+    BITBOX.ECPair.toCashAddress(ecpair);
     // bitcoincash:qz9nq206kteyv2t7trhdr4vzzkej60kqtytn7sxkxm
 
     // private key in wallet import format
