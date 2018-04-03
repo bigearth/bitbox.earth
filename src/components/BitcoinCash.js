@@ -152,51 +152,6 @@ class BitcoinCash extends Component {
     // true
           `}</SyntaxHighlighter>
 
-          <h3 id='fromWIF'><code>fromWIF</code></h3>
-          <p>
-        Create Master Private Key
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-        privateKeyWIF <code>string</code>:   Create keypair from private key in wallet import format (WIF)
-            </li>
-            <li>
-        network <code>string</code>         optional network. default: 'bitcoin'
-            </li>
-          </ol>
-          <h4>Result</h4>
-          <p>
-        ECPair:                 ECPair
-          </p>
-          <h4>Examples</h4>
-          <SyntaxHighlighter language='javascript' style={ocean}>{`
-    BITBOX.BitcoinCash.fromWIF('KxYoF3rr34fxUtGwfeASBrz6AWLjJCMG5wniooriX8NvHucsTDFz')
-    // ECPair {
-    //   d:
-    //    BigInteger {
-    //      '0': 22234870,
-    //      '1': 51704986,
-    //      '2': 65514685,
-    //      '3': 58120869,
-    //      '4': 9188204,
-    //      '5': 19136219,
-    //      '6': 39908188,
-    //      '7': 58691735,
-    //      '8': 30573386,
-    //      '9': 649733,
-    //      t: 10,
-    //      s: 0 },
-    //   compressed: true,
-    //   network:
-    //    { messagePrefix: 'Bitcoin Signed Message:',
-    //      bech32: 'bc',
-    //      bip32: { public: 76067358, private: 76066276 },
-    //      pubKeyHash: 0,
-    //      scriptHash: 5,
-    //      wif: 128 } }
-          `}</SyntaxHighlighter>
-
           <h3 id='encodeBase58Check'><code>encodeBase58Check</code></h3>
           <p>
         Encodes hex string as base58Check
