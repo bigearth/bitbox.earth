@@ -122,6 +122,9 @@ class Crypto extends Component {
 
             <h3 id='randomBytes'><code>randomBytes</code></h3>
             <p>
+            <strong>DEPRECATED</strong> and will be removed in v0.6.0. Instead use `randomBytesHex` or `randomBytesBuffer` depending if you need a hex encoded string or buffer.
+            </p>
+            <p>
   Generates cryptographically strong pseudo-random data. The size argument is a number indicating the number of bytes to generate.
             </p>
             <h4>Arguments</h4>
@@ -150,6 +153,71 @@ class Crypto extends Component {
 
   BITBOX.Crypto.randomBytes(32)
   // 6e1453357f6f99d19d2a6554f35eab65b6c27f6572e31d7f2faa696cac57759b
+
+            `}</SyntaxHighlighter>
+
+            <h3 id='randomBytesHex'><code>randomBytesHex</code></h3>
+            <p>
+  Generates cryptographically strong pseudo-random data encoded as hex. The size argument is a number indicating the number of bytes to generate.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+  numBytes<code>number</code>:          number of bytes to generate
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            hex <code>string</code>     hex encoded random bytes
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Crypto.randomBytesHex(16)
+  // c3a2e455d71593ede73e7458bdbdcfb9
+
+  BITBOX.Crypto.randomBytesHex(20)
+  // e274dee5cca791bd65a9f9ba7c93743d0b4eaa36
+
+  BITBOX.Crypto.randomBytesHex(24)
+  // a28d025d44e3cc1ec3a9d42eb85b7ea8277845960d10a7e2
+
+  BITBOX.Crypto.randomBytesHex(28)
+  // 58ef1902f604bdc4179d7d9ddc8b0e7d7ef7834a0fade161942e10c5
+
+  BITBOX.Crypto.randomBytesHex(32)
+  // 6e1453357f6f99d19d2a6554f35eab65b6c27f6572e31d7f2faa696cac57759b
+            `}</SyntaxHighlighter>
+
+            <h3 id='randomBytesBuffer'><code>randomBytesBuffer</code></h3>
+            <p>
+  Generates cryptographically strong pseudo-random data as a buffer. The size argument is a number indicating the number of bytes to generate.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+  numBytes<code>number</code>:          number of bytes to generate
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            buffer <code>Buffer</code>     random bytes as buffer
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Crypto.randomBytesBuffer(16)
+  // <Buffer 91 2e fa 0d 4d dc 57 a0 32 34 e9 a9 75 a0 51 fc>
+
+  BITBOX.Crypto.randomBytesBuffer(20)
+  // <Buffer be 7c 7e 6f ef 9b 7e b6 5f 3f a4 82 47 24 1b d3 74 0e 9b bd>
+
+  BITBOX.Crypto.randomBytesBuffer(24)
+  // <Buffer 06 4b 14 ab c9 eb 43 87 6d cc 38 d0 a2 c5 6e 9a e5 c2 94 76 ea b3 47 3b>
+
+  BITBOX.Crypto.randomBytesBuffer(28)
+  // <Buffer 90 7f aa 98 bb d9 1a 71 a7 fe bc d6 f2 59 8e 43 9d 54 3f 83 bc e7 79 8a 47 fb 45 8e>
+
+  BITBOX.Crypto.randomBytesBuffer(32)
+  // <Buffer 35 13 bd 6e b3 25 fc 99 8f 44 10 82 0e 65 f5 fd 24 49 54 bc e3 19 97 2e 1e 23 82 e3 30 14 7c 8a>            
             `}</SyntaxHighlighter>
           </div>
         </div>

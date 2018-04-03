@@ -113,7 +113,7 @@ class Mnemonic extends Component {
     let entropy = BITBOX.Crypto.randomBytes(16);
     // c2d5f2d51a4944f1c9e17f10e1b98718
     // turn entropy to 12 japanese word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy, BITBOX.Mnemonic.mnemonicWordLists().french)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy, BITBOX.Mnemonic.mnemonicWordLists().japanese)
     // ぱそこん　にあう　にんめい　きどく　ちそう　せんきょ　かいが　きおく　いれる　いねむり　しいく　きかんしゃ
       `}</SyntaxHighlighter>
 
@@ -196,7 +196,7 @@ class Mnemonic extends Component {
     mnemonic <code>string</code>:                         mnemonic phrase
         </li>
         <li>
-    passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
+    passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ""
         </li>
       </ol>
       <h4>Result</h4>
@@ -231,7 +231,7 @@ class Mnemonic extends Component {
     mnemonic <code>string</code>   mnemonic phrase
         </li>
         <li>
-    passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ''
+    passphrase <code>string</code> <code>optional</code>:   passphrase. Defaults to ""
         </li>
       </ol>
       <h4>Result</h4>
@@ -254,39 +254,6 @@ class Mnemonic extends Component {
 
     BITBOX.Mnemonic.mnemonicToSeedBuffer('frost deliver coin clutch upon round scene wonder various wise luggage country', 'yayayayay');
     // <Buffer 1d 00 9f a3 a8 86 51 a4 04 d5 03 3d eb 6d b1 01 e2 f1 3b c3 c8 6d 1f b9 93 b4 d1 33 dc 84 21 12 2c 9b 52 10 ba d8 96 15 e0 b0 9a 34 33 52 f8 07 c8 c4 ... >
-            `}</SyntaxHighlighter>
-
-      <h3 id='translateMnemonic'><code>translateMnemonic</code></h3>
-      <p>
-      Translate mnemonic
-      </p>
-      <h4>Arguments</h4>
-      <ol>
-        <li>
-    mnemonic <code>string</code>:       mnemonic phrase
-        </li>
-        <li>
-    fromLanguage <code>string</code>:   language mnemonic is being translated from
-        </li>
-        <li>
-    toLanguage <code>string</code>:    language mnemonic is being translated to
-        </li>
-      </ol>
-      <h4>Result</h4>
-      <p>
-    mnemonic <code>string</code>        translated mnemonic
-      </p>
-      <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-    // create korean mnemonic
-    let koreanMnemonic = BITBOX.Mnemonic.generateMnemonic(256, BITBOX.Mnemonic.mnemonicWordLists().korean);
-    // 상대 조직 피곤 기간 장면 저런 서쪽 신고 연예인 고춧가루 활짝 세종대왕 거울 대충 벨트 제일 저곳 남녀 수술 수학 학원 금년 유학 인공
-    // translate it to spanish
-    let spanishMnemonic = BITBOX.Mnemonic.translateMnemonic(koreanMnemonic, 'korean', 'spanish')
-    // gato razón torero bobina pintor poema grieta leer mirar aparato vivaz hembra alambre cielo esencia rabia poder buscar incapaz instante trofeo bicho oído pájaro
-    // translate back to korean
-    BITBOX.Mnemonic.translateMnemonic(spanishMnemonic, 'spanish', 'korean')
-    // 상대 조직 피곤 기간 장면 저런 서쪽 신고 연예인 고춧가루 활짝 세종대왕 거울 대충 벨트 제일 저곳 남녀 수술 수학 학원 금년 유학 인공
             `}</SyntaxHighlighter>
 
       <h3 id='mnemonicWordLists'><code>mnemonicWordLists</code></h3>
