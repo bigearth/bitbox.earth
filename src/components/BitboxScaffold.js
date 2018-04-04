@@ -35,7 +35,7 @@ class BitboxScaffold extends Component {
 
   Options:
 
-    -f, --framework <framework>  The framework to use. Options include "react", "angular" and "node". Default: "react"
+    -f, --framework <framework>  The framework to use. Options include "react", "angular", "nextjs" and "node". Default: "react"
     -r, --repo <repo>            The github repository to use. Ex: https://github.com/bigearth/bitbox-scaffold-react.git
     -h, --help                   output usage information
 
@@ -56,6 +56,9 @@ class BitboxScaffold extends Component {
               </li>
               <li>
                 <a href='https://github.com/bigearth/bitbox-scaffold-angular'>https://github.com/bigearth/bitbox-scaffold-angular</a>
+              </li>
+              <li>
+                <a href='https://github.com/bigearth/bitbox-scaffold-nextjs'>https://github.com/bigearth/bitbox-scaffold-nextjs</a>
               </li>
             </ul>
           </div>
