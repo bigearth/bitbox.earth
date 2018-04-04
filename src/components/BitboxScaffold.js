@@ -26,7 +26,7 @@ class BitboxScaffold extends Component {
         </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
-            <p>Create a $BCH app in under a minute in popular frameworks. Currently react, node and angular are supported. Pass in a <code>--repo</code> flag to specify a git repo to use.</p>
+            <p>Create a $BCH app in under a minute in popular frameworks. Currently react, node, nextjs and angular are supported. Pass in a <code>--repo</code> flag to specify a git repo to use.</p>
             <p>Each new app comes with BITBOX bindings and a <code>bitbox.js</code> file for configuration.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
   Usage: scaffold [options]
