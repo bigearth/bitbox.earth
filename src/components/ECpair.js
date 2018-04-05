@@ -393,7 +393,7 @@ class ECPair extends Component {
           hex <code>String</code>
               </li>
               <li>
-          signature <code>Obhect</code>
+          signature <code>Object</code>
               </li>
             </ol>
             <h4>Result</h4>
@@ -448,7 +448,7 @@ class ECPair extends Component {
           buffer <code>Buffer</code>
               </li>
               <li>
-          signature <code>Obhect</code>
+          signature <code>Object</code>
               </li>
             </ol>
             <h4>Result</h4>
