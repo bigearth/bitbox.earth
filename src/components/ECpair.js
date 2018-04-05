@@ -65,6 +65,39 @@ class ECPair extends Component {
     // 1GKBESUjcyBPLDMuHTdBvnypB9DVETFnL1
             `}</SyntaxHighlighter>
 
+            <h3 id='toWIF'><code>toWIF</code></h3>
+            <p>
+            Gets a private key in wallet import format from an ECPair.
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>ECPair</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          wif <code>string</code>:      private key in wallet import format
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet wif
+    let wif = 'L4vmKsStbQaCvaKPnCzdRArZgdAxTqVx8vjMGLW5nHtWdRguiRi1';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // wif from ecpair
+    BITBOX.ECPair.toWIF(ecpair);
+    // L4vmKsStbQaCvaKPnCzdRArZgdAxTqVx8vjMGLW5nHtWdRguiRi1
+
+    // testnet wif
+    let wif = 'cT3tJP7BnjFJSAHbooMXrY8E9t2AFj37amSBAYFMeHfqPqPgD4ZA';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // wif from ecpair
+    BITBOX.ECPair.toWIF(ecpair);
+    // cT3tJP7BnjFJSAHbooMXrY8E9t2AFj37amSBAYFMeHfqPqPgD4ZA
+            `}</SyntaxHighlighter>
+
             <h3 id='fromPublicKeyBuffer'><code>fromPublicKeyBuffer</code></h3>
             <p>
             Generates an ECPair from a public key buffer.
@@ -212,7 +245,7 @@ class ECPair extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          ecpair: ECPair
+          ecpair <code>ECPair</code>
               </li>
             </ol>
             <h4>Result</h4>
@@ -245,7 +278,7 @@ class ECPair extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          ecpair: ECPair
+          ecpair <code>ECPair</code>
               </li>
             </ol>
             <h4>Result</h4>
@@ -269,6 +302,193 @@ class ECPair extends Component {
     // to legacy address
     BITBOX.ECPair.toCashAddress(ecpair);
     // bitcoincash:qq0hlxa22ek7kcxew3wy7cpf6fdfm9jq4vms2xs3r4
+            `}</SyntaxHighlighter>
+
+            <h3 id='signHex'><code>signHex</code></h3>
+            <p>
+          Sign 32 byte hash encoded as hex
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>ECPair</code>
+              </li>
+              <li>
+          hex <code>string</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            signature <code>Object</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet wif
+    let wif = 'Kxq2EzVbDwjquUt5zyCFED5FRt99RZKEKVDJWTQcpSDoLAWMqLer';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // 32 byte hex
+    let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+    // sign
+    BITBOX.ECPair.signHex(ecpair, hex);
+
+    // testnet wif
+    let wif = 'cT3tJP7BnjFJSAHbooMXrY8E9t2AFj37amSBAYFMeHfqPqPgD4ZA';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // 32 byte hex
+    let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+    // sign
+    BITBOX.ECPair.signHex(ecpair, hex);
+            `}</SyntaxHighlighter>
+
+            <h3 id='signBuffer'><code>signBuffer</code></h3>
+            <p>
+          Sign 32 byte hash encoded as a buffer
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>ECPair</code>
+              </li>
+              <li>
+          buffer <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            signature <code>Object</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet wif
+    let wif = 'Kxq2EzVbDwjquUt5zyCFED5FRt99RZKEKVDJWTQcpSDoLAWMqLer';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // 32 byte buffer
+    let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+    // sign
+    BITBOX.ECPair.signBuffer(ecpair, buf);
+
+    // testnet wif
+    let wif = 'cT3tJP7BnjFJSAHbooMXrY8E9t2AFj37amSBAYFMeHfqPqPgD4ZA';
+    // ecpair from wif
+    let ecpair = BITBOX.ECPair.fromWIF(wif);
+    // 32 byte buffer
+    let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+    // sign
+    BITBOX.ECPair.signBuffer(ecpair, buf);
+            `}</SyntaxHighlighter>
+
+            <h3 id='verifyHex'><code>verifyHex</code></h3>
+            <p>
+          Verify signed 32 byte hash encoded as hex
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>ECPair</code>
+              </li>
+              <li>
+          hex <code>String</code>
+              </li>
+              <li>
+          signature <code>Obhect</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            verified <code>Boolean</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+      // mainnet wifs
+      let wif1 = 'Kxq2EzVbDwjquUt5zyCFED5FRt99RZKEKVDJWTQcpSDoLAWMqLer';
+      let wif2 = 'L4BwXDmjzEyzKHbAfGruhieUDPs8KTx7DMgqPk4aF9GefzgqPENV';
+      // ecpairs from wifs
+      let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
+      let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
+      // 32 byte hex
+      let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+      // sign
+      let signature = BITBOX.ECPair.signHex(ecpair1, hex);
+      // verify
+      BITBOX.ECPair.verifyHex(ecpair1, hex, signature);
+      // true
+      BITBOX.ECPair.verifyHex(ecpair2, hex, signature);
+      // false
+
+      // testnet wifs
+      let wif1 = 'cT3tJP7BnjFJSAHbooMXrY8E9t2AFj37amSBAYFMeHfqPqPgD4ZA';
+      let wif2 = 'cRaFawZ49jEV2X3byAV4iGBYCRBVU8PoBzUMVToeEbFeVzbH4Gi7';
+      // ecpairs from wifs
+      let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
+      let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
+      // 32 byte hex
+      let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+      // sign
+      let signature = BITBOX.ECPair.signHex(ecpair1, hex);
+      // verify
+      BITBOX.ECPair.verifyHex(ecpair1, hex, signature);
+      // true
+      BITBOX.ECPair.verifyHex(ecpair2, hex, signature);
+      // false
+            `}</SyntaxHighlighter>
+
+            <h3 id='verifyBuffer'><code>verifyBuffer</code></h3>
+            <p>
+          Verify signed 32 byte hash encoded as a buffer
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          ecpair <code>ECPair</code>
+              </li>
+              <li>
+          buffer <code>Buffer</code>
+              </li>
+              <li>
+          signature <code>Obhect</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            verified <code>Boolean</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+      // mainnet wifs
+      let wif1 = 'Kxq2EzVbDwjquUt5zyCFED5FRt99RZKEKVDJWTQcpSDoLAWMqLer';
+      let wif2 = 'L4BwXDmjzEyzKHbAfGruhieUDPs8KTx7DMgqPk4aF9GefzgqPENV';
+      // ecpairs from wifs
+      let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
+      let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
+      // 32 byte buffer
+      let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+      // sign
+      let signature = BITBOX.ECPair.signBuffer(ecpair1, buf);
+      // verify
+      BITBOX.ECPair.verifyBuffer(ecpair1, buf, signature);
+      // true
+      BITBOX.ECPair.verifyBuffer(ecpair2, buf, signature);
+      // false
+
+      // testnet wifs
+      let wif1 = 'cT3tJP7BnjFJSAHbooMXrY8E9t2AFj37amSBAYFMeHfqPqPgD4ZA';
+      let wif2 = 'cRaFawZ49jEV2X3byAV4iGBYCRBVU8PoBzUMVToeEbFeVzbH4Gi7';
+      // ecpairs from wifs
+      let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
+      let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
+      // 32 byte buffer
+      let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+      // sign
+      let signature = BITBOX.ECPair.signBuffer(ecpair1, buf);
+      // verify
+      BITBOX.ECPair.verifyBuffer(ecpair1, buf, signature);
+      // true
+      BITBOX.ECPair.verifyBuffer(ecpair2, buf, signature);
+      // false
+
             `}</SyntaxHighlighter>
           </div>
         </div>
