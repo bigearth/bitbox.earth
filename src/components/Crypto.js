@@ -166,7 +166,7 @@ class Crypto extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-            hex <code>string</code>:     hex encoded random bytes
+            buffer <code>Buffer</code>:     random bytes encoded as a buffer
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
