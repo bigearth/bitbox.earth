@@ -80,10 +80,6 @@ class Address extends Component {
     // bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
 
     // mainnet
-    BITBOX.Address.toCashAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN')
-    // bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
-
-    // mainnet
     BITBOX.Address.toCashAddress('18HEMuar5ZhXDFep1gEiY1eoPPcBLxfDxj')
     // bitcoincash:qp8a4vzfk9kstwsl4ud4ym3z2tckdf7a4gfwkxvtfq
 
