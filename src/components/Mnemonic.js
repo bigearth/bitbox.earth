@@ -76,44 +76,44 @@ class Mnemonic extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
     // generate 16 bytes of entropy
     let entropy = BITBOX.Crypto.randomBytes(16);
-    // c2d5f2d51a4944f1c9e17f10e1b98718
+    // <Buffer 70 16 9c b1 65 5a 29 2a 13 4e 7b 03 93 17 17 fa>
     // turn entropy to 12 word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
     // security question relief cruel nephew jump chest copper axis assist gift correct
 
     // generate 20 bytes of entropy
     let entropy = BITBOX.Crypto.randomBytes(20);
-    // 71cdd28575534807b1b477869c726a816bb1fe1b
+    // <Buffer 02 01 88 32 72 9c ba 96 3c 77 93 d1 c0 b3 90 88 ee f3 45 31>
     // turn entropy to 15 word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
     // impact hub pattern turkey cruel adult short moment make toe one actress roast yellow hurt
 
     // generate 24 bytes of entropy
     let entropy = BITBOX.Crypto.randomBytes(24);
-    // 1615e8a1c42dc008acf03d4a8d4a60467d29a1b8c5232756
+    // <Buffer 04 cc 50 93 e6 75 22 e8 4e ee 14 92 ae f6 e8 35 2b 06 29 13 62 e3 99 8d>
     // turn entropy to 18 word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
     // bid quantum chronic marriage swing affair record amateur enhance heart object mind spoon speak toast piece chef real
 
     // generate 28 bytes of entropy
     let entropy = BITBOX.Crypto.randomBytes(28);
-    // 9c17b186ccfddd4aa1314e1c3f0f86e60579870cb5d93fa6c100edb1
+    // <Buffer b0 6b 28 cd 78 c2 31 1d 7c 5a 5c 5c af 52 5c 54 6f f6 4b 27 aa 5a d1 b9 96 8f 00 a1>
     // turn entropy to 21 word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
     // orchard rural giant okay tape pipe luggage clap bring wear ticket slot fiscal seminar crazy robot distance current dizzy swarm barrel
 
     // generate 32 bytes of entropy
     let entropy = BITBOX.Crypto.randomBytes(32);
-    // f379da02cc426e6e26430d25e6cc372dfd0a1a2e4a33ac4dc6ae6d56017f642d
+    // <Buffer 3d b6 10 1d b7 81 63 ca 74 a9 bd c4 26 23 28 9b aa df 2e 98 33 f1 91 b3 c6 72 2b aa 0c 0d 0f f7>
     // turn entropy to 24 word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
     // vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property
 
     // generate 16 bytes of entropy
     let entropy = BITBOX.Crypto.randomBytes(16);
-    // c2d5f2d51a4944f1c9e17f10e1b98718
+    // <Buffer d9 03 4f f0 2a 17 1a 12 a3 41 e8 3b 60 c2 eb 41>
     // turn entropy to 12 japanese word mnemonic
-    BITBOX.Mnemonic.entropyToMnemonic(entropy, BITBOX.Mnemonic.mnemonicWordLists().japanese)
+    BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'), BITBOX.Mnemonic.mnemonicWordLists().japanese)
     // ぱそこん　にあう　にんめい　きどく　ちそう　せんきょ　かいが　きおく　いれる　いねむり　しいく　きかんしゃ
       `}</SyntaxHighlighter>
 
@@ -301,7 +301,9 @@ class Mnemonic extends Component {
       <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
     // First create a mnemonic from 32 bytes of random entropy
-    let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(32);
+    let entropy = BITBOX.Crypto.randomBytes(32);
+    // <Buffer cd e7 f0 17 49 92 c7 0c c2 15 b6 9b 99 62 b9 ad d9 32 4b 37 6e 51 90 52 79 53 a9 67 dd 86 b4 0b>
+    let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'));
     // symptom owner ridge follow buffalo choose stem depend million jar lemon claw color credit remove model pudding slot fiber west heavy ranch bird wet
 
     // Then call keypairsFromMnemonic and pass in your mnemonic and how many keypairs you'd like
@@ -317,22 +319,6 @@ class Mnemonic extends Component {
     address: 'bitcoincash:qrhj0lesz6sn7l4hc5arh5tt8k583ahdaun6mcdjx8' },
     { privateKeyWIF: 'Kz3qqJ8GFSSbDrBqtV7mfhBoDPkSmMKtp7Yk62psDgmRjyU8id8J',
     address: 'bitcoincash:qp8xjllc75c2hgrpjy3f6kegtfqgmn72dqs0y20anv' } ]
-
-    // again
-    let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(32);
-    // equip owner slim sibling panther future amazing inside rain boss work cup way debate monkey promote impact palace mansion idle embrace custom grocery stumble
-    BITBOX.Mnemonic.keypairsFromMnemonic(mnemonic, 5)
-    // returns
-    [ { privateKeyWIF: 'L51kvKUZ6CqGMBV6Ew7dPosK83rPcgXZZ3YBHwpRVPuCZSXuFfuy',
-    address: 'bitcoincash:qraws64rf3sxddh9frw5gjum9m7p2xqpxgk6qluhrt' },
-    { privateKeyWIF: 'L4rzcGNUgz1oDh6nZobdr1t5yyWNRQfL29MJtFMksjaG5qBN1NBi',
-      address: 'bitcoincash:qqpqhs5fqt2jfequqppytfemuh03fl493qljsepkue' },
-    { privateKeyWIF: 'KzxX4SAp53kjVqqV65GPTUxvuaKKuhAJZqyfZ51ogYvnfSiyrjah',
-      address: 'bitcoincash:qqua0de65f2ug3xxz0vyj0v4sp43qjg33qh6zqu5ld' },
-    { privateKeyWIF: 'L5SJXmhdd9wK6pYWAnNEr4uF8xZaPagzYrA3x8Wq6ykRj9kYwHcC',
-      address: 'bitcoincash:qpnfdl5umwl39u263kkxxnk6aa30cwrymg8v8p5j2f' },
-    { privateKeyWIF: 'KyWmctVJndJf59bpmgc5GUqfaNXn6RFMRCJGPK8aDGWLF4PzVf1x',
-      address: 'bitcoincash:qr8y2lgpf4dmr7w6rvlywm8e27w5jef42y3rg5ncg7' } ]
           `}</SyntaxHighlighter>
 
       <h3 id='findNearestWord'><code>findNearestWord</code></h3>

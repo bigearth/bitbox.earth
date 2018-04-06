@@ -164,7 +164,7 @@ class Homepage extends Component {
           </div>
 
           <div className="footer l-box is-center">
-            Created w/ ❤️ on EARTH by <a href='https://twitter.com/bitboxearth'>@bitboxearth</a>. Donations <strong>bitcoincash:qpuax2tarq33f86wccwlx8ge7tad2wgvqgjqlwshpw</strong>
+            Created w/ ❤️ on EARTH by <a href='https://twitter.com/bitboxearth'>@bitboxearth</a>. Donations <strong>bitcoincash:qr8zpz5nrw0laee42u3ce3tds8n9sgxdc5qrnzlx5a</strong>
           </div>
         </div>
       </div>
