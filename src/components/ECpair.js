@@ -328,7 +328,7 @@ class ECPair extends Component {
     // ecpair from wif
     let ecpair = BITBOX.ECPair.fromWIF(wif);
     // 32 byte hex
-    let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+    let hex = BITBOX.Crypto.sha256('EARTH');
     // sign
     BITBOX.ECPair.signHex(ecpair, hex);
 
@@ -337,7 +337,7 @@ class ECPair extends Component {
     // ecpair from wif
     let ecpair = BITBOX.ECPair.fromWIF(wif);
     // 32 byte hex
-    let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+    let hex = BITBOX.Crypto.sha256('EARTH');
     // sign
     BITBOX.ECPair.signHex(ecpair, hex);
             `}</SyntaxHighlighter>
@@ -366,7 +366,7 @@ class ECPair extends Component {
     // ecpair from wif
     let ecpair = BITBOX.ECPair.fromWIF(wif);
     // 32 byte buffer
-    let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+    let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
     // sign
     BITBOX.ECPair.signBuffer(ecpair, buf);
 
@@ -375,7 +375,7 @@ class ECPair extends Component {
     // ecpair from wif
     let ecpair = BITBOX.ECPair.fromWIF(wif);
     // 32 byte buffer
-    let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+    let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
     // sign
     BITBOX.ECPair.signBuffer(ecpair, buf);
             `}</SyntaxHighlighter>
@@ -409,7 +409,7 @@ class ECPair extends Component {
       let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
       let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
       // 32 byte hex
-      let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+      let hex = BITBOX.Crypto.sha256('EARTH');
       // sign
       let signature = BITBOX.ECPair.signHex(ecpair1, hex);
       // verify
@@ -425,7 +425,7 @@ class ECPair extends Component {
       let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
       let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
       // 32 byte hex
-      let hex = BITBOX.Crypto.createSHA256Hash('EARTH');
+      let hex = BITBOX.Crypto.sha256('EARTH');
       // sign
       let signature = BITBOX.ECPair.signHex(ecpair1, hex);
       // verify
@@ -464,7 +464,7 @@ class ECPair extends Component {
       let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
       let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
       // 32 byte buffer
-      let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+      let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
       // sign
       let signature = BITBOX.ECPair.signBuffer(ecpair1, buf);
       // verify
@@ -480,7 +480,7 @@ class ECPair extends Component {
       let ecpair1 = BITBOX.ECPair.fromWIF(wif1);
       let ecpair2 = BITBOX.ECPair.fromWIF(wif2);
       // 32 byte buffer
-      let buf = Buffer.from(BITBOX.Crypto.createSHA256Hash('EARTH'), 'hex');
+      let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
       // sign
       let signature = BITBOX.ECPair.signBuffer(ecpair1, buf);
       // verify

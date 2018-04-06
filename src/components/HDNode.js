@@ -575,6 +575,192 @@ class HDNode extends Component {
     account.getChainAddress(0)
     // 1JBApcAMD3riimPxABg2pNvwLumP9DEpxD
             `}</SyntaxHighlighter>
+
+            <h3 id='signHex'><code>signHex</code></h3>
+            <p>
+          Sign 32 byte hash encoded as hex
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          hdnode <code>HDNode</code>
+              </li>
+              <li>
+          hex <code>string</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            signature <code>Object</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet xpriv
+    let xpriv = 'xprv9z2uWrGjbYPxc728rvtMi4jt4SudRiSfYn6Tdif5XN17pJ1NTbHoHK6JePkPLY1NHXLaQcA6sWudpZDm7DwKhbsGQieAp9wx46Wbio4iXg9';
+    // hdnode from xpriv
+    let hdnode = BITBOX.HDNode.fromXPriv(xpriv);
+    // 32 byte hex
+    let hex = BITBOX.Crypto.sha256('EARTH');
+    // sign
+    BITBOX.HDNode.signHex(hdnode, hex);
+
+    // testnet xpriv
+    let xpriv = 'tprv8ggxJ8SG5EdqakzVUeLa9Gr7sqCdEcJPUNDmtdJscNxfmxoXvU36ZguiUWukJVEWEixAUr8pJabJkCt33wzxFQA587gqN51Lxdxx97zAzuG';
+    // hdnode from xpriv
+    let hdnode = BITBOX.HDNode.fromXPriv(xpriv);
+    // 32 byte hex
+    let hex = BITBOX.Crypto.sha256('EARTH');
+    // sign
+    BITBOX.HDNode.signHex(hdnode, hex);
+            `}</SyntaxHighlighter>
+
+            <h3 id='signBuffer'><code>signBuffer</code></h3>
+            <p>
+          Sign 32 byte hash encoded as a buffer
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          hdnode <code>HDNode</code>
+              </li>
+              <li>
+          buffer <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            signature <code>Object</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+    // mainnet xpriv
+    let xpriv = 'xprv9z2uWrGjbYPxc728rvtMi4jt4SudRiSfYn6Tdif5XN17pJ1NTbHoHK6JePkPLY1NHXLaQcA6sWudpZDm7DwKhbsGQieAp9wx46Wbio4iXg9';
+    // hdnode from xpriv
+    let hdnode = BITBOX.HDNode.fromXPriv(xpriv);
+    // 32 byte buffer
+    let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
+    // sign
+    BITBOX.HDNode.signBuffer(hdnode, buf);
+
+    // testnet xpriv
+    let xpriv = 'tprv8ggxJ8SG5EdqakzVUeLa9Gr7sqCdEcJPUNDmtdJscNxfmxoXvU36ZguiUWukJVEWEixAUr8pJabJkCt33wzxFQA587gqN51Lxdxx97zAzuG';
+    // hdnode from xpriv
+    let hdnode = BITBOX.HDNode.fromXPriv(xpriv);
+    // 32 byte buffer
+    let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
+    // sign
+    BITBOX.HDNode.signBuffer(hdnode, buf);
+            `}</SyntaxHighlighter>
+
+            <h3 id='verifyHex'><code>verifyHex</code></h3>
+            <p>
+          Verify signed 32 byte hash encoded as hex
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          hdnode <code>HDNode</code>
+              </li>
+              <li>
+          hex <code>String</code>
+              </li>
+              <li>
+          signature <code>Object</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            verified <code>Boolean</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+      // mainnet xprivs
+      let xpriv1 = 'xprv9ys4cvcoU8RoqvzxGj886r4Ey3w1WfVNYH8sMnVPVzyQtaPPM6Q8pHm3D9WPWvEupGEgcJ1xLaGaZDcvKfoAurE2AzHRRRup5FuHzDr8n15';
+      let xpriv2 = 'xprv9ys4cvcoU8RoxqkZ7Fgt33te4LPHgcsKwyoZYVorkzp9uonWxWgP9wiSQhPeBUqVHbdAyov4Yi55RywBkDfZKdJFRqA51Anz6v72zGaMGZp';
+      // hdnodes from xprivs
+      let hdnode1 = BITBOX.HDNode.fromXPriv(xpriv1);
+      let hdnode2 = BITBOX.HDNode.fromXPriv(xpriv2);
+      // 32 byte hex
+      let hex = BITBOX.Crypto.sha256('EARTH');
+      // sign
+      let signature = BITBOX.HDNode.signHex(hdnode1, hex);
+      // verify
+      BITBOX.HDNode.verifyHex(hdnode1, hex, signature);
+      // true
+      BITBOX.HDNode.verifyHex(hdnode2, hex, signature);
+      // false
+
+      // testnet xprivs
+      let xpriv1 = 'tprv8ggxJ8SG5EdqakzVUeLa9Gr7sqCdEcJPUNDmtdJscNxfmxoXvU36ZguiUWukJVEWEixAUr8pJabJkCt33wzxFQA587gqN51Lxdxx97zAzuG';
+      let xpriv2 = 'tprv8ggxJ8SG5EdqiM6Dn63QwHScQ7HS5hXqUMxSD1NEbDyPw6VtoUMFZBAohpTMsPz9cYbpHELmA4Zm79NKRvEvFdhWRX2bSmu7V7PiNb364nv';
+      // hdnodes from xprivs
+      let hdnode1 = BITBOX.HDNode.fromXPriv(xpriv1);
+      let hdnode2 = BITBOX.HDNode.fromXPriv(xpriv2);
+      // 32 byte hex
+      let hex = BITBOX.Crypto.sha256('EARTH');
+      // sign
+      let signature = BITBOX.HDNode.signHex(hdnode1, hex);
+      // verify
+      BITBOX.HDNode.verifyHex(hdnode1, hex, signature);
+      // true
+      BITBOX.HDNode.verifyHex(hdnode2, hex, signature);
+      // false
+            `}</SyntaxHighlighter>
+
+            <h3 id='verifyBuffer'><code>verifyBuffer</code></h3>
+            <p>
+          Verify signed 32 byte hash encoded as a buffer
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          hdnode <code>HDNode</code>
+              </li>
+              <li>
+          buffer <code>Buffer</code>
+              </li>
+              <li>
+          signature <code>Object</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            verified <code>Boolean</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+      // mainnet xprivs
+      let xpriv1 = 'xprv9ys4cvcoU8RoqvzxGj886r4Ey3w1WfVNYH8sMnVPVzyQtaPPM6Q8pHm3D9WPWvEupGEgcJ1xLaGaZDcvKfoAurE2AzHRRRup5FuHzDr8n15';
+      let xpriv2 = 'xprv9ys4cvcoU8RoxqkZ7Fgt33te4LPHgcsKwyoZYVorkzp9uonWxWgP9wiSQhPeBUqVHbdAyov4Yi55RywBkDfZKdJFRqA51Anz6v72zGaMGZp';
+      // hdnodes from xprivs
+      let hdnode1 = BITBOX.HDNode.fromXPriv(xpriv1);
+      let hdnode2 = BITBOX.HDNode.fromXPriv(xpriv2);
+      // 32 byte buffer
+      let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
+      // sign
+      let signature = BITBOX.HDNode.signBuffer(hdnode1, buf);
+      // verify
+      BITBOX.HDNode.verifyBuffer(hdnode1, buf, signature);
+      // true
+      BITBOX.HDNode.verifyBuffer(hdnode2, buf, signature);
+      // false
+
+      // testnet xprivs
+      let xpriv1 = 'tprv8ggxJ8SG5EdqakzVUeLa9Gr7sqCdEcJPUNDmtdJscNxfmxoXvU36ZguiUWukJVEWEixAUr8pJabJkCt33wzxFQA587gqN51Lxdxx97zAzuG';
+      let xpriv2 = 'tprv8ggxJ8SG5EdqiM6Dn63QwHScQ7HS5hXqUMxSD1NEbDyPw6VtoUMFZBAohpTMsPz9cYbpHELmA4Zm79NKRvEvFdhWRX2bSmu7V7PiNb364nv';
+      // hdnodes from xprivs
+      let hdnode1 = BITBOX.HDNode.fromXPriv(xpriv1);
+      let hdnode2 = BITBOX.HDNode.fromXPriv(xpriv2);
+      // 32 byte buffer
+      let buf = Buffer.from(BITBOX.Crypto.sha256('EARTH'), 'hex');
+      // sign
+      let signature = BITBOX.ECPair.signBuffer(hdnode1, buf);
+      // verify
+      BITBOX.HDNode.verifyBuffer(hdnode1, buf, signature);
+      // true
+      BITBOX.HDNode.verifyBuffer(hdnode2, buf, signature);
+      // false
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
