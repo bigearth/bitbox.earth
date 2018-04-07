@@ -300,26 +300,30 @@ class Script extends Component {
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-              // list all op codes
-              BITBOX.Script.opcodes;
-              // { OP_FALSE: 0,
-              //   OP_0: 0,
-              //   OP_PUSHDATA1: 76,
-              //   OP_PUSHDATA2: 77,
-              //   OP_PUSHDATA4: 78,
-              //   OP_1NEGATE: 79,
-              //   OP_RESERVED: 80,
-              //   OP_TRUE: 81,
-              //   OP_1: 81,
-              //   OP_2: 82,
-              //   OP_3: 83,
-              //   OP_4: 84,
-              //   ...
-              // }
+    // list all op codes
+    BITBOX.Script.opcodes;
+    // { OP_FALSE: 0,
+    //   OP_0: 0,
+    //   OP_PUSHDATA1: 76,
+    //   OP_PUSHDATA2: 77,
+    //   OP_PUSHDATA4: 78,
+    //   OP_1NEGATE: 79,
+    //   OP_RESERVED: 80,
+    //   OP_TRUE: 81,
+    //   OP_1: 81,
+    //   OP_2: 82,
+    //   OP_3: 83,
+    //   OP_4: 84,
+    //   ...
+    // }
 
-              // get the op code for a word
-              BITBOX.Script.opcodes.OP_NUM2BIN
-              // 128
+    // get the op code for a word
+    BITBOX.Script.opcodes.OP_SPLIT
+    // 127
+    BITBOX.Script.opcodes.OP_NUM2BIN
+    // 128
+    BITBOX.Script.opcodes.OP_BIN2NUM
+    // 129
             `}</SyntaxHighlighter>
           </div>
         </div>
