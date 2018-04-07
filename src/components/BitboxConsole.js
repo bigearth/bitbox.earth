@@ -45,11 +45,11 @@ class BitboxConsole extends Component {
   // create mnemonic
   > let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
   // create seed buffer from mnemonic
-  > let seedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+  > let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
   // create HDNode from seed buffer
-  > let hdNode = BITBOX.HDNode.fromSeedBuffer(seedBuffer);
+  > let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // derive hardened child HDNode
-  > let childNode = hdNode.derivePath("m/44'/145'/0'");
+  > let childNode = BITBOX.HDNode.derivePath(hdNode, "m/44'/145'/0'");
   > BITBOX.HDNode.toXPriv(childNode)
   // xprv9yHczLBaxwHo85o8mJVHSu1ghxEWM2QZcrvWFvHWXgkqfuqNz6EDNxv4wAPTBwX7nkrnBTPgdCZi7qyQAF72MF4KTq9UzzygDhvBajpwScs
             `}</SyntaxHighlighter>

@@ -66,11 +66,11 @@ class TransactionBuilder extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
     let mnemonic = 'crystal tell okay cheese salon strike enroll math robust ignore oven peace';
     // root seed buffer
-    let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeedBuffer(mnemonic);
+    let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
     // master HDNode
-    let masterHDNode = BITBOX.HDNode.fromSeedBuffer(rootSeedBuffer, 'bitcoincash');
+    let masterHDNode = BITBOX.HDNode.fromSeed(rootSeedBuffer, 'bitcoincash');
     // node of address which is going to spend utxo
-    let bip44BCHAccount0 = masterHDNode.derivePath("m/44'/145'/0'/0/0");
+    let bip44BCHAccount0 = BITBOX.HDNode.derivePath(masterHDNode, "m/44'/145'/0'/0/0");
     // keypair
     let keyPair = bip44BCHAccount0.keyPair;
     // instance of transaction builder
