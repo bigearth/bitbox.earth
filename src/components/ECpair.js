@@ -96,7 +96,7 @@ class ECPair extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-          ecpair <code>string</code>:      ECPair
+          ecpair <code>ECPair</code>
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -116,12 +116,12 @@ class ECPair extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          ecpair <code>string</code>:                 ECPair
+          ecpair <code>ECPair</code>
               </li>
             </ol>
             <h4>Result</h4>
             <p>
-          pubkeyBuffer <code>string</code>:       public key of an ECPair as a buffer
+          buffer <code>Buffer</code>:       public key of an ECPair as a buffer
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
