@@ -355,10 +355,10 @@ class HDNode extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
   let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
-  // create root seed encoded in hex from mnemonic
-  let rootSeedHex = BITBOX.Mnemonic.mnemonicToSeedHex(mnemonic);
-  // create HDNode from root seed hex
-  let hdNode = BITBOX.HDNode.fromSeedHex(rootSeedHex);
+  // create root seed buffer from mnemonic
+  let rootSeed= BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  // create HDNode from root seed
+  let hdNode = BITBOX.HDNode.fromSeed(rootSeed);
   // create public key buffer from HDNode
   BITBOX.HDNode.toPublicKey(hdNode);
   // <Buffer 03 3e 39 d6 ed 07 31 54 63 70 e2 e9 20 6d 31 dd d9 80 b5 39 5a ea d5 9b 3a 53 49 99 99 1a 20 4c 59>
