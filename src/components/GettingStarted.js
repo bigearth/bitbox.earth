@@ -36,7 +36,7 @@ class GettingStarted extends Component {
             <p>Generate any number of <a href='https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki'>BIP 44</a> accounts. Toggle their addresses between cashaddr/base58 as well as mainnet/testnet. Easily view the private key in wallet import format (WIF) and extended public (<code>xpub</code>) and private (<code>xpriv</code>) keys. Vary the amount of entropy from 16 bytes up to 32 bytes creating shorter/longer mnemonics. Set a custom mnemonic and/or HD Derivation Path. Optionally use a password.</p>
 
             <h3><i className="fa fa-keyboard" /> Full framework</h3>
-            <p>Create new $BCH apps in react, angular and node w/ <code>bitbox scaffold</code>. Create a blank app w/ <code>bitbox new</code>. Test your code against a local blockchain or remote full running node. Dozens of utility methods to accelerate how quickly you can create your app.</p>
+            <p>Create new $BCH apps in react, angular, nexjs and nodejs w/ <code>bitbox scaffold</code>. Create a blank app w/ <code>bitbox new</code>. Test your code against a local blockchain or remote full running node. Dozens of utility methods to accelerate how quickly you can create your app.</p>
 
             <h3><i className="fas fa-folder" /> Paper wallet generator</h3>
             <p>Creating paper wallets is as easy as <code>bitbox paper</code>. Set encoding to legacy or cashaddr. See the mnemonic and derivation path. Generate the mnemonic in 8 langugages including: english, chinese (simplified & traditional), french, italian, japanese, korean and spanish.</p>

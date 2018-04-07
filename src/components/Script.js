@@ -289,6 +289,38 @@ class Script extends Component {
     BITBOX.Script.hexFromASM(scriptPubKeyASM);
     // 76a914bee4182d9fbc8931a728410a0cd3e0f340f2995a88ac
             `}</SyntaxHighlighter>
+
+            <h3 id='opcodes'><code>opcodes</code></h3>
+            <p>
+            Script OP Codes
+            </p>
+            <h4>Result</h4>
+            <p>
+           opcodes <code>Object</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+              // list all op codes
+              BITBOX.Script.opcodes;
+              // { OP_FALSE: 0,
+              //   OP_0: 0,
+              //   OP_PUSHDATA1: 76,
+              //   OP_PUSHDATA2: 77,
+              //   OP_PUSHDATA4: 78,
+              //   OP_1NEGATE: 79,
+              //   OP_RESERVED: 80,
+              //   OP_TRUE: 81,
+              //   OP_1: 81,
+              //   OP_2: 82,
+              //   OP_3: 83,
+              //   OP_4: 84,
+              //   ...
+              // }
+
+              // get the op code for a word
+              BITBOX.Script.opcodes.OP_NUM2BIN
+              // 128
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
