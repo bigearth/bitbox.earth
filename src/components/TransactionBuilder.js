@@ -179,8 +179,8 @@ class TransactionBuilder extends Component {
   "OP_RETURN 23424348466f7245766572796f6e65"
 
   // you can use BITBOX to decompile it to the original text
-  let asm = BITBOX.Script.fromASM("OP_RETURN 23424348466f7245766572796f6e65")
-  let decompiled = BITBOX.Script.decompile(asm)
+  let fromAsm = BITBOX.Script.fromASM("OP_RETURN 23424348466f7245766572796f6e65")
+  let decompiled = BITBOX.Script.decompile(fromAsm)
   decompiled[1].toString('ascii')
   // #BCHForEveryone
             `}</SyntaxHighlighter>
