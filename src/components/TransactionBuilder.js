@@ -157,20 +157,6 @@ class TransactionBuilder extends Component {
 
             <h3 id='op_return'><code>OP_RETURN</code></h3>
             <p>
-            Write data to the blockchain w/ <code>OP_RETURN</code>
-            </p>
-            <h4>Result</h4>
-            <p>
-          Transaction <code>Object</code>:      Transaction
-            </p>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  // build tx
-  let tx = transactionBuilder.build();
-            `}</SyntaxHighlighter>
-
-            <h3 id='toHex'><code>toHex</code></h3>
-            <p>
             Return raw hex of transaction ready to be sent to the $BCH network
             </p>
             <h4>Result</h4>
