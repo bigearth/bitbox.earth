@@ -43,9 +43,9 @@ class BitboxConsole extends Component {
   // 1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN
 
   // create mnemonic
-  > let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  > let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  > let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  > let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   > let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // derive hardened child HDNode

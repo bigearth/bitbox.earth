@@ -48,18 +48,18 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   BITBOX.HDNode.fromSeed(seedBuffer);
 
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   BITBOX.HDNode.fromSeed(seedBuffer);
             `}</SyntaxHighlighter>
@@ -81,9 +81,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // derive unhardened child HDNode
@@ -107,9 +107,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // derive hardened child HDNode
@@ -133,9 +133,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // derive hardened child HDNode
@@ -159,9 +159,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to legacy address
@@ -171,9 +171,9 @@ class HDNode extends Component {
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to cash address
@@ -198,9 +198,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to cash address
@@ -210,9 +210,9 @@ class HDNode extends Component {
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to cash address
@@ -237,9 +237,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to WIF
@@ -249,9 +249,9 @@ class HDNode extends Component {
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to WIF
@@ -276,9 +276,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to extended public key
@@ -288,9 +288,9 @@ class HDNode extends Component {
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to extended public key
@@ -315,9 +315,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to extended private key
@@ -327,14 +327,52 @@ class HDNode extends Component {
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // to extended private key
   BITBOX.HDNode.toXPriv(hdNode);
   // xprv9s21ZrQH143K2b5GPP6zHz22E6LeCgQXJtwNbC3MA3Kz7Se7tveKo96EhqwFtSkYWkyenVcMqM7uq35PcUNG8cUdpsJEgwKG3dvfP7TmL3v
+            `}</SyntaxHighlighter>
+
+            <h3 id='toKeyPair'><code>toKeyPair</code></h3>
+            <p>
+            Get the ECPair of an HDNode
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+            hdNode: HDNode
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+            keyPair <code>ECPair</code>:     ECPair of an HDNode
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  // create mnemonic
+  let mnemonic = BITBOX.Mnemonic.generate(128);
+  // create root seed buffer from mnemonic
+  let rootSeed= BITBOX.Mnemonic.toSeed(mnemonic);
+  // create HDNode from root seed
+  let hdNode = BITBOX.HDNode.fromSeed(rootSeed);
+  // create public key buffer from HDNode
+  BITBOX.HDNode.toKeyPair(hdNode);
+
+  // generate entropy
+  let entropy = BITBOX.Crypto.randomBytes(32);
+  // create mnemonic from entropy
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
+  // create seed buffer from mnemonic
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
+  // create HDNode from seed buffer
+  let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
+  // create public key buffer from HDNode
+  BITBOX.HDNode.toKeyPair(hdNode);
+  // <Buffer 02 87 0e 84 f6 88 75 0e f7 e9 57 51 57 5c 04 51 e2 c0 e8 bb 9c 75 fc 01 f2 af 3d 5b 7f cd f0 f8 6d>
             `}</SyntaxHighlighter>
 
             <h3 id='toPublicKey'><code>toPublicKey</code></h3>
@@ -354,9 +392,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create root seed buffer from mnemonic
-  let rootSeed= BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let rootSeed= BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from root seed
   let hdNode = BITBOX.HDNode.fromSeed(rootSeed);
   // create public key buffer from HDNode
@@ -366,9 +404,9 @@ class HDNode extends Component {
   // generate entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // create mnemonic from entropy
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy);
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // create seed buffer from mnemonic
-  let seedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let seedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create HDNode from seed buffer
   let hdNode = BITBOX.HDNode.fromSeed(seedBuffer);
   // create public key buffer from HDNode
@@ -558,9 +596,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create root seed buffer
-  let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create master hd node
   let masterHDNode = BITBOX.HDNode.fromSeed(rootSeedBuffer);
   // derive child node
@@ -580,9 +618,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create root seed buffer
-  let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create master hd node
   let masterHDNode = BITBOX.HDNode.fromSeed(rootSeedBuffer);
   // derive child node
@@ -604,9 +642,9 @@ class HDNode extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // create mnemonic
-  let mnemonic = BITBOX.Mnemonic.generateMnemonic(128);
+  let mnemonic = BITBOX.Mnemonic.generate(128);
   // create root seed buffer
-  let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // create master hd node
   let masterHDNode = BITBOX.HDNode.fromSeed(rootSeedBuffer);
   // derive child node

@@ -26,7 +26,7 @@ class Mnemonic extends Component {
         </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
-            <h3 id='generateMnemonic'><code>generateMnemonic</code></h3>
+            <h3 id='generate'><code>generate</code></h3>
             <p>Generate <a href='https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki'>BIP39</a> mnemonic from entropy</p>
             <h4>Arguments</h4>
             <ol>
@@ -39,31 +39,31 @@ class Mnemonic extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // generate 12 word mnemonic
-  BITBOX.Mnemonic.generateMnemonic(128);
+  BITBOX.Mnemonic.generate(128);
   // boil lonely casino manage habit where total glory muffin name limit mansion
 
   // generate 15 word mnemonic
-  BITBOX.Mnemonic.generateMnemonic(160);
+  BITBOX.Mnemonic.generate(160);
   // steak prevent estate save dance design close noise cheap season among train sleep ketchup gas
 
   // generate 18 word mnemonic
-  BITBOX.Mnemonic.generateMnemonic(192);
+  BITBOX.Mnemonic.generate(192);
   // fever endorse purpose normal fashion desert blood robust prevent clean guard display raise virtual again unit banana rich
 
   // generate 21 word mnemonic
-  BITBOX.Mnemonic.generateMnemonic(224);
+  BITBOX.Mnemonic.generate(224);
   // scan pink shock describe chicken edit budget exit camera morning awesome silk inner pair sea few flock walnut write mountain surface
 
   // generate 24 word mnemonic
-  BITBOX.Mnemonic.generateMnemonic(256);
+  BITBOX.Mnemonic.generate(256);
   // disagree tide elbow citizen jazz cinnamon bridge certain april settle pact film always inmate border inform solution that submit produce cloth balcony upper maid
 
   // generate 12 french word mnemonic
-  BITBOX.Mnemonic.generateMnemonic(128, BITBOX.Mnemonic.mnemonicWordLists().french);
+  BITBOX.Mnemonic.generate(128, BITBOX.Mnemonic.wordLists().french);
   // annonce ampleur sanglier peser acheter cultiver abroger embellir résoudre dialogue grappin lanterne
             `}</SyntaxHighlighter>
 
-            <h3 id='entropyToMnemonic'><code>entropyToMnemonic</code></h3>
+            <h3 id='fromEntropy'><code>fromEntropy</code></h3>
             <p>Create mnemonic from entropy</p>
             <h4>Arguments</h4>
             <ol>
@@ -78,46 +78,46 @@ class Mnemonic extends Component {
   let entropy = BITBOX.Crypto.randomBytes(16);
   // <Buffer 70 16 9c b1 65 5a 29 2a 13 4e 7b 03 93 17 17 fa>
   // turn entropy to 12 word mnemonic
-  BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
   // security question relief cruel nephew jump chest copper axis assist gift correct
 
   // generate 20 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(20);
   // <Buffer 02 01 88 32 72 9c ba 96 3c 77 93 d1 c0 b3 90 88 ee f3 45 31>
   // turn entropy to 15 word mnemonic
-  BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
   // impact hub pattern turkey cruel adult short moment make toe one actress roast yellow hurt
 
   // generate 24 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(24);
   // <Buffer 04 cc 50 93 e6 75 22 e8 4e ee 14 92 ae f6 e8 35 2b 06 29 13 62 e3 99 8d>
   // turn entropy to 18 word mnemonic
-  BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
   // bid quantum chronic marriage swing affair record amateur enhance heart object mind spoon speak toast piece chef real
 
   // generate 28 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(28);
   // <Buffer b0 6b 28 cd 78 c2 31 1d 7c 5a 5c 5c af 52 5c 54 6f f6 4b 27 aa 5a d1 b9 96 8f 00 a1>
   // turn entropy to 21 word mnemonic
-  BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
   // orchard rural giant okay tape pipe luggage clap bring wear ticket slot fiscal seminar crazy robot distance current dizzy swarm barrel
 
   // generate 32 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // <Buffer 3d b6 10 1d b7 81 63 ca 74 a9 bd c4 26 23 28 9b aa df 2e 98 33 f1 91 b3 c6 72 2b aa 0c 0d 0f f7>
   // turn entropy to 24 word mnemonic
-  BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
   // vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property
 
   // generate 16 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(16);
   // <Buffer d9 03 4f f0 2a 17 1a 12 a3 41 e8 3b 60 c2 eb 41>
   // turn entropy to 12 japanese word mnemonic
-  BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'), BITBOX.Mnemonic.mnemonicWordLists().japanese)
+  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'), BITBOX.Mnemonic.wordLists().japanese)
   // ぱそこん　にあう　にんめい　きどく　ちそう　せんきょ　かいが　きおく　いれる　いねむり　しいく　きかんしゃ
       `}</SyntaxHighlighter>
 
-      <h3 id='mnemonicToEntropy'><code>mnemonicToEntropy</code></h3>
+      <h3 id='toEntropy'><code>toEntropy</code></h3>
       <p>Turn mnemonic to entropy</p>
       <h4>Arguments</h4>
       <ol>
@@ -136,31 +136,31 @@ class Mnemonic extends Component {
       <SyntaxHighlighter language='javascript' style={ocean}>{`
   // turn 12 word mnemonic to entropy
   let mnemonic = 'security question relief cruel nephew jump chest copper axis assist gift correct';
-  BITBOX.Mnemonic.mnemonicToEntropy(mnemonic)
+  BITBOX.Mnemonic.toEntropy(mnemonic)
   // <Buffer c2 d5 f2 d5 1a 49 44 f1 c9 e1 7f 10 e1 b9 87 18>
 
   // turn 15 word mnemonic to entropy
   let mnemonic = 'impact hub pattern turkey cruel adult short moment make toe one actress roast yellow hurt';
-  BITBOX.Mnemonic.mnemonicToEntropy(mnemonic)
+  BITBOX.Mnemonic.toEntropy(mnemonic)
   // <Buffer 71 cd d2 85 75 53 48 07 b1 b4 77 86 9c 72 6a 81 6b b1 fe 1b>
 
   // turn 18 word mnemonic to entropy
   let mnemonic = 'bid quantum chronic marriage swing affair record amateur enhance heart object mind spoon speak toast piece chef real';
-  BITBOX.Mnemonic.mnemonicToEntropy(mnemonic)
+  BITBOX.Mnemonic.toEntropy(mnemonic)
   // <Buffer 16 15 e8 a1 c4 2d c0 08 ac f0 3d 4a 8d 4a 60 46 7d 29 a1 b8 c5 23 27 56>
 
   // turn 21 word mnemonic to entropy
   let mnemonic = 'orchard rural giant okay tape pipe luggage clap bring wear ticket slot fiscal seminar crazy robot distance current dizzy swarm barrel';
-  BITBOX.Mnemonic.mnemonicToEntropy(mnemonic)
+  BITBOX.Mnemonic.toEntropy(mnemonic)
   // <Buffer 9c 17 b1 86 cc fd dd 4a a1 31 4e 1c 3f 0f 86 e6 05 79 87 0c b5 d9 3f a6 c1 00 ed b1>
 
   // turn 24 word mnemonic to entropy
   let mnemonic = 'vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property';
-  BITBOX.Mnemonic.mnemonicToEntropy(mnemonic)
+  BITBOX.Mnemonic.toEntropy(mnemonic)
   // <Buffer f3 79 da 02 cc 42 6e 6e 26 43 0d 25 e6 cc 37 2d fd 0a 1a 2e 4a 33 ac 4d c6 ae 6d 56 01 7f 64 2d>
             `}</SyntaxHighlighter>
 
-            <h3 id='validateMnemonic'><code>validateMnemonic</code></h3>
+            <h3 id='validate'><code>validate</code></h3>
       <p>Validate mnemonic</p>
       <h4>Arguments</h4>
       <ol>
@@ -177,17 +177,17 @@ class Mnemonic extends Component {
       </p>
       <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mnemonic.validateMnemonic('ca', BITBOX.Mnemonic.mnemonicWordLists().english)
+  BITBOX.Mnemonic.validate('ca', BITBOX.Mnemonic.wordLists().english)
   // ca is not in wordlist, did you mean cabbage?
 
-  BITBOX.Mnemonic.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion', BITBOX.Mnemonic.mnemonicWordLists().english)
+  BITBOX.Mnemonic.validate('boil lonely casino manage habit where total glory muffin name limit mansion', BITBOX.Mnemonic.wordLists().english)
   // Valid mnemonic
 
-  BITBOX.Mnemonic.validateMnemonic('boil lonely casino manage habit where total glory muffin name limit mansion boil lonely casino manage habit where total glory muffin name limit mansion', BITBOX.Mnemonic.mnemonicWordLists().english)
+  BITBOX.Mnemonic.validate('boil lonely casino manage habit where total glory muffin name limit mansion boil lonely casino manage habit where total glory muffin name limit mansion', BITBOX.Mnemonic.wordLists().english)
   // Invalid mnemonic
             `}</SyntaxHighlighter>
 
-      <h3 id='mnemonicToSeed'><code>mnemonicToSeed</code></h3>
+      <h3 id='toSeed'><code>toSeed</code></h3>
       <p>
       Create root seed from mnemonic
       </p>
@@ -206,23 +206,23 @@ class Mnemonic extends Component {
       </p>
       <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mnemonic.mnemonicToSeed('enable stem left method one submit coach bid inspire cluster armed bracket')
+  BITBOX.Mnemonic.toSeed('enable stem left method one submit coach bid inspire cluster armed bracket')
   // <Buffer 0a fa b7 46 8f 0c df 79 0f 0e 44 37 45 0c 33 c3 c8 27 17 42 75 d6 13 02 c3 55 de ef 2e 69 57 e4 f5 dd 55 b6 a8 73 78 6d b8 09 36 75 af 4f 6b 2c 52 63 ... >
 
-  BITBOX.Mnemonic.mnemonicToSeed('vendor talk alone sick balance tissue number armor frequent plug transfer chest', 'password');
+  BITBOX.Mnemonic.toSeed('vendor talk alone sick balance tissue number armor frequent plug transfer chest', 'password');
   // <Buffer 2d a5 46 52 36 a4 1c 90 bf c5 38 c9 78 16 03 26 1f 70 7c 67 44 aa e0 97 fa 96 1b a1 23 16 a0 e2 0c f6 ac b6 09 cc 2f af 9a 99 50 b3 f9 a9 be c9 f4 19 ... >
 
-  BITBOX.Mnemonic.mnemonicToSeed('idea relax weird defense body bronze champion ancient vocal peanut similar dose grit company peasant gate sunset deal library act include penalty annual main', '');
+  BITBOX.Mnemonic.toSeed('idea relax weird defense body bronze champion ancient vocal peanut similar dose grit company peasant gate sunset deal library act include penalty annual main', '');
   // <Buffer c1 56 36 5b 0f 2a 16 04 dd 6f 53 ad 7d 0a 4c 14 ba 38 f9 81 fb 18 0f df c3 14 6e 6a fc d8 af 2f 1f c4 2c b2 d3 65 8a 31 2e a8 48 59 12 bd f0 f1 8d e4 ... >
 
-  BITBOX.Mnemonic.mnemonicToSeed('bus aware census desk orphan zebra fashion host try muscle pig close jealous slice elegant prison reject ship great program trumpet syrup tray remove', '');
+  BITBOX.Mnemonic.toSeed('bus aware census desk orphan zebra fashion host try muscle pig close jealous slice elegant prison reject ship great program trumpet syrup tray remove', '');
   // <Buffer f4 2c e8 e1 88 d1 5a 66 5c 18 c0 cf ae df 09 3c 75 d2 4c 47 9d 52 87 f4 be c0 6b 13 e7 da 04 01 a3 50 36 87 22 1f ee cf c8 57 e8 6e ae bb 17 4b 83 60 ... >
 
-  BITBOX.Mnemonic.mnemonicToSeed('frost deliver coin clutch upon round scene wonder various wise luggage country', 'yayayayay');
+  BITBOX.Mnemonic.toSeed('frost deliver coin clutch upon round scene wonder various wise luggage country', 'yayayayay');
   // <Buffer 1d 00 9f a3 a8 86 51 a4 04 d5 03 3d eb 6d b1 01 e2 f1 3b c3 c8 6d 1f b9 93 b4 d1 33 dc 84 21 12 2c 9b 52 10 ba d8 96 15 e0 b0 9a 34 33 52 f8 07 c8 c4 ... >
             `}</SyntaxHighlighter>
 
-      <h3 id='mnemonicWordLists'><code>mnemonicWordLists</code></h3>
+      <h3 id='wordLists'><code>wordLists</code></h3>
       <p>
     Return mnemonic word lists
       </p>
@@ -232,7 +232,7 @@ class Mnemonic extends Component {
       </p>
       <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mnemonic.mnemonicWordLists();
+  BITBOX.Mnemonic.wordLists();
   // {
   //   EN: [],
   //   JA: [],
@@ -247,7 +247,7 @@ class Mnemonic extends Component {
   // }
             `}</SyntaxHighlighter>
 
-      <h3 id='keypairsFromMnemonic'><code>keypairsFromMnemonic</code></h3>
+      <h3 id='toKeypairs'><code>toKeypairs</code></h3>
       <p>
     Returns an array of privateKeyWIF/publicAddress pairs. It generates the addresses as the nth external change address of the first account from that mnemonic w/ this derivation path: <code>m/44&rsquo;/145&rsquo;/0&rsquo;/0/n</code>
       </p>
@@ -269,11 +269,11 @@ class Mnemonic extends Component {
   // First create a mnemonic from 32 bytes of random entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // <Buffer cd e7 f0 17 49 92 c7 0c c2 15 b6 9b 99 62 b9 ad d9 32 4b 37 6e 51 90 52 79 53 a9 67 dd 86 b4 0b>
-  let mnemonic = BITBOX.Mnemonic.entropyToMnemonic(entropy.toString('hex'));
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'));
   // symptom owner ridge follow buffalo choose stem depend million jar lemon claw color credit remove model pudding slot fiber west heavy ranch bird wet
 
-  // Then call keypairsFromMnemonic and pass in your mnemonic and how many keypairs you'd like
-  BITBOX.Mnemonic.keypairsFromMnemonic(mnemonic, 5)
+  // Then call toKeypairs and pass in your mnemonic and how many keypairs you'd like
+  BITBOX.Mnemonic.toKeypairs(mnemonic, 5)
   // [ { privateKeyWIF: 'Kz6b1TszeUGaypUpRCnfD2L17bQSW93o4j3VMpvT5e5BqaF9XkyP',
   // address: 'bitcoincash:qp8a4vzfk9kstwsl4ud4ym3z2tckdf7a4gfwkxvtfq' },
   // { privateKeyWIF: 'L5ZHQ2BdTQaTq2A8HNsdkHYKPLsfrHgvJyrVxHFFZyN9K3fmeoiG',
@@ -307,25 +307,25 @@ class Mnemonic extends Component {
           <SyntaxHighlighter language='javascript' style={ocean}>{`
   // english
   let word = 'ab';
-  let wordlist = BITBOX.Mnemonic.mnemonicWordLists().english;
+  let wordlist = BITBOX.Mnemonic.wordLists().english;
   BITBOX.Mnemonic.findNearestWord(word, wordlist);
   // abandon
 
   // french
   let word = 'octu';
-  let wordlist = BITBOX.Mnemonic.mnemonicWordLists().french;
+  let wordlist = BITBOX.Mnemonic.wordLists().french;
   BITBOX.Mnemonic.findNearestWord(word, wordlist);
   // octupler
 
   // spanish
   let word = 'foobaro';
-  let wordlist = BITBOX.Mnemonic.mnemonicWordLists().spanish;
+  let wordlist = BITBOX.Mnemonic.wordLists().spanish;
   BITBOX.Mnemonic.findNearestWord(word, wordlist);
   // forro
 
   // italian
   let word = 'nv';
-  let wordlist = BITBOX.Mnemonic.mnemonicWordLists().italian;
+  let wordlist = BITBOX.Mnemonic.wordLists().italian;
   BITBOX.Mnemonic.findNearestWord(word, wordlist);
   // neve
           `}</SyntaxHighlighter>

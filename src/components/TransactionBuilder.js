@@ -111,13 +111,13 @@ class TransactionBuilder extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   let mnemonic = 'crystal tell okay cheese salon strike enroll math robust ignore oven peace';
   // root seed buffer
-  let rootSeedBuffer = BITBOX.Mnemonic.mnemonicToSeed(mnemonic);
+  let rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
   // master HDNode
   let masterHDNode = BITBOX.HDNode.fromSeed(rootSeedBuffer, 'bitcoincash');
   // node of address which is going to spend utxo
   let childHDNode = BITBOX.HDNode.derivePath(masterHDNode, "m/44'/145'/0'/0/0");
   // keypair
-  let keyPair = childHDNode.keyPair;
+  let keyPair = BITBOX.HDNode.toKeyPair(childHDNode);
   // get byte count to calculate fee. paying 1 sat/byte
   // sign w/ keyPair
   transactionBuilder.sign(0, keyPair);
