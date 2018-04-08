@@ -157,7 +157,7 @@ class TransactionBuilder extends Component {
 
             <h3 id='op_return'><code>OP_RETURN</code></h3>
             <p>
-            Return raw hex of transaction ready to be sent to the $BCH network
+            Write data to the blockchain w/ <code>OP_RETURN</code>
             </p>
             <h4>Result</h4>
             <p>
