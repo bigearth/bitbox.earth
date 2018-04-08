@@ -566,7 +566,7 @@ class HDNode extends Component {
   // derive child node
   let childNode = BITBOX.HDNode.derivePath(masterHDNode, "m/44'/145'/0'/0");
   // create account
-  let account = BITBOX.HDNode.createAccount([childNode]);
+  BITBOX.HDNode.createAccount([childNode]);
             `}</SyntaxHighlighter>
 
             <h3 id='getChainAddress'><code>getChainAddress</code></h3>
