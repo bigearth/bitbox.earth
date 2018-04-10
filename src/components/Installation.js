@@ -31,8 +31,16 @@ class Installation extends Component {
             <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.3.5/BITBOX-0.3.5.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running:</p>
             <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.3.5.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
-            <h4 id="windows"><i className="fab fa-windows" /> Windows</h4>
-            <p>There currently is no Windows build but there is a <a href='https://github.com/bigearth/bitbox-electron/issues/8'>$50 bounty</a> paid in $BCH.</p>
+            <h4 id="windows"><i className="fab fa-windows" /> Windows and <i className="fab fa-linux" /> Linux</h4>
+            <p>There currently is no Windows installer but there is a <a href='https://github.com/bigearth/bitbox-electron/issues/8'>$50 bounty</a> paid in $BCH.</p>
+            <h5>Clone the git repo</h5>
+            <SyntaxHighlighter language='text' style={ocean}>{" git clone https://github.com/bigearth/bitbox-electron.git"}</SyntaxHighlighter>
+            <h5>Install dependencies</h5>
+            <SyntaxHighlighter language='text' style={ocean}>{" cd bitbox-electron && npm install"}</SyntaxHighlighter>
+            <h5>Build app</h5>
+            <SyntaxHighlighter language='text' style={ocean}>{" npm run build"}</SyntaxHighlighter>
+            <h5>Launch app</h5>
+            <SyntaxHighlighter language='text' style={ocean}>{" npm start"}</SyntaxHighlighter>
             <h3 id="commandline"><i className="fas fa-terminal" /> Command Line</h3>
             <p>To use commands like <code>new</code>, <code>scaffold</code> and <code>console</code>:</p>
             <SyntaxHighlighter language='text' style={ocean}>{" npm install bitbox-cli --global"}</SyntaxHighlighter>

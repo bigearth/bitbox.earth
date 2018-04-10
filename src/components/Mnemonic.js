@@ -78,35 +78,35 @@ class Mnemonic extends Component {
   let entropy = BITBOX.Crypto.randomBytes(16);
   // <Buffer 70 16 9c b1 65 5a 29 2a 13 4e 7b 03 93 17 17 fa>
   // turn entropy to 12 word mnemonic
-  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy)
   // security question relief cruel nephew jump chest copper axis assist gift correct
 
   // generate 20 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(20);
   // <Buffer 02 01 88 32 72 9c ba 96 3c 77 93 d1 c0 b3 90 88 ee f3 45 31>
   // turn entropy to 15 word mnemonic
-  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy)
   // impact hub pattern turkey cruel adult short moment make toe one actress roast yellow hurt
 
   // generate 24 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(24);
   // <Buffer 04 cc 50 93 e6 75 22 e8 4e ee 14 92 ae f6 e8 35 2b 06 29 13 62 e3 99 8d>
   // turn entropy to 18 word mnemonic
-  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy)
   // bid quantum chronic marriage swing affair record amateur enhance heart object mind spoon speak toast piece chef real
 
   // generate 28 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(28);
   // <Buffer b0 6b 28 cd 78 c2 31 1d 7c 5a 5c 5c af 52 5c 54 6f f6 4b 27 aa 5a d1 b9 96 8f 00 a1>
   // turn entropy to 21 word mnemonic
-  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy)
   // orchard rural giant okay tape pipe luggage clap bring wear ticket slot fiscal seminar crazy robot distance current dizzy swarm barrel
 
   // generate 32 bytes of entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // <Buffer 3d b6 10 1d b7 81 63 ca 74 a9 bd c4 26 23 28 9b aa df 2e 98 33 f1 91 b3 c6 72 2b aa 0c 0d 0f f7>
   // turn entropy to 24 word mnemonic
-  BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'))
+  BITBOX.Mnemonic.fromEntropy(entropy)
   // vibrant solution level obtain cheap damage october giant chalk cushion assist fossil spawn artist rice edit proof hotel process survey gas sausage mouse property
 
   // generate 16 bytes of entropy
@@ -269,7 +269,7 @@ class Mnemonic extends Component {
   // First create a mnemonic from 32 bytes of random entropy
   let entropy = BITBOX.Crypto.randomBytes(32);
   // <Buffer cd e7 f0 17 49 92 c7 0c c2 15 b6 9b 99 62 b9 ad d9 32 4b 37 6e 51 90 52 79 53 a9 67 dd 86 b4 0b>
-  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy.toString('hex'));
+  let mnemonic = BITBOX.Mnemonic.fromEntropy(entropy);
   // symptom owner ridge follow buffalo choose stem depend million jar lemon claw color credit remove model pudding slot fiber west heavy ranch bird wet
 
   // Then call toKeypairs and pass in your mnemonic and how many keypairs you'd like
