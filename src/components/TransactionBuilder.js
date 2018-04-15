@@ -188,21 +188,21 @@ class TransactionBuilder extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // encode some text as a buffer
   let buf = new Buffer('#BCHForEveryone');
-  // create array w/ OP_RETURN code and text buffer and compile
-  let data = BITBOX.Script.compile([
+  // create array w/ OP_RETURN code and text buffer and encode
+  let data = BITBOX.Script.encode([
     BITBOX.Script.opcodes.OP_RETURN,
     buf
   ])
-  // add compiled data as output and send 0 satoshis
+  // add encoded data as output and send 0 satoshis
   transactionBuilder.addOutput(data, 0)
 
   // later when you decode the raw hex of the tx you'll see this scriptPubKey
   "OP_RETURN 23424348466f7245766572796f6e65"
 
-  // you can use BITBOX to decompile it to the original text
+  // you can use BITBOX to decode it to the original text
   let fromAsm = BITBOX.Script.fromASM("OP_RETURN 23424348466f7245766572796f6e65")
-  let decompiled = BITBOX.Script.decompile(fromAsm)
-  decompiled[1].toString('ascii')
+  let decoded = BITBOX.Script.decode(fromAsm)
+  decoded[1].toString('ascii')
   // #BCHForEveryone
             `}</SyntaxHighlighter>
           </div>
