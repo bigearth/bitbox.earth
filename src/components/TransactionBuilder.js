@@ -84,7 +84,7 @@ class TransactionBuilder extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // txid of vout
   let txid = 'f7890915febe580920df2681d2bac0909ae89bd0cc1d3ed763e5eeba7f337f0e';
-  // add input with txid, index of vout
+  // add input with txid and index of vout
   transactionBuilder.addInput(txid, 0);
             `}</SyntaxHighlighter>
 
@@ -103,6 +103,7 @@ class TransactionBuilder extends Component {
             </ol>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let originalAmount = 100000;
   let byteCount = BITBOX.BitcoinCash.getByteCount({ P2PKH: 1 }, { P2PKH: 1 });
   // amount to send to receiver. It's the original amount - 1 sat/byte for tx size
   let sendAmount = originalAmount - byteCount;
@@ -134,6 +135,7 @@ class TransactionBuilder extends Component {
             </ol>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let originalAmount = 100000;
   // node of address which is going to spend utxo
   let hdnode = BITBOX.HDNode.fromXPriv("xprvA3eaDg64MwDr72PVGJ7CkvshNAzCDRz7rn98sYrZVAtDSWCAmNGQhEQeCLDcnmcpSkfjhHevXmu4ZL8ZcT9D4vEbG8LpiToZETrHZttw9Yw");
   // keypair

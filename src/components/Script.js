@@ -62,76 +62,6 @@ class Script extends Component {
   // 129
             `}</SyntaxHighlighter>
 
-            <h3 id='classifyInput'><code>classifyInput</code></h3>
-            <p>
-            Classify transaction input
-            </p>
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-          input <code>Buffer</code>
-              </li>
-            </ol>
-            <h4>Result</h4>
-            <p>
-          type <code>String</code>
-            </p>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  let pubkeyInput = "3045022100ba2c3b717e023966cb16df65ca83f77029e2a5b80c47c47b6956474ac9ff281302201d48ee3292439e284a6654a0e79ac2b8f7fff5c6b0d715260aa296501a239c6441";
-  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(pubkeyInput));
-  // pubkey
-
-  let pubkeyhashInput = "30440220280d4a9954c5afe24089bdd545466bd7a8caad8b295e30de9d3cb5e56fccf64e022036663b2c53b5fac674b4b935b53e2a4ea88dfc71c9b879870976d82887542ab441 02969479fa9bea3082697dce683ac05b13ae63016b41d5ca1a450ad40f6c543751";
-  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(pubkeyhashInput));
-  // pubkeyhash
-
-  let multisigInput = "OP_0 3045022100fe324541215798b2df68cbd44039615e23c506d4ec1a05572064392a98196b82022068c849fa6699206da2fc6d7848efc1d3804a5816d6293615fe34c1a7f34e1c2f01 3044022001ab168e80b863fdec694350b587339bb72a37108ac3c989849251444d13ebba02201811272023e3c1038478eb972a82d3ad431bfc2408e88e4da990f1a7ecbb263901 3045022100aaeb7204c17eee2f2c4ff1c9f8b39b79e75e7fbf33e92cc67ac51be8f15b75f90220659eee314a4943a6384d2b154fa5821ef7a084814d7ee2c6f9f7f0ffb53be34b01";
-  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(multisigInput));
-  // multisig
-
-  let scripthashInput = "OP_0 304402207515cf147d201f411092e6be5a64a6006f9308fad7b2a8fdaab22cd86ce764c202200974b8aca7bf51dbf54150d3884e1ae04f675637b926ec33bf75939446f6ca2801 3045022100ef253c1faa39e65115872519e5f0a33bbecf430c0f35cf562beabbad4da24d8d02201742be8ee49812a73adea3007c9641ce6725c32cd44ddb8e3a3af460015d140501 522102359c6e3f04cefbf089cf1d6670dc47c3fb4df68e2bad1fa5a369f9ce4b42bbd1210395a9d84d47d524548f79f435758c01faec5da2b7e551d3b8c995b7e06326ae4a52ae";
-  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(scripthashInput));
-  // scripthash
-            `}</SyntaxHighlighter>
-
-            <h3 id='classifyOutput'><code>classifyOutput</code></h3>
-            <p>
-            Classify transaction output
-            </p>
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-          output <code>Buffer</code>
-              </li>
-            </ol>
-            <h4>Result</h4>
-            <p>
-          type <code>String</code>
-            </p>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  let nullDataOutput = "OP_RETURN 424348466f7245766572796f6e65";
-  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(nullDataOutput));
-  // nulldata
-
-  let pubkeyOutput = "02359c6e3f04cefbf089cf1d6670dc47c3fb4df68e2bad1fa5a369f9ce4b42bbd1 OP_CHECKSIG";
-  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(pubkeyOutput));
-  // pubkey
-
-  let pubkeyhashOutput = "OP_DUP OP_HASH160 aa4d7985c57e011a8b3dd8e0e5a73aaef41629c5 OP_EQUALVERIFY OP_CHECKSIG";
-  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(pubkeyhashOutput));
-  // pubkeyhash
-
-  let multisigOutput = "OP_2 02359c6e3f04cefbf089cf1d6670dc47c3fb4df68e2bad1fa5a369f9ce4b42bbd1 0395a9d84d47d524548f79f435758c01faec5da2b7e551d3b8c995b7e06326ae4a OP_2 OP_CHECKMULTISIG";
-  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(multisigOutput));
-  // multisig
-
-  let scripthashOutput = "OP_HASH160 722ff0bc2c3f47b35c20df646c395594da24e90e OP_EQUAL";
-  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(scripthashOutput));
-  // scripthash
-            `}</SyntaxHighlighter>
-
             <h3 id='encode'><code>encode</code></h3>
             <p>
             Encode a Script buffer
@@ -914,6 +844,76 @@ class Script extends Component {
   let buf = BITBOX.Script.scriptHash.output.encode(scriptHash);
   BITBOX.Script.scriptHash.output.check(buf);
   // true
+            `}</SyntaxHighlighter>
+
+            <h3 id='classifyInput'><code>classifyInput</code></h3>
+            <p>
+            Classify transaction input
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          input <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          type <code>String</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let pubkeyInput = "3045022100ba2c3b717e023966cb16df65ca83f77029e2a5b80c47c47b6956474ac9ff281302201d48ee3292439e284a6654a0e79ac2b8f7fff5c6b0d715260aa296501a239c6441";
+  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(pubkeyInput));
+  // pubkey
+
+  let pubkeyhashInput = "30440220280d4a9954c5afe24089bdd545466bd7a8caad8b295e30de9d3cb5e56fccf64e022036663b2c53b5fac674b4b935b53e2a4ea88dfc71c9b879870976d82887542ab441 02969479fa9bea3082697dce683ac05b13ae63016b41d5ca1a450ad40f6c543751";
+  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(pubkeyhashInput));
+  // pubkeyhash
+
+  let multisigInput = "OP_0 3045022100fe324541215798b2df68cbd44039615e23c506d4ec1a05572064392a98196b82022068c849fa6699206da2fc6d7848efc1d3804a5816d6293615fe34c1a7f34e1c2f01 3044022001ab168e80b863fdec694350b587339bb72a37108ac3c989849251444d13ebba02201811272023e3c1038478eb972a82d3ad431bfc2408e88e4da990f1a7ecbb263901 3045022100aaeb7204c17eee2f2c4ff1c9f8b39b79e75e7fbf33e92cc67ac51be8f15b75f90220659eee314a4943a6384d2b154fa5821ef7a084814d7ee2c6f9f7f0ffb53be34b01";
+  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(multisigInput));
+  // multisig
+
+  let scripthashInput = "OP_0 304402207515cf147d201f411092e6be5a64a6006f9308fad7b2a8fdaab22cd86ce764c202200974b8aca7bf51dbf54150d3884e1ae04f675637b926ec33bf75939446f6ca2801 3045022100ef253c1faa39e65115872519e5f0a33bbecf430c0f35cf562beabbad4da24d8d02201742be8ee49812a73adea3007c9641ce6725c32cd44ddb8e3a3af460015d140501 522102359c6e3f04cefbf089cf1d6670dc47c3fb4df68e2bad1fa5a369f9ce4b42bbd1210395a9d84d47d524548f79f435758c01faec5da2b7e551d3b8c995b7e06326ae4a52ae";
+  BITBOX.Script.classifyInput(BITBOX.Script.fromASM(scripthashInput));
+  // scripthash
+            `}</SyntaxHighlighter>
+
+            <h3 id='classifyOutput'><code>classifyOutput</code></h3>
+            <p>
+            Classify transaction output
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          output <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          type <code>String</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let nullDataOutput = "OP_RETURN 424348466f7245766572796f6e65";
+  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(nullDataOutput));
+  // nulldata
+
+  let pubkeyOutput = "02359c6e3f04cefbf089cf1d6670dc47c3fb4df68e2bad1fa5a369f9ce4b42bbd1 OP_CHECKSIG";
+  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(pubkeyOutput));
+  // pubkey
+
+  let pubkeyhashOutput = "OP_DUP OP_HASH160 aa4d7985c57e011a8b3dd8e0e5a73aaef41629c5 OP_EQUALVERIFY OP_CHECKSIG";
+  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(pubkeyhashOutput));
+  // pubkeyhash
+
+  let multisigOutput = "OP_2 02359c6e3f04cefbf089cf1d6670dc47c3fb4df68e2bad1fa5a369f9ce4b42bbd1 0395a9d84d47d524548f79f435758c01faec5da2b7e551d3b8c995b7e06326ae4a OP_2 OP_CHECKMULTISIG";
+  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(multisigOutput));
+  // multisig
+
+  let scripthashOutput = "OP_HASH160 722ff0bc2c3f47b35c20df646c395594da24e90e OP_EQUAL";
+  BITBOX.Script.classifyOutput(BITBOX.Script.fromASM(scripthashOutput));
+  // scripthash
             `}</SyntaxHighlighter>
           </div>
         </div>
