@@ -33,7 +33,7 @@ class TransactionBuilder extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          network <code>String</code>:                network. Defaults to "bitcoincash"
+          network <code>String</code>: Defaults to "bitcoincash"
               </li>
             </ol>
             <h4>Result</h4>
@@ -44,6 +44,27 @@ class TransactionBuilder extends Component {
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // instance of transaction builder
   let transactionBuilder = new BITBOX.TransactionBuilder('bitcoincash');
+            `}</SyntaxHighlighter>
+
+            <h3 id='hashTypes'><code>hashTypes</code></h3>
+            <p>
+            BITBOX supports the <code>SIGHASH_ALL</code>, <code>SIGHASH_NONE</code> and <code>SIGHASH_SINGLE</code> hash types w/ the <code>SIGHASH_ANYONECANPAY</code> modifier.
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  transactionBuilder.hashTypes
+  // { SIGHASH_ALL: 1,
+  //   SIGHASH_NONE: 2,
+  //   SIGHASH_SINGLE: 3,
+  //   SIGHASH_ANYONECANPAY: 128,
+  //   SIGHASH_BITCOINCASH_BIP143: 64 }
+
+  transactionBuilder.hashTypes.SIGHASH_ALL
+  // 1
+
+  // also has a DEFAULT_SEQUENCE of 0xffffffff
+  transactionBuilder.DEFAULT_SEQUENCE
+  // 4294967295
             `}</SyntaxHighlighter>
 
             <h3 id='addInput'><code>addInput</code></h3>
@@ -58,18 +79,13 @@ class TransactionBuilder extends Component {
               <li>
           index <code>Number</code>:              index of vout
               </li>
-              <li>
-          originalAmount <code>Number</code>:     amount of satoshis at vout
-              </li>
             </ol>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // txid of vout
   let txid = 'f7890915febe580920df2681d2bac0909ae89bd0cc1d3ed763e5eeba7f337f0e';
-  // original amount of satoshis in vout
-  let originalAmount = 14438;
-  // add input with txid, index of vout and amount of satoshis at vout
-  transactionBuilder.addInput(txid, 0, originalAmount);
+  // add input with txid, index of vout
+  transactionBuilder.addInput(txid, 0);
             `}</SyntaxHighlighter>
 
             <h3 id='addOutput'><code>addOutput</code></h3>
@@ -79,7 +95,7 @@ class TransactionBuilder extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          address <code>String</code>:               legacy or cashaddr address
+          scriptPubKey <code>String</code>:               legacy/cashaddr address or script
               </li>
               <li>
           sendAmount <code>Number</code>:                amount to send in satoshis
@@ -106,21 +122,26 @@ class TransactionBuilder extends Component {
               <li>
           keyPair <code>ECPair</code>:                ECPair of HDNode
               </li>
+              <li>
+          redeemScript <code>Buffer</code>
+              </li>
+              <li>
+          hashType <code>Number</code>
+              </li>
+              <li>
+          originalAmount <code>Number</code>: satoshis in vin
+              </li>
             </ol>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  let mnemonic = 'crystal tell okay cheese salon strike enroll math robust ignore oven peace';
-  // root seed buffer
-  let rootSeedBuffer = BITBOX.Mnemonic.toSeed(mnemonic);
-  // master HDNode
-  let masterHDNode = BITBOX.HDNode.fromSeed(rootSeedBuffer, 'bitcoincash');
   // node of address which is going to spend utxo
-  let childHDNode = BITBOX.HDNode.derivePath(masterHDNode, "m/44'/145'/0'/0/0");
+  let hdnode = BITBOX.HDNode.fromXPriv("xprvA3eaDg64MwDr72PVGJ7CkvshNAzCDRz7rn98sYrZVAtDSWCAmNGQhEQeCLDcnmcpSkfjhHevXmu4ZL8ZcT9D4vEbG8LpiToZETrHZttw9Yw");
   // keypair
-  let keyPair = BITBOX.HDNode.toKeyPair(childHDNode);
-  // get byte count to calculate fee. paying 1 sat/byte
+  let keyPair = BITBOX.HDNode.toKeyPair(hdnode);
+  // empty redeemScript variable
+  let redeemScript;
   // sign w/ keyPair
-  transactionBuilder.sign(0, keyPair);
+  transactionBuilder.sign(0, keyPair, redeemScript, transactionBuilder.hashTypes.SIGHASH_ALL, originalAmount);
             `}</SyntaxHighlighter>
 
             <h3 id='build'><code>build</code></h3>
