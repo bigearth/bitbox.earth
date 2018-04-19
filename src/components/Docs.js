@@ -9,6 +9,7 @@ import BitboxNew from './BitboxNew';
 import BitboxConsole from './BitboxConsole';
 import BitboxScaffold from './BitboxScaffold';
 import BitboxPaper from './BitboxPaper';
+import BitboxProxy from './BitboxProxy';
 
 import {
   Link
@@ -56,6 +57,9 @@ class Docs extends Component {
               <li>
                 <Link to="/docs/bitboxpaper"><i className="fas fa-folder" /> <code>paper</code></Link>
               </li>
+              <li>
+                <Link to="/docs/bitboxproxy"><i className="fas fa-cloud-upload-alt" /> <code>proxy</code></Link>
+              </li>
             </ul>
           </div>
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5 docsContent">
@@ -69,6 +73,7 @@ class Docs extends Component {
             <Route path="/docs/bitboxscaffold" component={BitboxScaffold}/>
             <Route path="/docs/bitboxconsole" component={BitboxConsole}/>
             <Route path="/docs/bitboxpaper" component={BitboxPaper}/>
+            <Route path="/docs/bitboxproxy" component={BitboxProxy}/>
           </div>
         </div>
       </div>
