@@ -39,7 +39,7 @@ class Installation extends Component {
             <p>For installing on Windows use the official installer from <a href='https://nodejs.org/'>nodejs.org</a>. Install the one which says "Recommended for most users"</p>
             <h3 id="gui"><i className="fas fa-desktop" /> GUI</h3>
             <h4 id="apple"><i className="fab fa-apple" /> MacOS</h4>
-            <p>Download the <a href='https://github.com/bigearth/bitbox-electron/releases/download/0.3.5/BITBOX-0.3.5.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running:</p>
+            <p>Download the <a href='https://github.com/bigearth/bitbox-gui/releases/download/0.7.1/BITBOX-0.7.1.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running:</p>
             <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.3.5.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows"><i className="fab fa-windows" /> Windows and <i className="fab fa-linux" /> Linux</h4>
