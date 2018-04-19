@@ -46,6 +46,9 @@ class GettingStarted extends Component {
 
             <h3><i className="fas fa-terminal" /> Built in console</h3>
             <p><code>bitbox console</code> opens a repl w/ the entire <Link to="/bitboxcli/bitcoincash">BITBOX</Link> api available. Ex: <code>BitcoinCash</code>, <code>Crypto</code>, <code>Blockchain</code>, <code>Control</code>, <code>Generating</code>, <code>Mining</code>, <code>Network</code>, <code>RawTransactions</code>, <code>Util</code> and <code>Wallet</code>.</p>
+
+            <h3><i className="fas fa-cloud-upload-alt" /> Proxy</h3>
+            <p><code>bitbox proxy</code> lets you <code>POST</code> to full BCH nodes w/out working of CORS configuration.</p>
           </div>
         </div>
 
