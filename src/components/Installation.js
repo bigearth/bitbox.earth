@@ -53,7 +53,7 @@ class Installation extends Component {
             <h5>Launch app</h5>
             <SyntaxHighlighter language='text' style={ocean}>{" npm start"}</SyntaxHighlighter>
             <h3 id="commandline"><i className="fas fa-terminal" /> Command Line</h3>
-            <p>To use commands like <code>new</code>, <code>scaffold</code> and <code>console</code>:</p>
+            <p>To use commands like <code>new</code> and <code>console</code>:</p>
             <SyntaxHighlighter language='text' style={ocean}>{" npm install bitbox-cli --global"}</SyntaxHighlighter>
             <p>To use inside a command line script or client/server app:</p>
             <SyntaxHighlighter language='text' style={ocean}>{" npm install bitbox-cli --save"}</SyntaxHighlighter>
