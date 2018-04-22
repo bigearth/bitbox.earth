@@ -28,11 +28,12 @@ class BitboxNew extends Component {
           <div className="pure-u-1-1">
             <p>BITBOX will generate a new app w/ empty <code>src/</code> and <code>test/</code> directories and a <code>bitbox.js</code> configured to connect to your local BITBOX. It accepts several flags to configure your new project or optionally specify commonly used arguments in a .bitboxrc file in your home directory.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
-  Usage: new [options]
+  Usage: new [options] <name>
 
   Options:
 
-    -t, --title <title>              Title of new project
+    -s, --scaffold <scaffold>        The framework to use. Options include react, angular, nextjs and node. (Default: react)
+    -r, --scaffold-repo <repo>       The github repository to use. Ex: https://github.com/bigearth/bitbox-scaffold-react.git
     -e, --environment <environment>  environment of running BITBOX instance. Ex: production, staging. Default: development
     -r, --protocol <protocol>        protocol of running BITBOX instance. Default: http
     -o, --host <host>                host of running BITBOX instance. Default: localhost
@@ -41,13 +42,8 @@ class BitboxNew extends Component {
     -a, --password <passwore>        Bitcoin Cash JSON RPC password
     -h, --help                       output usage information
 
-  $ bitbox new --title helloEARTH
-  Creating helloEARTH/ directory
-  Creating src/ directory: ./helloEARTH/src
-  Creating test/ directory: ./helloEARTH/tests
-  Creating bitbox.js configuration file
-  All done. ✅
-  Go get em! Remember--with great power comes great responsibility. 🚀
+  $ bitbox new helloEARTH
+  $ bitbox new helloEARTH --scaffold react
             `}</SyntaxHighlighter>
             <h3 id="bitboxJS">bitbox.js</h3>
             <p>Your <code>bitbox.js</code> file will contain the default settings to connect to your local running BITBOX.</p>
