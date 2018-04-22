@@ -40,7 +40,7 @@ class BitboxNew extends Component {
     -p, --port <port>                port of running BITBOX instance. Default: 8332
     -u, --username <username>        Bitcoin Cash JSON RPC username
     -a, --password <password>        Bitcoin Cash JSON RPC password
-    -c, --corsproxy <corsproxy>      Boolean to proxy POST requests to 'bitbox proxy'
+    -c, --corsproxy                  Enable proxy POST requests to bitbox proxy (default: disabled)
     -h, --help                       output usage information
 
   $ bitbox new helloEARTH
