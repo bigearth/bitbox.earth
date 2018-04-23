@@ -43,7 +43,6 @@ class Installation extends Component {
             <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.3.5.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows"><i className="fab fa-windows" /> Windows and <i className="fab fa-linux" /> Linux</h4>
-            <p>There currently is no Windows installer but there is a <a href='https://github.com/bigearth/bitbox-electron/issues/8'>$50 bounty</a> paid in $BCH.</p>
             <h5>Clone the git repo</h5>
             <SyntaxHighlighter language='text' style={ocean}>{" git clone https://github.com/bigearth/bitbox-electron.git"}</SyntaxHighlighter>
             <h5>Install dependencies</h5>
