@@ -221,18 +221,13 @@ class Mining extends Component {
   parameters     (string, optional): object of optional parameters
             </li>
           </ol>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-      {
-        "workid" : "id"    (string, optional) if the server provided a workid, it MUST be included with submissions
-      }
-            `}</SyntaxHighlighter>
           <h4>Result</h4>
           <p>
     legacyAddress <code>string</code>    legacy base 58 check encoded address
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mining.submitBlock("mydata")
+  BITBOX.Mining.submitBlock(hexdata, parameters)
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
