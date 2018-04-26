@@ -32,7 +32,7 @@ class BitboxNew extends Component {
 
   Options:
 
-    -s, --scaffold <scaffold>        The framework to use. Options include react, angular, nextjs and node. (Default: react)
+    -s, --scaffold <scaffold>        The framework to use. Options include react, angular, node, next, and vue. (Default: react)
     -r, --scaffold-repo <repo>       The github repository to use. Ex: https://github.com/bigearth/bitbox-scaffold-react.git
     -e, --environment <environment>  environment of running BITBOX instance. Ex: production, staging. Default: development
     -r, --protocol <protocol>        protocol of running BITBOX instance. Default: http
