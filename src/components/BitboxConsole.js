@@ -32,7 +32,7 @@ class BitboxConsole extends Component {
   > BITBOX.
   BITBOX.Address                 BITBOX.BitboxHTTP              BITBOX.BitcoinCash             BITBOX.Blockchain              BITBOX.Control                 BITBOX.Crypto                  BITBOX.ECPair
   BITBOX.Generating              BITBOX.HDNode                  BITBOX.Mining                  BITBOX.Mnemonic                BITBOX.Network                 BITBOX.RawTransactions         BITBOX.Script
-  BITBOX.Transaction             BITBOX.Util                    BITBOX.Wallet                  BITBOX.config
+  BITBOX.Transaction             BITBOX.Util                    BITBOX.config
             `}</SyntaxHighlighter>
             <p>Quickly test your ideas</p>
             <SyntaxHighlighter language='text' style={ocean}>{`

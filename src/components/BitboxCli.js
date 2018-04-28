@@ -15,7 +15,6 @@ import Mining from './Mining';
 import Network from './Network';
 import RawTransactions from './RawTransactions';
 import Util from './Util';
-import Wallet from './Wallet';
 import Address from './Address';
 import Mnemonic from './Mnemonic';
 import HDNode from './HDNode';
@@ -86,9 +85,6 @@ class BitboxCli extends Component {
               <li>
                 <Link to="/bitboxcli/util"><i className="fas fa-cogs" /> Util</Link>
               </li>
-              <li>
-                <Link to="/bitboxcli/wallet"><i className="fas fa-folder" /> Wallet</Link>
-              </li>
             </ul>
           </div>
           <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-4-5 docsContent">
@@ -109,7 +105,6 @@ class BitboxCli extends Component {
             <Route path="/bitboxcli/network" component={Network}/>
             <Route path="/bitboxcli/rawtransactions" component={RawTransactions}/>
             <Route path="/bitboxcli/util" component={Util}/>
-            <Route path="/bitboxcli/wallet" component={Wallet}/>
           </div>
         </div>
       </div>

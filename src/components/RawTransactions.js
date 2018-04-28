@@ -158,62 +158,6 @@ class RawTransactions extends Component {
   });
             `}</SyntaxHighlighter>
 
-            <h3 id='fundRawTransaction'><code>fundRawTransaction</code></h3>
-          <p>
-  Add inputs to a transaction until it has enough in value to meet its out value.
-  This will not modify existing inputs, and will add at most one change output to the outputs.
-  No existing outputs will be modified unless "subtractFeeFromOutputs" is specified.
-  Note that inputs which were signed may need to be resigned after completion since in/outputs have been added.
-  The inputs added will not be signed, use signrawtransaction for that.
-  Note that all existing inputs must have their previous output transaction be in the wallet.
-  Note that all inputs selected must be of standard form and P2SH scripts must be
-  in the wallet using importaddress or addmultisigaddress (to calculate fees).
-  You can see whether this is the case by checking the "solvable" field in the listunspent output.
-  Only pay-to-pubkey, multisig, and P2SH versions thereof are currently supported for watch-only
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  hexstring           (string, required): The hex string of the raw transaction
-            </li>
-            <li>
-  options                 (object, optional)
-            </li>
-          </ol>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-     {
-       "changeAddress"          (string, optional, default pool address) The bitcoin address to receive the change
-       "changePosition"         (numeric, optional, default random) The index of the change output
-       "includeWatching"        (boolean, optional, default false) Also select inputs which are watch only
-       "lockUnspents"           (boolean, optional, default false) Lock selected unspent outputs
-       "reserveChangeKey"       (boolean, optional, default true) Reserves the change output key from the keypool
-       "feeRate"                (numeric, optional, default not set: makes wallet determine the fee) Set a specific feerate (BCH per KB)
-       "subtractFeeFromOutputs" (array, optional) A json array of integers.
-                                The fee will be equally deducted from the amount of each specified output.
-                                The outputs are specified by their zero-based index, before any change output is added.
-                                Those recipients will receive less bitcoins than you enter in their corresponding amount field.
-                                If no outputs are specified here, the sender pays the fee.
-                                    [vout_index,...]
-     }
-                           for backward compatibility: passing in a true instead of an object will result in {"includeWatching":true}
-            `}</SyntaxHighlighter>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "hex":       "value", (string)  The resulting raw transaction (hex-encoded string)
-    "fee":       n,         (numeric) Fee in BCH the resulting transaction pays
-    "changepos": n          (numeric) The position of the added change output, or -1
-  }
-            `}</SyntaxHighlighter>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.RawTransactions.fundRawTransaction([], {"myaddress":0.01})
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
             <h3 id='getRawTransaction'><code>getRawTransaction</code></h3>
           <p>
   Return the raw transaction data. If verbose is 'true', returns an Object with information about 'txid'. If verbose is 'false' or omitted, returns a string that is serialized, hex-encoded data for 'txid'.
