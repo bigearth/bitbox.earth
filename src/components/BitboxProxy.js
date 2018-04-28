@@ -26,6 +26,7 @@ componentDidMount() {
         </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
+           <h3>Local proxy</h3>
             <p><code>bitboind</code> doesnt&rsquo;t support CORS so this runs a small local proxy you can <code>POST</code> to in order to avoid errors.</p>
             <SyntaxHighlighter language='text' style={ocean}>{`
   Usage: proxy [options]
@@ -39,7 +40,7 @@ componentDidMount() {
   $ bitbox proxy
   CORS Proxy running at: http://localhost:1337
            `}</SyntaxHighlighter>
-            <p><strong>note</strong> you need to pass a <code>corsproxy: true</code> argument to <code>bitbox-cli</code>&rsquo;s constructor.</p>
+            <p><strong>note</strong> you need to pass a <code>corsproxy: 'local'</code> argument to <code>bitbox-cli</code>&rsquo;s constructor.</p>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   let BITBOX = new BITBOXCli({
     protocol: 'http',
@@ -47,7 +48,21 @@ componentDidMount() {
     port: 8332,
     username: 'username',
     password: 'password',
-    corsproxy: true
+    corsproxy: 'local'
+  });
+           `}</SyntaxHighlighter>
+           <h3>Remote proxy</h3>
+           <p>BITBOX also runs a remote proxy for BCH apps. <a href='https://proxy.bitbox.earth/'>proxy.bitbox.earth</a> is a remote proxy just for this purpose.</p>
+           <p>It&rsquo;s limited to 50 requests per 3 minutes. Please reach out to BITBOX if you have a BCH app and you need more requests reach out to BITBOX.</p>
+            <p><strong>note</strong> you need to pass a <code>corsproxy: 'remote'</code> argument to <code>bitbox-cli</code>&rsquo;s constructor.</p>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let BITBOX = new BITBOXCli({
+    protocol: 'http',
+    host: 'ip.of.node',
+    port: 8332,
+    username: 'username',
+    password: 'password',
+    corsproxy: 'remote'
   });
            `}</SyntaxHighlighter>
           </div>
