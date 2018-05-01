@@ -176,7 +176,7 @@ class Blockchain extends Component {
           </ol>
           <h4>Result</h4>
           <p>
-  hashk        <code>string</code> The block hash
+  hash        <code>string</code> The block hash
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -185,7 +185,7 @@ class Blockchain extends Component {
     console.log(result);
   }, (err) => { console.log(err);
   });
-  // 037e2ee505097ad0e4d00d96dcc2299e43700fb22236c5befcc9347ccfe0cf10
+  // 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
             `}</SyntaxHighlighter>
 
             <h3 id='getBlockHeader'><code>getBlockHeader</code></h3>
@@ -279,7 +279,6 @@ class Blockchain extends Component {
           <p>
   Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
           </p>
-          <h4>Arguments</h4>
           <h4>Result</h4>
           <p>
   n.nnn       (numeric): the proof-of-work difficulty as a multiple of the minimum difficulty.

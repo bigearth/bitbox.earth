@@ -175,39 +175,6 @@ class Mining extends Component {
   });
             `}</SyntaxHighlighter>
 
-            <h3 id='prioritiseTransaction'><code>prioritiseTransaction</code></h3>
-          <p>
-  Accepts the transaction into mined blocks at a higher (or lower) priority
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  txid       (string, required): The transaction id.
-            </li>
-            <li>
-  priority_delta (numeric, required): The priority to add or subtract.
-                    The transaction selection algorithm considers the tx as it would have a higher priority.
-                    (priority of a transaction is calculated: coinage * value_in_satoshis / txsize)
-            </li>
-            <li>
-  fee_delta      (numeric, required): The fee value (in satoshis) to add (or subtract, if negative).
-                    The fee is not actually paid, only the algorithm for selecting transactions into a block
-                    considers the transaction as it would have paid a higher (or lower) fee.
-            </li>
-          </ol>
-          <h4>Result</h4>
-          <p>
-  true              (boolean): Returns true
-          </p>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mining.prioritiseTransaction("txid", 0.0, 10000)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
             <h3 id='submitBlock'><code>submitBlock</code></h3>
           <p>
   Attempts to submit new block to network. The 'jsonparametersobject' parameter is currently ignored. See https://en.bitcoin.it/wiki/BIP_0022 for full specification.

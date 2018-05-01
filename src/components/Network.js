@@ -123,7 +123,7 @@ class Network extends Component {
           <p>
   Returns the number of connections to other nodes.
           </p>
-          <h4>Arguments</h4>
+          <h4>Result</h4>
           <ol>
             <li>
   n          (numeric): The connection count
