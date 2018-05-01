@@ -240,10 +240,10 @@ class RawTransactions extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-  hexstring    (string, required): The hex string of the raw transaction)
+  hexstring    <code>string</code> required: The hex string of the raw transaction
             </li>
             <li>
-  allowhighfees    (boolean, optional, default=false): Allow high fees
+  allowhighfees    <code>boolean</code> optional, default=false: Allow high fees
             </li>
           </ol>
           <h4>Result</h4>

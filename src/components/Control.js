@@ -86,29 +86,6 @@ class Control extends Component {
   });
             `}</SyntaxHighlighter>
 
-            <h3 id='help'><code>help</code></h3>
-          <p>
-  List all commands, or get help for a specified command.
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  command     (string, optional): The command to get help on
-            </li>
-          </ol>
-          <h4>Result</h4>
-          <p>
-  text     (string): The help text
-          </p>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Control.help()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
             <h3 id='stop'><code>stop</code></h3>
           <p>
   Stop Bitcoin server.

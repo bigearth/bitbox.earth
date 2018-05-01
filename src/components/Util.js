@@ -27,60 +27,6 @@ class Util extends Component {
         <div className="pure-g">
           <div className="pure-u-1-1">
 
-            <h3 id='estimateSmartFee'><code>estimateSmartFee</code></h3>
-            <p>
-            WARNING: This interface is unstable and may disappear or change! Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks if possible and return the number of blocks for which the estimate is valid.
-            </p>
-
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-            nblocks (numeric, required)
-              </li>
-            </ol>
-            <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in BCH)
-    "blocks" : n         (numeric) block number where estimate was found
-  }
-            `}</SyntaxHighlighter>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Util.estimateSmartFee(2)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
-            <h3 id='estimateSmartPriority'><code>estimateSmartPriority</code></h3>
-            <p>
-            DEPRECATED. WARNING: This interface is unstable and may disappear or change! Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks if possible and return the number of blocks for which the estimate is valid.
-            </p>
-
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-            nblocks (numeric, required)
-              </li>
-            </ol>
-            <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "feerate" : x.x,     (numeric) estimate fee-per-kilobyte (in BCH)
-    "blocks" : n         (numeric) block number where estimate was found
-  }
-            `}</SyntaxHighlighter>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Util.estimateSmartPriority(2)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
             <h3 id='createMultisig'><code>createMultisig</code></h3>
             <p>
   Creates a multi-signature address with n signature of m keys required. It returns a json object with the address and redeemScript.
@@ -112,63 +58,6 @@ class Util extends Component {
   //   address: '39cp79UgFriqYS5ZYZyhiXbnUfE4eUjZur',
   //   redeemScript: '52210261d3f136eea0a3f786389d85212fae01d7b4a3c7520af78b49f079471d847d3421027495999882ace5aa4fb3d920dd7571b1ed75bcbd5987ef289cb6f88629c4a09652ae'
   // }
-            `}</SyntaxHighlighter>
-
-            <h3 id='estimateFee'><code>estimateFee</code></h3>
-            <p>
-  Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within nblocks blocks.
-            </p>
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-  nblocks     (numeric, required)
-              </li>
-            </ol>
-            <h4>Result</h4>
-            <p>
-  n              (numeric): estimated fee-per-kilobyte
-            </p>
-            <p>
-  A negative value is returned if not enough transactions and blocks
-  have been observed to make an estimate.
-  -1 is always returned for nblocks == 1 as it is impossible to calculate
-  a fee that is high enough to get reliably included in the next block.
-            </p>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Util.estimateFee(2)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-  // 0.00000002
-            `}</SyntaxHighlighter>
-
-            <h3 id='estimatePriority'><code>estimatePriority</code></h3>
-            <p>
-  DEPRECATED. Estimates the approximate priority a zero-fee transaction needs to begin confirmation within nblocks blocks.
-            </p>
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-  nblocks     (numeric, required)
-              </li>
-            </ol>
-            <h4>Result</h4>
-            <p>
-  n              (numeric) estimated priority
-            </p>
-            <p>
-  A negative value is returned if not enough transactions and blocks have been observed to make an estimate.
-            </p>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Util.estimatePriority(2)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-  // -1
             `}</SyntaxHighlighter>
 
             <h3 id='signMessageWithPrivKey'><code>signMessageWithPrivKey</code></h3>
