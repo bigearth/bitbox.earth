@@ -44,9 +44,9 @@ class Installation extends Component {
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows"><i className="fab fa-windows" /> Windows and <i className="fab fa-linux" /> Linux</h4>
             <h5>Clone the git repo</h5>
-            <SyntaxHighlighter language='text' style={ocean}>{" git clone https://github.com/bigearth/bitbox-electron.git"}</SyntaxHighlighter>
+            <SyntaxHighlighter language='text' style={ocean}>{" git clone https://github.com/bigearth/bitbox-gui.git"}</SyntaxHighlighter>
             <h5>Install dependencies</h5>
-            <SyntaxHighlighter language='text' style={ocean}>{" cd bitbox-electron && npm install"}</SyntaxHighlighter>
+            <SyntaxHighlighter language='text' style={ocean}>{" cd bitbox-gui && npm install"}</SyntaxHighlighter>
             <h5>Build app</h5>
             <SyntaxHighlighter language='text' style={ocean}>{" npm run build"}</SyntaxHighlighter>
             <h5>Launch app</h5>
