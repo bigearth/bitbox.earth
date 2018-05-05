@@ -535,6 +535,98 @@ class Address extends Component {
         // bitcoincash:qqxf90phz7ysrj53tymq6qvmquk0kd04wvjf6s83nv
         // bitcoincash:qrygumzwu7anzppyzcraa2tal3vlzc7p3smyh5cdth
           `}</SyntaxHighlighter>
+
+            <h3 id='details'><code>details</code></h3>
+          <p>
+  Return details about an address including balance.
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  address  <code>String</code> required: legacy or cashAddr
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  details <code>Object</code>: Details about address including balance
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Address.details('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+
+  // {
+  //   "addrStr": "1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA",
+  //   "balance": 0.36781097,
+  //   "balanceSat": 36781097,
+  //   "totalReceived": 0.36781097,
+  //   "totalReceivedSat": 36781097,
+  //   "totalSent": 0,
+  //   "totalSentSat": 0,
+  //   "unconfirmedBalance": 0,
+  //   "unconfirmedBalanceSat": 0,
+  //   "unconfirmedTxApperances": 0,
+  //   "txApperances": 7,
+  //   "transactions": [
+  //     "f737485aaee3c10b13013fa109bb6294b099246134ca9885f4cc332dbc6c9bb4",
+  //     "decd5b9c0c959e4e543182093e8f7f8bc7a6ecd96a8a062daaeff3667f8feca7",
+  //     "94e69a627a34ae27fca81d15fff4323a7ce1f7c275c7485762ce018221017632",
+  //     "e67c70787af7f3506263c9eda007f3d2d24bd750ff95b5c50a120d9118dfd807",
+  //     "8e5e00704a147d54028f94d52df7730e821b9c6cd4bd29494e5636f49c199d6a",
+  //     "15102827c108566ea5daf725c09079c1a3f42ef99d1eb68ea8c584f7b16ab87a",
+  //     "cc27be8846276612dfce5924b7be96556212f0f0e62bd17641732175edb9911e"
+  //   ]
+  // }
+            `}</SyntaxHighlighter>
+
+            <h3 id='utxo'><code>utxo</code></h3>
+          <p>
+  Return list of uxto for address
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  address  <code>String</code> required: legacy or cashAddr
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  details <code>Object</code>: Details about address including balance
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Address.utxo('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA')
+  .then((result) => {
+    console.log(result);
+  }, (err) => { console.log(err);
+  });
+
+  // [
+  //   {
+  //     "address": "1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA",
+  //     "txid": "f737485aaee3c10b13013fa109bb6294b099246134ca9885f4cc332dbc6c9bb4",
+  //     "vout": 0,
+  //     "scriptPubKey": "76a9147064aa0c2de4e79e6c0a1290f769e40b3dda1b8e88ac",
+  //     "amount": 0.299,
+  //     "satoshis": 29900000,
+  //     "height": 528796,
+  //     "confirmations": 16
+  //   },
+  //   {
+  //     "address": "1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA",
+  //     "txid": "decd5b9c0c959e4e543182093e8f7f8bc7a6ecd96a8a062daaeff3667f8feca7",
+  //     "vout": 0,
+  //     "scriptPubKey": "76a9147064aa0c2de4e79e6c0a1290f769e40b3dda1b8e88ac",
+  //     "amount": 0.04839108,
+  //     "satoshis": 4839108,
+  //     "height": 528573,
+  //     "confirmations": 239
+  //   }
+  // ]
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>

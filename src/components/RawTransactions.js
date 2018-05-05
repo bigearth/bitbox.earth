@@ -226,7 +226,7 @@ class RawTransactions extends Component {
             `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.RawTransactions.getRawTransaction("mytxid", true)
+  BITBOX.RawTransactions.getRawTransaction("0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098")
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
@@ -241,9 +241,6 @@ class RawTransactions extends Component {
           <ol>
             <li>
   hexstring    <code>string</code> required: The hex string of the raw transaction
-            </li>
-            <li>
-  allowhighfees    <code>boolean</code> optional, default=false: Allow high fees
             </li>
           </ol>
           <h4>Result</h4>
