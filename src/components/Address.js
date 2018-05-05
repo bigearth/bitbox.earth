@@ -594,7 +594,7 @@ class Address extends Component {
           </ol>
           <h4>Result</h4>
           <p>
-  details <code>Object</code>: Details about address including balance
+  utxo <code>Object</code>: utxo for address
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
