@@ -54,31 +54,11 @@
 </url>
 
 <url>
-  <loc>https://www.bitbox.earth/bitboxcli/transactionbuilder</loc>
-</url>
-
-<url>
-  <loc>https://www.bitbox.earth/bitboxcli/mnemonic</loc>
-</url>
-
-<url>
   <loc>https://www.bitbox.earth/bitboxcli/address</loc>
 </url>
 
 <url>
-  <loc>https://www.bitbox.earth/bitboxcli/hdnode</loc>
-</url>
-
-<url>
-  <loc>https://www.bitbox.earth/bitboxcli/crypto</loc>
-</url>
-
-<url>
-  <loc>https://www.bitbox.earth/bitboxcli/ecpair</loc>
-</url>
-
-<url>
-  <loc>https://www.bitbox.earth/bitboxcli/script</loc>
+  <loc>https://www.bitbox.earth/bitboxcli/block</loc>
 </url>
 
 <url>
@@ -90,7 +70,23 @@
 </url>
 
 <url>
+  <loc>https://www.bitbox.earth/bitboxcli/crypto</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/ecpair</loc>
+</url>
+
+<url>
   <loc>https://www.bitbox.earth/bitboxcli/generating</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/hdnode</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/mnemonic</loc>
 </url>
 
 <url>
@@ -103,6 +99,18 @@
 
 <url>
   <loc>https://www.bitbox.earth/bitboxcli/rawtransactions</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/script</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/transaction</loc>
+</url>
+
+<url>
+  <loc>https://www.bitbox.earth/bitboxcli/transactionbuilder</loc>
 </url>
 
 <url>

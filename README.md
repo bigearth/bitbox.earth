@@ -21,4 +21,4 @@ Inpired by [ganache](http://truffleframework.com/ganache/).
 1. Clone this repo
 2. `npm install` the dependencies
 3. `npm start` to build the app and run a local server
-4. `localhost:8080` to view the app
+4. `localhost:3000` to view the app

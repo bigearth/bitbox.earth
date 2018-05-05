@@ -11,4 +11,4 @@ app.get('*', function (request, response){
   response.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 })
 
-app.listen(8080);
+app.listen(3000);
