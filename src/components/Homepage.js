@@ -26,7 +26,7 @@ class Homepage extends Component {
       <div>
         <div className="splash-container">
           <div className="splash">
-            <h1 className="splash-head">EXPLORE</h1>
+            <h1 className="splash-head">YOUR $BCH TOOLKIT</h1>
             <p className="splash-subhead">
               Bitcoin Cash Block Explorer by BITBOX.
             </p>
