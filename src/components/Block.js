@@ -33,7 +33,7 @@ class Block extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-    hash  <code>String</code> required: block hash
+    id  <code>String</code> required: block hash or height
               </li>
             </ol>
             <h4>Result</h4>
