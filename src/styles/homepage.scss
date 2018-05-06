@@ -108,7 +108,18 @@
   padding: 10px;
 }
 
-.Graphics .darkBlue{
+.Graphics .white {
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.Graphics .logoWhite {
+  border: 1px solid #000;
+}
+
+.Graphics .darkBlue {
   background: #2d3e50;
   color: #fff;
   padding: 10px;

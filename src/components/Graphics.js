@@ -26,8 +26,8 @@ class Graphics extends Component {
         </div>
         <div className="content-wrapper">
           <div className="content features">
-            <h2 className="content-head is-center">Logos</h2>
-            <h3 className="content-subhead is-center">Download BITBOX logos in PNG and SVG</h3>
+            <h2 className="content-head is-center">Logo</h2>
+            <h3 className="content-subhead is-center">Download the BITBOX logo in PNG and SVG</h3>
 
             <div className="pure-g">
               <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -38,16 +38,16 @@ class Graphics extends Component {
                   <img alt="black small" className="pure-img-responsive" src='assets/cube-black-small.png' />
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-black-small.png'>Small (png)</a>
+                  <a className="pure-button black" href='assets/cube-black-small.png'>Small (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-black-medium.png'>Medium (png)</a>
+                  <a className="pure-button black" href='assets/cube-black-medium.png'>Medium (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-black-large.png'>Large (png)</a>
+                  <a className="pure-button black" href='assets/cube-black-large.png'>Large (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-black.svg'>Vector (svg)</a>
+                  <a className="pure-button black" href='assets/cube-black.svg'>Vector (svg)</a>
                 </p>
               </div>
               <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -58,16 +58,16 @@ class Graphics extends Component {
                   <img alt="blue small" className="pure-img-responsive" src='assets/cube-light-blue-small.png' />
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-light-blue-small.png'>Small (png)</a>
+                  <a className="pure-button lightBlue" href='assets/cube-light-blue-small.png'>Small (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-light-blue-medium.png'>Medium (png)</a>
+                  <a className="pure-button lightBlue" href='assets/cube-light-blue-medium.png'>Medium (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-light-blue-large.png'>Large (png)</a>
+                  <a className="pure-button lightBlue" href='assets/cube-light-blue-large.png'>Large (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-light-blue.svg'>Vector (svg)</a>
+                  <a className="pure-button lightBlue" href='assets/cube-light-blue.svg'>Vector (svg)</a>
                 </p>
               </div>
               <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -75,19 +75,19 @@ class Graphics extends Component {
                   BITBOX Logo White
                 </h4>
                 <p>
-                  <img alt="white small" className="pure-img-responsive" src='assets/cube-white-small.png' />
+                  <img alt="white small" className="logoWhite pure-img-responsive" src='assets/cube-white-small.png' />
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-white-small.png'>Small (png)</a>
+                  <a className="pure-button white" href='assets/cube-white-small.png'>Small (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-white-medium.png'>Medium (png)</a>
+                  <a className="pure-button white" href='assets/cube-white-medium.png'>Medium (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-white-large.png'>Large (png)</a>
+                  <a className="pure-button white" href='assets/cube-white-large.png'>Large (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-white.svg'>Vector (svg)</a>
+                  <a className="pure-button white" href='assets/cube-white.svg'>Vector (svg)</a>
                 </p>
               </div>
               <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -98,21 +98,21 @@ class Graphics extends Component {
                   <img alt="dark blue small" className="pure-img-responsive" src='assets/cube-dark-blue-small.png' />
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-dark-blue-small.png'>Small (png)</a>
+                  <a className="pure-button darkBlue" href='assets/cube-dark-blue-small.png'>Small (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-dark-blue-medium.png'>Medium (png)</a>
+                  <a className="pure-button darkBlue" href='assets/cube-dark-blue-medium.png'>Medium (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-dark-blue-large.png'>Large (png)</a>
+                  <a className="pure-button darkBlue" href='assets/cube-dark-blue-large.png'>Large (png)</a>
                 </p>
                 <p>
-                  <a className="pure-button" href='assets/cube-dark-blue.svg'>Vector (svg)</a>
+                  <a className="pure-button darkBlue" href='assets/cube-dark-blue.svg'>Vector (svg)</a>
                 </p>
               </div>
             </div>
             <h2 className="content-head is-center">Visual Identity</h2>
-            <h3 className="content-subhead is-center">BITBOX fonts and colors.</h3>
+            <h3 className="content-subhead is-center">BITBOX colors</h3>
 
             <div className="pure-g">
               <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
@@ -129,20 +129,6 @@ class Graphics extends Component {
                   CMYK: <span className='black'>0 / 0 / 0 / 100</span>
                 </p>
                 <h4 className="">
-                  BITBOX Light Blue
-                </h4>
-                <p>
-                  Hex: <span className='lightBlue'>#1f8dd6</span>
-                </p>
-                <p>
-                  RGB: <span className='lightBlue'>31 / 141 / 214</span>
-                </p>
-                <p>
-                  CMYK: <span className='lightBlue'>86 / 34 / 0 / 16</span>
-                </p>
-              </div>
-              <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
-                <h4 className="">
                   BITBOX White
                 </h4>
                 <p>
@@ -153,6 +139,20 @@ class Graphics extends Component {
                 </p>
                 <p>
                   CMYK: <span className=''>0 / 0 / 0 / 0</span>
+                </p>
+              </div>
+              <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                <h4 className="">
+                  BITBOX Light Blue
+                </h4>
+                <p>
+                  Hex: <span className='lightBlue'>#1f8dd6</span>
+                </p>
+                <p>
+                  RGB: <span className='lightBlue'>31 / 141 / 214</span>
+                </p>
+                <p>
+                  CMYK: <span className='lightBlue'>86 / 34 / 0 / 16</span>
                 </p>
                 <h4 className="">
                   BITBOX Dark Blue
