@@ -13,6 +13,7 @@ import {
 import BitboxCli from './components/BitboxCli';
 import Docs from './components/Docs';
 import Homepage from './components/Homepage';
+import Graphics from './components/Graphics';
 
 // css
 import './styles/app.scss';
@@ -46,6 +47,13 @@ class App extends Component {
     const BitboxCliPage = (props) => {
       return (
         <BitboxCli
+        />
+      );
+    };
+
+    const GraphicsPage = (props) => {
+      return (
+        <Graphics
         />
       );
     };
@@ -91,6 +99,7 @@ class App extends Component {
           <Switch>
             <Route path="/docs" component={DocsPage}/>
             <Route path="/bitboxcli" component={BitboxCliPage}/>
+            <Route path="/graphics" component={GraphicsPage}/>
             <Route exact path="/" component={Homepage}/>
             <Redirect from='*' to='/' />
           </Switch>

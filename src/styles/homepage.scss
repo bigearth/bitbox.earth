@@ -70,6 +70,10 @@
   font-size: 2em;
 }
 
+.Graphics .features h3 {
+  font-size: 1.25em;
+}
+
 .screenshot-desc {
   margin-top: 10em;
   text-align: center;
@@ -86,4 +90,26 @@
 .download li a {
   text-decoration: none;
   color: $lightBlue;
+}
+
+.Graphics img {
+  width: 200px;
+}
+
+.Graphics .black {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+.Graphics .lightBlue {
+  background: $lightBlue;
+  color: #fff;
+  padding: 10px;
+}
+
+.Graphics .darkBlue{
+  background: #2d3e50;
+  color: #fff;
+  padding: 10px;
 }
