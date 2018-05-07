@@ -43,7 +43,7 @@ class Transaction extends Component {
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   // single txid
-  BITBOX.Transaction.details('a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8') .then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Transaction.details('a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8').then((result) => { console.log(result); }, (err) => { console.log(err); });
 
   // {
   //   "txid": "a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8",
