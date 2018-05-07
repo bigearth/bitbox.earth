@@ -33,7 +33,7 @@ class Transaction extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-    txid or txids <code>String | Array</code> required: Transaction id or url encoded array of transaction ids
+    txid or txids <code>String | Array</code> required: Transaction id or array of transaction ids
               </li>
             </ol>
             <h4>Result</h4>
