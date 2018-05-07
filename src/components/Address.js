@@ -552,11 +552,7 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Address.details('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA')
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Address.details('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA').then((result) => { console.log(result); }, (err) => { console.log(err); });
 
   // {
   //   "addrStr": "1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA",
@@ -598,11 +594,7 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Address.utxo('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA')
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Address.utxo('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA').then((result) => { console.log(result); }, (err) => { console.log(err); });
 
   // [
   //   {

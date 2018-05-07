@@ -42,11 +42,7 @@ class Block extends Component {
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Block.details('000000001c6aeec19265e9cc3ded8ba5ef5e63fae7747f30bf9c02c7bc8883f0')
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Block.details('000000001c6aeec19265e9cc3ded8ba5ef5e63fae7747f30bf9c02c7bc8883f0').then((result) => { console.log(result); }, (err) => { console.log(err); });
 
   // {
   //   "hash": "000000001c6aeec19265e9cc3ded8ba5ef5e63fae7747f30bf9c02c7bc8883f0",

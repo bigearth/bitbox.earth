@@ -48,11 +48,9 @@ class Generating extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Generating.generateToAddress(11, 'bitcoincash:qzhhrxcdlxdsw3xuw8nz3c4476fdz69uq5gewr0lxg')
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Generating.generateToAddress(11, 'bitcoincash:qzhhrxcdlxdsw3xuw8nz3c4476fdz69uq5gewr0lxg').then((result) => { console.log(result); }, (err) => { console.log(err); });
+  
+  // []
             `}</SyntaxHighlighter>
           </div>
         </div>

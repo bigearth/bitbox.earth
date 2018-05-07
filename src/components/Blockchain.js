@@ -37,11 +37,7 @@ class Blockchain extends Component {
             <h4>Examples</h4>
 
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBestBlockHash()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getBestBlockHash().then((result) => { console.log(result); }, (err) => { console.log(err); });
   // 241decef88889efac8e6ce428a8ac696fdde5972eceed97e1fb58d6106af31d5
             `}</SyntaxHighlighter>
 
@@ -58,92 +54,56 @@ class Blockchain extends Component {
   verbose                (boolean, optional, default=true) true for a json object, false for the hex encoded data
               </li>
             </ol>
-            <h4>Result</h4>
-            <p>
-  Result (for verbose = true):
-            </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "hash" : "hash",     <code>string</code> the block hash (same as provided)
-    "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
-    "size" : n,            (numeric) The block size
-    "height" : n,          (numeric) The block height or index
-    "version" : n,         (numeric) The block version
-    "versionHex" : "00000000", <code>string</code> The block version formatted in hexadecimal
-    "merkleroot" : "xxxx", <code>string</code> The merkle root
-    "tx" : [               (array of string) The transaction ids
-       "transactionid"     <code>string</code> The transaction id
-       ,...
-    ],
-    "time" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
-    "mediantime" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)
-    "nonce" : n,           (numeric) The nonce
-    "bits" : "1d00ffff", <code>string</code> The bits
-    "difficulty" : x.xxx,  (numeric) The difficulty
-    "chainwork" : "xxxx",  <code>string</code> Expected number of hashes required to produce the chain up to this block (in hex)
-    "previousblockhash" : "hash",  <code>string</code> The hash of the previous block
-    "nextblockhash" : "hash"       <code>string</code> The hash of the next block
-  }
-            `}</SyntaxHighlighter>
-            <p>
-  Result (for verbose=false):
-            </p>
-            <p>
-  data             <code>string</code>: A string that is serialized, hex-encoded data for block 'hash'.
-            </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlock("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getBlock("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09").then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // { hash: '00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09',
+  // confirmations: 528236,
+  // size: 216,
+  // height: 1000,
+  // version: 1,
+  // versionHex: '00000001',
+  // merkleroot: 'fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33',
+  // tx:
+  //  [ 'fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33' ],
+  // time: 1232346882,
+  // mediantime: 1232344831,
+  // nonce: 2595206198,
+  // bits: '1d00ffff',
+  // difficulty: 1,
+  // chainwork: '000000000000000000000000000000000000000000000000000003e903e903e9',
+  // previousblockhash: '0000000008e647742775a230787d66fdf92c46a48c896bfbc85cdc8acc67e87d',
+  // nextblockhash: '00000000a2887344f8db859e372e7e4bc26b23b9de340f725afbf2edb265b4c6' }
             `}</SyntaxHighlighter>
 
             <h3 id='getBlockchainInfo'><code>getBlockchainInfo</code></h3>
           <p>
   Returns an object containing various state info regarding blockchain processing.
           </p>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "chain": "xxxx",        <code>string</code> current network name as defined in BIP70 (main, test, regtest)
-    "blocks": xxxxxx,         (numeric) the current number of blocks processed in the server
-    "headers": xxxxxx,        (numeric) the current number of headers we have validated
-    "bestblockhash": "...", <code>string</code> the hash of the currently best block
-    "difficulty": xxxxxx,     (numeric) the current difficulty
-    "mediantime": xxxxxx,     (numeric) median time for the current best block
-    "verificationprogress": xxxx, (numeric) estimate of verification progress [0..1]
-    "chainwork": "xxxx"     <code>string</code> total amount of work in active chain, in hexadecimal
-    "pruned": xx,             (boolean) if the blocks are subject to pruning
-    "pruneheight": xxxxxx,    (numeric) lowest-height complete block stored
-    "softforks": [            (array) status of softforks in progress
-       {
-          "id": "xxxx",        <code>string</code> name of softfork
-          "version": xx,         (numeric) block version
-          "reject": {            (object) progress toward rejecting pre-softfork blocks
-             "status": xx,       (boolean) true if threshold reached
-          },
-       }, ...
-    ],
-    "bip9_softforks": {          (object) status of BIP9 softforks in progress
-       "xxxx" : {                <code>string</code> name of the softfork
-          "status": "xxxx",    <code>string</code> one of "defined", "started", "locked_in", "active", "failed"
-          "bit": xx,             (numeric) the bit (0-28) in the block version field used to signal this softfork (only for "started" status)
-          "startTime": xx,       (numeric) the minimum median time past of a block at which the bit gains its meaning
-          "timeout": xx,         (numeric) the median time past of a block at which the deployment is considered failed if not yet locked in
-          "since": xx            (numeric) height of the first block to which the status applies
-       }
-    }
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockchainInfo()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getBlockchainInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // { chain: 'main',
+  // blocks: 529235,
+  // headers: 529235,
+  // bestblockhash: '00000000000000000108641af52e01a447b1f9d801571f93a0f20a8cbf80c236',
+  // difficulty: 702784497476.8376,
+  // mediantime: 1525727823,
+  // verificationprogress: 0.9999892037620548,
+  // chainwork: '00000000000000000000000000000000000000000099f5e1cf7d4e462a493a51',
+  // pruned: false,
+  // softforks:
+  //  [ { id: 'bip34', version: 2, reject: [Object] },
+  //    { id: 'bip66', version: 3, reject: [Object] },
+  //    { id: 'bip65', version: 4, reject: [Object] } ],
+  // bip9_softforks:
+  //  { csv:
+  //     { status: 'active',
+  //       startTime: 1462060800,
+  //       timeout: 1493596800,
+  //       since: 419328 } } }
             `}</SyntaxHighlighter>
 
             <h3 id='getBlockCount'><code>getBlockCount</code></h3>
@@ -156,12 +116,8 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockCount()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-  // 6
+  BITBOX.Blockchain.getBlockCount().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  // 529235
             `}</SyntaxHighlighter>
 
             <h3 id='getBlockHash'><code>getBlockHash</code></h3>
@@ -180,11 +136,7 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockHash(0)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getBlockHash(0).then((result) => { console.log(result); }, (err) => { console.log(err); });
   // 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
             `}</SyntaxHighlighter>
 
@@ -202,77 +154,46 @@ class Blockchain extends Component {
   verbose           (boolean, optional, default=true) true for a json object, false for the hex encoded data
             </li>
           </ol>
-          <h4>Result</h4>
-          <p>
-  Result (for verbose = true):
-          </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "hash" : "hash",     <code>string</code> the block hash (same as provided)
-    "confirmations" : n,   (numeric) The number of confirmations, or -1 if the block is not on the main chain
-    "height" : n,          (numeric) The block height or index
-    "version" : n,         (numeric) The block version
-    "versionHex" : "00000000", <code>string</code> The block version formatted in hexadecimal
-    "merkleroot" : "xxxx", <code>string</code> The merkle root
-    "time" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
-    "mediantime" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)
-    "nonce" : n,           (numeric) The nonce
-    "bits" : "1d00ffff", <code>string</code> The bits
-    "difficulty" : x.xxx,  (numeric) The difficulty
-    "chainwork" : "0000...1f3"     <code>string</code> Expected number of hashes required to produce the current chain (in hex)
-    "previousblockhash" : "hash",  <code>string</code> The hash of the previous block
-    "nextblockhash" : "hash",      <code>string</code> The hash of the next block
-  }
-            `}</SyntaxHighlighter>
-          <p>
-  Result (for verbose=false):
-          </p>
-          <p>
-  data             <code>string</code> A string that is serialized, hex-encoded data for block 'hash'.
-          </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockHeader("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getBlockHeader("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09").then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // { hash: '00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09',
+  // confirmations: 528236,
+  // height: 1000,
+  // version: 1,
+  // versionHex: '00000001',
+  // merkleroot: 'fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33',
+  // time: 1232346882,
+  // mediantime: 1232344831,
+  // nonce: 2595206198,
+  // bits: '1d00ffff',
+  // difficulty: 1,
+  // chainwork: '000000000000000000000000000000000000000000000000000003e903e903e9',
+  // previousblockhash: '0000000008e647742775a230787d66fdf92c46a48c896bfbc85cdc8acc67e87d',
+  // nextblockhash: '00000000a2887344f8db859e372e7e4bc26b23b9de340f725afbf2edb265b4c6' }
             `}</SyntaxHighlighter>
 
             <h3 id='getChainTips'><code>getChainTips</code></h3>
           <p>
   Return information about all known tips in the block tree, including the main chain as well as orphaned branches.
           </p>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  [
-    {
-      "height": xxxx,         (numeric) height of the chain tip
-      "hash": "xxxx",         <code>string</code> block hash of the tip
-      "branchlen": 0          (numeric) zero for main chain
-      "status": "active"      <code>string</code> "active" for the main chain
-    },
-    {
-      "height": xxxx,
-      "hash": "xxxx",
-      "branchlen": 1          (numeric) length of branch connecting the tip to the main chain
-      "status": "xxxx"        <code>string</code> status of the chain (active, valid-fork, valid-headers, headers-only, invalid)
-    }
-  ]
-  Possible values for status:
-  1.  "invalid"               This branch contains at least one invalid block
-  2.  "headers-only"          Not all blocks for this branch are available, but the headers are valid
-  3.  "valid-headers"         All blocks are available for this branch, but they were never fully validated
-  4.  "valid-fork"            This branch is not part of the active chain, but is fully validated
-  5.  "active"                This is the tip of the active main chain, which is certainly valid
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getChainTips()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getChainTips().then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // [ { height: 529235,
+  //   hash: '00000000000000000108641af52e01a447b1f9d801571f93a0f20a8cbf80c236',
+  //   branchlen: 0,
+  //   status: 'active' },
+  // { height: 527442,
+  //   hash: '0000000000000000014cbf7b7aa12e52dd97db4b1ba5f39dccae37773af9272e',
+  //   branchlen: 1,
+  //   status: 'invalid' },
+  // { height: 526861,
+  //   hash: '00000000000000000225b070818bbafd95842ecbd25edf39bff54a7aa5c8fd10',
+  //   branchlen: 1,
+  //   status: 'valid-headers' } ]
             `}</SyntaxHighlighter>
 
             <h3 id='getDifficulty'><code>getDifficulty</code></h3>
@@ -285,11 +206,9 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getDifficulty()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getDifficulty().then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // 702784497476.8376
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolAncestors'><code>getMempoolAncestors</code></h3>
@@ -306,47 +225,9 @@ class Blockchain extends Component {
             </li>
           </ol>
           <h4>Result</h4>
-          <p>
-  Result (for verbose=false):
-          </p>
-          <SyntaxHighlighter language='javascript' style={ocean}>{`
-  [                       (json array of strings)
-    "transactionid"           <code>string</code> The transaction id of an in-mempool ancestor transaction
-    ,...
-  ]
-            `}</SyntaxHighlighter>
-          <p>
-  Result (for verbose=true):
-          </p>
-          <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {                           (json object)
-    "transactionid" : {       (json object)
-      "size" : n,             (numeric) transaction size.
-      "fee" : n,              (numeric) transaction fee in BCH
-      "modifiedfee" : n,      (numeric) transaction fee with fee deltas used for mining priority
-      "time" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT
-      "height" : n,           (numeric) block height when transaction entered pool
-      "startingpriority" : n, (numeric) DEPRECATED. Priority when transaction entered pool
-      "currentpriority" : n,  (numeric) DEPRECATED. Transaction priority now
-      "descendantcount" : n,  (numeric) number of in-mempool descendant transactions (including this one)
-      "descendantsize" : n,   (numeric) virtual transaction size of in-mempool descendants (including this one)
-      "descendantfees" : n,   (numeric) modified fees (see above) of in-mempool descendants (including this one)
-      "ancestorcount" : n,    (numeric) number of in-mempool ancestor transactions (including this one)
-      "ancestorsize" : n,     (numeric) virtual transaction size of in-mempool ancestors (including this one)
-      "ancestorfees" : n,     (numeric) modified fees (see above) of in-mempool ancestors (including this one)
-      "depends" : [           (array) unconfirmed transactions used as inputs for this transaction
-          "transactionid",    <code>string</code> parent transaction id
-         ... ]
-    }, ...
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolAncestors("mytxid")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getMempoolAncestors("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolDescendants'><code>getMempoolDescendants</code></h3>
@@ -362,48 +243,9 @@ class Blockchain extends Component {
   verbose                  (boolean, optional, default=false): True for a json object, false for array of transaction ids
             </li>
           </ol>
-          <h4>Result</h4>
-          <p>
-  Result (for verbose=false):
-          </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  [                       (json array of strings)
-    "transactionid"           <code>string</code> The transaction id of an in-mempool descendant transaction
-    ,...
-  ]
-            `}</SyntaxHighlighter>
-          <p>
-  Result (for verbose=true):
-          </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {                           (json object)
-    "transactionid" : {       (json object)
-      "size" : n,             (numeric) transaction size.
-      "fee" : n,              (numeric) transaction fee in BCH
-      "modifiedfee" : n,      (numeric) transaction fee with fee deltas used for mining priority
-      "time" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT
-      "height" : n,           (numeric) block height when transaction entered pool
-      "startingpriority" : n, (numeric) DEPRECATED. Priority when transaction entered pool
-      "currentpriority" : n,  (numeric) DEPRECATED. Transaction priority now
-      "descendantcount" : n,  (numeric) number of in-mempool descendant transactions (including this one)
-      "descendantsize" : n,   (numeric) virtual transaction size of in-mempool descendants (including this one)
-      "descendantfees" : n,   (numeric) modified fees (see above) of in-mempool descendants (including this one)
-      "ancestorcount" : n,    (numeric) number of in-mempool ancestor transactions (including this one)
-      "ancestorsize" : n,     (numeric) virtual transaction size of in-mempool ancestors (including this one)
-      "ancestorfees" : n,     (numeric) modified fees (see above) of in-mempool ancestors (including this one)
-      "depends" : [           (array) unconfirmed transactions used as inputs for this transaction
-          "transactionid",    <code>string</code> parent transaction id
-         ... ]
-    }, ...
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolDescendants("mytxid")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getMempoolDescendants("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolEntry'><code>getMempoolEntry</code></h3>
@@ -416,57 +258,24 @@ class Blockchain extends Component {
   txid                   (string, required): The transaction id (must be in mempool)
             </li>
           </ol>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {                           (json object)
-      "size" : n,             (numeric) transaction size.
-      "fee" : n,              (numeric) transaction fee in BCH
-      "modifiedfee" : n,      (numeric) transaction fee with fee deltas used for mining priority
-      "time" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT
-      "height" : n,           (numeric) block height when transaction entered pool
-      "startingpriority" : n, (numeric) DEPRECATED. Priority when transaction entered pool
-      "currentpriority" : n,  (numeric) DEPRECATED. Transaction priority now
-      "descendantcount" : n,  (numeric) number of in-mempool descendant transactions (including this one)
-      "descendantsize" : n,   (numeric) virtual transaction size of in-mempool descendants (including this one)
-      "descendantfees" : n,   (numeric) modified fees (see above) of in-mempool descendants (including this one)
-      "ancestorcount" : n,    (numeric) number of in-mempool ancestor transactions (including this one)
-      "ancestorsize" : n,     (numeric) virtual transaction size of in-mempool ancestors (including this one)
-      "ancestorfees" : n,     (numeric) modified fees (see above) of in-mempool ancestors (including this one)
-      "depends" : [           (array) unconfirmed transactions used as inputs for this transaction
-          "transactionid",    <code>string</code> parent transaction id
-         ... ]
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolEntry("mytxid")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getMempoolEntry("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolInfo'><code>getMempoolInfo</code></h3>
           <p>
   Returns details on the active state of the TX memory pool.
           </p>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "size": xxxxx,               (numeric) Current tx count
-    "bytes": xxxxx,              (numeric) Transaction size.
-    "usage": xxxxx,              (numeric) Total memory usage for the mempool
-    "maxmempool": xxxxx,         (numeric) Maximum memory usage for the mempool
-    "mempoolminfee": xxxxx       (numeric) Minimum fee for tx to be accepted
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolInfo()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getMempoolInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // { size: 257,
+  // bytes: 98257,
+  // usage: 365840,
+  // maxmempool: 300000000,
+  // mempoolminfee: 0 }
             `}</SyntaxHighlighter>
 
             <h3 id='getRawMempool'><code>getRawMempool</code></h3>
@@ -479,48 +288,27 @@ class Blockchain extends Component {
   verbose (boolean, optional, default=false): True for a json object, false for array of transaction ids
             </li>
           </ol>
-          <h4>Result</h4>
-          <p>
-  Result: (for verbose = false):
-          </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  [                     (json array of string)
-    "transactionid"     <code>string</code> The transaction id
-    ,...
-  ]
-            `}</SyntaxHighlighter>
-          <p>
-  Result: (for verbose = true):
-          </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {                           (json object)
-    "transactionid" : {       (json object)
-      "size" : n,             (numeric) transaction size.
-      "fee" : n,              (numeric) transaction fee in BCH
-      "modifiedfee" : n,      (numeric) transaction fee with fee deltas used for mining priority
-      "time" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT
-      "height" : n,           (numeric) block height when transaction entered pool
-      "startingpriority" : n, (numeric) DEPRECATED. Priority when transaction entered pool
-      "currentpriority" : n,  (numeric) DEPRECATED. Transaction priority now
-      "descendantcount" : n,  (numeric) number of in-mempool descendant transactions (including this one)
-      "descendantsize" : n,   (numeric) virtual transaction size of in-mempool descendants (including this one)
-      "descendantfees" : n,   (numeric) modified fees (see above) of in-mempool descendants (including this one)
-      "ancestorcount" : n,    (numeric) number of in-mempool ancestor transactions (including this one)
-      "ancestorsize" : n,     (numeric) virtual transaction size of in-mempool ancestors (including this one)
-      "ancestorfees" : n,     (numeric) modified fees (see above) of in-mempool ancestors (including this one)
-      "depends" : [           (array) unconfirmed transactions used as inputs for this transaction
-          "transactionid",    <code>string</code> parent transaction id
-         ... ]
-    }, ...
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getRawMempool(true)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getRawMempool(true).then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // [  {'2ae541af20db6f2b50410f418af56e349d08877d685f6cf54df54658e892db7a':
+  //  { size: 237,
+  //    fee: 0.00000238,
+  //    modifiedfee: 0.00000238,
+  //    time: 1525732015,
+  //    height: 529235,
+  //    startingpriority: 0,
+  //    currentpriority: 0,
+  //    descendantcount: 10,
+  //    descendantsize: 2376,
+  //    descendantfees: 2380,
+  //    ancestorcount: 3,
+  //    ancestorsize: 712,
+  //    ancestorfees: 714,
+  //    depends:
+  //     [ 'e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e' ] },]
+
             `}</SyntaxHighlighter>
 
             <h3 id='getTxOut'><code>getTxOut</code></h3>
@@ -539,43 +327,16 @@ class Blockchain extends Component {
   include_mempool  (boolean, optional): Whether to include the mempool
             </li>
           </ol>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "bestblock" : "hash",    <code>string</code> the block hash
-    "confirmations" : n,       (numeric) The number of confirmations
-    "value" : x.xxx,           (numeric) The transaction value in BCH
-    "scriptPubKey" : {         (json object)
-       "asm" : "code",       <code>string</code>
-       "hex" : "hex",        <code>string</code>
-       "reqSigs" : n,          (numeric) Number of required signatures
-       "type" : "pubkeyhash", <code>string</code> The type, eg pubkeyhash
-       "addresses" : [          (array of string) array of bitcoin addresses
-          "address"     <code>string</code> bitcoin address
-          ,...
-       ]
-    },
-    "coinbase" : true|false   (boolean) Coinbase or not
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getTxOut("txid", 1)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getTxOut("e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e", 1).then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // null
             `}</SyntaxHighlighter>
 
             <h3 id='getTxOutProof'><code>getTxOutProof</code></h3>
           <p>
   Returns a hex-encoded proof that "txid" was included in a block.
-          </p>
-          <p>
-  NOTE: By default this function only works sometimes. This is when there is an
-  unspent output in the utxo for this transaction. To make it always work,
-  you need to maintain a transaction index, using the -txindex command line option or
-  specify the block in which the transaction is included manually (by blockhash).
           </p>
           <h4>Arguments</h4>
           <ol>
@@ -594,11 +355,9 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getTxOutProof(["txid1", "txid2"])
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getTxOutProof(["e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e", "d16662463fd98eb96c8f6898d58a4461ac3d0120f4d0aea601d72b37759f261c"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // Not all transactions found in specified or retrieved block
             `}</SyntaxHighlighter>
 
             <h3 id='getTxOutSetInfo'><code>getTxOutSetInfo</code></h3>
@@ -606,26 +365,9 @@ class Blockchain extends Component {
   Returns statistics about the unspent transaction output set.
   Note this call may take some time.
           </p>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "height":n,     (numeric) The current block height (index)
-    "bestblock": "hex",   <code>string</code> the best block hash hex
-    "transactions": n,      (numeric) The number of transactions
-    "txouts": n,            (numeric) The number of output transactions
-    "bogosize": n,          (numeric) A database-independent metric for UTXO set size
-    "hash_serialized": "hash",   <code>string</code> The serialized hash
-    "disk_size": n,         (numeric) The estimated size of the chainstate on disk
-    "total_amount": x.xxx          (numeric) The total amount
-  }
-            `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getTxOutSetInfo()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.getTxOutSetInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='preciousBlock'><code>preciousBlock</code></h3>
@@ -644,11 +386,7 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.preciousBlock("blockhash")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.preciousBlock("00000000000000000108641af52e01a447b1f9d801571f93a0f20a8cbf80c236").then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='pruneBlockchain'><code>pruneBlockchain</code></h3>
@@ -664,11 +402,7 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.pruneBlockchain(1000)
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.pruneBlockchain(1000).then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='verifyChain'><code>verifyChain</code></h3>
@@ -690,11 +424,8 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.verifyChain()
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.verifyChain().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  // true
             `}</SyntaxHighlighter>
 
             <h3 id='verifyTxOutProof'><code>verifyTxOutProof</code></h3>
@@ -714,11 +445,7 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.verifyTxOutProof("proof")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  BITBOX.Blockchain.verifyTxOutProof("proof").then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
           </div>
         </div>
