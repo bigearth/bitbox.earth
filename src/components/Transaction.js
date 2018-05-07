@@ -33,7 +33,7 @@ class Transaction extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-    hash  <code>String</code> required: Transaction hash
+    txid or txids <code>String | Array</code> required: Transaction id or url encoded array of transaction ids
               </li>
             </ol>
             <h4>Result</h4>
@@ -42,11 +42,8 @@ class Transaction extends Component {
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Transaction.details('a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8')
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
+  // single txid
+  BITBOX.Transaction.details('a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8') .then((result) => { console.log(result); }, (err) => { console.log(err); });
 
   // {
   //   "txid": "a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8",
@@ -85,6 +82,37 @@ class Transaction extends Component {
   //   "valueOut": 50,
   //   "size": 135
   // }
+
+  // array of txids
+  BITBOX.Transaction.details(["a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8", "113f1fe1c454a56436d4f93c7c6e315d1ed985d111299e9c2a3e2d3d1e9f177f"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+
+  // [ { txid: 'a85fa3d831ab6b0305e7ff88d2d4941e25a810d4461635df51490653822071a8',
+  //   version: 1,
+  //   locktime: 0,
+  //   vin: [ [Object] ],
+  //   vout: [ [Object] ],
+  //   blockhash: '000000001c6aeec19265e9cc3ded8ba5ef5e63fae7747f30bf9c02c7bc8883f0',
+  //   blockheight: 507,
+  //   confirmations: 528728,
+  //   time: 1231973656,
+  //   blocktime: 1231973656,
+  //   isCoinBase: true,
+  //   valueOut: 50,
+  //   size: 135 },
+  // { txid: '113f1fe1c454a56436d4f93c7c6e315d1ed985d111299e9c2a3e2d3d1e9f177f',
+  //   version: 1,
+  //   locktime: 0,
+  //   vin: [ [Object], [Object] ],
+  //   vout: [ [Object], [Object] ],
+  //   blockhash: '000000000000000001da2a49a63fb7d0d0893ebcb892aee3fbbfa47c803f9cf0',
+  //   blockheight: 418195,
+  //   confirmations: 111040,
+  //   time: 1467019582,
+  //   blocktime: 1467019582,
+  //   valueOut: 2.09965689,
+  //   size: 372,
+  //   valueIn: 2.0997689,
+  //   fees: 0.00011201 } ]
             `}</SyntaxHighlighter>
           </div>
         </div>
