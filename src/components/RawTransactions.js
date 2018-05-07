@@ -26,47 +26,6 @@ class RawTransactions extends Component {
         </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
-
-            <h3 id='createRawTransaction'><code>createRawTransaction</code></h3>
-            <p>
-  Create a transaction spending the given inputs and creating new outputs.
-  Outputs can be addresses or data.
-  Returns hex-encoded raw transaction.
-  Note that the transaction&rsquo;s inputs are not signed, and
-  it is not stored in the wallet or transmitted to the network.
-            </p>
-            <h4>Arguments</h4>
-            <h5>inputs</h5>
-            <p>
-  (array, required): A json array of json objects
-            </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-[ { "txid":"id",    (string, required) The transaction id "vout":n,         (numeric, required) The output number "sequence":n      (numeric, optional) The sequence number } ,... ]
-            `}</SyntaxHighlighter>
-            <h5>outputs</h5>
-              <p>
-                 (object, required): a json object with outputs
-              </p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-              { "address": x.xxx,    (numeric or string, required) The key is the bitcoin address, the numeric value (can be string) is the BCH amount "data": "hex"      (string, required) The key is "data", the value is hex encoded data ,... }
-            `}</SyntaxHighlighter>
-            <h5>locktime</h5>
-              <p>
-                (numeric, optional, default=0): Raw locktime. Non-0 value also locktime-activates inputs
-              </p>
-            <h4>Result</h4>
-            <p>
-  transaction              (string): hex string of the transaction
-            </p>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.RawTransactions.createRawTransaction([{"txid":"myid","vout":0}], {"address":0.01})
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
             <h3 id='decodeRawTransaction'><code>decodeRawTransaction</code></h3>
             <p>
   Return a JSON object representing the serialized, hex-encoded transaction.
@@ -250,85 +209,6 @@ class RawTransactions extends Component {
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
   BITBOX.RawTransactions.sendRawTransaction("signedhex")
-  .then((result) => {
-    console.log(result);
-  }, (err) => { console.log(err);
-  });
-            `}</SyntaxHighlighter>
-
-            <h3 id='signRawTransaction'><code>signRawTransaction</code></h3>
-          <p>
-  Sign inputs for raw transaction (serialized, hex-encoded).
-  The second optional argument (may be null) is an array of previous transaction outputs that
-  this transaction depends on but may not yet be in the block chain.
-  The third optional argument (may be null) is an array of base58-encoded private
-  keys that, if given, will be the only keys used to sign the transaction.
-          </p>
-          <h4>Arguments</h4>
-          <h5>hexstring</h5>
-          <p>(string, required) The transaction hex string</p>
-          <h5>prevtxs</h5>
-          <p>(string, optional) An json array of previous dependent transaction outputs</p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-       [               (json array of json objects, or 'null' if none provided)
-         {
-           "txid":"id",             (string, required) The transaction id
-           "vout":n,                  (numeric, required) The output number
-           "scriptPubKey": "hex",   (string, required) script key
-           "redeemScript": "hex",   (string, required for P2SH or P2WSH) redeem script
-           "amount": value            (numeric, required) The amount spent
-         }
-         ,...
-      ]
-            `}</SyntaxHighlighter>
-          <h5>privkeys</h5>
-          <p>(string, optional) A json array of base58-encoded private keys for signing</p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-      [                  (json array of strings, or 'null' if none provided)
-        "privatekey"   (string) private key in base58-encoding
-        ,...
-      ]
-            `}</SyntaxHighlighter>
-          <h5>sighashtype</h5>
-          <p>(string, optional, default=ALL) The signature hash type. Must be one of</p>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-         "ALL"
-         "NONE"
-         "SINGLE"
-         "ALL|ANYONECANPAY"
-         "NONE|ANYONECANPAY"
-         "SINGLE|ANYONECANPAY"
-         "ALL|FORKID"
-         "NONE|FORKID"
-         "SINGLE|FORKID"
-         "ALL|FORKID|ANYONECANPAY"
-         "NONE|FORKID|ANYONECANPAY"
-         "SINGLE|FORKID|ANYONECANPAY"
-            `}</SyntaxHighlighter>
-          <h5>
-          </h5>
-          <p>
-          </p>
-          <h4>Result</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  {
-    "hex" : "value",           (string) The hex-encoded raw transaction with signature(s)
-    "complete" : true|false,   (boolean) If the transaction has a complete set of signatures
-    "errors" : [                 (json array of objects) Script verification errors (if there are any)
-      {
-        "txid" : "hash",           (string) The hash of the referenced, previous transaction
-        "vout" : n,                (numeric) The index of the output to spent and used as input
-        "scriptSig" : "hex",       (string) The hex-encoded signature script
-        "sequence" : n,            (numeric) Script sequence number
-        "error" : "text"           (string) Verification or signing error related to the input
-      }
-      ,...
-    ]
-  }
-            `}</SyntaxHighlighter>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.RawTransactions.signRawTransaction("myhex")
   .then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
