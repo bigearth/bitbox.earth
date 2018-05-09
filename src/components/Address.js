@@ -33,12 +33,12 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>       cashaddr address to be converted
+    address <code>String</code>       cashaddr address to be converted
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    legacyAddress <code>string</code>    legacy base 58 check encoded address
+    legacyAddress <code>String</code>    legacy base 58 check encoded address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -66,12 +66,15 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>       legacy address to be converted
+    address <code>String</code> required:       legacy address to be converted
+            </li>
+            <li>
+    prefix <code>Boolean</code> optional:        include prefix
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    cashAddress <code>string</code>      cashAddr encoded address
+    cashAddress <code>String</code>      cashAddr encoded address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -79,17 +82,17 @@ class Address extends Component {
     BITBOX.Address.toCashAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN')
     // bitcoincash:qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
 
-    // mainnet
-    BITBOX.Address.toCashAddress('18HEMuar5ZhXDFep1gEiY1eoPPcBLxfDxj')
-    // bitcoincash:qp8a4vzfk9kstwsl4ud4ym3z2tckdf7a4gfwkxvtfq
-
-    // tesnet
-    BITBOX.Address.toCashAddress('n2FZEv1o4DjqKtgJTqpANsivyemMEzEsS9')
-    // bchtest:qr3hz2zvnaneyedrznkn20a95lech08vdqp95mungk
+    // mainnet no prefix
+    BITBOX.Address.toCashAddress('1HiaTupadqQN66Tvgt7QSE5Wg13BUy25eN', false)
+    // qzm47qz5ue99y9yl4aca7jnz7dwgdenl85jkfx3znl
 
     // tesnet
     BITBOX.Address.toCashAddress('msDbtTj7kWXPpYaR7PQmMK84i66fJqQMLx')
     // bchtest:qzq9je6pntpva3wf6scr7mlnycr54sjgeqxgrr9ku3
+
+    // testnet no prefix
+    BITBOX.Address.toCashAddress('msDbtTj7kWXPpYaR7PQmMK84i66fJqQMLx', false)
+    // qzq9je6pntpva3wf6scr7mlnycr54sjgeqxgrr9ku3
           `}</SyntaxHighlighter>
 
           <h3 id='isLegacyAddress'><code>isLegacyAddress</code></h3>
@@ -99,12 +102,12 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>:         address to determine
+    address <code>String</code>:         address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isLegacyAddress <code>boolean</code>:   true/false if legacy address
+    isLegacyAddress <code>Boolean</code>:   true/false if legacy address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -140,12 +143,12 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>:            address to determine
+    address <code>String</code>:            address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isCashAddress <code>boolean</code>:    true/false if cashaddress
+    isCashAddress <code>Boolean</code>:    true/false if cashaddress
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -181,12 +184,12 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>:            address to determine
+    address <code>String</code>:            address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isMainnetAddress <code>boolean</code>:     true/false if mainnet address
+    isMainnetAddress <code>Boolean</code>:     true/false if mainnet address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -222,12 +225,12 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    addresss <code>string</code>:            address to determine
+    addresss <code>String</code>:            address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isMainnetAddresss <code>boolean</code>:     true/false if is testnet address
+    isMainnetAddresss <code>Boolean</code>:     true/false if is testnet address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -263,12 +266,12 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-    address <code>string</code>          address to determine
+    address <code>String</code>          address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isP2PKHAddress <code>boolean</code>     true/false if is p2pkh address
+    isP2PKHAddress <code>Boolean</code>     true/false if is p2pkh address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -304,12 +307,12 @@ class Address extends Component {
           <h4>arguments</h4>
           <ol>
             <li>
-    address <code>string</code>         address to determine
+    address <code>String</code>         address to determine
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    isP2SHAddress <code>boolean</code>     true/false if is p2sh address
+    isP2SHAddress <code>Boolean</code>     true/false if is p2sh address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -345,12 +348,12 @@ class Address extends Component {
           <h4>arguments</h4>
           <ol>
             <li>
-    address <code>string</code>               address to determine format
+    address <code>String</code>               address to determine format
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    addressFormat <code>string</code>            address format
+    addressFormat <code>String</code>            address format
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -386,12 +389,12 @@ class Address extends Component {
           <h4>arguments</h4>
           <ol>
             <li>
-    address <code>string</code>               address to determine network
+    address <code>String</code>               address to determine network
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    addressNetwork <code>string</code>           address network
+    addressNetwork <code>String</code>           address network
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -427,12 +430,12 @@ class Address extends Component {
           <h4>arguments</h4>
           <ol>
             <li>
-    address <code>string</code>            address to determine network
+    address <code>String</code>            address to determine network
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-    addressNetwork <code>string</code>        address network
+    addressNetwork <code>String</code>        address network
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -468,15 +471,15 @@ class Address extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        xpub <code>string</code>:                 extended public key to be used
+        xpub <code>String</code>:                 extended public key to be used
             </li>
             <li>
-        path <code>string</code> <code>optional</code>:       derivation path of external change address. Default is <code>0/0</code>
+        path <code>String</code> <code>optional</code>:       derivation path of external change address. Default is <code>0/0</code>
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        changeAddress <code>string</code>:      cashaddr encoded change address
+        changeAddress <code>String</code>:      cashaddr encoded change address
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
