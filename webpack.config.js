@@ -1,6 +1,7 @@
 let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 
 module.exports = {
@@ -34,13 +35,15 @@ module.exports = {
           loader: 'sass-loader'
         }
       ]
-    }]
+    },
+]
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'BITBOX',
       template: 'src/index.html',
       filename: 'index.html'
-    })
+    }),
+      new UglifyJsPlugin()
   ]
 };
