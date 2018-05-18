@@ -712,7 +712,7 @@ class Address extends Component {
   //   }
   // ];
 
-  BITBOX.Address.utxo(['1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.unconfirmed(['1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
   // [
   //   [
   //     {
