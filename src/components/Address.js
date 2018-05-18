@@ -551,7 +551,7 @@ class Address extends Component {
           </ol>
           <h4>Result</h4>
           <p>
-  details <code>Object</code>: Details about address including balance
+  details <code>Object | Array</code>: Details about address including balance
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -617,7 +617,7 @@ class Address extends Component {
   //   cashAddress: 'bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra' } ]
             `}</SyntaxHighlighter>
 
-            <h3 id='utxo'><code>utxo</code></h3>
+          <h3 id='utxo'><code>utxo</code></h3>
           <p>
   Return list of uxto for address
           </p>
@@ -629,7 +629,7 @@ class Address extends Component {
           </ol>
           <h4>Result</h4>
           <p>
-  utxo <code>Object</code>: utxo for address
+  utxo <code>Array</code>: utxo for address
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -679,6 +679,56 @@ class Address extends Component {
   //     legacyAddress: '1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA',
   //     cashAddress: 'bitcoincash:qpcxf2sv9hjw08nvpgffpamfus9nmksm3chv5zqtnz' }],
   //     [] ]
+            `}</SyntaxHighlighter>
+
+          <h3 id='unconfirmed'><code>unconfirmed</code></h3>
+          <p>
+  Return list of unconfirmed transactions for address
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+  address or addresses  <code>String | Array</code> required: legacy or cashAddr or array of addresses
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+  unconfirmed <code>Array</code>: unconirmed transactions for address
+          </p>
+          <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  BITBOX.Address.unconfirmed('1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W').then((result) => { console.log(result); }, (err) => { console.log(err); });
+  // [
+  //   {
+  //     "txid": "e0aadd861a06993e39af932bb0b9ad69e7b37ef5843a13c6724789e1c94f3513",
+  //     "vout": 1,
+  //     "scriptPubKey": "76a914a0f531f4ff810a415580c12e54a7072946bb927e88ac",
+  //     "amount": 0.00008273,
+  //     "satoshis": 8273,
+  //     "confirmations": 0,
+  //     "ts": 1526680569,
+  //     "legacyAddress": "1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W",
+  //     "cashAddress": "bitcoincash:qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c"
+  //   }
+  // ];
+
+  BITBOX.Address.utxo(['1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  // [
+  //   [
+  //     {
+  //       "txid": "e0aadd861a06993e39af932bb0b9ad69e7b37ef5843a13c6724789e1c94f3513",
+  //       "vout": 1,
+  //       "scriptPubKey": "76a914a0f531f4ff810a415580c12e54a7072946bb927e88ac",
+  //       "amount": 0.00008273,
+  //       "satoshis": 8273,
+  //       "confirmations": 0,
+  //       "ts": 1526680569,
+  //       "legacyAddress": "1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W",
+  //       "cashAddress": "bitcoincash:qzs02v05l7qs5s24srqju498qu55dwuj0cx5ehjm2c"
+  //     }
+  //   ],
+  //   []
+  // ];
             `}</SyntaxHighlighter>
           </div>
         </div>
