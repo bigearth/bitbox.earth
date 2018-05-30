@@ -64,15 +64,6 @@ class Control extends Component {
   //    chunks_used: 0,
   //    chunks_free: 1 } }
             `}</SyntaxHighlighter>
-
-            <h3 id='stop'><code>stop</code></h3>
-          <p>
-  Stop Bitcoin server.
-          </p>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Control.stop().then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>

@@ -26,67 +26,6 @@ class Network extends Component {
         </div>
         <div className="pure-g">
           <div className="pure-u-1-1">
-            <h3 id='addNode'><code>addNode</code></h3>
-            <p>
-  Attempts add or remove a node from the addnode list.
-  Or try a connection to a node once.
-            </p>
-            <h4>Arguments</h4>
-            <ol>
-              <li>
-  node    (string, required): The node (see getpeerinfo for nodes)
-              </li>
-              <li>
-  command  (string, required): 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once
-              </li>
-            </ol>
-            <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.addNode("192.168.0.6:8333", "onetry").then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
-
-            <h3 id='clearBanned'><code>clearBanned</code></h3>
-          <p>
-  Clear all banned IPs.
-          </p>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.clearBanned().then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
-
-            <h3 id='disconnectNode'><code>disconnectNode</code></h3>
-          <p>
-  Immediately disconnects from the specified peer node. Strictly one out of 'address' and 'nodeid' can be provided to identify the node. To disconnect by nodeid, either set 'address' to the empty string, or call using the named 'nodeid' argument only.
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  address     (string, optional): The IP address/port of the node
-            </li>
-            <li>
-  nodeid      (number, optional): The node ID (see getpeerinfo for node IDs)
-            </li>
-          </ol>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.disconnectNode("192.168.0.6:8333").then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
-
-            <h3 id='getAddedNodeInfo'><code>getAddedNodeInfo</code></h3>
-          <p>
-  Returns information about the given added node, or all added nodes (note that onetry addnodes are not listed here)
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  node   (string, optional): If provided, return information about this specific node, otherwise all nodes are returned.
-            </li>
-          </ol>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.getAddedNodeInfo('192.168.0.201').then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
-
             <h3 id='getConnectionCount'><code>getConnectionCount</code></h3>
           <p>
   Returns the number of connections to other nodes.
@@ -99,7 +38,11 @@ class Network extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.getConnectionCount().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Network.getConnectionCount().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // 35
             `}</SyntaxHighlighter>
@@ -110,7 +53,11 @@ class Network extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.getNetTotals().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Network.getNetTotals().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { totalbytesrecv: 413668219,
   // totalbytessent: 14308845058,
@@ -130,7 +77,11 @@ class Network extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.getNetworkInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Network.getNetworkInfo().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { version: 170000,
   // subversion: '/Bitcoin ABC:0.17.0(EB32.0)/',
@@ -168,7 +119,11 @@ class Network extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.getPeerInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Network.getPeerInfo().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // [{ id: 32388,
   //   addr: '173.249.34.172:54414',
@@ -204,24 +159,6 @@ class Network extends Component {
   //   bytesrecv_per_msg: { getaddr: 24, pong: 32, verack: 24, version: 130 } } ]
             `}</SyntaxHighlighter>
 
-            <h3 id='listBanned'><code>listBanned</code></h3>
-          <p>
-  List all banned IPs/Subnets.
-          </p>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.listBanned().then((result) => { console.log(result); }, (err) => { console.log(err); });
-
-  // [ { address: '1.34.150.136/32',
-  //   banned_until: 1525812187,
-  //   ban_created: 1525725787,
-  //   ban_reason: 'node misbehaving' },
-  // { address: '1.126.107.110/32',
-  //   banned_until: 1525778858,
-  //   ban_created: 1525692458,
-  //   ban_reason: 'node misbehaving' }]
-            `}</SyntaxHighlighter>
-
             <h3 id='ping'><code>ping</code></h3>
           <p>
   Requests that a ping be sent to all other nodes, to measure ping time.
@@ -230,50 +167,14 @@ class Network extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.ping().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Network.ping().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // null
             `}</SyntaxHighlighter>
-
-            <h3 id='setBan'><code>setBan</code></h3>
-          <p>
-  Attempts add or remove a IP/Subnet from the banned list.
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  subnet     (string, required): The IP/Subnet (see getpeerinfo for nodes ip) with a optional netmask (default is /32 = single ip)
-            </li>
-            <li>
-  command      (string, required): 'add' to add a IP/Subnet to the list, 'remove' to remove a IP/Subnet from the list
-            </li>
-            <li>
-  bantime      (numeric, optional): time in seconds how long (or until when if [absolute] is set) the ip is banned (0 or empty means using the default time of 24h which can also be overwritten by the -bantime startup argument)
-            </li>
-            <li>
-  absolute     (boolean, optional): If set, the bantime must be a absolute timestamp in seconds since epoch (Jan 1 1970 GMT)
-            </li>
-          </ol>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.setBan("192.168.0.6", "add", 8640).then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
-
-            <h3 id='setNetworkActive'><code>setNetworkActive</code></h3>
-          <p>
-  Disable/enable all p2p network activity.
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-  state        (boolean, required): true to enable networking, false to disable
-            </li>
-          </ol>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Network.setNetworkActive(true).then((result) => { console.log(result); }, (err) => { console.log(err); });
-            `}</SyntaxHighlighter>
-          </div>
         </div>
       </div>
     );

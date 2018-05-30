@@ -37,7 +37,11 @@ class Blockchain extends Component {
             <h4>Examples</h4>
 
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBestBlockHash().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getBestBlockHash().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
   // 241decef88889efac8e6ce428a8ac696fdde5972eceed97e1fb58d6106af31d5
             `}</SyntaxHighlighter>
 
@@ -56,7 +60,11 @@ class Blockchain extends Component {
             </ol>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlock("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getBlock("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { hash: '00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09',
   // confirmations: 528236,
@@ -83,7 +91,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockchainInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getBlockchainInfo().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { chain: 'main',
   // blocks: 529235,
@@ -116,7 +128,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockCount().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getBlockCount().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
   // 529235
             `}</SyntaxHighlighter>
 
@@ -136,7 +152,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockHash(0).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getBlockHash(0).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
   // 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
             `}</SyntaxHighlighter>
 
@@ -156,7 +176,11 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getBlockHeader("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getBlockHeader("00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { hash: '00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09',
   // confirmations: 528236,
@@ -180,7 +204,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getChainTips().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getChainTips().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // [ { height: 529235,
   //   hash: '00000000000000000108641af52e01a447b1f9d801571f93a0f20a8cbf80c236',
@@ -206,7 +234,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getDifficulty().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getDifficulty().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // 702784497476.8376
             `}</SyntaxHighlighter>
@@ -227,7 +259,11 @@ class Blockchain extends Component {
           <h4>Result</h4>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolAncestors("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getMempoolAncestors("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolDescendants'><code>getMempoolDescendants</code></h3>
@@ -245,7 +281,11 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolDescendants("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getMempoolDescendants("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolEntry'><code>getMempoolEntry</code></h3>
@@ -260,7 +300,11 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolEntry("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getMempoolEntry("fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='getMempoolInfo'><code>getMempoolInfo</code></h3>
@@ -269,7 +313,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getMempoolInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getMempoolInfo().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { size: 257,
   // bytes: 98257,
@@ -290,7 +338,11 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getRawMempool(true).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getRawMempool(true).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // [  {'2ae541af20db6f2b50410f418af56e349d08877d685f6cf54df54658e892db7a':
   //  { size: 237,
@@ -329,7 +381,11 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getTxOut("e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e", 1).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getTxOut("e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e", 1).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // null
             `}</SyntaxHighlighter>
@@ -355,19 +411,13 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getTxOutProof(["e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e", "d16662463fd98eb96c8f6898d58a4461ac3d0120f4d0aea601d72b37759f261c"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.getTxOutProof(["e25682caafc7000645d59f4c11d8d594b2943979b9d8fafb9f946e2b35c21b7e", "d16662463fd98eb96c8f6898d58a4461ac3d0120f4d0aea601d72b37759f261c"]).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // Not all transactions found in specified or retrieved block
-            `}</SyntaxHighlighter>
-
-            <h3 id='getTxOutSetInfo'><code>getTxOutSetInfo</code></h3>
-          <p>
-  Returns statistics about the unspent transaction output set.
-  Note this call may take some time.
-          </p>
-          <h4>Examples</h4>
-            <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.getTxOutSetInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
             `}</SyntaxHighlighter>
 
             <h3 id='preciousBlock'><code>preciousBlock</code></h3>
@@ -386,7 +436,11 @@ class Blockchain extends Component {
           </ol>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.preciousBlock("00000000000000000108641af52e01a447b1f9d801571f93a0f20a8cbf80c236").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.preciousBlock("00000000000000000108641af52e01a447b1f9d801571f93a0f20a8cbf80c236").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='pruneBlockchain'><code>pruneBlockchain</code></h3>
@@ -402,7 +456,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.pruneBlockchain(1000).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.pruneBlockchain(1000).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
             `}</SyntaxHighlighter>
 
             <h3 id='verifyChain'><code>verifyChain</code></h3>
@@ -424,7 +482,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.verifyChain().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.verifyChain().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
   // true
             `}</SyntaxHighlighter>
 
@@ -445,7 +507,11 @@ class Blockchain extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Blockchain.verifyTxOutProof("proof").then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Blockchain.verifyTxOutProof("proof").then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
             `}</SyntaxHighlighter>
           </div>
         </div>

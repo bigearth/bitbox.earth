@@ -555,7 +555,11 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Address.details('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA').then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.details('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA').then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // {
   //   "addrStr": "1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA",
@@ -580,7 +584,11 @@ class Address extends Component {
   //   ]
   // }
 
-  BITBOX.Address.details(['1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.details(['1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // [ { balance: 0.36781097,
   //   balanceSat: 36781097,
@@ -633,7 +641,11 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Address.utxo('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA').then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.utxo('1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA').then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // [
   //   {
@@ -658,7 +670,11 @@ class Address extends Component {
   //   }
   // ]
 
-  BITBOX.Address.utxo(['1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.utxo(['1BFHGm4HzqgXXyNX8n7DsQno5DAC4iLMRA', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // [ [ { txid: 'f737485aaee3c10b13013fa109bb6294b099246134ca9885f4cc332dbc6c9bb4',
   //     vout: 0,
@@ -697,7 +713,12 @@ class Address extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Address.unconfirmed('1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W').then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.unconfirmed('1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W').then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
+
   // [
   //   {
   //     "txid": "e0aadd861a06993e39af932bb0b9ad69e7b37ef5843a13c6724789e1c94f3513",
@@ -712,7 +733,12 @@ class Address extends Component {
   //   }
   // ];
 
-  BITBOX.Address.unconfirmed(['1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Address.unconfirmed(['1Fg4r9iDrEkCcDmHTy2T79EusNfhyQpu7W', "bitcoincash:qp7ekaepv3wf2nq035hevcma4x9sxmp3w56048g6ra"]).then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
+
   // [
   //   [
   //     {

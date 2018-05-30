@@ -114,8 +114,7 @@ class Mining extends Component {
           `}</SyntaxHighlighter>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mining.getBlockTemplate()
-  .then((result) => {
+  BITBOX.Mining.getBlockTemplate().then((result) => {
     console.log(result);
   }, (err) => { console.log(err);
   });
@@ -140,10 +139,10 @@ class Mining extends Component {
             `}</SyntaxHighlighter>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mining.getMiningInfo()
-  .then((result) => {
+  BITBOX.Mining.getMiningInfo().then((result) => {
     console.log(result);
-  }, (err) => { console.log(err);
+  }, (err) => {
+    console.log(err);
   });
             `}</SyntaxHighlighter>
 
@@ -168,10 +167,10 @@ class Mining extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mining.getNetworkHashps()
-  .then((result) => {
+  BITBOX.Mining.getNetworkHashps().then((result) => {
     console.log(result);
-  }, (err) => { console.log(err);
+  }, (err) => {
+    console.log(err);
   });
             `}</SyntaxHighlighter>
 
@@ -194,10 +193,10 @@ class Mining extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Mining.submitBlock(hexdata, parameters)
-  .then((result) => {
+  BITBOX.Mining.submitBlock(hexdata, parameters).then((result) => {
     console.log(result);
-  }, (err) => { console.log(err);
+  }, (err) => {
+    console.log(err);
   });
             `}</SyntaxHighlighter>
           </div>
