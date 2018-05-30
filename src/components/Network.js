@@ -175,6 +175,7 @@ class Network extends Component {
 
   // null
             `}</SyntaxHighlighter>
+          </div>
         </div>
       </div>
     );
