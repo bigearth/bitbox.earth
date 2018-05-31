@@ -32,7 +32,11 @@ class Control extends Component {
           </p>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Control.getInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Control.getInfo().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { version: 170000,
   // protocolversion: 70015,
@@ -54,7 +58,11 @@ class Control extends Component {
           <h4>Result</h4>
           <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
-  BITBOX.Control.getMemoryInfo().then((result) => { console.log(result); }, (err) => { console.log(err); });
+  BITBOX.Control.getMemoryInfo().then((result) => {
+    console.log(result);
+  }, (err) => {
+    console.log(err);
+  });
 
   // { locked:
   //  { used: 0,
