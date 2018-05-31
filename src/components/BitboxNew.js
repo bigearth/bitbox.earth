@@ -33,14 +33,8 @@ class BitboxNew extends Component {
   Options:
 
     -s, --scaffold <scaffold>        The framework to use. Options include react, angular, node, next, and vue. (Default: react)
-    -r, --scaffold-repo <repo>       The github repository to use. Ex: https://github.com/bigearth/bitbox-scaffold-react.git
+    -r, --restURL <restURL>          The rest URL to use. default: https://rest.bitbox.earth/v1/
     -e, --environment <environment>  environment of running BITBOX instance. Ex: production, staging. Default: development
-    -r, --protocol <protocol>        protocol of running BITBOX instance. Default: http
-    -o, --host <host>                host of running BITBOX instance. Default: localhost
-    -p, --port <port>                port of running BITBOX instance. Default: 8332
-    -u, --username <username>        Bitcoin Cash JSON RPC username
-    -a, --password <password>        Bitcoin Cash JSON RPC password
-    -c, --corsproxy                  Enable proxy POST requests to bitbox proxy (default: disabled)
     -h, --help                       output usage information
 
   $ bitbox new helloEARTH
@@ -52,12 +46,7 @@ class BitboxNew extends Component {
   exports.config = {
     networks: {
       development: {
-        protocol: "http",
-        host: "localhost",
-        port: 8332,
-        username: "",
-        password: "",
-        corsproxy: false
+        restURL: 'https://rest.bitbox.earth/v1/'
       }
     }
   };
@@ -70,12 +59,7 @@ class BitboxNew extends Component {
   ; bitbox config comment
 
   [new]
-  protocol = http
-  host = localhost
-  port = 8332
-  username = ""
-  password = ""
-  corsproxy = false
+  restURL = https://rest.bitbox.earth/v1/
             `}</SyntaxHighlighter>
           </div>
         </div>
