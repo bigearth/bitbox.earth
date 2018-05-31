@@ -52,7 +52,7 @@ class BitboxNew extends Component {
   };
             `}</SyntaxHighlighter>
             <h3 id="customNew">Customize your build</h3>
-            <p>By default your <code>bitbox.js</code> will connect over <code>http://localhost:8332</code> but you can change this by passing in any or all of the following flags: <code>--protocol</code>, <code>--host</code> and/or <code>--port</code></p>
+            <p>By default your <code>bitbox.js</code> will connect over <code>https://rest.bitbox.earth/v1/</code> but you can change this by passing in a <code>--restURL</code> flag</p>
             <p>You can also set these values in a <code>.bitboxrc</code> file in your home directory for regularly used values.</p>
             <h3 id="bitboxrc"><code>.bitboxrc</code></h3>
             <SyntaxHighlighter language='text' style={ocean}>{`
