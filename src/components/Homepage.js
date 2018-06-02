@@ -143,16 +143,22 @@ class Homepage extends Component {
                     <p>BITBOX is on GitHub under the MIT Open Source License. We welcome any and all contributions, and feature suggestions.</p>
                     <ul>
                       <li>
-                        <a href='https://github.com/bigearth/bitbox-electron'>https://github.com/bigearth/bitbox-electron</a>
+                        <a href='https://github.com/bigearth/bitbox-cli'>bitbox-cli</a>
                       </li>
                       <li>
-                        <a href='https://github.com/bigearth/bitbox-cli'>https://github.com/bigearth/bitbox-cli</a>
+                        <a href='https://github.com/bigearth/bitbox-gui'>BITBOX GUI</a>
                       </li>
                       <li>
-                        <a href='https://github.com/bigearth/bitbox.earth'>https://github.com/bigearth/bitbox.earth</a>
+                        <a href='https://github.com/bigearth/bitbox.earth'>www.bitbox.earth</a>
                       </li>
                       <li>
-                        <a href='https://github.com/bigearth/bitblog'>https://github.com/bigearth/bitblog</a>
+                        <a href='https://github.com/bigearth/rest.bitbox.earth'>REST</a>
+                      </li>
+                      <li>
+                        <a href='https://github.com/bigearth/explore.bitbox.earth'>Explore</a>
+                      </li>
+                      <li>
+                        <a href='https://github.com/bigearth/bitblog'>BITBLOG</a>
                       </li>
                     </ul>
                   </div>
