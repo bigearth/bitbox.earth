@@ -28,7 +28,7 @@ class Homepage extends Component {
           <div className="splash">
             <h1 className="splash-head">YOUR $BCH TOOLKIT</h1>
             <p className="splash-subhead">
-              Bitcoin Cash Block Explorer by BITBOX.
+              SUPERCHARGE your Bitcoin Cash workflow.
             </p>
             <p>
               <a href="https://github.com/bigearth/bitbox-gui/releases/download/0.7.8/BITBOX-0.7.8.dmg" className="pure-button pure-button-primary">
