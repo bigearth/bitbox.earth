@@ -13,7 +13,7 @@
     "express": "^4.16.2",
     "merkle-lib": "^2.0.10",
     "moment": "^2.20.1",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.9.0",
     "path": "^0.12.7",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
