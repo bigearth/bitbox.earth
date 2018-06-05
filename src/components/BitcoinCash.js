@@ -105,7 +105,7 @@ class BitcoinCash extends Component {
 
           <h3 id='toBits'><code>toBits</code></h3>
           <p>
-        Converting satoshi units to Bits denominationn
+        Converting satoshi units to Bits denomination
           </p>
           <h4>Arguments</h4>
           <ol>
@@ -142,7 +142,7 @@ class BitcoinCash extends Component {
 
           <h3 id='fromBits'><code>fromBits</code></h3>
           <p>
-        Converting bits units to satoshi denominationn
+        Converting bits units to satoshi denomination
           </p>
           <h4>Arguments</h4>
           <ol>
