@@ -74,10 +74,16 @@ class TransactionBuilder extends Component {
             <h4>Arguments</h4>
             <ol>
               <li>
-          txid <code>String</code>:               txid of vout
+          txid <code>String</code> (required):               txid of vout
               </li>
               <li>
-          index <code>Number</code>:              index of vout
+          index <code>Number</code> (required):              index of vout
+              </li>
+              <li>
+          sequence <code>Number</code> (optional):           relative lock time. Default <code>0xffffffff</code>
+              </li>
+              <li>
+          prevOutScript <code>String</code> (optional):      previous output script
               </li>
             </ol>
             <h4>Examples</h4>
