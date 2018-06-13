@@ -213,6 +213,52 @@ class TransactionBuilder extends Component {
   decoded[1].toString('ascii')
   // #BCHForEveryone
             `}</SyntaxHighlighter>
+
+            <h3 id='encodeBIP68'><code>bip68.encode</code></h3>
+            <p>
+            Encoded <a href='https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki'>bip68</a> relative time lock
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          config <code>Object</code>: Valid keys: <code>seconds</code> and <code>block</code>. <code>seconds</code> must be in multiples of 512.
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          hex <code>string</code>:      hex encoded relative timelock
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let transactionBuilder = new BITBOX.TransactionBuilder();
+  transactionBuilder.bip68.encode({ seconds: 2048 })
+  // 4194308
+  transactionBuilder.bip68.encode({ blocks: 52 })
+  // 52
+            `}</SyntaxHighlighter>
+
+            <h3 id='decodeBIP68'><code>bip68.decode</code></h3>
+            <p>
+            Decoded <a href='https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki'>bip68</a> relative time lock
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          hex <code>String</code>: hex encoded relative lock time
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          details <code>Object</code>: details about the relative lock time
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let transactionBuilder = new BITBOX.TransactionBuilder();
+  transactionBuilder.bip68.decode(0x03ffffff)
+  // { seconds: 33553920 }
+  transactionBuilder.bip68.decode(0x0100fffe)
+  // { blocks: 65534 }
+            `}</SyntaxHighlighter>
           </div>
         </div>
       </div>
