@@ -36,12 +36,12 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        bitcoinCash <code>number</code>:         unit to be converted
+        bitcoinCash <code>Number</code>:         unit to be converted
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        satoshi <code>number</code>:    bitcoinCash unit converted to satoshis
+        satoshi <code>Number</code>:    bitcoinCash unit converted to satoshis
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -73,12 +73,12 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        satoshi <code>number</code>:         unit to be converted
+        satoshi <code>Number</code>:         unit to be converted
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        bitcoinCash <code>number</code>:    satoshi unit converted to Bitcoin Cash
+        bitcoinCash <code>Number</code>:    satoshi unit converted to Bitcoin Cash
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -110,12 +110,12 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        satoshi <code>number</code>:         unit to be converted
+        satoshi <code>Number</code>:         unit to be converted
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        bits <code>number</code>:    satoshi unit converted to Bits
+        bits <code>Number</code>:    satoshi unit converted to Bits
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -147,12 +147,12 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        bits <code>number</code>:         unit to be converted
+        bits <code>Number</code>:         unit to be converted
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        satoshi <code>number</code>:    bits unit converted to satoshi
+        satoshi <code>Number</code>:    bits unit converted to satoshi
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -184,10 +184,10 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        privateKeyWIF <code>string</code>:        private key in wallet import format
+        privateKeyWIF <code>String</code>:        private key in wallet import format
             </li>
             <li>
-        message <code>string</code>:              message to sign
+        message <code>String</code>:              message to sign
             </li>
           </ol>
           <h4>Result</h4>
@@ -233,12 +233,12 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        hex <code>string</code>:                        hex encoded bytes to encode as base58check
+        hex <code>String</code>:                        hex encoded bytes to encode as base58check
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        base58check <code>string</code>:                    base58check encoded string
+        base58check <code>String</code>:                    base58check encoded string
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -275,7 +275,7 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        base58check <code>string</code>:                base58check encoded string to decode to hex
+        base58check <code>String</code>:                base58check encoded string to decode to hex
             </li>
           </ol>
           <h4>Result</h4>
@@ -317,10 +317,10 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        address <code>string</code>:                cashaddr (w/ or w/out prefix) or legacy base58check encoded address
+        address <code>String</code>:                cashaddr (w/ or w/out prefix) or legacy base58check encoded address
             </li>
             <li>
-        options <code>object</code>:                options such as amount, label, message etc
+        options <code>Object</code>:                options such as amount, label, message etc
             </li>
           </ol>
           <h4>Result</h4>
@@ -362,12 +362,12 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        bip21 <code>string</code>:                 bip21 encoded uri
+        bip21 <code>String</code>:                 bip21 encoded uri
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        results <code>object</code>:                  decoded bip21 uri
+        results <code>Object</code>:                  decoded bip21 uri
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -397,16 +397,16 @@ class BitcoinCash extends Component {
           <h4>Arguments</h4>
           <ol>
             <li>
-        inputs <code>object</code>:                 object w/ keys describing input types and counts. 'MULTISIG-P2SH' and 'P2PKH'. "MULTISIG-P2SH" also should include the required and total number of signatures. EX: "MULTISIG-P2SH:2-4"
+        inputs <code>Object</code>:                 object w/ keys describing input types and counts. 'MULTISIG-P2SH' and 'P2PKH'. "MULTISIG-P2SH" also should include the required and total number of signatures. EX: "MULTISIG-P2SH:2-4"
             </li>
             <li>
-        outputs <code>object</code>:                 object w/ keys describing output types and counts. 'P2SH' and 'P2PKH'
+        outputs <code>Object</code>:                 object w/ keys describing output types and counts. 'P2SH' and 'P2PKH'
 
             </li>
           </ol>
           <h4>Result</h4>
           <p>
-        byteCount <code>number</code>:                  number of bytes
+        byteCount <code>Number</code>:                  number of bytes
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
@@ -467,6 +467,65 @@ class BitcoinCash extends Component {
     };
     BITBOX.BitcoinCash.getByteCount(inputs, outputs);
     // 1780
+          `}</SyntaxHighlighter>
+
+          <h3 id='encryptBIP38'><code>encryptBIP38</code></h3>
+          <p>
+        <a href='https://github.com/bitcoin/bips/blob/master/bip-0038.mediawiki'>BIP38</a> encrypt privkey WIFs
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+        wif <code>String</code>:  privkey WIF on mainnet or testnet
+            </li>
+            <li>
+        password <code>String</code>: password to encrypt wif with
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+        encryptedKey <code>String</code>: privkey WIF encrypted w/ password
+          </p>
+          <h4>Examples</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+            // mainnet
+            BITBOX.BitcoinCash.encryptBIP38('L1phBREbhL4vb1uHHHCAse8bdGE5c7ic2PFjRxMawLzQCsiFVbvu', '9GKVkabAHBMyAf');
+            // 6PYU2fDHRVF2194gKDGkbFbeu4mFgkWtVvg2RPd2Sp6KmZx3RCHFpgBB2G
+
+            // testnet
+            BITBOX.BitcoinCash.encryptBIP38('cSx7KzdH9EcvDEireu2WYpGnXdFYpta7sJUNt5kVCJgA7kcAU8Gm', '1EBPIyj55eR8bVUov9');
+            // 6PYUAPLwLSEjWSAfoe9NTSPkMZXnJA8j8EFJtKaeSnP18RCouutBrS2735
+          `}</SyntaxHighlighter>
+
+          <h3 id='decryptBIP38'><code>decryptBIP38</code></h3>
+          <p>
+        <a href='https://github.com/bitcoin/bips/blob/master/bip-0038.mediawiki'>BIP38</a> decrypt privkey WIFs
+          </p>
+          <h4>Arguments</h4>
+          <ol>
+            <li>
+        encryptedKey <code>String</code>: encrypted privkey WIF
+            </li>
+            <li>
+        password <code>String</code>: password to decrypt wif with
+            </li>
+            <li>
+        network <code>String</code>: mainnet or testnet. Default: mainnet
+            </li>
+          </ol>
+          <h4>Result</h4>
+          <p>
+        wif <code>String</code>: decrypted privkey WIF on mainnet or testnet
+          </p>
+          <h4>Examples</h4>
+          <SyntaxHighlighter language='javascript' style={ocean}>{`
+            // mainnet
+            BITBOX.BitcoinCash.decryptBIP38('6PYU2fDHRVF2194gKDGkbFbeu4mFgkWtVvg2RPd2Sp6KmZx3RCHFpgBB2G', '9GKVkabAHBMyAf', 'mainnet');
+            // L1phBREbhL4vb1uHHHCAse8bdGE5c7ic2PFjRxMawLzQCsiFVbvu
+
+            // testnet
+            BITBOX.BitcoinCash.decryptBIP38('6PYUAPLwLSEjWSAfoe9NTSPkMZXnJA8j8EFJtKaeSnP18RCouutBrS2735', '1EBPIyj55eR8bVUov9', 'testnet');
+            // cSx7KzdH9EcvDEireu2WYpGnXdFYpta7sJUNt5kVCJgA7kcAU8Gm
           `}</SyntaxHighlighter>
           </div>
         </div>
