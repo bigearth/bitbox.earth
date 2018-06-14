@@ -488,13 +488,13 @@ class BitcoinCash extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-            // mainnet
-            BITBOX.BitcoinCash.encryptBIP38('L1phBREbhL4vb1uHHHCAse8bdGE5c7ic2PFjRxMawLzQCsiFVbvu', '9GKVkabAHBMyAf');
-            // 6PYU2fDHRVF2194gKDGkbFbeu4mFgkWtVvg2RPd2Sp6KmZx3RCHFpgBB2G
+    // mainnet
+    BITBOX.BitcoinCash.encryptBIP38('L1phBREbhL4vb1uHHHCAse8bdGE5c7ic2PFjRxMawLzQCsiFVbvu', '9GKVkabAHBMyAf');
+    // 6PYU2fDHRVF2194gKDGkbFbeu4mFgkWtVvg2RPd2Sp6KmZx3RCHFpgBB2G
 
-            // testnet
-            BITBOX.BitcoinCash.encryptBIP38('cSx7KzdH9EcvDEireu2WYpGnXdFYpta7sJUNt5kVCJgA7kcAU8Gm', '1EBPIyj55eR8bVUov9');
-            // 6PYUAPLwLSEjWSAfoe9NTSPkMZXnJA8j8EFJtKaeSnP18RCouutBrS2735
+    // testnet
+    BITBOX.BitcoinCash.encryptBIP38('cSx7KzdH9EcvDEireu2WYpGnXdFYpta7sJUNt5kVCJgA7kcAU8Gm', '1EBPIyj55eR8bVUov9');
+    // 6PYUAPLwLSEjWSAfoe9NTSPkMZXnJA8j8EFJtKaeSnP18RCouutBrS2735
           `}</SyntaxHighlighter>
 
           <h3 id='decryptBIP38'><code>decryptBIP38</code></h3>
@@ -519,13 +519,13 @@ class BitcoinCash extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-            // mainnet
-            BITBOX.BitcoinCash.decryptBIP38('6PYU2fDHRVF2194gKDGkbFbeu4mFgkWtVvg2RPd2Sp6KmZx3RCHFpgBB2G', '9GKVkabAHBMyAf', 'mainnet');
-            // L1phBREbhL4vb1uHHHCAse8bdGE5c7ic2PFjRxMawLzQCsiFVbvu
+    // mainnet
+    BITBOX.BitcoinCash.decryptBIP38('6PYU2fDHRVF2194gKDGkbFbeu4mFgkWtVvg2RPd2Sp6KmZx3RCHFpgBB2G', '9GKVkabAHBMyAf', 'mainnet');
+    // L1phBREbhL4vb1uHHHCAse8bdGE5c7ic2PFjRxMawLzQCsiFVbvu
 
-            // testnet
-            BITBOX.BitcoinCash.decryptBIP38('6PYUAPLwLSEjWSAfoe9NTSPkMZXnJA8j8EFJtKaeSnP18RCouutBrS2735', '1EBPIyj55eR8bVUov9', 'testnet');
-            // cSx7KzdH9EcvDEireu2WYpGnXdFYpta7sJUNt5kVCJgA7kcAU8Gm
+    // testnet
+    BITBOX.BitcoinCash.decryptBIP38('6PYUAPLwLSEjWSAfoe9NTSPkMZXnJA8j8EFJtKaeSnP18RCouutBrS2735', '1EBPIyj55eR8bVUov9', 'testnet');
+    // cSx7KzdH9EcvDEireu2WYpGnXdFYpta7sJUNt5kVCJgA7kcAU8Gm
           `}</SyntaxHighlighter>
           </div>
         </div>
