@@ -8,9 +8,8 @@ Inpired by [ganache](http://truffleframework.com/ganache/).
 
 ## Setup
 
-* Node v9.4.x
-  * `nvm install 9.4.0 && nvm use v9.4.0`
-* npm v5.6.x
+* Node v10.3.x && npm v5.6.x
+  * `nvm install stable`
 * webpack v3.10.x
   * `npm install --global webpack`
 * XCode

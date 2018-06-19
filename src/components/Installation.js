@@ -31,16 +31,16 @@ class Installation extends Component {
             <p>NodeJS is a javascript runtime build on Chrome’s V8 engine. npm is the package manager for NodeJS.</p>
             <h5 id="macos"><i className="fab fa-apple" /> MacOS and <i className="fab fa-linux" /> Linux</h5>
             <p>For installing on Unix platorms use <a href='https://github.com/creationix/nvm'>nvm</a> the node version manager. Install <code>nvm</code> w/</p>
-            <SyntaxHighlighter language='text' style={ocean}>{" curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash"}</SyntaxHighlighter>
-            <p>Once you have nvm install NodeJS v9.4.0 w/</p>
-            <SyntaxHighlighter language='text' style={ocean}>{" nvm install 9.4.0"}</SyntaxHighlighter>
-            <p>This also installs npm v5.6.0.</p>
+            <SyntaxHighlighter language='text' style={ocean}>{" curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash"}</SyntaxHighlighter>
+            <p>Once you have nvm install NodeJS v10.3.0 w/</p>
+            <SyntaxHighlighter language='text' style={ocean}>{" nvm install stable"}</SyntaxHighlighter>
+            <p>This also installs npm v6.1.0.</p>
             <h5 id="windows"><i className="fab fa-windows" /> Windows</h5>
             <p>For installing on Windows use the official installer from <a href='https://nodejs.org/'>nodejs.org</a>. Install the one which says "Recommended for most users"</p>
             <h3 id="gui"><i className="fas fa-desktop" /> GUI</h3>
             <h4 id="apple"><i className="fab fa-apple" /> MacOS</h4>
             <p>Download the <a href='https://github.com/bigearth/bitbox-gui/releases/download/0.7.8/BITBOX-0.7.8.dmg'>app for MacOS</a>. You can verify the files haven&rsquo;t been tampered w/ by downloading them and running:</p>
-            <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.3.5.dmg"}</SyntaxHighlighter>
+            <SyntaxHighlighter language='text' style={ocean}>{" openssl sha -sha256 path/to/BITBOX-0.7.8.dmg"}</SyntaxHighlighter>
             <p>Verify the output matches the latest BITBOX release&rsquo;s <a href='https://github.com/bigearth/keys-n-hashes'>checksum</a>.</p>
             <h4 id="windows"><i className="fab fa-windows" /> Windows and <i className="fab fa-linux" /> Linux</h4>
             <h5>Clone the git repo</h5>
