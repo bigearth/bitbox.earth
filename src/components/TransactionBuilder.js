@@ -214,6 +214,80 @@ class TransactionBuilder extends Component {
   // #BCHForEveryone
             `}</SyntaxHighlighter>
 
+            <h3 id='encodeBIP66'><code>bip66.encode</code></h3>
+            <p>
+            Strict DER signature encoding per <a href='https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki'>bip66</a>
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          r <code>Buffer</code>
+              </li>
+              <li>
+          s <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          encoded <code>Buffer</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let transactionBuilder = new BITBOX.TransactionBuilder();
+  let r = Buffer.from('1ea1fdff81b3a271659df4aad19bc4ef83def389131a36358fe64b245632e777', 'hex');
+  let s = Buffer.from('29e164658be9ce810921bf81d6b86694785a79ea1e52dbfa5105148d1f0bc1', 'hex');
+  transactionBuilder.bip66.encode(r, s);
+  // <Buffer 30 43 02 20 1e a1 fd ff 81 b3 a2 71 65 9d f4 aa d1 9b c4 ef 83 de f3 89 13 1a 36 35 8f e6 4b 24 56 32 e7 77 02 1f 29 e1 64 65 8b e9 ce 81 09 21 bf 81 ... >
+            `}</SyntaxHighlighter>
+
+            <h3 id='decodeBIP66'><code>bip66.decode</code></h3>
+            <p>
+            Strict DER signature decoding per <a href='https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki'>bip66</a>
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          signature <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          decoded <code>Object</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let transactionBuilder = new BITBOX.TransactionBuilder();
+  let signature = new Buffer.from('304302201ea1fdff81b3a271659df4aad19bc4ef83def389131a36358fe64b245632e777021f29e164658be9ce810921bf81d6b86694785a79ea1e52dbfa5105148d1f0bc1', 'hex');
+  transactionBuilder.bip66.decode(signature);
+  // { r:
+  //  <Buffer 1e a1 fd ff 81 b3 a2 71 65 9d f4 aa d1 9b c4 ef 83 de f3 89 13 1a 36 35 8f e6 4b 24 56 32 e7 77>,
+  // s:
+  //  <Buffer 29 e1 64 65 8b e9 ce 81 09 21 bf 81 d6 b8 66 94 78 5a 79 ea 1e 52 db fa 51 05 14 8d 1f 0b c1> }
+            `}</SyntaxHighlighter>
+
+            <h3 id='checkBIP66'><code>bip66.check</code></h3>
+            <p>
+            Check format of <a href='https://github.com/bitcoin/bips/blob/master/bip-0066.mediawiki'>bip66</a> Strict DER Signature
+            </p>
+            <h4>Arguments</h4>
+            <ol>
+              <li>
+          DER <code>Buffer</code>
+              </li>
+            </ol>
+            <h4>Result</h4>
+            <p>
+          value <code>Boolean</code>
+            </p>
+            <h4>Examples</h4>
+            <SyntaxHighlighter language='javascript' style={ocean}>{`
+  let transactionBuilder = new BITBOX.TransactionBuilder();
+  let DER = '3044022029db2d5f4e1dcc04e19266cce3cb135865784c62ab653b307f0e0bb744f5c2aa022000a97f5826912cac8b44d9f577a26f169a2f8db781f2ddb7de2bc886e93b6844';
+  let buffer = Buffer.from(DER, 'hex')
+  transactionBuilder.bip66.check(buffer);
+  // true
+            `}</SyntaxHighlighter>
+
             <h3 id='encodeBIP68'><code>bip68.encode</code></h3>
             <p>
             Encoded <a href='https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki'>bip68</a> relative time lock
