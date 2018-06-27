@@ -103,7 +103,7 @@ class BitcoinCash extends Component {
     // 507
           `}</SyntaxHighlighter>
 
-          <h3 id='toBits'><code>toBits</code></h3>
+          <h3 id='satsToBits'><code>satsToBits</code></h3>
           <p>
         Converting satoshi units to Bits denomination
           </p>
@@ -119,62 +119,25 @@ class BitcoinCash extends Component {
           </p>
           <h4>Examples</h4>
           <SyntaxHighlighter language='javascript' style={ocean}>{`
-    // convert 4242323400 satoshis to 42423.234 bits
-    BITBOX.BitcoinCash.toBits(4242323400)
-    // 42423.234
+    // convert 4242323400 satoshis to 42423234 bits
+    BITBOX.BitcoinCash.satsToBits(4242323400)
+    // 42423234
 
-    // convert 100000000 satoshis to 1000 bits
-    BITBOX.BitcoinCash.toBits(100000000)
-    // 1000
+    // convert 100000000 satoshis to 1000000 bits
+    BITBOX.BitcoinCash.satsToBits(100000000)
+    // 1000000
 
-    // convert 314000000 satoshis to 3140 bits
-    BITBOX.BitcoinCash.toBits(314000000)
-    // 3140
+    // convert 314000000 satoshis to 3140000 bits
+    BITBOX.BitcoinCash.satsToBits(314000000)
+    // 3140000
 
-    // convert 987600000000 satoshis to 9876000 bits
-    BITBOX.BitcoinCash.toBits(987600000000)
-    // 9876000
+    // convert 987600000000 satoshis to 9876000000 bits
+    BITBOX.BitcoinCash.satsToBits(987600000000)
+    // 9876000000
 
-    // convert 12300 satoshis to 0.123 bits
-    BITBOX.BitcoinCash.toBits(12300)
-    // 0.123
-            `}</SyntaxHighlighter>
-
-          <h3 id='fromBits'><code>fromBits</code></h3>
-          <p>
-        Converting bits units to satoshi denomination
-          </p>
-          <h4>Arguments</h4>
-          <ol>
-            <li>
-        bits <code>Number</code>:         unit to be converted
-            </li>
-          </ol>
-          <h4>Result</h4>
-          <p>
-        satoshi <code>Number</code>:    bits unit converted to satoshi
-          </p>
-          <h4>Examples</h4>
-          <SyntaxHighlighter language='javascript' style={ocean}>{`
-    // convert 42423.234 bits to 4242323400 satoshis
-    BITBOX.BitcoinCash.fromBits(42423.234)
-    // 4242323400
-
-    // convert 1000 bits to 100000000 satoshis
-    BITBOX.BitcoinCash.fromBits(1000)
-    // 100000000
-
-    // convert 3140 bits to 314000000 satoshis
-    BITBOX.BitcoinCash.fromBits(3140)
-    // 314000000
-
-    // convert 9876000 bits to 987600000000 satoshis
-    BITBOX.BitcoinCash.fromBits(9876000)
-    // 987600000000
-
-    // convert 0.123 bits to 12300 satoshis
-    BITBOX.BitcoinCash.fromBits(0.123)
-    // 12300
+    // convert 12300 satoshis to 123 bits
+    BITBOX.BitcoinCash.satsToBits(12300)
+    // 123
             `}</SyntaxHighlighter>
 
           <h3 id='signMessageWithPrivKey'><code>signMessageWithPrivKey</code></h3>

@@ -300,7 +300,7 @@ class TransactionBuilder extends Component {
             </ol>
             <h4>Result</h4>
             <p>
-          hex <code>string</code>:      hex encoded relative timelock
+          hex <code>String</code>:      hex encoded relative timelock
             </p>
             <h4>Examples</h4>
             <SyntaxHighlighter language='javascript' style={ocean}>{`
